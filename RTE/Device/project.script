@@ -1,0 +1,4 @@
+load STM32F767IGTx 
+project name STCubeGenerated 
+project toolchain "MDK-ARM V5" 
+project path "D:\stm32f7_ucosiii\RTE\Device\STM32F767IGTx\" 
