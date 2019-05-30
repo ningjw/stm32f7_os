@@ -5,11 +5,7 @@ SemaphoreHandle_t  CountSem = NULL;
 SemaphoreHandle_t  MuxSem = NULL;
 EventGroupHandle_t Event = NULL;
 QueueHandle_t      Queue = NULL;
-
 TimerHandle_t SoftTmr = NULL; /*  软件定时器句柄 */
-
-TimerHandle_t SoftTmrStatic = NULL;//静态软件定时器
-StaticTimer_t xTimerBuffers;
 
 void SoftTmr_Callback(TimerHandle_t xTimer)
 {
@@ -18,29 +14,6 @@ void SoftTmr_Callback(TimerHandle_t xTimer)
 
 void led0_task(void* arg)
 {
-    BinarySem = xSemaphoreCreateBinary();    /*  创建 二值 信号量 */
-    CountSem = xSemaphoreCreateCounting(5, 5); /*  创建 计数信号量 */
-    MuxSem = xSemaphoreCreateMutex();        /*  创建 互斥信号量 */
-    Event = xEventGroupCreate();/*  创建 事件组 */
-    Queue = xQueueCreate((UBaseType_t ) 4,/*  消息队列的长度 */
-                         (UBaseType_t ) 4);/*  消息的大小 */
-
-    SoftTmr = xTimerCreate((const char*)"AutoReloadTimer",
-                           (TickType_t)1000,   /* 定时器周期 1000(tick) */
-                           (UBaseType_t)pdTRUE,/*  周期模式 */
-                           (void*)1,           /* 为每个计时器分配一个索引的唯一 ID */
-                            SoftTmr_Callback);
-    if (SoftTmr != NULL) {
-        xTimerStart(SoftTmr, 0); // 开启周期定时器
-    }
-    
-    SoftTmrStatic = xTimerCreateStatic("Timer",
-                                       1000,
-                                       pdTRUE,
-                                       ( void * )2,
-                                       SoftTmr_Callback,
-                                       &xTimerBuffers);
-
     arg = arg;
     uint32_t send_data1 = 1;
     while(1)

@@ -3,5 +3,6 @@
 
 void led0_task(void* arg);
 void led1_task(void* arg);
+void SoftTmr_Callback(TimerHandle_t xTimer);
 
 #endif

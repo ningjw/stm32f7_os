@@ -43,24 +43,24 @@
 
 #if (defined(__ARMCC_VERSION) || defined(__GNUC__) || defined(__ICCARM__))
 #include <stdint.h>
-
+#include "stm32f767xx.h"
 extern uint32_t SystemCoreClock;
 #endif
 
 /* Constants that describe the hardware and memory usage. */
 #define configCPU_CLOCK_HZ                    (SystemCoreClock)
 #define configTICK_RATE_HZ                    ((TickType_t)1000)
-#define configTOTAL_HEAP_SIZE                 ((size_t)4096)
-#define configMINIMAL_STACK_SIZE              ((uint16_t)256)
+#define configTOTAL_HEAP_SIZE                 ((size_t)10240)
+#define configMINIMAL_STACK_SIZE              ((uint16_t)128)
 #define configSUPPORT_DYNAMIC_ALLOCATION      1
-#define configSUPPORT_STATIC_ALLOCATION       1
+#define configSUPPORT_STATIC_ALLOCATION       0
 
 /* Constants related to the behaviour or the scheduler. */
-#define configMAX_PRIORITIES                  10
+#define configMAX_PRIORITIES                  32
 #define configUSE_PREEMPTION                  1
 #define configUSE_TIME_SLICING                1
 #define configIDLE_SHOULD_YIELD               1
-#define configMAX_TASK_NAME_LEN               (10)
+#define configMAX_TASK_NAME_LEN               (16)
 #define configUSE_16_BIT_TICKS                0   
 
 /* Software timer definitions. */
@@ -105,11 +105,11 @@ extern uint32_t SystemCoreClock;
   #define configPRIO_BITS                     __NVIC_PRIO_BITS
 #else
   /* 7 priority levels */
-  #define configPRIO_BITS                     3
+  #define configPRIO_BITS                     4
 #endif
 
 /* The lowest interrupt priority that can be used in a call to a "set priority" function. */
-#define configLIBRARY_LOWEST_INTERRUPT_PRIORITY       0x07
+#define configLIBRARY_LOWEST_INTERRUPT_PRIORITY       0x0F
 
 /* The highest interrupt priority that can be used by any interrupt service
  * routine that makes calls to interrupt safe FreeRTOS API functions.  DO NOT
