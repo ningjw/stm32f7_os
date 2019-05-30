@@ -19,7 +19,7 @@ void start_task(VOID)
     task_init_param.usTaskPrio = 4;
     task_init_param.pfnTaskEntry = (TSK_ENTRY_FUNC)led1_task;
     task_init_param.uwStackSize = 0;//使用默认堆栈大小
-    LOS_TaskCreate(&Led0_TaskId, &task_init_param);/* 创建任务 */
+    LOS_TaskCreate(&Led1_TaskId, &task_init_param);/* 创建任务 */
     
     LOS_TaskDelete(Start_TaskId);
 }
@@ -32,7 +32,7 @@ void os_init(void)
     task_init_param.pcName = "start_task";
     task_init_param.usTaskPrio = 3;
     task_init_param.pfnTaskEntry = (TSK_ENTRY_FUNC)start_task;
-    task_init_param.uwStackSize = 128;
+    task_init_param.uwStackSize = 0;
     
     LOS_TaskCreate(&Start_TaskId, &task_init_param);/* 创建任务 */
     

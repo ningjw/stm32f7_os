@@ -128,7 +128,7 @@ extern "C" {
  * @ingroup los_config
  * Minimum stack size.
  */
-#define LOSCFG_BASE_CORE_TSK_MIN_STACK_SIZE                 (0x130U)
+#define LOSCFG_BASE_CORE_TSK_MIN_STACK_SIZE                 (0x80U)
 
 /**
  * @ingroup los_config
@@ -279,8 +279,8 @@ extern "C" {
  * as LiteOS`s heap, User must config the start address and size of the board`s memory, Because in
  * KEIL and IAR compiler, the program can`t get the end address of SRAM.
  */
-#define BOARD_SRAM_START_ADDR     0x20000000
-#define BOARD_SRAM_SIZE_KB        1024
+#define BOARD_SRAM_START_ADDR     0x20020000
+#define BOARD_SRAM_SIZE_KB        40
 #define BOARD_SRAM_END_ADDR      (BOARD_SRAM_START_ADDR + 1024 * BOARD_SRAM_SIZE_KB)
 
 /**
