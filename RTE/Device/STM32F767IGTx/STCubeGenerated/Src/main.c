@@ -65,7 +65,27 @@ static void MX_FMC_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+//配置MPU的region(SRAM区域为透写模式)
+void LCD_MPU_Config(void)
+{	
+	MPU_Region_InitTypeDef MPU_Initure;
 
+	HAL_MPU_Disable();							//配置MPU之前先关闭MPU,配置完成以后在使能MPU	
+	//外部SRAM为region0，大小为2MB，此区域可读写
+	MPU_Initure.Enable=MPU_REGION_ENABLE;	    //使能region
+	MPU_Initure.Number=MPU_REGION_NUMBER0;		//设置region，外部SRAM使用的region0
+	MPU_Initure.BaseAddress=0x60000000;	//region基地址
+	MPU_Initure.Size=MPU_REGION_SIZE_256MB;			//region大小
+	MPU_Initure.SubRegionDisable=0X00;
+	MPU_Initure.TypeExtField=MPU_TEX_LEVEL0;
+	MPU_Initure.AccessPermission = MPU_REGION_FULL_ACCESS;	//此region可读写
+	MPU_Initure.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;	//允许读取此区域中的指令
+	MPU_Initure.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
+	MPU_Initure.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
+	MPU_Initure.IsBufferable = MPU_ACCESS_BUFFERABLE;
+	HAL_MPU_ConfigRegion(&MPU_Initure);
+	HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);     //开启MPU
+}
 /* USER CODE END 0 */
 
 /**
@@ -90,9 +110,9 @@ int main(void)
 
   /* Configure the system clock */
   SystemClock_Config();
-    
-  /* USER CODE BEGIN SysInit */
 
+  /* USER CODE BEGIN SysInit */
+    LCD_MPU_Config();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -100,9 +120,9 @@ int main(void)
   MX_USART1_UART_Init();
   MX_CRC_Init();
   MX_FMC_Init();
-  LCD_InitSequence();
-    
   /* USER CODE BEGIN 2 */
+  LCD_ReadId();
+  LCD_InitSequence();
   os_init();
   /* USER CODE END 2 */
 
@@ -275,17 +295,17 @@ static void MX_FMC_Init(void)
   hsram1.Init.WriteFifo = FMC_WRITE_FIFO_DISABLE;
   hsram1.Init.PageSize = FMC_PAGE_SIZE_NONE;
   /* Timing */
-  Timing.AddressSetupTime = 15;
-  Timing.AddressHoldTime = 15;
-  Timing.DataSetupTime = 85;
+  Timing.AddressSetupTime = 0;
+  Timing.AddressHoldTime = 0;
+  Timing.DataSetupTime = 10;
   Timing.BusTurnAroundDuration = 1;
   Timing.CLKDivision = 16;
   Timing.DataLatency = 17;
   Timing.AccessMode = FMC_ACCESS_MODE_A;
   /* ExtTiming */
-  ExtTiming.AddressSetupTime = 15;
-  ExtTiming.AddressHoldTime = 15;
-  ExtTiming.DataSetupTime = 15;
+  ExtTiming.AddressSetupTime = 0;
+  ExtTiming.AddressHoldTime = 0;
+  ExtTiming.DataSetupTime = 3;
   ExtTiming.BusTurnAroundDuration = 1;
   ExtTiming.CLKDivision = 16;
   ExtTiming.DataLatency = 17;
@@ -319,10 +339,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|LCD_BL_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PB0 PB1 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  /*Configure GPIO pins : PB0 PB1 LCD_BL_Pin */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|LCD_BL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

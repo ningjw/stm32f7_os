@@ -38,9 +38,11 @@ extern "C" {
 #include "event_groups.h"
 
 #include "lcd_driver.h"
+#include "iic_driver.h"
 
 #include "start_task.h"
 #include "led_task.h"
+#include "utility.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -66,6 +68,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LCD_BL_Pin GPIO_PIN_5
+#define LCD_BL_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

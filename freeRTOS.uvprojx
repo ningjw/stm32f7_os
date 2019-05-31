@@ -54,7 +54,7 @@
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
-          <BrowseInformation>1</BrowseInformation>
+          <BrowseInformation>0</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -392,6 +392,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\led_task.c</FilePath>
             </File>
+            <File>
+              <FileName>utility.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\utility.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -401,6 +406,11 @@
               <FileName>lcd_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\lcd_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\iic_driver.c</FilePath>
             </File>
           </Files>
         </Group>

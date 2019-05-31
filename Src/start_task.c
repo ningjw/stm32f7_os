@@ -20,6 +20,10 @@ extern TimerHandle_t      SoftTmr;
   **********************************************************************/
 static void AppTaskCreate(void)
 {
+    vTaskDelay(50);
+    HAL_GPIO_WritePin(GPIOB, LCD_BL_Pin, GPIO_PIN_SET);
+    LCD_Fill(100,100,200,200,0x00FF);
+    
     taskENTER_CRITICAL(); //进入临界区
 
     /*  创建 LED_Task  任务 */
