@@ -36,6 +36,9 @@ extern "C" {
 #include "task.h"
 #include "semphr.h"
 #include "event_groups.h"
+
+#include "lcd_driver.h"
+
 #include "start_task.h"
 #include "led_task.h"
 /* USER CODE END Includes */

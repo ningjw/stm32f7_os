@@ -53,7 +53,7 @@ Purpose     : Display controller configuration (single layer)
 
 #include "GUI.h"
 #include "GUIDRV_FlexColor.h"
-
+#include "lcd_driver.h"
 /*********************************************************************
 *
 *       Layer configuration (to be modified)
@@ -64,8 +64,8 @@ Purpose     : Display controller configuration (single layer)
 //
 // Physical display size
 //
-#define XSIZE_PHYS  240 // To be adapted to x-screen size
-#define YSIZE_PHYS  320 // To be adapted to y-screen size
+#define XSIZE_PHYS  800 // To be adapted to x-screen size
+#define YSIZE_PHYS  480 // To be adapted to y-screen size
 
 /*********************************************************************
 *
@@ -106,6 +106,7 @@ Purpose     : Display controller configuration (single layer)
 *   Sets display register
 */
 static void LcdWriteReg(U16 Data) {
+    LCD->reg = Data;
   // ... TBD by user
 }
 
@@ -117,6 +118,7 @@ static void LcdWriteReg(U16 Data) {
 *   Writes a value to a display register
 */
 static void LcdWriteData(U16 Data) {
+    LCD->data = Data;
   // ... TBD by user
 }
 
@@ -130,6 +132,8 @@ static void LcdWriteData(U16 Data) {
 static void LcdWriteDataMultiple(U16 * pData, int NumItems) {
   while (NumItems--) {
     // ... TBD by user
+      LCD->data = *pData;
+      pData++;
   }
 }
 
@@ -143,6 +147,8 @@ static void LcdWriteDataMultiple(U16 * pData, int NumItems) {
 static void LcdReadDataMultiple(U16 * pData, int NumItems) {
   while (NumItems--) {
     // ... TBD by user
+      *pData = LCD->data;
+      pData++;
   }
 }
 

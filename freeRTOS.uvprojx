@@ -54,7 +54,7 @@
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
-          <BrowseInformation>0</BrowseInformation>
+          <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Inc</IncludePath>
+              <IncludePath>.\Inc;.\STemWinLibrary532\inc;.\STemWinLibrary532\Config</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -395,6 +395,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Driver</GroupName>
+          <Files>
+            <File>
+              <FileName>lcd_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\lcd_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>:STM32CubeMX:Common Sources</GroupName>
           <Files>
             <File>
@@ -411,6 +421,36 @@
               <FileName>stm32f7xx_it.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\RTE\Device\STM32F767IGTx\STCubeGenerated\Src\stm32f7xx_it.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>STemWin</GroupName>
+          <Files>
+            <File>
+              <FileName>GUI_X_OS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STemWinLibrary532\OS\GUI_X_OS.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIConf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STemWinLibrary532\Config\GUIConf.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUIDRV_Template.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STemWinLibrary532\Config\GUIDRV_Template.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCDConf_FlexColor_Template.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\STemWinLibrary532\Config\LCDConf_FlexColor_Template.c</FilePath>
+            </File>
+            <File>
+              <FileName>STemWin532_CM7_OS_Keil.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>.\STemWinLibrary532\Lib\STemWin532_CM7_OS_Keil.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -498,6 +538,12 @@
           <targetInfo name="Target 1"/>
         </targetInfos>
       </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="CRC" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Common" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL Common">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
@@ -529,6 +575,12 @@
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="RCC" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7x5_7x6_7x7_7x9_750 HAL GPIO">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="SRAM" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
           <targetInfo name="Target 1"/>

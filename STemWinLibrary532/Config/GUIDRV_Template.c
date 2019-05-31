@@ -57,7 +57,7 @@ Purpose     : Template driver, could be used as starting point for new
 #include "LCD_Private.h"
 #include "GUI_Private.h"
 #include "LCD_ConfDefaults.h"
-
+#include "lcd_driver.h"
 /*********************************************************************
 *
 *       Defines
@@ -154,11 +154,7 @@ static void _SetPixelIndex(GUI_DEVICE * pDevice, int x, int y, int PixelIndex) {
     GUI_USE_PARA(y);
     GUI_USE_PARA(PixelIndex);
     {
-      //
-      // Write into hardware ... Adapt to your system
-      //
-      // TBD by customer...
-      //
+        LCD_DrawPoint(x,y,PixelIndex); //调用 tftlcd.c 文件中的快速打点函数
     }
     #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
       #undef xPhys
@@ -193,12 +189,7 @@ static unsigned int _GetPixelIndex(GUI_DEVICE * pDevice, int x, int y) {
     GUI_USE_PARA(x);
     GUI_USE_PARA(y);
     {
-      //
-      // Write into hardware ... Adapt to your system
-      //
-      // TBD by customer...
-      //
-      PixelIndex = 0;
+      PixelIndex = LCD_ReadPoint(x,y);  //次处调用读点函数
     }
     #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
       #undef xPhys
@@ -236,11 +227,12 @@ static void _FillRect(GUI_DEVICE * pDevice, int x0, int y0, int x1, int y1) {
       }
     }
   } else {
-    for (; y0 <= y1; y0++) {
-      for (x = x0; x <= x1; x++) {
-        _SetPixelIndex(pDevice, x, y0, PixelIndex);
-      }
-    }
+//    for (; y0 <= y1; y0++) {
+//      for (x = x0; x <= x1; x++) {
+//        _SetPixelIndex(pDevice, x, y0, PixelIndex);
+//      }
+//    }
+      LCD_Fill(x0,y0,x1,y1,LCD_COLORINDEX);
   }
 }
 
@@ -499,6 +491,14 @@ static void _DrawBitLine16BPP(GUI_DEVICE * pDevice, int x, int y, U16 const GUI_
   for (;xsize > 0; xsize--, x++, p++) {
     _SetPixelIndex(pDevice, x, y, *p);
   }
+  
+//    LCD_SetCursor(x,y);
+//    *(__IO uint16_t *)(UCGUI_LCD_CMD) = lcddev.wramcmd; //写入颜色值
+//    for (;xsize > 0; xsize--, x++, p++)
+//    {
+//    pixel = *p;
+//    *(__IO uint16_t *)(UCGUI_LCD_DATA) =pixel;
+//    }
 }
 
 /*********************************************************************

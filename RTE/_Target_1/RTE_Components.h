@@ -34,6 +34,8 @@
 #define RTE_RTOS_FreeRTOS_TIMERS        /* RTOS FreeRTOS Timers */
 /*  Keil::Device:STM32Cube Framework:STM32CubeMX:1.0.0 */
 #define RTE_DEVICE_FRAMEWORK_CUBE_MX
+/*  Keil::Device:STM32Cube HAL:CRC:1.2.6 */
+#define RTE_DEVICE_HAL_CRC
 /*  Keil::Device:STM32Cube HAL:Common:1.2.6 */
 #define RTE_DEVICE_HAL_COMMON
 /*  Keil::Device:STM32Cube HAL:Cortex:1.2.6 */
@@ -46,6 +48,8 @@
 #define RTE_DEVICE_HAL_PWR
 /*  Keil::Device:STM32Cube HAL:RCC:1.2.6 */
 #define RTE_DEVICE_HAL_RCC
+/*  Keil::Device:STM32Cube HAL:SRAM:1.2.6 */
+#define RTE_DEVICE_HAL_SRAM
 /*  Keil::Device:STM32Cube HAL:UART:1.2.6 */
 #define RTE_DEVICE_HAL_UART
 /*  Keil::Device:Startup:1.2.2 */

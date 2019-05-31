@@ -40,7 +40,7 @@
 /* #define HAL_CRYP_MODULE_ENABLED   */
 /* #define HAL_CAN_MODULE_ENABLED   */
 /* #define HAL_CEC_MODULE_ENABLED   */
-/* #define HAL_CRC_MODULE_ENABLED   */
+#define HAL_CRC_MODULE_ENABLED
 /* #define HAL_CRYP_MODULE_ENABLED   */
 /* #define HAL_DAC_MODULE_ENABLED   */
 /* #define HAL_DCMI_MODULE_ENABLED   */
@@ -48,7 +48,7 @@
 /* #define HAL_ETH_MODULE_ENABLED   */
 /* #define HAL_NAND_MODULE_ENABLED   */
 /* #define HAL_NOR_MODULE_ENABLED   */
-/* #define HAL_SRAM_MODULE_ENABLED   */
+#define HAL_SRAM_MODULE_ENABLED
 /* #define HAL_SDRAM_MODULE_ENABLED   */
 /* #define HAL_HASH_MODULE_ENABLED   */
 /* #define HAL_I2S_MODULE_ENABLED   */
@@ -78,7 +78,6 @@
 /* #define HAL_SMBUS_MODULE_ENABLED   */
 /* #define HAL_EXTI_MODULE_ENABLED   */
 #define HAL_GPIO_MODULE_ENABLED
-#define HAL_EXTI_MODULE_ENABLED 
 #define HAL_DMA_MODULE_ENABLED
 #define HAL_RCC_MODULE_ENABLED
 #define HAL_FLASH_MODULE_ENABLED
@@ -232,7 +231,7 @@
 #endif /* HAL_RCC_MODULE_ENABLED */
 
 #ifdef HAL_EXTI_MODULE_ENABLED
-//  #include "stm32f7xx_hal_exti.h"
+  #include "stm32f7xx_hal_exti.h"
 #endif /* HAL_EXTI_MODULE_ENABLED */
 
 #ifdef HAL_GPIO_MODULE_ENABLED
