@@ -37,6 +37,9 @@ extern "C" {
 #include "semphr.h"
 #include "event_groups.h"
 
+#include "GUI.h"
+#include "DIALOG.h"
+
 #include "lcd_driver.h"
 #include "iic_driver.h"
 

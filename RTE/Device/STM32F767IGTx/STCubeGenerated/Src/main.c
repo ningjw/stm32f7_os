@@ -55,6 +55,7 @@ SRAM_HandleTypeDef hsram1;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MPU_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_CRC_Init(void);
@@ -65,27 +66,7 @@ static void MX_FMC_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-//配置MPU的region(SRAM区域为透写模式)
-void LCD_MPU_Config(void)
-{	
-	MPU_Region_InitTypeDef MPU_Initure;
 
-	HAL_MPU_Disable();							//配置MPU之前先关闭MPU,配置完成以后在使能MPU	
-	//外部SRAM为region0，大小为2MB，此区域可读写
-	MPU_Initure.Enable=MPU_REGION_ENABLE;	    //使能region
-	MPU_Initure.Number=MPU_REGION_NUMBER0;		//设置region，外部SRAM使用的region0
-	MPU_Initure.BaseAddress=0x60000000;	//region基地址
-	MPU_Initure.Size=MPU_REGION_SIZE_256MB;			//region大小
-	MPU_Initure.SubRegionDisable=0X00;
-	MPU_Initure.TypeExtField=MPU_TEX_LEVEL0;
-	MPU_Initure.AccessPermission = MPU_REGION_FULL_ACCESS;	//此region可读写
-	MPU_Initure.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;	//允许读取此区域中的指令
-	MPU_Initure.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
-	MPU_Initure.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
-	MPU_Initure.IsBufferable = MPU_ACCESS_BUFFERABLE;
-	HAL_MPU_ConfigRegion(&MPU_Initure);
-	HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);     //开启MPU
-}
 /* USER CODE END 0 */
 
 /**
@@ -98,6 +79,8 @@ int main(void)
 
   /* USER CODE END 1 */
   
+  /* MPU Configuration--------------------------------------------------------*/
+  MPU_Config();
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -112,7 +95,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-    LCD_MPU_Config();
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -121,6 +104,7 @@ int main(void)
   MX_CRC_Init();
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
+//  HAL_UART_Transmit(&huart1,"start",sizeof("start"),0);
   LCD_ReadId();
   LCD_InitSequence();
   os_init();
@@ -153,13 +137,12 @@ void SystemClock_Config(void)
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
   /** Initializes the CPU, AHB and APB busses clocks 
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 215;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 25;
+  RCC_OscInitStruct.PLL.PLLN = 432;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -191,6 +174,9 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+  /** Enables the Clock Security System 
+  */
+  HAL_RCC_EnableCSS();
 }
 
 /**
@@ -296,15 +282,15 @@ static void MX_FMC_Init(void)
   hsram1.Init.PageSize = FMC_PAGE_SIZE_NONE;
   /* Timing */
   Timing.AddressSetupTime = 0;
-  Timing.AddressHoldTime = 0;
-  Timing.DataSetupTime = 10;
+  Timing.AddressHoldTime = 15;
+  Timing.DataSetupTime = 9;
   Timing.BusTurnAroundDuration = 1;
   Timing.CLKDivision = 16;
   Timing.DataLatency = 17;
   Timing.AccessMode = FMC_ACCESS_MODE_A;
   /* ExtTiming */
   ExtTiming.AddressSetupTime = 0;
-  ExtTiming.AddressHoldTime = 0;
+  ExtTiming.AddressHoldTime = 15;
   ExtTiming.DataSetupTime = 3;
   ExtTiming.BusTurnAroundDuration = 1;
   ExtTiming.CLKDivision = 16;
@@ -339,7 +325,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|LCD_BL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : PB0 PB1 LCD_BL_Pin */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|LCD_BL_Pin;
@@ -353,6 +342,34 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/* MPU Configuration */
+
+void MPU_Config(void)
+{
+  MPU_Region_InitTypeDef MPU_InitStruct = {0};
+
+  /* Disables the MPU */
+  HAL_MPU_Disable();
+  /** Initializes and configures the Region and the memory to be protected 
+  */
+  MPU_InitStruct.Enable = MPU_REGION_ENABLE;
+  MPU_InitStruct.Number = MPU_REGION_NUMBER0;
+  MPU_InitStruct.BaseAddress = 0x60000000;
+  MPU_InitStruct.Size = MPU_REGION_SIZE_256MB;
+  MPU_InitStruct.SubRegionDisable = 0x0;
+  MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
+  MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+  MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;
+  MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
+  MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
+  MPU_InitStruct.IsBufferable = MPU_ACCESS_BUFFERABLE;
+
+  HAL_MPU_ConfigRegion(&MPU_InitStruct);
+  /* Enables the MPU */
+  HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.

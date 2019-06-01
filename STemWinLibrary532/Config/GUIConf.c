@@ -62,8 +62,8 @@ Purpose     : Display controller initialization
 //
 // Define the available number of bytes available for the GUI
 //
-#define GUI_NUMBYTES  (1024*40)
-
+#define GUI_NUMBYTES  (1024*256)
+static U32 aMemory[GUI_NUMBYTES / 4];
 /*********************************************************************
 *
 *       Public code
@@ -82,7 +82,7 @@ void GUI_X_Config(void) {
   //
   // 32 bit aligned memory area
   //
-  static U32 aMemory[GUI_NUMBYTES / 4];
+  
   //
   // Assign memory to emWin
   //

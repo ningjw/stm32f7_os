@@ -38,10 +38,13 @@ uint32_t LCD_ReadPoint(uint16_t x, uint16_t y)
     LCD->reg = MEM_READ;
     r = LCD->data;		//dummy Read
     __NOP;
+    __NOP;
     r = LCD->data;  	//实际坐标颜色
-    g = (r & 0XFF) << 8;		//第一次读取的是RG的值,R在前,G在后,各占8位
+    __NOP;
+    __NOP;
     b = LCD->data;
-
+    
+    g = (r & 0XFF) << 8;		//第一次读取的是RG的值,R在前,G在后,各占8位
     return (((r >> 11) << 11) | ((g >> 10) << 5) | (b >> 11)); //公式转换一下
 }
 
@@ -53,15 +56,11 @@ uint32_t LCD_ReadPoint(uint16_t x, uint16_t y)
 ***************************************************************************************/
 void LCD_DrawPoint(uint16_t x, uint16_t y, uint32_t color)
 {
-    LCD->reg = (SET_X_CMD);
-    LCD->data = (x>>8);  
-    LCD->reg = (SET_X_CMD+1);
-    LCD->data = (x&0XFF);	  
+    LCD_SetCursor(x,y);
     
-    LCD->reg = (SET_Y_CMD);
-    LCD->data = (y>>8);  
-    LCD->reg = (SET_Y_CMD+1);
-    LCD->data = (y&0XFF); 
+    LCD->reg = MEM_WRITE;
+    __NOP;__NOP;
+	LCD->data = color; 
 }
 
 
@@ -118,8 +117,6 @@ void LCD_ReadId(void)
 void LCD_Scan_Dir(uint8_t dir)
 {
     uint16_t regval = 0;
-
-    uint16_t temp;
     if(dir == 1)
     {
         switch(dir)//方向转换
@@ -178,7 +175,7 @@ void LCD_Scan_Dir(uint8_t dir)
         regval |= (1 << 7) | (1 << 6) | (1 << 5);
         break;
     }
-
+    
     LCD_WriteReg(SET_DIR, regval);
 
     LCD->reg = (SET_X_CMD);
@@ -203,7 +200,7 @@ void LCD_Scan_Dir(uint8_t dir)
 //dir:0,竖屏；1,横屏
 void LCD_Display_Dir(uint8_t dir)
 {
-    if(dir == 0)			//竖屏
+    if(dir == 0)	//竖屏
     {
         lcddev.width = 480;
         lcddev.height = 800;
@@ -632,6 +629,7 @@ void LCD_InitSequence(void)
     delay_us(120);
     LCD->reg = (0x2900);
     LCD_Display_Dir(0);		//默认为竖屏
+    HAL_GPIO_WritePin(GPIOB, LCD_BL_Pin, GPIO_PIN_SET);
 }
 
 

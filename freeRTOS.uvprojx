@@ -397,6 +397,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\utility.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f7xx_hal_conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\RTE\Device\STM32F767IGTx\STCubeGenerated\Inc\stm32f7xx_hal_conf.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -461,6 +466,11 @@
               <FileName>STemWin532_CM7_OS_Keil.lib</FileName>
               <FileType>4</FileType>
               <FilePath>.\STemWinLibrary532\Lib\STemWin532_CM7_OS_Keil.lib</FilePath>
+            </File>
+            <File>
+              <FileName>GUIConf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\STemWinLibrary532\Config\GUIConf.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -20,9 +20,16 @@ extern TimerHandle_t      SoftTmr;
   **********************************************************************/
 static void AppTaskCreate(void)
 {
-    vTaskDelay(50);
-    HAL_GPIO_WritePin(GPIOB, LCD_BL_Pin, GPIO_PIN_SET);
-    LCD_Fill(100,100,200,200,0x00FF);
+  /* Init the STemWin GUI Library */
+    GUI_Init();
+    /* Setup layer configuration during startup */
+    GUI_SetBkColor(GUI_LIGHTBLUE);
+//    GUI_SelectLayer(1);
+    GUI_Clear();
+//    GUI_SetBkColor(GUI_TRANSPARENT); 
+//    GUI_SelectLayer(0);
+    GUI_SetFont(&GUI_Font24_ASCII); //设置字体
+    GUI_DispStringAt("Hello world!",100,100);
     
     taskENTER_CRITICAL(); //进入临界区
 

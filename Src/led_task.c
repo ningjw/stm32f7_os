@@ -16,6 +16,7 @@ void led0_task(void* arg)
 {
     arg = arg;
     uint32_t send_data1 = 1;
+    
     while(1)
     {
         xSemaphoreGive( BinarySem );
