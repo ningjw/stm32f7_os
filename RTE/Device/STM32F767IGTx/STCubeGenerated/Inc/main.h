@@ -42,6 +42,7 @@ extern "C" {
 
 #include "lcd_driver.h"
 #include "iic_driver.h"
+#include "sdram_driver.h"
 
 #include "start_task.h"
 #include "led_task.h"
@@ -55,7 +56,7 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+extern SDRAM_HandleTypeDef hsdram1;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

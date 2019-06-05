@@ -37,11 +37,7 @@ uint32_t LCD_ReadPoint(uint16_t x, uint16_t y)
 
     LCD->reg = MEM_READ;
     r = LCD->data;		//dummy Read
-    __NOP;
-    __NOP;
     r = LCD->data;  	//实际坐标颜色
-    __NOP;
-    __NOP;
     b = LCD->data;
     
     g = (r & 0XFF) << 8;		//第一次读取的是RG的值,R在前,G在后,各占8位
@@ -59,7 +55,6 @@ void LCD_DrawPoint(uint16_t x, uint16_t y, uint32_t color)
     LCD_SetCursor(x,y);
     
     LCD->reg = MEM_WRITE;
-    __NOP;__NOP;
 	LCD->data = color; 
 }
 

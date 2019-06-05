@@ -40,14 +40,20 @@
 #define RTE_DEVICE_HAL_COMMON
 /*  Keil::Device:STM32Cube HAL:Cortex:1.2.6 */
 #define RTE_DEVICE_HAL_CORTEX
+/*  Keil::Device:STM32Cube HAL:DMA2D:1.2.6 */
+#define RTE_DEVICE_HAL_DMA2D
 /*  Keil::Device:STM32Cube HAL:DMA:1.2.6 */
 #define RTE_DEVICE_HAL_DMA
 /*  Keil::Device:STM32Cube HAL:GPIO:1.2.6 */
 #define RTE_DEVICE_HAL_GPIO
+/*  Keil::Device:STM32Cube HAL:LTDC:1.2.6 */
+#define RTE_DEVICE_HAL_LTDC
 /*  Keil::Device:STM32Cube HAL:PWR:1.2.6 */
 #define RTE_DEVICE_HAL_PWR
 /*  Keil::Device:STM32Cube HAL:RCC:1.2.6 */
 #define RTE_DEVICE_HAL_RCC
+/*  Keil::Device:STM32Cube HAL:SDRAM:1.2.6 */
+#define RTE_DEVICE_HAL_SDRAM
 /*  Keil::Device:STM32Cube HAL:SRAM:1.2.6 */
 #define RTE_DEVICE_HAL_SRAM
 /*  Keil::Device:STM32Cube HAL:UART:1.2.6 */
