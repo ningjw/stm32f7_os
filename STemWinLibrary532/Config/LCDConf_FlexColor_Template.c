@@ -64,8 +64,8 @@ Purpose     : Display controller configuration (single layer)
 //
 // Physical display size
 //
-#define XSIZE_PHYS  800 // To be adapted to x-screen size
-#define YSIZE_PHYS  480 // To be adapted to y-screen size
+#define XSIZE_PHYS  480 // To be adapted to x-screen size
+#define YSIZE_PHYS  272 // To be adapted to y-screen size
 
 /*********************************************************************
 *
@@ -178,8 +178,8 @@ void LCD_X_Config(void) {
   //
   // Display driver configuration, required for Lin-driver
   //
-  LCD_SetSizeEx (0, lcddev.width , lcddev.height);
-  LCD_SetVSizeEx(0, lcddev.width, lcddev.height);
+  LCD_SetSizeEx (0, XSIZE_PHYS , YSIZE_PHYS);
+  LCD_SetVSizeEx(0, XSIZE_PHYS, YSIZE_PHYS);
   //
   // Orientation
   //

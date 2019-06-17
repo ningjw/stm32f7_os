@@ -21,18 +21,17 @@ extern TimerHandle_t      SoftTmr;
 static void AppTaskCreate(void)
 {
   /* Init the STemWin GUI Library */
-    GUI_Init();
+    LTDC_Clear(0xFFFFFFFF);
+    LCD_Fill(100,100,200,200,0xff);
+//    GUI_Init();
     /* Setup layer configuration during startup */
-    GUI_SetBkColor(GUI_LIGHTBLUE);
-//    GUI_SelectLayer(1);
-    GUI_Clear();
-//    GUI_SetBkColor(GUI_TRANSPARENT); 
-//    GUI_SelectLayer(0);
-    GUI_SetFont(&GUI_Font24_ASCII); //设置字体
-    GUI_DispStringAt("Hello world!",100,100);
+//    GUI_SetBkColor(GUI_LIGHTBLUE);
+//    GUI_Clear();
+//    GUI_SetFont(&GUI_Font24_ASCII); //设置字体
+//    GUI_DispStringAt("Hello world!",100,100);
     
     taskENTER_CRITICAL(); //进入临界区
-
+    
     /*  创建 LED_Task  任务 */
     xTaskCreate((TaskFunction_t )led1_task, /*  任务入口函数 */
                 (const char* )"LED2_Task",/*  任务名字 */

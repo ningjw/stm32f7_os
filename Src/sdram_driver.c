@@ -1,7 +1,7 @@
 #include "main.h"
 
-uint16_t test_sram[256] __attribute__((at(0XC0000000)));
-
+//uint16_t test_sram[256] __attribute__((at(0XC0000000)));
+extern uint16_t ltdc_buf[480][272];
 /***************************************************************************************
   * @brief   
   * @input   
@@ -53,9 +53,9 @@ void SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram)
 	//Ыљвд,COUNT=64*1000*108/8192-20=823
 	HAL_SDRAM_ProgramRefreshRate(hsdram, 823);
     
-      for(uint8_t i = 0; i< 255; i++){
-        test_sram[i] = i;
-      }
+//      for(uint8_t i = 0; i< 255; i++){
+//        ltdc_buf[0][i] = i;
+//      }
 }
 
 

@@ -40,6 +40,7 @@ extern "C" {
 #include "GUI.h"
 #include "DIALOG.h"
 
+#include "ltdc_driver.h"
 #include "lcd_driver.h"
 #include "iic_driver.h"
 #include "sdram_driver.h"
