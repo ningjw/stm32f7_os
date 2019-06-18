@@ -16,7 +16,8 @@ void led0_task(void* arg)
 {
     arg = arg;
     uint32_t send_data1 = 1;
-    
+    static uint8_t index = 0;
+    GUI_Init();
     while(1)
     {
         xSemaphoreGive( BinarySem );
@@ -25,7 +26,24 @@ void led0_task(void* arg)
                     &send_data1,/*  发送的消息内容 */
                     0 );        /*  等待时间 0 */
         HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-        vTaskDelay(500); /* 延时 500 个 tick */
+        
+        index++;
+        switch(index%3)
+        {
+            case 0:
+                GUI_SetBkColor(GUI_RED);
+                break;
+            case 1:
+                GUI_SetBkColor(GUI_BLUE);
+                break;
+            case 2:
+                GUI_SetBkColor(GUI_GRAY);
+                break;
+        }
+        GUI_Clear();
+        GUI_SetFont(&GUI_Font24_ASCII); //设置字体
+        GUI_DispStringAt("Hello world!",100,100);
+        vTaskDelay(1000); /* 延时 500 个 tick */
     }
 }
 
@@ -46,7 +64,7 @@ void led1_task(void* arg)
                        &r_queue, /*  发送的消息内容 */
                        portMAX_DELAY); /*  等待时间  一直等 */
         HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_1);
-        vTaskDelay(500); /* 延时 500 个 tick */
+        vTaskDelay(1000); /* 延时 500 个 tick */
     }
 }
 

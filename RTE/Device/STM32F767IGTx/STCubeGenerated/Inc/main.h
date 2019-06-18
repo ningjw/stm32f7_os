@@ -41,7 +41,7 @@ extern "C" {
 #include "DIALOG.h"
 
 #include "ltdc_driver.h"
-#include "lcd_driver.h"
+//#include "lcd_driver.h"
 #include "iic_driver.h"
 #include "sdram_driver.h"
 
@@ -73,6 +73,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LAYER1_ADDR 0xC003FC00
+#define LAYER0_ADDR 0xC0000000
+#define LCD_WIDTH 480
+#define LCD_HEIGHT 272
 #define LCD_BL_Pin GPIO_PIN_5
 #define LCD_BL_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */

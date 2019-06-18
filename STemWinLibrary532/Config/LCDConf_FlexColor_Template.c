@@ -53,7 +53,7 @@ Purpose     : Display controller configuration (single layer)
 
 #include "GUI.h"
 #include "GUIDRV_FlexColor.h"
-#include "lcd_driver.h"
+#include "ltdc_driver.h"
 /*********************************************************************
 *
 *       Layer configuration (to be modified)
@@ -106,7 +106,6 @@ Purpose     : Display controller configuration (single layer)
 *   Sets display register
 */
 static void LcdWriteReg(U16 Data) {
-    LCD->reg = Data;
   // ... TBD by user
 }
 
@@ -118,7 +117,6 @@ static void LcdWriteReg(U16 Data) {
 *   Writes a value to a display register
 */
 static void LcdWriteData(U16 Data) {
-    LCD->data = Data;
   // ... TBD by user
 }
 
@@ -132,8 +130,6 @@ static void LcdWriteData(U16 Data) {
 static void LcdWriteDataMultiple(U16 * pData, int NumItems) {
   while (NumItems--) {
     // ... TBD by user
-      LCD->data = *pData;
-      pData++;
   }
 }
 
@@ -147,8 +143,6 @@ static void LcdWriteDataMultiple(U16 * pData, int NumItems) {
 static void LcdReadDataMultiple(U16 * pData, int NumItems) {
   while (NumItems--) {
     // ... TBD by user
-      *pData = LCD->data;
-      pData++;
   }
 }
 
@@ -168,13 +162,14 @@ static void LcdReadDataMultiple(U16 * pData, int NumItems) {
 *
 */
 void LCD_X_Config(void) {
-  GUI_DEVICE * pDevice;
-  CONFIG_FLEXCOLOR Config = {0};
-  GUI_PORT_API PortAPI = {0};
+//  GUI_DEVICE * pDevice;
+//  CONFIG_FLEXCOLOR Config = {0};
+//  GUI_PORT_API PortAPI = {0};
   //
   // Set display driver and color conversion
   //
-  pDevice = GUI_DEVICE_CreateAndLink(&GUIDRV_Template_API, GUICC_M565, 0, 0);
+//  pDevice = 
+  GUI_DEVICE_CreateAndLink(&GUIDRV_Template_API, GUICC_M565, 0, 0);
   //
   // Display driver configuration, required for Lin-driver
   //

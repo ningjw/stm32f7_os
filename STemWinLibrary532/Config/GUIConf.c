@@ -63,7 +63,7 @@ Purpose     : Display controller initialization
 // Define the available number of bytes available for the GUI
 //
 #define GUI_NUMBYTES  (1024*256)
-static U32 aMemory[GUI_NUMBYTES / 4];
+static U32 aMemory[GUI_NUMBYTES / 4] __attribute__((at(0xC007F800)));;
 /*********************************************************************
 *
 *       Public code
