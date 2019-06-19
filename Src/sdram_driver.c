@@ -44,7 +44,7 @@ void SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram)
            SDRAM_MODEREG_OPERATING_MODE_STANDARD |   //设置操作模式:0,标准模式
            SDRAM_MODEREG_WRITEBURST_MODE_SINGLE;     //设置突发写模式:1,单点访问
     
-    SDRAM_Send_Cmd(0,FMC_SDRAM_CMD_LOAD_MODE,1,temp);   //设置SDRAM的模式寄存器
+    SDRAM_Send_Cmd(hsdram,FMC_SDRAM_CMD_LOAD_MODE,1,temp);   //设置SDRAM的模式寄存器
     
     //刷新频率计数器(以SDCLK频率计数),计算方法:
 	//COUNT=SDRAM刷新周期/行数-20=SDRAM刷新周期(us)*SDCLK频率(Mhz)/行数
