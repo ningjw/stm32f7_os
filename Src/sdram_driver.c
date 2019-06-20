@@ -31,7 +31,7 @@ void SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram)
 	uint32_t temp=0;
     //SDRAM控制器初始化完成以后还需要按照如下顺序初始化SDRAM
     SDRAM_Send_Cmd(hsdram, FMC_SDRAM_CMD_CLK_ENABLE, 1, 0); //时钟配置使能
-    delay_us(500);                                          //至少延时200us
+    vTaskDelay(1);                                          //至少延时200us
     SDRAM_Send_Cmd(hsdram, FMC_SDRAM_CMD_PALL, 1, 0);       //对所有存储区预充电
     SDRAM_Send_Cmd(hsdram, FMC_SDRAM_CMD_AUTOREFRESH_MODE, 8, 0);//设置自刷新次数 
     
@@ -51,10 +51,6 @@ void SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram)
     //我们使用的SDRAM刷新周期为64ms,SDCLK=216/2=108Mhz,行数为8192(2^13).
 	//所以,COUNT=64*1000*108/8192-20=823
 	HAL_SDRAM_ProgramRefreshRate(hsdram, 823);
-    
-//      for(uint8_t i = 0; i< 255; i++){
-//        ltdc_layer0[0][i] = i;
-//      }
 }
 
 

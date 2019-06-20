@@ -22,17 +22,12 @@ static void AppTaskCreate(void)
 {
     taskENTER_CRITICAL(); //进入临界区
     
-  /* Init the STemWin GUI Library */
-    LTDC_Clear(0xffff);
-
-    GUI_Init();
-//    /* Setup layer configuration during startup */
-//    GUI_SetBkColor(GUI_RED);
-//    GUI_Clear();
-//    GUI_SetFont(&GUI_Font24_ASCII); //设置字体
-//    GUI_DispStringAt("Hello world!",100,100);
+    SDRAM_Initialization_Sequence(&hsdram1);
     
-
+    LTDC_Clear(0xffff);
+    
+    GT9147_Init();//初始化电容触摸屏控制器
+    
     /*  创建 LED_Task  任务 */
     xTaskCreate((TaskFunction_t )led1_task, /*  任务入口函数 */
                 (const char* )"LED2_Task",/*  任务名字 */

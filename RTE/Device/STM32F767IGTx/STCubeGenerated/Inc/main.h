@@ -41,8 +41,7 @@ extern "C" {
 #include "DIALOG.h"
 
 #include "ltdc_driver.h"
-//#include "lcd_driver.h"
-#include "iic_driver.h"
+#include "gt9147_iic_driver.h"
 #include "sdram_driver.h"
 
 #include "start_task.h"

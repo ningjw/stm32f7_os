@@ -1,5 +1,10 @@
 #include "main.h"
 
+void delay_ms(uint16_t nms)
+{	
+	delay_us((uint32_t)(nms*1000));				//普通方式延时
+}
+
 void delay_us(uint32_t nus)
 {
     uint32_t ticks;
@@ -11,7 +16,7 @@ void delay_us(uint32_t nus)
     {
         t_now = SysTick->VAL;	
 		if(t_now!=t_old)
-		{	    
+		{
 			if(t_now<t_old)
                 t_cnt += t_old - t_now;	//这里注意一下SYSTICK是一个递减的计数器就可以了.
 			else
@@ -19,10 +24,10 @@ void delay_us(uint32_t nus)
             
 			t_old = t_now;
             
-			if(t_cnt>=ticks)
+			if(t_cnt >= ticks)
                 break;			//时间超过/等于要延迟的时间,则退出.
 		}
-    }	
+    }
 }
 
 //#pragma import(__use_no_semihosting)

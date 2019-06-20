@@ -17,24 +17,23 @@ void LCD_Fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint32_t color
     uint32_t addr = ((uint32_t)ltdc_layer0[0] + 2 * (LTDC_WIDTH * sy + sx));//输出存储器地址
     uint16_t offline = LTDC_WIDTH - (ex - sx + 1); //设置行偏移 
     
-    RCC->AHB1ENR |= 1<<23;			         //使能DM2D时钟
-	DMA2D->CR = 3<<16;				         //寄存器到存储器模式
+    RCC->AHB1ENR |= RCC_AHB1LPENR_DMA2DLPEN; //使能DM2D时钟
+	DMA2D->CR = DMA2D_CR_MODE;				 //寄存器到存储器模式
 	DMA2D->OPFCCR = LTDC_PIXEL_FORMAT_RGB565;//设置颜色格式
 	DMA2D->OOR = offline;
-	DMA2D->CR &= ~(1<<0);				     //先停止DMA2D
+	DMA2D->CR &= ~(DMA2D_CR_START);			//先停止DMA2D
 	DMA2D->OMAR = addr;
 	DMA2D->NLR = (ey - sy + 1) | ((ex - sx + 1)<<16);//设定行数寄存器
 	DMA2D->OCOLR = color;				     //设定输出颜色寄存器 
 
-	DMA2D->CR |= 1<<0;				         //启动DMA2D
-	while((DMA2D->ISR&(1<<1))==0)	         //等待传输完成
+	DMA2D->CR |= DMA2D_CR_START;		    //启动DMA2D
+	while((DMA2D->ISR & DMA2D_ISR_TCIF) == 0)	         //等待传输完成
 	{
 		timeout++;
 		if(timeout>0X1FFFFF)
             break;	//超时退出
 	}
-	DMA2D->IFCR |= 1<<1;				    //清除传输完成标志 	
-
+	DMA2D->IFCR |= DMA2D_IFCR_CTCIF;				    //清除传输完成标志 	
 }
 
 /***************************************************************************************
