@@ -26,7 +26,7 @@ static void AppTaskCreate(void)
     
     LTDC_Clear(0xffff);
     
-    GT9147_Init();//初始化电容触摸屏控制器
+    GT9147_Init();//电容触摸屏控制器初始化
     
     /*  创建 LED_Task  任务 */
     xTaskCreate((TaskFunction_t )led1_task, /*  任务入口函数 */

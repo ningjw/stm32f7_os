@@ -27,22 +27,23 @@ void led0_task(void* arg)
                     0 );        /*  等待时间 0 */
         HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
         
-        index++;
-        switch(index%3)
-        {
-            case 0:
-                GUI_SetBkColor(GUI_RED);
-                break;
-            case 1:
-                GUI_SetBkColor(GUI_BLUE);
-                break;
-            case 2:
-                GUI_SetBkColor(GUI_GRAY);
-                break;
-        }
-        GUI_Clear();
-        GUI_SetFont(&GUI_Font24_ASCII); //设置字体
-        GUI_DispStringAt("Hello world!",100,100);
+//        index++;
+//        switch(index%3)
+//        {
+//            case 0:
+//                GUI_SetBkColor(GUI_RED);
+//                break;
+//            case 1:
+//                GUI_SetBkColor(GUI_BLUE);
+//                break;
+//            case 2:
+//                GUI_SetBkColor(GUI_GRAY);
+//                break;
+//        }
+//        GUI_Clear();
+//        GUI_SetFont(&GUI_Font24_ASCII); //设置字体
+//        GUI_DispStringAt("Hello world!",100,100);
+       
         vTaskDelay(1000); /* 延时 500 个 tick */
     }
 }
