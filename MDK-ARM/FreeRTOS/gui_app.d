@@ -36,6 +36,8 @@ freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc.h
 freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc_ex.h
 freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h
 freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h
+freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h
+freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h
 freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\gui_app.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
 freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\GUI.h

@@ -35,6 +35,8 @@ freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc.h
 freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc_ex.h
 freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h
 freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h
+freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h
+freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h
 freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\main.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
 freertos\main.o: ..\Middlewares\ST\STemWin\inc\GUI.h
@@ -67,3 +69,13 @@ freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\sdram_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+freertos\main.o: ../Inc/fatfs.h
+freertos\main.o: ../Middlewares/Third_Party/FatFs/src/ff.h
+freertos\main.o: ../Middlewares/Third_Party/FatFs/src/integer.h
+freertos\main.o: ../Inc/ffconf.h
+freertos\main.o: ../Inc/bsp_driver_sd.h
+freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\main.o: ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h
+freertos\main.o: ../Middlewares/Third_Party/FatFs/src/diskio.h
+freertos\main.o: ../Inc/sd_diskio.h

@@ -75,6 +75,17 @@ void Error_Handler(void);
 #define LAYER0_ADDR 0xC0000000
 #define LCD_WIDTH 480
 #define LCD_HEIGHT 272
+#define KEY_LEFT_Pin GPIO_PIN_13
+#define KEY_LEFT_GPIO_Port GPIOC
+#define KEY_UP_Pin GPIO_PIN_0
+#define KEY_UP_GPIO_Port GPIOA
+#define KEY_DOWN_Pin GPIO_PIN_2
+#define KEY_DOWN_GPIO_Port GPIOH
+#define KEY_RIGHT_Pin GPIO_PIN_3
+#define KEY_RIGHT_GPIO_Port GPIOH
+#define TOUCH_INT_Pin GPIO_PIN_7
+#define TOUCH_INT_GPIO_Port GPIOH
+#define TOUCH_INT_EXTI_IRQn EXTI9_5_IRQn
 #define LCD_BL_Pin GPIO_PIN_5
 #define LCD_BL_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
