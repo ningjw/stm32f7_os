@@ -1,0 +1,9 @@
+stcubegenerated\guiconf.o: ../STemWin/Target/GUIConf.c
+stcubegenerated\guiconf.o: ../Middlewares/ST/STemWin/inc/GUI.h
+stcubegenerated\guiconf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+stcubegenerated\guiconf.o: ../Middlewares/ST/STemWin/inc/GUI_ConfDefaults.h
+stcubegenerated\guiconf.o: ../STemWin/Target/GUIConf.h
+stcubegenerated\guiconf.o: ../Middlewares/ST/STemWin/inc/GUI_Type.h
+stcubegenerated\guiconf.o: ../Middlewares/ST/STemWin/inc/LCD.h
+stcubegenerated\guiconf.o: ../Middlewares/ST/STemWin/inc/Global.h
+stcubegenerated\guiconf.o: ../Middlewares/ST/STemWin/inc/GUI_Version.h

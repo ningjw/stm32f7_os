@@ -1,0 +1,12 @@
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
+stcubegenerated\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+stcubegenerated\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+stcubegenerated\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stcubegenerated\list.o: ../Core/Inc/FreeRTOSConfig.h
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1/portmacro.h
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+stcubegenerated\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
