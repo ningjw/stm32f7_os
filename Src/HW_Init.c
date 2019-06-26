@@ -56,6 +56,8 @@
 
 LTDC_HandleTypeDef            hltdc; 
 
+DMA2D_HandleTypeDef           hdma2d;
+
 SDRAM_HandleTypeDef hsdram1;
 
 #define REFRESH_COUNT        1750
@@ -115,11 +117,11 @@ void MX_LCD_Init(void)
   pLayerCfg.WindowX1 = LCD_WIDTH;
   pLayerCfg.WindowY0 = 0;
   pLayerCfg.WindowY1 = LCD_HEIGHT;
-  pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_RGB565;
-  pLayerCfg.Alpha = 255;
+  pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_ARGB1555;
+  pLayerCfg.Alpha = 0xFF;
   pLayerCfg.Alpha0 = 0;
-  pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
-  pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
+  pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_PAxCA;
+  pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_PAxCA;
   pLayerCfg.FBStartAdress = LAYER0_ADDR;
   pLayerCfg.ImageWidth = LCD_WIDTH;
   pLayerCfg.ImageHeight = LCD_HEIGHT;
@@ -135,11 +137,11 @@ void MX_LCD_Init(void)
   pLayerCfg1.WindowX1 = LCD_WIDTH;
   pLayerCfg1.WindowY0 = 0;
   pLayerCfg1.WindowY1 = LCD_HEIGHT;
-  pLayerCfg1.PixelFormat = LTDC_PIXEL_FORMAT_RGB565;
-  pLayerCfg1.Alpha = 0;
+  pLayerCfg1.PixelFormat = LTDC_PIXEL_FORMAT_ARGB1555;
+  pLayerCfg1.Alpha = 0xFF;
   pLayerCfg1.Alpha0 = 0;
-  pLayerCfg1.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
-  pLayerCfg1.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
+  pLayerCfg1.BlendingFactor1 = LTDC_BLENDING_FACTOR1_PAxCA;
+  pLayerCfg1.BlendingFactor2 = LTDC_BLENDING_FACTOR2_PAxCA;
   pLayerCfg1.FBStartAdress = LAYER1_ADDR;
   pLayerCfg1.ImageWidth = LCD_WIDTH;
   pLayerCfg1.ImageHeight = LCD_HEIGHT;
@@ -260,6 +262,44 @@ void MX_SDRAM_InitEx(void)
   /* Step 6: Set the refresh rate counter */
   /* Set the device refresh rate */
   HAL_SDRAM_ProgramRefreshRate(&hsdram1, REFRESH_COUNT); 
+}
+
+/* DMA2D init function */
+void MX_DMA2D_Init(void) 
+{
+/* Configure the DMA2D default mode */ 
+
+  hdma2d.Instance = DMA2D;
+  hdma2d.Init.Mode = DMA2D_M2M_BLEND;
+  hdma2d.Init.ColorMode = DMA2D_OUTPUT_ARGB1555;
+  hdma2d.Init.OutputOffset = 0;
+  hdma2d.LayerCfg[1].InputOffset = 0;
+  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_ARGB1555;
+  hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
+  hdma2d.LayerCfg[1].InputAlpha = 0;
+  hdma2d.LayerCfg[1].AlphaInverted = DMA2D_REGULAR_ALPHA;
+  hdma2d.LayerCfg[1].RedBlueSwap = DMA2D_RB_REGULAR;
+  hdma2d.LayerCfg[0].InputOffset = 0;
+  hdma2d.LayerCfg[0].InputColorMode = DMA2D_INPUT_ARGB1555;
+  hdma2d.LayerCfg[0].AlphaMode = DMA2D_NO_MODIF_ALPHA;
+  hdma2d.LayerCfg[0].InputAlpha = 0;
+  hdma2d.LayerCfg[0].AlphaInverted = DMA2D_REGULAR_ALPHA;
+  hdma2d.LayerCfg[0].RedBlueSwap = DMA2D_RB_REGULAR;
+  if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
+  {
+    Error_Handler( );
+  }
+
+  if (HAL_DMA2D_ConfigLayer(&hdma2d, 0) != HAL_OK)
+  {
+    Error_Handler( );
+  }
+
+  if (HAL_DMA2D_ConfigLayer(&hdma2d, 1) != HAL_OK)
+  {
+    Error_Handler( );
+  }
+
 }
 
 /*  MSPInit/deInit Implementation */
@@ -581,6 +621,44 @@ void HAL_SDRAM_MspDeInit(SDRAM_HandleTypeDef* hsdram){
   /* USER CODE BEGIN SDRAM_MspDeInit 1 */
 
   /* USER CODE END SDRAM_MspDeInit 1 */
+}
+
+void HAL_DMA2D_MspInit(DMA2D_HandleTypeDef* dma2dHandle)
+{
+  if(dma2dHandle->Instance==DMA2D)
+  {
+  /* USER CODE BEGIN DMA2D_MspInit 0 */
+
+  /* USER CODE END DMA2D_MspInit 0 */
+    /* Enable Peripheral clock */
+    __HAL_RCC_DMA2D_CLK_ENABLE();
+
+    /* Peripheral interrupt init */
+    HAL_NVIC_SetPriority(DMA2D_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(DMA2D_IRQn);
+  /* USER CODE BEGIN DMA2D_MspInit 1 */
+
+  /* USER CODE END DMA2D_MspInit 1 */
+  }
+}
+
+void HAL_DMA2D_MspDeInit(DMA2D_HandleTypeDef* dma2dHandle)
+{
+  if(dma2dHandle->Instance==DMA2D)
+  {
+  /* USER CODE BEGIN DMA2D_MspDeInit 0 */
+
+  /* USER CODE END DMA2D_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_DMA2D_CLK_DISABLE();
+
+    /* Peripheral interrupt Deinit*/
+    HAL_NVIC_DisableIRQ(DMA2D_IRQn);
+
+  /* USER CODE BEGIN DMA2D_MspDeInit 1 */
+
+  /* USER CODE END DMA2D_MspDeInit 1 */
+  }
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

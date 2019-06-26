@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx,USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;     ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;     ../Middlewares/Third_Party/FreeRTOS/Source/include;     ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;     ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;     ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;     ..\Drivers\Peripheral_Driver\Inc;     ../Inc;     ..\Middlewares\ST\STemWin\inc;   ../Middlewares/Third_Party/FatFs/src</IncludePath>
+              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;                                           ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                                           ../Middlewares/Third_Party/FreeRTOS/Source/include;                                           ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                                           ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                                           ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                                           ..\Drivers\Peripheral_Driver\Inc;                                           ../Inc;                                           ..\Middlewares\ST\STemWin\inc;                                         ../Middlewares/Third_Party/FatFs/src;                     ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -470,8 +470,23 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Drivers/CMSIS</GroupName>
+          <Files>
+            <File>
+              <FileName>system_stm32f7xx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/system_stm32f7xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Drivers/STM32F7xx_HAL_Driver</GroupName>
           <Files>
+            <File>
+              <FileName>stm32f7xx_hal_dma2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c</FilePath>
+            </File>
             <File>
               <FileName>stm32f7xx_ll_fmc.c</FileName>
               <FileType>1</FileType>
@@ -610,12 +625,32 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/CMSIS</GroupName>
+          <GroupName>Middlewares/FatFs</GroupName>
           <Files>
             <File>
-              <FileName>system_stm32f7xx.c</FileName>
+              <FileName>diskio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/system_stm32f7xx.c</FilePath>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff_gen_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>syscall.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/option/syscall.c</FilePath>
+            </File>
+            <File>
+              <FileName>cc936.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/option/cc936.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -686,36 +721,6 @@
               <FileName>GUI_X_OS.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/ST/STemWin/OS/GUI_X_OS.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Middlewares/FatFs</GroupName>
-          <Files>
-            <File>
-              <FileName>diskio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/diskio.c</FilePath>
-            </File>
-            <File>
-              <FileName>ff.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/ff.c</FilePath>
-            </File>
-            <File>
-              <FileName>ff_gen_drv.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c</FilePath>
-            </File>
-            <File>
-              <FileName>syscall.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/option/syscall.c</FilePath>
-            </File>
-            <File>
-              <FileName>cc936.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/option/cc936.c</FilePath>
             </File>
           </Files>
         </Group>

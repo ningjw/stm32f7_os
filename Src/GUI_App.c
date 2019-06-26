@@ -50,12 +50,28 @@ void GRAPHICS_MainTask(void) {
 /* USER CODE BEGIN GRAPHICS_MainTask */
  /* User can implement his graphic application here */
   /* Hello Word example */
-    GUI_SetBkColor(GUI_RED);
+    GUI_SelectLayer(0);
+    GUI_SetBkColor(GUI_GRAY);
+    GUI_SelectLayer(1);
     GUI_Clear();
     GUI_SetColor(GUI_WHITE);
     GUI_SetFont(&GUI_Font32_1);
     GUI_DispStringAt("Hello world!", (LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
    
+    GUI_EnableAlpha(1); //开启 Alpha
+    GUI_SetColor(GUI_BLACK);
+    GUI_DispStringHCenterAt("Alphablending", 45, 61);
+    GUI_SetAlpha(40); //设置 Alpha 值
+    GUI_SetColor( GUI_RED);
+    GUI_FillRect(0, 20, 49, 69);
+    GUI_SetAlpha(80); //设置 Alpha 值
+    GUI_SetColor(GUI_GREEN);
+    GUI_FillRect(20, 40, 69, 89);
+    GUI_SetAlpha(40); //设置 Alpha 值
+    GUI_SetColor(GUI_BLUE);
+    GUI_FillRect(40, 60, 89, 109);
+    GUI_EnableAlpha(0); //关闭 Alpha
+
 /* USER CODE END GRAPHICS_MainTask */
   while(1)
 {

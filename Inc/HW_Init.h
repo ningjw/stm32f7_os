@@ -56,6 +56,7 @@
 void MX_FMC_Init(void);
 void MX_SDRAM_InitEx(void);
 void MX_LCD_Init(void);
+void MX_DMA2D_Init(void);
 
 #endif /* __HW_INIT_H */
 
