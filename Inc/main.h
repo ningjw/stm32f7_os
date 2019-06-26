@@ -41,6 +41,7 @@ extern "C" {
 #include "task.h"
 #include "semphr.h"
 #include "event_groups.h"
+#include "stdio.h"
 
 #include "ltdc_driver.h"
 #include "gt9147_iic_driver.h"

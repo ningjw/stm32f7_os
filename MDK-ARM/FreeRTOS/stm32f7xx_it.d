@@ -65,6 +65,7 @@ freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semp
 freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+freertos\stm32f7xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\sdram_driver.h

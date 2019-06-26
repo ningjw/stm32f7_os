@@ -65,6 +65,7 @@ freertos\stm32f7xx_hal_msp.o: ../Middlewares/Third_Party/FreeRTOS/Source/include
 freertos\stm32f7xx_hal_msp.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\stm32f7xx_hal_msp.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\stm32f7xx_hal_msp.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+freertos\stm32f7xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\sdram_driver.h

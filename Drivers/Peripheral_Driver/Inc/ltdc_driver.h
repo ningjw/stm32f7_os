@@ -21,7 +21,7 @@
 #define BRRED 			 0XFC07 //棕红色
 #define GRAY  			 0X8430 //灰色
 
-extern uint16_t ltdc_layer0[LTDC_HEIGHT][LTDC_WIDTH];
+extern uint16_t ltdc_layer1[LTDC_WIDTH][LTDC_HEIGHT];
 
 /***************************************************************************************
   * @brief   读取个某点的颜色值
@@ -30,7 +30,7 @@ extern uint16_t ltdc_layer0[LTDC_HEIGHT][LTDC_WIDTH];
 ***************************************************************************************/
 __inline uint32_t LCD_ReadPoint(uint16_t x, uint16_t y)
 {
-    return *(uint16_t*)((uint32_t)ltdc_layer0[0] + 2 * (LTDC_WIDTH * y + x));
+    return *(uint16_t*)((uint32_t)ltdc_layer1[0] + 2 * (LTDC_WIDTH * y + x));
 }
 
 
@@ -41,7 +41,7 @@ __inline uint32_t LCD_ReadPoint(uint16_t x, uint16_t y)
 ***************************************************************************************/
 __inline void LCD_DrawPoint(uint16_t x, uint16_t y, uint32_t color)
 {
-    *(uint16_t*)((uint32_t)ltdc_layer0[0] + 2 * (LTDC_WIDTH * y + x)) = color;
+    *(uint16_t*)((uint32_t)ltdc_layer1[0] + 2 * (LTDC_WIDTH * y + x)) = color;
 }
 
 

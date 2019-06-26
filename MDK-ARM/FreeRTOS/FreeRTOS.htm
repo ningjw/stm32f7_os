@@ -3,7 +3,7 @@
 <title>Static Call Graph - [FreeRTOS\FreeRTOS.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image FreeRTOS\FreeRTOS.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Jun 26 23:15:39 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Jun 26 23:34:14 2019
 <BR><P>
 <H3>Maximum Stack Usage =        336 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -559,13 +559,13 @@ Function Pointers
  <LI><a href="#[80]">LCD_Index2Color_M8888I</a> from GUICC_M8888I_Index2Color.o(.text.LCD_Index2Color_M8888I) referenced from GUICC_M8888I.o(.rodata)
  <LI><a href="#[80]">LCD_Index2Color_M8888I</a> from GUICC_M8888I_Index2Color.o(.text.LCD_Index2Color_M8888I) referenced from GUI__Alpha.o(.text.GUI__DoAlphaBlending)
  <LI><a href="#[80]">LCD_Index2Color_M8888I</a> from GUICC_M8888I_Index2Color.o(.text.LCD_Index2Color_M8888I) referenced from GUIDEV_WriteToActiveAlpha.o(.text._WriteToActiveAlpha)
- <LI><a href="#[a1]">LCD_LL_CopyBuffer</a> from stemwin_wrapper.o(i.LCD_LL_CopyBuffer) referenced from stemwin_wrapper.o(i.LCD_X_Config)
- <LI><a href="#[a2]">LCD_LL_CopyRect</a> from stemwin_wrapper.o(i.LCD_LL_CopyRect) referenced from stemwin_wrapper.o(i.LCD_X_Config)
+ <LI><a href="#[a0]">LCD_LL_CopyBuffer</a> from stemwin_wrapper.o(i.LCD_LL_CopyBuffer) referenced from stemwin_wrapper.o(i.LCD_X_Config)
+ <LI><a href="#[a1]">LCD_LL_CopyRect</a> from stemwin_wrapper.o(i.LCD_LL_CopyRect) referenced from stemwin_wrapper.o(i.LCD_X_Config)
  <LI><a href="#[a4]">LCD_LL_DrawBitmap16bpp</a> from stemwin_wrapper.o(i.LCD_LL_DrawBitmap16bpp) referenced from stemwin_wrapper.o(i.LCD_X_Config)
  <LI><a href="#[a5]">LCD_LL_DrawBitmap32bpp</a> from stemwin_wrapper.o(i.LCD_LL_DrawBitmap32bpp) referenced from stemwin_wrapper.o(i.LCD_X_Config)
  <LI><a href="#[a3]">LCD_LL_DrawBitmap8bpp</a> from stemwin_wrapper.o(i.LCD_LL_DrawBitmap8bpp) referenced from stemwin_wrapper.o(i.LCD_X_Config)
- <LI><a href="#[a0]">LCD_LL_FillRect</a> from stemwin_wrapper.o(i.LCD_LL_FillRect) referenced from stemwin_wrapper.o(i.LCD_LL_FillRect)
- <LI><a href="#[a0]">LCD_LL_FillRect</a> from stemwin_wrapper.o(i.LCD_LL_FillRect) referenced from stemwin_wrapper.o(i.LCD_X_Config)
+ <LI><a href="#[a2]">LCD_LL_FillRect</a> from stemwin_wrapper.o(i.LCD_LL_FillRect) referenced from stemwin_wrapper.o(i.LCD_LL_FillRect)
+ <LI><a href="#[a2]">LCD_LL_FillRect</a> from stemwin_wrapper.o(i.LCD_LL_FillRect) referenced from stemwin_wrapper.o(i.LCD_X_Config)
  <LI><a href="#[66]">LPTIM1_IRQHandler</a> from startup_stm32f767xx.o(.text) referenced from startup_stm32f767xx.o(RESET)
  <LI><a href="#[62]">LTDC_ER_IRQHandler</a> from startup_stm32f767xx.o(.text) referenced from startup_stm32f767xx.o(RESET)
  <LI><a href="#[61]">LTDC_IRQHandler</a> from startup_stm32f767xx.o(.text) referenced from startup_stm32f767xx.o(RESET)
@@ -1273,9 +1273,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[13d]"></a>GUIMONO_DispChar</STRONG> (Thumb, 380 bytes, Stack size unknown bytes, GUI_CharM.o(.text.GUIMONO_DispChar))
-<BR><BR>[Calls]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawBitmap
+<BR><BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
+<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawBitmap
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDrawMode
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> F6x8.o(.rodata)
 </UL>
@@ -1290,14 +1290,14 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[132]"></a>GUIPROP_DispChar</STRONG> (Thumb, 244 bytes, Stack size unknown bytes, GUI_CharP.o(.text.GUIPROP_DispChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = GUIPROP_DispChar &rArr; GUI_GetColor &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<LI>Call Chain = GUIPROP_DispChar &rArr; GUI_SetColor &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawBitmap
+<BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
+<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
+<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawBitmap
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDrawMode
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetColor
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetBkColor
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> F32_1.o(.rodata)
 <LI> F32_ASCII.o(.rodata)
@@ -1384,13 +1384,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[191]"></a>GUI_ALLOC_FreeFixedBlock</STRONG> (Thumb, 20 bytes, Stack size unknown bytes, GUI_Alloc.o(.text.GUI_ALLOC_FreeFixedBlock))
-<BR><BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
 <LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Delete
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 
 <P><STRONG><a name="[180]"></a>GUI_ALLOC_GetFixedBlock</STRONG> (Thumb, 568 bytes, Stack size unknown bytes, GUI_Alloc.o(.text.GUI_ALLOC_GetFixedBlock))
@@ -1401,7 +1401,10 @@ Global Symbols
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_RemoveHoles
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_AddFreeMemory
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetVSize
+<BR>[Called By]<UL><LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_CreateAndLink
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetVSize
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetSize
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Init
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetDevFunc
@@ -1418,9 +1421,6 @@ Global Symbols
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DoAlphaBlending
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Create
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUITASK_Init
-<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_CreateAndLink
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
 </UL>
 
 <P><STRONG><a name="[195]"></a>GUI_ALLOC_Lock</STRONG> (Thumb, 16 bytes, Stack size unknown bytes, GUI_Alloc.o(.text.GUI_ALLOC_Lock))
@@ -1635,13 +1635,13 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = GUI_Clear &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
+<BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 <LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__GetNextIVR
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InitIVRSearch
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDrawMode
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GotoXY
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_MainTask
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_cbBackWin
@@ -1653,9 +1653,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV__CreateFixed
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
+<LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV__CreateFixed
 </UL>
 
 <P><STRONG><a name="[18f]"></a>GUI_DEVICE_CreateAndLink</STRONG> (Thumb, 304 bytes, Stack size unknown bytes, GUI_Device.o(.text.GUI_DEVICE_CreateAndLink))
@@ -1670,20 +1670,20 @@ Global Symbols
 <P><STRONG><a name="[190]"></a>GUI_DEVICE_Delete</STRONG> (Thumb, 4 bytes, Stack size unknown bytes, GUI_Device.o(.text.GUI_DEVICE_Delete))
 <BR><BR>[Calls]<UL><LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_FreeFixedBlock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_OnExit
 <LI><a href="#[1ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
 <LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV__CreateFixed
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 
 <P><STRONG><a name="[1c7]"></a>GUI_DEVICE_Link</STRONG> (Thumb, 156 bytes, Stack size unknown bytes, GUI_Device.o(.text.GUI_DEVICE_Link))
-<BR><BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetDrawMode
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetColor
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetBkColor
 <LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Select
 <LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_CopyToLCDAt.part.0
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 
 <P><STRONG><a name="[1bd]"></a>GUI_DEVICE_LinkDevices</STRONG> (Thumb, 172 bytes, Stack size unknown bytes, GUI_Device.o(.text.GUI_DEVICE_LinkDevices))
@@ -1691,12 +1691,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1f9]"></a>GUI_DEVICE_Unlink</STRONG> (Thumb, 68 bytes, Stack size unknown bytes, GUI_Device.o(.text.GUI_DEVICE_Unlink))
-<BR><BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetDrawMode
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetColor
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetBkColor
 <LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectLCD
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 
 <P><STRONG><a name="[1bc]"></a>GUI_DEVICE_UnlinkTaskDevices</STRONG> (Thumb, 4 bytes, Stack size unknown bytes, GUI_Device.o(.text.GUI_DEVICE_UnlinkTaskDevices))
@@ -1708,7 +1708,16 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1cd]"></a>GUI_DEVICE__GetpDriver</STRONG> (Thumb, 44 bytes, Stack size unknown bytes, GUI_Device.o(.text.GUI_DEVICE__GetpDriver))
-<BR><BR>[Called By]<UL><LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetLUTEntryEx
+<BR><BR>[Called By]<UL><LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetVSizeEx
+<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetVRAMAddrEx
+<LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetSizeEx
+<LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDevFunc
+<LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
+<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
+<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
+<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSize
+<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetLUTEntryEx
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetPalette
 <LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetNumColors
 <LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetMirrorYEx
@@ -1728,15 +1737,6 @@ Global Symbols
 <LI><a href="#[1cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_CreateEx
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetNumLayers
 <LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__ManageCache
-<LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetVSizeEx
-<LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetVRAMAddrEx
-<LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetSizeEx
-<LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDevFunc
-<LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
-<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSize
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 
 <P><STRONG><a name="[192]"></a>GUI_Delay</STRONG> (Thumb, 128 bytes, Stack size unknown bytes, GUI_Time.o(.text.GUI_Delay))
@@ -1779,22 +1779,22 @@ Global Symbols
 
 <P><STRONG><a name="[1a2]"></a>GUI_EnableAlpha</STRONG> (Thumb, 192 bytes, Stack size unknown bytes, GUI_EnableAlpha.o(.text.GUI_EnableAlpha))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = GUI_EnableAlpha &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
+<LI>Call Chain = GUI_EnableAlpha &rArr; GUI_SetAlpha &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 <LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetVXSizeMax
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Create
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__RegisterExit
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_MainTask
 </UL>
 
 <P><STRONG><a name="[194]"></a>GUI_Exec</STRONG> (Thumb, 92 bytes, Stack size unknown bytes, GUI_Common.o(.text.GUI_Exec))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = GUI_Exec &rArr; WM_Exec &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<LI>Call Chain = GUI_Exec &rArr; WM_Exec &rArr; GUI_SetColor &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_Exec
 </UL>
@@ -1805,11 +1805,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = GUI_FillRect &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
+<BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 <LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__GetNextIVR
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InitIVRSearch
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_MainTask
 </UL>
@@ -1871,7 +1871,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
 </UL>
 
 <P><STRONG><a name="[199]"></a>GUI_GetFontDistY</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, GUI_Char.o(.text.GUI_GetFontDistY))
@@ -1967,7 +1967,19 @@ Global Symbols
 <LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_LinkDevices
 <LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_UnlinkTaskDevices
 </UL>
-<BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocZero
+<BR>[Called By]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetLayerPosEx
+<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
+<LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetFont
+<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
+<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
+<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
+<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
+<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringHCenterAt
+<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringAt
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Delay
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocZero
 <LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_Free
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_RequestSize
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocNoInit
@@ -2025,18 +2037,6 @@ Global Symbols
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Write
 <LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_TIMER_GetFlag
 <LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_TIMER_Delete
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetLayerPosEx
-<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
-<LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetFont
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
-<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
-<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringHCenterAt
-<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringAt
-<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Delay
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
 </UL>
 
 <P><STRONG><a name="[1be]"></a>GUI_MEMDEV_Clear</STRONG> (Thumb, 88 bytes, Stack size unknown bytes, GUIDEV_Clear.o(.text.GUI_MEMDEV_Clear))
@@ -2053,7 +2053,7 @@ Global Symbols
 
 <P><STRONG><a name="[1c1]"></a>GUI_MEMDEV_CopyToLCD</STRONG> (Thumb, 16 bytes, Stack size unknown bytes, GUIDEV.o(.text.GUI_MEMDEV_CopyToLCD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = GUI_MEMDEV_CopyToLCD &rArr; GUI_MEMDEV_CopyToLCDAt.part.0 &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<LI>Call Chain = GUI_MEMDEV_CopyToLCD &rArr; GUI_MEMDEV_CopyToLCDAt.part.0 &rArr; GUI_SelectLayer &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_CopyToLCDAt.part.0
 </UL>
@@ -2196,7 +2196,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = GUI_MEMDEV_Paint1Static &rArr; GUI_MEMDEV_GetDataPtr &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
+<BR>[Calls]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
+<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSize
+<LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
 <LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_h2p
 <LI><a href="#[1e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__AlphaPreserveTrans
@@ -2209,8 +2211,6 @@ Global Symbols
 <LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Select
 <LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV__CreateFixed
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Write
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSize
-<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSize
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> WM.o(.text._Paint1Trans)
 <LI> WM.o(.text.WM__PaintWinAndOverlays)
@@ -2406,10 +2406,10 @@ Global Symbols
 <LI><a href="#[1c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_UpdateColorIndices
 <LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SelectLCD
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Select
+<BR>[Called By]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[1d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Select
 <LI><a href="#[1ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
 <LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_CopyToLCDAt.part.0
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 
 <P><STRONG><a name="[1c4]"></a>GUI_SelectLayer</STRONG> (Thumb, 64 bytes, Stack size unknown bytes, GUI_SelectLayer.o(.text.GUI_SelectLayer))
@@ -2446,11 +2446,11 @@ Global Symbols
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__RegisterExit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_MainTask
+<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetDrawMode
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetColor
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetBkColor
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUI_SetAlpha.o(.text.GUI_SetAlpha)
 </UL>
@@ -2476,8 +2476,8 @@ Global Symbols
 <LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetColor
 </UL>
 <BR>[Called By]<UL><LI><a href="#[285]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_MainTask
-<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_Exec
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
 </UL>
 
 <P><STRONG><a name="[1c3]"></a>GUI_SetDrawMode</STRONG> (Thumb, 24 bytes, Stack size unknown bytes, GUI_Common.o(.text.GUI_SetDrawMode))
@@ -2624,7 +2624,19 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_Unlock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocZero
+<BR>[Called By]<UL><LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetLayerPosEx
+<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
+<LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetFont
+<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
+<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
+<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
+<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
+<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringHCenterAt
+<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringAt
+<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Delay
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocZero
 <LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_Free
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_RequestSize
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocNoInit
@@ -2682,18 +2694,6 @@ Global Symbols
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Write
 <LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_TIMER_GetFlag
 <LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_TIMER_Delete
-<LI><a href="#[1ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetLayerPosEx
-<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
-<LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetFont
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
-<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
-<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringHCenterAt
-<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DispStringAt
-<LI><a href="#[192]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Delay
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
 </UL>
 
 <P><STRONG><a name="[203]"></a>GUI__AllocAlphaBuffer</STRONG> (Thumb, 156 bytes, Stack size unknown bytes, GUI__Alpha.o(.text.GUI__AllocAlphaBuffer))
@@ -2727,11 +2727,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = GUI__Config &rArr; GUITASK_Init &rArr; GUI_X_InitOS &rArr; osMutexCreate &rArr; xQueueCreateMutex &rArr; prvInitialiseMutex &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__RegisterExit
+<BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_Config
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_Config
+<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__RegisterExit
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUITASK_Init
 <LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetVersionString
-<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_Config
-<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_Config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
 </UL>
@@ -2820,14 +2820,14 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> GUI__Alpha.o(.data)
 </UL>
 <P><STRONG><a name="[17f]"></a>GUI__RegisterExit</STRONG> (Thumb, 40 bytes, Stack size unknown bytes, GUI_Core.o(.text.GUI__RegisterExit))
-<BR><BR>[Called By]<UL><LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_InitColors
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
+<LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_InitColors
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__AllocAlphaBuffer
 <LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DoAlphaBlending
 <LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_Init
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUITASK_Init
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__Config
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
 </UL>
 
 <P><STRONG><a name="[20d]"></a>GUI__memset</STRONG> (Thumb, 128 bytes, Stack size unknown bytes, GUI__Private.o(.text.GUI__memset))
@@ -2870,9 +2870,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> GUICC_8666.o(.rodata)
 </UL>
 <P><STRONG><a name="[177]"></a>LCD_DrawBitmap</STRONG> (Thumb, 780 bytes, Stack size unknown bytes, LCD.o(.text.LCD_DrawBitmap))
-<BR><BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV__WriteToActiveOpaque
+<BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV__WriteToActiveOpaque
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIMONO_DispChar
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
 <LI><a href="#[1ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_WriteToActiveAlpha
 </UL>
 
@@ -2883,21 +2883,21 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> GUI_Core.o(.rodata)
 </UL>
 <P><STRONG><a name="[178]"></a>LCD_FillRect</STRONG> (Thumb, 96 bytes, Stack size unknown bytes, LCD.o(.text.LCD_FillRect))
-<BR><BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
-<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIMONO_DispChar
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
+<BR><BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIMONO_DispChar
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
 </UL>
 
 <P><STRONG><a name="[20e]"></a>LCD_GetBitsPerPixelEx</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetBitsPerPixelEx))
 <BR><BR>[Calls]<UL><LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE__GetpDriver
 </UL>
-<BR>[Called By]<UL><LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_InitLUT
+<BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_Config
+<LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_InitLUT
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawHLine
 <LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetLine
-<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_Config
 </UL>
 
 <P><STRONG><a name="[1a6]"></a>LCD_GetBkColorIndex</STRONG> (Thumb, 16 bytes, Stack size unknown bytes, LCD_GetColorIndex.o(.text.LCD_GetBkColorIndex))
@@ -2956,10 +2956,10 @@ Global Symbols
 <P><STRONG><a name="[215]"></a>LCD_GetSwapXYEx</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetSwapXYEx))
 <BR><BR>[Calls]<UL><LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE__GetpDriver
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetOrg
+<BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_Config
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetOrg
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetVSize
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetSize
-<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_Config
 </UL>
 
 <P><STRONG><a name="[1d8]"></a>LCD_GetVXSizeEx</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetVXSizeEx))
@@ -2971,10 +2971,10 @@ Global Symbols
 <P><STRONG><a name="[1a3]"></a>LCD_GetVXSizeMax</STRONG> (Thumb, 50 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetVXSizeMax))
 <BR><BR>[Calls]<UL><LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE__GetpDriver
 </UL>
-<BR>[Called By]<UL><LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__AllocAlphaBuffer
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DoAlphaBlending
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_EnableAlpha
+<LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__AllocAlphaBuffer
+<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DoAlphaBlending
 </UL>
 
 <P><STRONG><a name="[1d9]"></a>LCD_GetVYSizeEx</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetVYSizeEx))
@@ -2991,8 +2991,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1b4]"></a>LCD_GetXSizeDisplay</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetXSizeDisplay))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPos
-<LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
+<BR><BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPos
 </UL>
 
 <P><STRONG><a name="[1d1]"></a>LCD_GetXSizeEx</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetXSizeEx))
@@ -3015,8 +3015,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1b5]"></a>LCD_GetYSizeDisplay</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetYSizeDisplay))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPos
-<LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
+<BR><BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPos
 </UL>
 
 <P><STRONG><a name="[1d2]"></a>LCD_GetYSizeEx</STRONG> (Thumb, 32 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_GetYSizeEx))
@@ -3078,12 +3078,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[218]"></a>LCD_InitLUT</STRONG> (Thumb, 128 bytes, Stack size unknown bytes, LCD_Color.o(.text.LCD_InitLUT))
-<BR><BR>[Calls]<UL><LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetLUTEntryEx
+<BR><BR>[Calls]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
+<LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetLUTEntryEx
 <LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetNumColorsEx
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE__GetpDriver
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Index2Color
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetNumLayers
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;emWin_LCD_Init
 </UL>
@@ -3096,9 +3096,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[173]"></a>LCD_SetBkColor</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, LCD.o(.text.LCD_SetBkColor))
-<BR><BR>[Called By]<UL><LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_InitContext
+<BR><BR>[Called By]<UL><LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
+<LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_InitContext
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GL_SetDefault
-<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
 </UL>
 
 <P><STRONG><a name="[221]"></a>LCD_SetBkColorIndex</STRONG> (Thumb, 24 bytes, Stack size unknown bytes, LCD.o(.text.LCD_SetBkColorIndex))
@@ -3124,9 +3124,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[175]"></a>LCD_SetColor</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, LCD.o(.text.LCD_SetColor))
-<BR><BR>[Called By]<UL><LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_InitContext
+<BR><BR>[Called By]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
+<LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_InitContext
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GL_SetDefault
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
 </UL>
 
 <P><STRONG><a name="[220]"></a>LCD_SetColorIndex</STRONG> (Thumb, 24 bytes, Stack size unknown bytes, LCD.o(.text.LCD_SetColorIndex))
@@ -3137,7 +3137,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE__GetpDriver
 </UL>
 <BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_Config
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
 </UL>
 
 <P><STRONG><a name="[1b8]"></a>LCD_SetDisplaySize</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, LCD_GetEx.o(.text.LCD_SetDisplaySize))
@@ -3145,11 +3145,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[176]"></a>LCD_SetDrawMode</STRONG> (Thumb, 12 bytes, Stack size unknown bytes, LCD.o(.text.LCD_SetDrawMode))
-<BR><BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
+<BR><BR>[Called By]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
 <LI><a href="#[1c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetDrawMode
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GL_SetDefault
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIMONO_DispChar
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUIPROP_DispChar
 </UL>
 
 <P><STRONG><a name="[219]"></a>LCD_SetLUTEntryEx</STRONG> (Thumb, 50 bytes, Stack size unknown bytes, LCD_Set.o(.text.LCD_SetLUTEntryEx))
@@ -3217,9 +3217,10 @@ Global Symbols
 
 <P><STRONG><a name="[225]"></a>WM_CreateWindowAsChild</STRONG> (Thumb, 472 bytes, Stack size unknown bytes, WM.o(.text.WM_CreateWindowAsChild))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = WM_CreateWindowAsChild &rArr; GUI_ALLOC_AllocZero &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<LI>Call Chain = WM_CreateWindowAsChild &rArr; GUI_SelectLayer &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocZero
+<BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_AllocZero
 <LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
 <LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_h2p
@@ -3230,7 +3231,6 @@ Global Symbols
 <LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__SendMessage
 <LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InsertWindowIntoList
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_InvalidateRect.part.2
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_Init
 </UL>
@@ -3260,9 +3260,12 @@ Global Symbols
 
 <P><STRONG><a name="[1a4]"></a>WM_Exec</STRONG> (Thumb, 664 bytes, Stack size unknown bytes, WM.o(.text.WM_Exec))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = WM_Exec &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<LI>Call Chain = WM_Exec &rArr; GUI_SetColor &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
+<BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
+<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
+<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
 <LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_h2p
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
@@ -3275,9 +3278,6 @@ Global Symbols
 <LI><a href="#[1d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Draw
 <LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__IntersectRect
 <LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__ManageCache
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetColor
-<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Exec
 </UL>
@@ -3326,9 +3326,10 @@ Global Symbols
 
 <P><STRONG><a name="[1ba]"></a>WM_Init</STRONG> (Thumb, 348 bytes, Stack size unknown bytes, WM.o(.text.WM_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = WM_Init &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<LI>Call Chain = WM_Init &rArr; GUI_SelectLayer &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_h2p
+<BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_h2p
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
 <LI><a href="#[1c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetClipRectMax
@@ -3337,7 +3338,6 @@ Global Symbols
 <LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__AddCriticalHandle
 <LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_CreateWindowAsChild
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_InvalidateRect.part.2
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
 </UL>
@@ -3500,13 +3500,13 @@ Global Symbols
 <LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Findx0.constprop.10
 <LI><a href="#[247]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Findx1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DispLine
+<BR>[Called By]<UL><LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
+<LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DispLine
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InitIVRSearch
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__Paint1
 <LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_CopyToLCDAt.part.0
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Write
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
 </UL>
 
 <P><STRONG><a name="[223]"></a>WM__GetPrevSibling</STRONG> (Thumb, 50 bytes, Stack size unknown bytes, WM__Private.o(.text.WM__GetPrevSibling))
@@ -3527,12 +3527,12 @@ Global Symbols
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__ActivateClipRect
 <LI><a href="#[231]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__IntersectRect
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DispLine
+<BR>[Called By]<UL><LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
+<LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__DispLine
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__Paint1
 <LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_CopyToLCDAt.part.0
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Write
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_FillRect
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
 </UL>
 
 <P><STRONG><a name="[226]"></a>WM__InsertWindowIntoList</STRONG> (Thumb, 212 bytes, Stack size unknown bytes, WM.o(.text.WM__InsertWindowIntoList))
@@ -3679,12 +3679,12 @@ Global Symbols
 
 <P><STRONG><a name="[1b3]"></a>emWin_LCD_Init</STRONG> (Thumb, 272 bytes, Stack size unknown bytes, LCD.o(.text.emWin_LCD_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = emWin_LCD_Init &rArr; LCD_InitColors &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
+<LI>Call Chain = emWin_LCD_Init &rArr; GUI_SelectLayer &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_InitLUT
+<BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_InitLUT
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_InitColors
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE__GetpDriver
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Init
 </UL>
@@ -3710,9 +3710,9 @@ Global Symbols
 <P><STRONG><a name="[25a]"></a>BSP_SD_Init</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, bsp_driver_sd.o(i.BSP_SD_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = BSP_SD_Init &rArr; HAL_SD_ConfigWideBusOperation &rArr; SD_WideBus_Enable &rArr; SD_FindSCR &rArr; SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[25b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_IsDetected
-<LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_Init
+<BR>[Calls]<UL><LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_Init
 <LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
+<LI><a href="#[25b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_IsDetected
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_initialize
 </UL>
@@ -4050,8 +4050,8 @@ Global Symbols
 <P><STRONG><a name="[181]"></a>GUI_X_InitOS</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, gui_x_os.o(i.GUI_X_InitOS))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = GUI_X_InitOS &rArr; osMutexCreate &rArr; xQueueCreateMutex &rArr; prvInitialiseMutex &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexCreate
-<LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<BR>[Calls]<UL><LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUITASK_Init
 </UL>
@@ -4081,8 +4081,8 @@ Global Symbols
 <P><STRONG><a name="[294]"></a>HAL_CRC_Init</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, stm32f7xx_hal_crc.o(i.HAL_CRC_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_CRC_Init &rArr; HAL_CRCEx_Polynomial_Set
 </UL>
-<BR>[Calls]<UL><LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CRC_MspInit
-<LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CRCEx_Polynomial_Set
+<BR>[Calls]<UL><LI><a href="#[296]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CRCEx_Polynomial_Set
+<LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CRC_MspInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_CRC_Init
 </UL>
@@ -4167,8 +4167,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[29d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[281]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SDRAM_InitEx
-<LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
+<BR>[Called By]<UL><LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
+<LI><a href="#[281]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SDRAM_InitEx
 </UL>
 
 <P><STRONG><a name="[2b2]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 336 bytes, Stack size 20 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_DeInit))
@@ -4229,8 +4229,8 @@ Global Symbols
 <LI><a href="#[2b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[2b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
 <LI><a href="#[29c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
-<LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
 <LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CheckIdleState
 </UL>
@@ -4242,8 +4242,8 @@ Global Symbols
 <P><STRONG><a name="[2a6]"></a>HAL_Init</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, stm32f7xx_hal.o(i.HAL_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
-<LI><a href="#[2a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+<BR>[Calls]<UL><LI><a href="#[2a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+<LI><a href="#[2a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
 <LI><a href="#[2a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -4274,8 +4274,8 @@ Global Symbols
 <P><STRONG><a name="[2ab]"></a>HAL_LTDC_ConfigLayer</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, stm32f7xx_hal_ltdc.o(i.HAL_LTDC_ConfigLayer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = HAL_LTDC_ConfigLayer &rArr; LTDC_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[2ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LTDC_SetConfig
+<BR>[Calls]<UL><LI><a href="#[2ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LTDC_SetConfig
+<LI><a href="#[2ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[282]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_LCD_Init
 </UL>
@@ -4463,9 +4463,9 @@ Global Symbols
 <P><STRONG><a name="[2c0]"></a>HAL_SDRAM_Init</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, stm32f7xx_hal_sdram.o(i.HAL_SDRAM_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = HAL_SDRAM_Init &rArr; HAL_SDRAM_MspInit &rArr; HAL_FMC_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_MspInit
-<LI><a href="#[2c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FMC_SDRAM_Timing_Init
+<BR>[Calls]<UL><LI><a href="#[2c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FMC_SDRAM_Timing_Init
 <LI><a href="#[2c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FMC_SDRAM_Init
+<LI><a href="#[2c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_MspInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FMC_Init
 </UL>
@@ -4531,8 +4531,8 @@ Global Symbols
 <P><STRONG><a name="[25c]"></a>HAL_SD_Init</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, stm32f7xx_hal_sd.o(i.HAL_SD_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = HAL_SD_Init &rArr; HAL_SD_InitCard &rArr; SD_InitCard &rArr; SDMMC_CmdSetRelAdd &rArr; SDMMC_GetCmdResp6 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_MspInit
-<LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
+<BR>[Calls]<UL><LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
+<LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_MspInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_Init
 </UL>
@@ -4540,11 +4540,11 @@ Global Symbols
 <P><STRONG><a name="[2cd]"></a>HAL_SD_InitCard</STRONG> (Thumb, 136 bytes, Stack size 48 bytes, stm32f7xx_hal_sd.o(i.HAL_SD_InitCard))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = HAL_SD_InitCard &rArr; SD_InitCard &rArr; SDMMC_CmdSetRelAdd &rArr; SDMMC_GetCmdResp6 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[2cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
+<BR>[Calls]<UL><LI><a href="#[2cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_PowerON
 <LI><a href="#[2d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
 <LI><a href="#[2ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_PowerState_ON
 <LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_Init
+<LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_Init
 </UL>
@@ -4651,6 +4651,19 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stemwin_wrapper.o(i.LCD_X_Config)
 </UL>
+<P><STRONG><a name="[a2]"></a>LCD_LL_FillRect</STRONG> (Thumb, 176 bytes, Stack size 48 bytes, stemwin_wrapper.o(i.LCD_LL_FillRect))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
+<LI>Call Chain = LCD_LL_FillRect &rArr; GUI_GetDrawMode &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+</UL>
+<BR>[Calls]<UL><LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDevFunc
+<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
+<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
+<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetBufferSize
+<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2D_FillBuffer
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> stemwin_wrapper.o(i.LCD_LL_FillRect)
+<LI> stemwin_wrapper.o(i.LCD_X_Config)
+</UL>
 <P><STRONG><a name="[207]"></a>LCD_X_Config</STRONG> (Thumb, 358 bytes, Stack size 8 bytes, stemwin_wrapper.o(i.LCD_X_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
 <LI>Call Chain = LCD_X_Config &rArr; GUI_DEVICE_CreateAndLink &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
@@ -4722,8 +4735,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = MX_FMC_Init &rArr; HAL_SDRAM_Init &rArr; HAL_SDRAM_MspInit &rArr; HAL_FMC_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[2a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SDRAM_Init
+<LI><a href="#[2a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GRAPHICS_HW_Init
 </UL>
@@ -4782,9 +4795,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_SendCommand
 <LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_GetCmdResp1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks_DMA
+<BR>[Called By]<UL><LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks_DMA
 <LI><a href="#[25f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks_DMA
-<LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
 </UL>
 
 <P><STRONG><a name="[2fb]"></a>SDMMC_CmdBusWidth</STRONG> (Thumb, 58 bytes, Stack size 40 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_CmdBusWidth))
@@ -4918,9 +4931,9 @@ Global Symbols
 <P><STRONG><a name="[2d1]"></a>SDMMC_ConfigData</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_ConfigData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SDMMC_ConfigData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks_DMA
+<BR>[Called By]<UL><LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_WriteBlocks_DMA
 <LI><a href="#[25f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ReadBlocks_DMA
-<LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_FindSCR
 </UL>
 
 <P><STRONG><a name="[309]"></a>SDMMC_GetCommandResponse</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_GetCommandResponse))
@@ -4947,9 +4960,9 @@ Global Symbols
 <P><STRONG><a name="[2ca]"></a>SDMMC_Init</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SDMMC_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
-<LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
+<BR>[Called By]<UL><LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_InitCard
 <LI><a href="#[2d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_InitCard
+<LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ConfigWideBusOperation
 </UL>
 
 <P><STRONG><a name="[2ce]"></a>SDMMC_PowerState_ON</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f7xx_ll_sdmmc.o(i.SDMMC_PowerState_ON))
@@ -4985,10 +4998,10 @@ Global Symbols
 <P><STRONG><a name="[b6]"></a>SD_initialize</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, sd_diskio.o(i.SD_initialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = SD_initialize &rArr; BSP_SD_Init &rArr; HAL_SD_ConfigWideBusOperation &rArr; SD_WideBus_Enable &rArr; SD_FindSCR &rArr; SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_Init
-<LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
+<BR>[Calls]<UL><LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
 <LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelRunning
 <LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_CheckStatus
+<LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sd_diskio.o(.constdata)
 </UL>
@@ -5002,10 +5015,10 @@ Global Symbols
 <P><STRONG><a name="[b8]"></a>SD_read</STRONG> (Thumb, 198 bytes, Stack size 56 bytes, sd_diskio.o(i.SD_read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = SD_read &rArr; BSP_SD_ReadBlocks_DMA &rArr; HAL_SD_ReadBlocks_DMA &rArr; SDMMC_CmdReadSingleBlock &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_ReadBlocks_DMA
-<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageGet
+<BR>[Calls]<UL><LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageGet
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_CheckStatusWithTimeout
+<LI><a href="#[25e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_ReadBlocks_DMA
+<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sd_diskio.o(.constdata)
 </UL>
@@ -5020,11 +5033,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = SD_write &rArr; BSP_SD_WriteBlocks_DMA &rArr; HAL_SD_WriteBlocks_DMA &rArr; SDMMC_CmdWriteSingleBlock &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
 <BR>[Calls]<UL><LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_GetCardState
-<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageGet
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_CheckStatusWithTimeout
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_WriteBlocks_DMA
+<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sd_diskio.o(.constdata)
 </UL>
@@ -5191,13 +5204,13 @@ Global Symbols
 <P><STRONG><a name="[28f]"></a>osKernelSysTick</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, cmsis_os.o(i.osKernelSysTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = osKernelSysTick &rArr; xTaskGetTickCountFromISR &rArr; vPortValidateInterruptPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
-<LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCountFromISR
+<BR>[Calls]<UL><LI><a href="#[32c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCountFromISR
 <LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_GetTime
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_write
+<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_write
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_CheckStatusWithTimeout
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_GetTime
 </UL>
 
 <P><STRONG><a name="[314]"></a>osMessageCreate</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, cmsis_os.o(i.osMessageCreate))
@@ -5211,9 +5224,9 @@ Global Symbols
 <P><STRONG><a name="[315]"></a>osMessageGet</STRONG> (Thumb, 150 bytes, Stack size 40 bytes, cmsis_os.o(i.osMessageGet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = osMessageGet &rArr; xQueueReceive &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
-<LI><a href="#[32f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
+<BR>[Calls]<UL><LI><a href="#[32f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
 <LI><a href="#[330]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
+<LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_write
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SD_read
@@ -5222,9 +5235,9 @@ Global Symbols
 <P><STRONG><a name="[261]"></a>osMessagePut</STRONG> (Thumb, 92 bytes, Stack size 32 bytes, cmsis_os.o(i.osMessagePut))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = osMessagePut &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
-<LI><a href="#[331]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
+<BR>[Calls]<UL><LI><a href="#[331]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[260]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SD_ReadCpltCallback
 </UL>
@@ -5240,9 +5253,9 @@ Global Symbols
 <P><STRONG><a name="[293]"></a>osMutexRelease</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, cmsis_os.o(i.osMutexRelease))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
-<LI><a href="#[334]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
+<BR>[Calls]<UL><LI><a href="#[334]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
+<LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_Unlock
 </UL>
@@ -5250,9 +5263,9 @@ Global Symbols
 <P><STRONG><a name="[292]"></a>osMutexWait</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, cmsis_os.o(i.osMutexWait))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = osMutexWait &rArr; xQueueSemaphoreTake &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
-<LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
+<BR>[Calls]<UL><LI><a href="#[335]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[32f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
+<LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;inHandlerMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_X_Lock
 </UL>
@@ -5269,8 +5282,8 @@ Global Symbols
 <P><STRONG><a name="[318]"></a>osSystickHandler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, cmsis_os.o(i.osSystickHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = osSystickHandler &rArr; xPortSysTickHandler &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
-<LI><a href="#[329]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<BR>[Calls]<UL><LI><a href="#[329]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
@@ -5278,8 +5291,8 @@ Global Symbols
 <P><STRONG><a name="[326]"></a>osThreadCreate</STRONG> (Thumb, 48 bytes, Stack size 32 bytes, cmsis_os.o(i.osThreadCreate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeFreeRtosPriority
-<LI><a href="#[338]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<BR>[Calls]<UL><LI><a href="#[338]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
+<LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeFreeRtosPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -5295,10 +5308,10 @@ Global Symbols
 <P><STRONG><a name="[354]"></a>pvPortMalloc</STRONG> (Thumb, 308 bytes, Stack size 24 bytes, heap_4.o(i.pvPortMalloc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
-<LI><a href="#[356]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvHeapInit
-<LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<BR>[Calls]<UL><LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[355]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
+<LI><a href="#[356]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvHeapInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[338]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 <LI><a href="#[32e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
@@ -5381,9 +5394,9 @@ Global Symbols
 <P><STRONG><a name="[347]"></a>vPortFree</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, heap_4.o(i.vPortFree))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = vPortFree &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
-<LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<BR>[Calls]<UL><LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
 <LI><a href="#[355]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
+<LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInsertBlockIntoFreeList
 </UL>
 <BR>[Called By]<UL><LI><a href="#[338]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 <LI><a href="#[343]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvDeleteTCB
@@ -5532,10 +5545,10 @@ Global Symbols
 <LI><a href="#[341]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
-<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessagePut
+<BR>[Called By]<UL><LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessagePut
 <LI><a href="#[348]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseMutex
 <LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 </UL>
 
 <P><STRONG><a name="[331]"></a>xQueueGenericSendFromISR</STRONG> (Thumb, 264 bytes, Stack size 40 bytes, queue.o(i.xQueueGenericSendFromISR))
@@ -5583,8 +5596,8 @@ Global Symbols
 <LI><a href="#[359]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortValidateInterruptPriority
 <LI><a href="#[344]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
-<LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageGet
+<BR>[Called By]<UL><LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageGet
+<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
 </UL>
 
 <P><STRONG><a name="[335]"></a>xQueueSemaphoreTake</STRONG> (Thumb, 450 bytes, Stack size 40 bytes, queue.o(i.xQueueSemaphoreTake))
@@ -5664,8 +5677,8 @@ Global Symbols
 <LI><a href="#[33c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsertEnd
 <LI><a href="#[33b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
-<LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<BR>[Called By]<UL><LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
 </UL>
 
 <P><STRONG><a name="[346]"></a>xTaskPriorityDisinherit</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, tasks.o(i.xTaskPriorityDisinherit))
@@ -5821,8 +5834,8 @@ Local Symbols
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPixelformat
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_DrawBitmap16bpp
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyRect
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyBuffer
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyRect
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyBuffer
 </UL>
 
 <P><STRONG><a name="[274]"></a>DMA2D_CopyBufferWithAlpha</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, stemwin_wrapper.o(i.DMA2D_CopyBufferWithAlpha))
@@ -5848,17 +5861,17 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[272]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DMA_ExecOperation
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPixelformat
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
 </UL>
 
 <P><STRONG><a name="[2e2]"></a>GetBufferSize</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, stemwin_wrapper.o(i.GetBufferSize))
-<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_DrawBitmap16bpp
+<BR><BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_DrawBitmap16bpp
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_LCD_DrawBitmapAlpha
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_FillRect
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_DrawBitmap8bpp
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_DrawBitmap32bpp
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyRect
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyBuffer
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyRect
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_LL_CopyBuffer
 </UL>
 
 <P><STRONG><a name="[273]"></a>GetPixelformat</STRONG> (Thumb, 314 bytes, Stack size 0 bytes, stemwin_wrapper.o(i.GetPixelformat))
@@ -5869,7 +5882,7 @@ Local Symbols
 <LI><a href="#[271]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2D_CopyBuffer
 </UL>
 
-<P><STRONG><a name="[a1]"></a>LCD_LL_CopyBuffer</STRONG> (Thumb, 102 bytes, Stack size 40 bytes, stemwin_wrapper.o(i.LCD_LL_CopyBuffer))
+<P><STRONG><a name="[a0]"></a>LCD_LL_CopyBuffer</STRONG> (Thumb, 102 bytes, Stack size 40 bytes, stemwin_wrapper.o(i.LCD_LL_CopyBuffer))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD_LL_CopyBuffer &rArr; DMA2D_CopyBuffer
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetBufferSize
@@ -5877,7 +5890,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stemwin_wrapper.o(i.LCD_X_Config)
 </UL>
-<P><STRONG><a name="[a2]"></a>LCD_LL_CopyRect</STRONG> (Thumb, 186 bytes, Stack size 56 bytes, stemwin_wrapper.o(i.LCD_LL_CopyRect))
+<P><STRONG><a name="[a1]"></a>LCD_LL_CopyRect</STRONG> (Thumb, 186 bytes, Stack size 56 bytes, stemwin_wrapper.o(i.LCD_LL_CopyRect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = LCD_LL_CopyRect &rArr; DMA2D_CopyBuffer
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetBufferSize
@@ -5901,19 +5914,6 @@ Local Symbols
 <LI><a href="#[275]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2D_DrawBitmapL8
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stemwin_wrapper.o(i.LCD_X_Config)
-</UL>
-<P><STRONG><a name="[a0]"></a>LCD_LL_FillRect</STRONG> (Thumb, 174 bytes, Stack size 48 bytes, stemwin_wrapper.o(i.LCD_LL_FillRect))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
-<LI>Call Chain = LCD_LL_FillRect &rArr; GUI_GetDrawMode &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
-</UL>
-<BR>[Calls]<UL><LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDevFunc
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_FillRect
-<LI><a href="#[1ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_GetDrawMode
-<LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetBufferSize
-<LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2D_FillBuffer
-</UL>
-<BR>[Address Reference Count : 2]<UL><LI> stemwin_wrapper.o(i.LCD_LL_FillRect)
-<LI> stemwin_wrapper.o(i.LCD_X_Config)
 </UL>
 <P><STRONG><a name="[9b]"></a>TransferComplete</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stemwin_wrapper.o(i.TransferComplete))
 <BR>[Address Reference Count : 1]<UL><LI> stemwin_wrapper.o(i.DMA2D_Init)
@@ -6123,10 +6123,10 @@ Local Symbols
 <P><STRONG><a name="[9d]"></a>SD_DMAError</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, stm32f7xx_hal_sd.o(i.SD_DMAError))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = SD_DMAError &rArr; HAL_SD_GetCardState &rArr; SD_SendStatus &rArr; SDMMC_CmdSendStatus &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
-<BR>[Calls]<UL><LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
-<LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ErrorCallback
+<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ErrorCallback
 <LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_GetError
 <LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdStopTransfer
+<LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_GetCardState
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> stm32f7xx_hal_sd.o(i.HAL_SD_ReadBlocks_DMA)
 <LI> stm32f7xx_hal_sd.o(i.HAL_SD_WriteBlocks_DMA)
@@ -6134,9 +6134,9 @@ Local Symbols
 <P><STRONG><a name="[9c]"></a>SD_DMAReceiveCplt</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, stm32f7xx_hal_sd.o(i.SD_DMAReceiveCplt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = SD_DMAReceiveCplt &rArr; HAL_SD_RxCpltCallback &rArr; BSP_SD_ReadCpltCallback &rArr; osMessagePut &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_RxCpltCallback
-<LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ErrorCallback
+<BR>[Calls]<UL><LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_ErrorCallback
 <LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SDMMC_CmdStopTransfer
+<LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_RxCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f7xx_hal_sd.o(i.HAL_SD_ReadBlocks_DMA)
 </UL>
@@ -6260,8 +6260,8 @@ Local Symbols
 <P><STRONG><a name="[345]"></a>prvCopyDataToQueue</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, queue.o(i.prvCopyDataToQueue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = prvCopyDataToQueue &rArr; xTaskPriorityDisinherit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[346]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
+<BR>[Calls]<UL><LI><a href="#[346]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskPriorityDisinherit
+<LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[331]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 <LI><a href="#[332]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
@@ -6390,11 +6390,11 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[32b]"></a>inHandlerMode</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, cmsis_os.o(i.inHandlerMode))
-<BR><BR>[Called By]<UL><LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
-<LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
-<LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessagePut
+<BR><BR>[Called By]<UL><LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessagePut
 <LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageGet
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
+<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexWait
+<LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMutexRelease
 </UL>
 
 <P><STRONG><a name="[337]"></a>makeFreeRtosPriority</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, cmsis_os.o(i.makeFreeRtosPriority))
@@ -6727,9 +6727,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _SetBkColor &rArr; GUI_SetAlpha &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Unlink
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUI_EnableAlpha.o(.rodata)
 </UL>
@@ -6737,9 +6737,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _SetColor &rArr; GUI_SetAlpha &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Unlink
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUI_EnableAlpha.o(.rodata)
 </UL>
@@ -6747,9 +6747,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _SetDrawMode &rArr; GUI_SetAlpha &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Unlink
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUI_EnableAlpha.o(.rodata)
 </UL>
@@ -6757,9 +6757,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _DrawBitmap &rArr; GUI_SetAlpha &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
+<LI><a href="#[1c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Link
 <LI><a href="#[1f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DEVICE_Unlink
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetAlpha
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUI_EnableAlpha.o(.rodata)
 </UL>
@@ -6814,9 +6814,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _GetLine &rArr; _ReadRectFromMemdev &rArr; GUI_MEMDEV_GetDataPtr &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__ExpandPixelIndices
+<BR>[Calls]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
+<LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__ExpandPixelIndices
 <LI><a href="#[252]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ReadRectFromMemdev
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
 </UL>
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawBitmap
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_DrawHLine
@@ -6843,10 +6843,10 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _DrawHLine &rArr; _GetLine &rArr; _ReadRectFromMemdev &rArr; GUI_MEMDEV_GetDataPtr &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__CompactPixelIndices
+<BR>[Calls]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
+<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__CompactPixelIndices
 <LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetLine
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Index2Color
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_FillRect
 </UL>
@@ -6867,10 +6867,10 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _DrawBitmap &rArr; _GetLine &rArr; _ReadRectFromMemdev &rArr; GUI_MEMDEV_GetDataPtr &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__CompactPixelIndices
+<BR>[Calls]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
+<LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__CompactPixelIndices
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_SetPixelIndex
 <LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GetLine
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetBitsPerPixelEx
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUI_SetAlpha.o(.rodata)
 </UL>
@@ -6917,9 +6917,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _SetVRAMAddr &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
-<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -6927,9 +6927,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _SetVis &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
-<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -6946,11 +6946,11 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _SetPos &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
 <LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetYSizeDisplay
 <LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetXSizeDisplay
-<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -6958,9 +6958,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _SetAlpha &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
-<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -6977,9 +6977,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _ShowBuffer &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
-<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -7045,9 +7045,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _Init &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
-<LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -7055,10 +7055,10 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _SetSize &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
-<LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
-<LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
+<BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -7066,9 +7066,9 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = _SetVSize &rArr; GUI_ALLOC_GetFixedBlock &rArr; _EnlargeBlocks &rArr;  _Alloc (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
+<BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_GetFixedBlock
 <LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI__memset
-<LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.text._GetDevFunc)
 </UL>
@@ -7076,10 +7076,10 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = _SetOrg &rArr; LCD_X_DisplayDriver &rArr; GUI_GetLayerPosEx &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetMirrorYEx
-<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetMirrorXEx
-<LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
+<BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetSwapXYEx
 <LI><a href="#[253]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_X_DisplayDriver
+<LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetMirrorYEx
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetMirrorXEx
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> GUIDRV_Lin_16.o(.rodata)
 </UL>
@@ -7152,9 +7152,10 @@ Local Symbols
 
 <P><STRONG><a name="[1c2]"></a>GUI_MEMDEV_CopyToLCDAt.part.0</STRONG> (Thumb, 260 bytes, Stack size unknown bytes, GUIDEV.o(.text.GUI_MEMDEV_CopyToLCDAt.part.0))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = GUI_MEMDEV_CopyToLCDAt.part.0 &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
+<LI>Call Chain = GUI_MEMDEV_CopyToLCDAt.part.0 &rArr; GUI_SelectLayer &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
+<BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Unlock
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Lock
@@ -7168,7 +7169,6 @@ Local Symbols
 <LI><a href="#[1ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLCD
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV__WriteToActiveOpaque
 <LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_Deactivate
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_CopyToLCD
 </UL>
@@ -7374,14 +7374,14 @@ Local Symbols
 
 <P><STRONG><a name="[83]"></a>_cbBackWin</STRONG> (Thumb, 176 bytes, Stack size unknown bytes, WM.o(.text._cbBackWin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
-<LI>Call Chain = _cbBackWin &rArr; WM_SendToParent &rArr;  WM__SendMessage (Cycle)
+<LI>Call Chain = _cbBackWin &rArr; GUI_SetBkColor &rArr; GUI_Unlock &rArr; GUI_X_Unlock &rArr; osMutexRelease &rArr; xQueueGenericSend &rArr; vTaskPlaceOnEventList &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_SendToParent
+<BR>[Calls]<UL><LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
+<LI><a href="#[22b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_SendToParent
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__GetClientRectEx
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_InvalidateRect.part.2
 <LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_StoreKey
-<LI><a href="#[1fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SetBkColor
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Clear
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> WM.o(.text.WM_Init)
 </UL>
@@ -7390,7 +7390,8 @@ Local Symbols
  + In Cycle
 <LI>Call Chain = WM_DeleteWindow.part.3 &rArr;  WM_DeleteWindow.part.3 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_Free
+<BR>[Calls]<UL><LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_Free
 <LI><a href="#[1c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_UnlockH
 <LI><a href="#[1bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_LockH
 <LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_ALLOC_h2p
@@ -7403,7 +7404,6 @@ Local Symbols
 <LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM__InvalidateRect
 <LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_DeleteWindow.part.3
 <LI><a href="#[1ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_MEMDEV_Delete
-<LI><a href="#[1c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_SelectLayer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_Exec1Input
 <LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WM_DeleteWindow.part.3

@@ -113,7 +113,7 @@ static void     DMA2D_FillBuffer(U32 LayerIndex, void * pDst, U32 xSize, U32 ySi
 
 static void     LCD_LL_CopyBuffer(int LayerIndex, int IndexSrc, int IndexDst);
 static void     LCD_LL_CopyRect(int LayerIndex, int x0, int y0, int x1, int y1, int xSize, int ySize);
-static void     LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex);
+ void     LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex);
 static void     LCD_LL_DrawBitmap8bpp(int LayerIndex, int x, int y, U8 const * p, int xSize, int ySize, int BytesPerLine);
 void            LCD_LL_DrawBitmap16bpp(int LayerIndex, int x, int y, U16 const * p, int xSize, int ySize, int BytesPerLine);
 static void     LCD_LL_DrawBitmap32bpp(int LayerIndex, int x, int y, U8 const * p,  int xSize, int ySize, int BytesPerLine);
@@ -587,7 +587,7 @@ static void LCD_LL_CopyRect(int LayerIndex, int x0, int y0, int x1, int y1, int 
   * @param  PixelIndex:  Pixel index.             
   * @retval None.
   */
-static void LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex) 
+ void LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex) 
 {
   U32 BufferSize, AddrDst;
   int xSize, ySize;
