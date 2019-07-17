@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx,USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;                                           ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                                           ../Middlewares/Third_Party/FreeRTOS/Source/include;                                           ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                                           ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                                           ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                                           ..\Drivers\Peripheral_Driver\Inc;                                           ../Inc;                                           ..\Middlewares\ST\STemWin\inc;                                         ../Middlewares/Third_Party/FatFs/src;                     ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;                                                 ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                                                 ../Middlewares/Third_Party/FreeRTOS/Source/include;                                                 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;                                                 ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;                                                 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                                                 ..\Drivers\Peripheral_Driver\Inc;                                                 ../Inc;                                                 ..\Middlewares\ST\STemWin\inc;                                               ../Middlewares/Third_Party/FatFs/src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -406,6 +406,11 @@
               <FileName>utility.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Peripheral_Driver\Src\utility.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_X_Touch_Analog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Peripheral_Driver\Src\GUI_X_Touch_Analog.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -476,6 +481,16 @@
               <FileName>system_stm32f7xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/system_stm32f7xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/STemWin/App</GroupName>
+          <Files>
+            <File>
+              <FileName>FramewinDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../STemWin/App/FramewinDLG.c</FilePath>
             </File>
           </Files>
         </Group>

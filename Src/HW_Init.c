@@ -86,7 +86,6 @@ static FMC_SDRAM_CommandTypeDef Command;
 void MX_LCD_Init(void) 
 { 
  LTDC_LayerCfgTypeDef pLayerCfg;
- LTDC_LayerCfgTypeDef pLayerCfg1;
 
 /* De-Initialize LTDC */
   HAL_LTDC_DeInit(&hltdc);
@@ -117,11 +116,11 @@ void MX_LCD_Init(void)
   pLayerCfg.WindowX1 = LCD_WIDTH;
   pLayerCfg.WindowY0 = 0;
   pLayerCfg.WindowY1 = LCD_HEIGHT;
-  pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_ARGB1555;
+  pLayerCfg.PixelFormat = LTDC_PIXEL_FORMAT_RGB565;
   pLayerCfg.Alpha = 0xFF;
   pLayerCfg.Alpha0 = 0;
-  pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_PAxCA;
-  pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_PAxCA;
+  pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
+  pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
   pLayerCfg.FBStartAdress = LAYER0_ADDR;
   pLayerCfg.ImageWidth = LCD_WIDTH;
   pLayerCfg.ImageHeight = LCD_HEIGHT;
@@ -129,26 +128,6 @@ void MX_LCD_Init(void)
   pLayerCfg.Backcolor.Green = 0;
   pLayerCfg.Backcolor.Red = 0;
   if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg, 0) != HAL_OK)
-  {
-    Error_Handler( );
-  }
-
-  pLayerCfg1.WindowX0 = 0;
-  pLayerCfg1.WindowX1 = LCD_WIDTH;
-  pLayerCfg1.WindowY0 = 0;
-  pLayerCfg1.WindowY1 = LCD_HEIGHT;
-  pLayerCfg1.PixelFormat = LTDC_PIXEL_FORMAT_ARGB1555;
-  pLayerCfg1.Alpha = 0xFF;
-  pLayerCfg1.Alpha0 = 0;
-  pLayerCfg1.BlendingFactor1 = LTDC_BLENDING_FACTOR1_PAxCA;
-  pLayerCfg1.BlendingFactor2 = LTDC_BLENDING_FACTOR2_PAxCA;
-  pLayerCfg1.FBStartAdress = LAYER1_ADDR;
-  pLayerCfg1.ImageWidth = LCD_WIDTH;
-  pLayerCfg1.ImageHeight = LCD_HEIGHT;
-  pLayerCfg1.Backcolor.Blue = 0;
-  pLayerCfg1.Backcolor.Green = 0;
-  pLayerCfg1.Backcolor.Red = 0;
-  if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg1, 1) != HAL_OK)
   {
     Error_Handler( );
   }
@@ -270,27 +249,16 @@ void MX_DMA2D_Init(void)
 /* Configure the DMA2D default mode */ 
 
   hdma2d.Instance = DMA2D;
-  hdma2d.Init.Mode = DMA2D_M2M_BLEND;
-  hdma2d.Init.ColorMode = DMA2D_OUTPUT_ARGB1555;
+  hdma2d.Init.Mode = DMA2D_M2M;
+  hdma2d.Init.ColorMode = DMA2D_OUTPUT_RGB565;
   hdma2d.Init.OutputOffset = 0;
   hdma2d.LayerCfg[1].InputOffset = 0;
-  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_ARGB1555;
+  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_RGB565;
   hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
   hdma2d.LayerCfg[1].InputAlpha = 0;
   hdma2d.LayerCfg[1].AlphaInverted = DMA2D_REGULAR_ALPHA;
   hdma2d.LayerCfg[1].RedBlueSwap = DMA2D_RB_REGULAR;
-  hdma2d.LayerCfg[0].InputOffset = 0;
-  hdma2d.LayerCfg[0].InputColorMode = DMA2D_INPUT_ARGB1555;
-  hdma2d.LayerCfg[0].AlphaMode = DMA2D_NO_MODIF_ALPHA;
-  hdma2d.LayerCfg[0].InputAlpha = 0;
-  hdma2d.LayerCfg[0].AlphaInverted = DMA2D_REGULAR_ALPHA;
-  hdma2d.LayerCfg[0].RedBlueSwap = DMA2D_RB_REGULAR;
   if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
-  {
-    Error_Handler( );
-  }
-
-  if (HAL_DMA2D_ConfigLayer(&hdma2d, 0) != HAL_OK)
   {
     Error_Handler( );
   }

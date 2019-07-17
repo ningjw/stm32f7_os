@@ -45,7 +45,6 @@ extern "C" {
 
 #include "ltdc_driver.h"
 #include "gt9147_iic_driver.h"
-#include "sdram_driver.h"
 #include "utility.h"
 /* USER CODE END Includes */
 

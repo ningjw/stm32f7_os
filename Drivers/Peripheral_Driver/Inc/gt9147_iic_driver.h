@@ -31,6 +31,8 @@
 #define GT_TP5_REG 		0X8170		//第五个触摸点数据地址  
 
 
+extern uint16_t touch_x,touch_y;
+
 uint8_t GT9147_Init(void);
 
 

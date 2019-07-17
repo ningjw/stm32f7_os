@@ -53,6 +53,7 @@ UART_HandleTypeDef huart1;
 
 DMA_HandleTypeDef hdma_memtomem_dma2_stream0;
 osThreadId defaultTaskHandle;
+osThreadId touchTaskHandle;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -69,6 +70,7 @@ extern void GRAPHICS_Init(void);
 extern void GRAPHICS_MainTask(void);
 static void MX_SDMMC1_SD_Init(void);
 void StartDefaultTask(void const * argument);
+void StartTouchTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -151,8 +153,12 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 512);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+  /* definition and creation of touchTask */
+  osThreadDef(touchTask, StartTouchTask, osPriorityIdle, 0, 512);
+  touchTaskHandle = osThreadCreate(osThread(touchTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -449,12 +455,29 @@ void StartDefaultTask(void const * argument)
   GRAPHICS_MainTask();
 
   /* USER CODE BEGIN 5 */
+
+  /* USER CODE END 5 */ 
+}
+
+/* USER CODE BEGIN Header_StartTouchTask */
+/**
+* @brief Function implementing the touchTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTouchTask */
+void StartTouchTask(void const * argument)
+{
+  /* USER CODE BEGIN StartTouchTask */
+  GUI_TOUCH_Calibrate(GUI_COORD_X,0,LCD_WIDTH,0,LCD_WIDTH);   
+  GUI_TOUCH_Calibrate(GUI_COORD_Y,0,LCD_HEIGHT,0,LCD_HEIGHT);
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    GUI_TOUCH_Exec();
+    osDelay(5);
   }
-  /* USER CODE END 5 */ 
+  /* USER CODE END StartTouchTask */
 }
 
 /* MPU Configuration */

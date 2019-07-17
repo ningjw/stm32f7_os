@@ -11,6 +11,8 @@
   */
 #include "main.h"
 
+uint16_t touch_x,touch_y;
+
 const uint16_t GT9147_TPX_TBL[5] = {GT_TP1_REG, GT_TP2_REG, GT_TP3_REG, GT_TP4_REG, GT_TP5_REG};
 
 //GT9147配置参数表:第一个字节为版本号(0X60),必须保证新的版本号大于等于GT9147内部flash原有版本号,才会更新配置.
@@ -303,6 +305,8 @@ uint8_t GT9147_Init(void)
     return 1;
 }
 
+
+uint8_t press_sta = 0;
 /***************************************************************************************
   * @brief   PH7中断, 触摸中断
   * @input
@@ -329,11 +333,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
                 x[i] = (((uint16_t)buf[1] << 8) + buf[0]);
                 y[i] = (((uint16_t)buf[3] << 8) + buf[2]);
             }
-            for(i = 0; i < (mode & 0xF); i++)
-            {
-                LCD_DrawPoint(x[i], y[i], i * 0xaa + 0xff);
-//                printf("x=%d, y=%d\r\n",x[i],y[i]);
-            }
+            touch_x = x[0];
+            touch_y = y[0];
+        }
+        
+        if((mode&0x8F)==0x80)//无触摸点按下,xy赋值为0xffff
+        {
+          touch_x = 0xffff;
+          touch_y = 0xffff;
         }
     }
 }

@@ -1,12 +1,12 @@
 freertos\system_stm32f7xx.o: ../Src/system_stm32f7xx.c
 freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h
-freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Include/core_cm7.h
+freertos\system_stm32f7xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm7.h
 freertos\system_stm32f7xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Include/cmsis_version.h
-freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+freertos\system_stm32f7xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h
+freertos\system_stm32f7xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h
+freertos\system_stm32f7xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h
+freertos\system_stm32f7xx.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h
 freertos\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 freertos\system_stm32f7xx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\system_stm32f7xx.o: ../Inc/stm32f7xx_hal_conf.h

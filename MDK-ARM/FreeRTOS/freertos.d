@@ -17,11 +17,11 @@ freertos\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 freertos\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 freertos\freertos.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 freertos\freertos.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h
-freertos\freertos.o: ../Drivers/CMSIS/Include/core_cm7.h
-freertos\freertos.o: ../Drivers/CMSIS/Include/cmsis_version.h
-freertos\freertos.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
-freertos\freertos.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-freertos\freertos.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+freertos\freertos.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm7.h
+freertos\freertos.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h
+freertos\freertos.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h
+freertos\freertos.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h
+freertos\freertos.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h
 freertos\freertos.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 freertos\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\freertos.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
@@ -68,5 +68,4 @@ freertos\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
-freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\sdram_driver.h
 freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\utility.h

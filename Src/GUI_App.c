@@ -45,38 +45,33 @@
 #include "GUI_App.h"
 #include "GUI.h"
 
-void GRAPHICS_MainTask(void) {
+#include "DIALOG.h"
+extern  WM_HWIN CreateFramewin(void); 
+  
 
+void GRAPHICS_MainTask(void) {
+  /* 1- Create a FrameWin using GUIBuilder */
+  CreateFramewin();
+ 
 /* USER CODE BEGIN GRAPHICS_MainTask */
  /* User can implement his graphic application here */
   /* Hello Word example */
-    GUI_SelectLayer(0);
-    GUI_SetBkColor(GUI_GRAY);
-    GUI_SelectLayer(1);
-    GUI_Clear();
-    GUI_SetColor(GUI_WHITE);
-    GUI_SetFont(&GUI_Font32_1);
-    GUI_DispStringAt("Hello world!", (LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
-   
-    GUI_EnableAlpha(1); //开启 Alpha
-    GUI_SetColor(GUI_BLACK);
-    GUI_DispStringHCenterAt("Alphablending", 45, 61);
-    GUI_SetAlpha(40); //设置 Alpha 值
-    GUI_SetColor( GUI_RED);
-    GUI_FillRect(0, 20, 49, 69);
-    GUI_SetAlpha(80); //设置 Alpha 值
-    GUI_SetColor(GUI_GREEN);
-    GUI_FillRect(20, 40, 69, 89);
-    GUI_SetAlpha(40); //设置 Alpha 值
-    GUI_SetColor(GUI_BLUE);
-    GUI_FillRect(40, 60, 89, 109);
-    GUI_EnableAlpha(0); //关闭 Alpha
+    
+    GUI_CURSOR_Show();
+//    GUI_SetBkColor(GUI_GRAY);
+//    GUI_Clear();
+//    GUI_SetColor(GUI_WHITE);
+//    GUI_SetFont(&GUI_Font32_1);
+//    GUI_DispStringAt("Hello world!", (LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
+  
+//    GUI_UC_SetEncodeUTF8(); // Enable UTF8 decoding
+//    GUI_DispStringAt("\xE6\x82\xA8",(LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
 
 /* USER CODE END GRAPHICS_MainTask */
   while(1)
-{
-      GUI_Delay(100);
-}
+  {
+        GUI_Delay(100);
+  }
 }
 
 /*************************** End of file ****************************/

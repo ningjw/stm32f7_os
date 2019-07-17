@@ -70,14 +70,10 @@
 #define NUM_BUFFERS         1   /* Number of multiple buffers to be used */
 #define NUM_VSCREENS        1  /* Number of virtual screens to be used */
 
-#define COLOR_CONVERSION_0      GUICC_M1555I
+#define COLOR_CONVERSION_0      GUICC_M565
 #define DISPLAY_DRIVER_0        GUIDRV_LIN_16
 
-#define COLOR_CONVERSION_1      GUICC_M1555I
-#define DISPLAY_DRIVER_1        GUIDRV_LIN_16
-
 #define LCD_LAYER0_FRAME_BUFFER        ((uint32_t)0xc0000000) /* LTDC Layer 0 frame buffer */
-#define LCD_LAYER1_FRAME_BUFFER        ((uint32_t)0xc003fc00) /* LTDC Layer 0 frame buffer */
 
 extern LTDC_HandleTypeDef    hltdc;
 extern DMA2D_HandleTypeDef   hdma2d;
@@ -113,7 +109,7 @@ static void     DMA2D_FillBuffer(U32 LayerIndex, void * pDst, U32 xSize, U32 ySi
 
 static void     LCD_LL_CopyBuffer(int LayerIndex, int IndexSrc, int IndexDst);
 static void     LCD_LL_CopyRect(int LayerIndex, int x0, int y0, int x1, int y1, int xSize, int ySize);
- void     LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex);
+static void     LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex);
 static void     LCD_LL_DrawBitmap8bpp(int LayerIndex, int x, int y, U8 const * p, int xSize, int ySize, int BytesPerLine);
 void            LCD_LL_DrawBitmap16bpp(int LayerIndex, int x, int y, U16 const * p, int xSize, int ySize, int BytesPerLine);
 static void     LCD_LL_DrawBitmap32bpp(int LayerIndex, int x, int y, U8 const * p,  int xSize, int ySize, int BytesPerLine);
@@ -587,7 +583,7 @@ static void LCD_LL_CopyRect(int LayerIndex, int x0, int y0, int x1, int y1, int 
   * @param  PixelIndex:  Pixel index.             
   * @retval None.
   */
- void LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex) 
+static void LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex) 
 {
   U32 BufferSize, AddrDst;
   int xSize, ySize;
