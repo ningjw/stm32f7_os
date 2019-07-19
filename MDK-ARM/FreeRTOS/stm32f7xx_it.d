@@ -66,8 +66,13 @@ freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queu
 freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\stm32f7xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+freertos\stm32f7xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\stm32f7xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\stm32f7xx_it.o: ..\Middlewares\ST\STemWin\inc\WM.h
+freertos\stm32f7xx_it.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
+freertos\stm32f7xx_it.o: ../Inc/STemWin_Demo.h
 freertos\stm32f7xx_it.o: ../Inc/stm32f7xx_it.h
 freertos\stm32f7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

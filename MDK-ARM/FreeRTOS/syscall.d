@@ -69,9 +69,13 @@ freertos\syscall.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\syscall.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\syscall.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\syscall.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+freertos\syscall.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\syscall.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\syscall.o: ..\Middlewares\ST\STemWin\inc\WM.h
+freertos\syscall.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\syscall.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\syscall.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\syscall.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
+freertos\syscall.o: ../Inc/STemWin_Demo.h
 freertos\syscall.o: ../Inc/bsp_driver_sd.h
 freertos\syscall.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-freertos\syscall.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

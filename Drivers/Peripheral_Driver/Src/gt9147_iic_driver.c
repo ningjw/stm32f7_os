@@ -312,7 +312,6 @@ uint8_t press_sta = 0;
   * @input
   * @return
 ***************************************************************************************/
-void     LCD_LL_FillRect(int LayerIndex, int x0, int y0, int x1, int y1, U32 PixelIndex);
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     uint8_t buf[4];

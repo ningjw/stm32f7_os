@@ -469,8 +469,8 @@ void StartDefaultTask(void const * argument)
 void StartTouchTask(void const * argument)
 {
   /* USER CODE BEGIN StartTouchTask */
-  GUI_TOUCH_Calibrate(GUI_COORD_X,0,LCD_WIDTH,0,LCD_WIDTH);   
-  GUI_TOUCH_Calibrate(GUI_COORD_Y,0,LCD_HEIGHT,0,LCD_HEIGHT);
+  GUI_TOUCH_Calibrate(GUI_COORD_X,0,LCD_WIDTH,0,LCD_WIDTH-1);   
+  GUI_TOUCH_Calibrate(GUI_COORD_Y,0,LCD_HEIGHT,0,LCD_HEIGHT-1);
   /* Infinite loop */
   for(;;)
   {

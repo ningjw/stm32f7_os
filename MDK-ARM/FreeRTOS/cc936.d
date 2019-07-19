@@ -69,9 +69,13 @@ freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\cc936.o: ..\Middlewares\ST\STemWin\inc\WM.h
+freertos\cc936.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
+freertos\cc936.o: ../Inc/STemWin_Demo.h
 freertos\cc936.o: ../Inc/bsp_driver_sd.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

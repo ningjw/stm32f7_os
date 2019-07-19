@@ -66,9 +66,14 @@ freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\main.o: ..\Middlewares\ST\STemWin\inc\WM.h
+freertos\main.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
+freertos\main.o: ../Inc/STemWin_Demo.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\main.o: ../Inc/fatfs.h
 freertos\main.o: ../Middlewares/Third_Party/FatFs/src/ff.h
@@ -76,7 +81,6 @@ freertos\main.o: ../Middlewares/Third_Party/FatFs/src/integer.h
 freertos\main.o: ../Inc/ffconf.h
 freertos\main.o: ../Inc/bsp_driver_sd.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\main.o: ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h
 freertos\main.o: ../Middlewares/Third_Party/FatFs/src/diskio.h
 freertos\main.o: ../Inc/sd_diskio.h

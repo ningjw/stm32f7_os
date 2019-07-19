@@ -443,24 +443,9 @@
               <FilePath>../Src/freertos.c</FilePath>
             </File>
             <File>
-              <FileName>GUIConf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/GUIConf.c</FilePath>
-            </File>
-            <File>
               <FileName>HW_Init.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/HW_Init.c</FilePath>
-            </File>
-            <File>
-              <FileName>GUI_App.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/GUI_App.c</FilePath>
-            </File>
-            <File>
-              <FileName>STemwin_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/STemwin_wrapper.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_it.c</FileName>
@@ -488,9 +473,39 @@
           <GroupName>Application/User/STemWin/App</GroupName>
           <Files>
             <File>
+              <FileName>GUIConf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/GUIConf.c</FilePath>
+            </File>
+            <File>
+              <FileName>STemwin_wrapper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/STemwin_wrapper.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_App.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/GUI_App.c</FilePath>
+            </File>
+            <File>
               <FileName>FramewinDLG.c</FileName>
               <FileType>1</FileType>
               <FilePath>../STemWin/App/FramewinDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>bitmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\bitmap.c</FilePath>
+            </File>
+            <File>
+              <FileName>STemWin_Demo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\STemWin_Demo.c</FilePath>
+            </File>
+            <File>
+              <FileName>font_24.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\font_24.c</FilePath>
             </File>
           </Files>
         </Group>

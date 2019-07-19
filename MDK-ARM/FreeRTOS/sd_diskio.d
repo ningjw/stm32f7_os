@@ -72,10 +72,14 @@ freertos\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.
 freertos\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+freertos\sd_diskio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\sd_diskio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\sd_diskio.o: ..\Middlewares\ST\STemWin\inc\WM.h
+freertos\sd_diskio.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\sd_diskio.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\sd_diskio.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\sd_diskio.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
+freertos\sd_diskio.o: ../Inc/STemWin_Demo.h
 freertos\sd_diskio.o: ../Inc/bsp_driver_sd.h
 freertos\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-freertos\sd_diskio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\sd_diskio.o: ../Inc/sd_diskio.h

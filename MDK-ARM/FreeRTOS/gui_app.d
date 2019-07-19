@@ -67,12 +67,15 @@ freertos\gui_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\gui_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\gui_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\gui_app.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+freertos\gui_app.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\gui_app.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\WM.h
+freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\gui_app.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\gui_app.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\gui_app.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
+freertos\gui_app.o: ../Inc/STemWin_Demo.h
 freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\DIALOG.h
-freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\WM.h
-freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\BUTTON.h
 freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\DIALOG_Intern.h
 freertos\gui_app.o: ..\Middlewares\ST\STemWin\inc\WIDGET.h

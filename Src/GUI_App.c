@@ -51,21 +51,42 @@ extern  WM_HWIN CreateFramewin(void);
 
 void GRAPHICS_MainTask(void) {
   /* 1- Create a FrameWin using GUIBuilder */
-  CreateFramewin();
+//  CreateFramewin();
  
 /* USER CODE BEGIN GRAPHICS_MainTask */
  /* User can implement his graphic application here */
   /* Hello Word example */
-    
-    GUI_CURSOR_Show();
+  
+  GUI_CURSOR_Show();
+  
+  extern GUI_FONT GUI_Font24;
+  GUI_Clear();
+  GUI_UC_SetEncodeUTF8();   // 设置编码
+  GUI_SetFont(&GUI_Font24); // 设置字体
+  GUI_DispString("你好\n");
+//#define APP_WMOVE
+#ifdef BITMAP_APP
+  draw_bitmap();
+#elif defined ALPHA_APP
+  alpha_display();
+#elif defined APP_2D
+  draw_2d();
+#elif defined APP_TEXT
+    text_display();
+#elif defined APP_MEMDEV    
+    _DemoMemDev();
+#elif defined APP_SEGMEM
+    _DemoBandingMemdev();
+#elif defined APP_AUTODEV
+    _DemoScale();
+#elif defined APP_WMOVE
+    _DemoRedraw();
+  #endif
 //    GUI_SetBkColor(GUI_GRAY);
 //    GUI_Clear();
 //    GUI_SetColor(GUI_WHITE);
 //    GUI_SetFont(&GUI_Font32_1);
 //    GUI_DispStringAt("Hello world!", (LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
-  
-//    GUI_UC_SetEncodeUTF8(); // Enable UTF8 decoding
-//    GUI_DispStringAt("\xE6\x82\xA8",(LCD_GetXSize()-150)/2, (LCD_GetYSize()-20)/2);
 
 /* USER CODE END GRAPHICS_MainTask */
   while(1)

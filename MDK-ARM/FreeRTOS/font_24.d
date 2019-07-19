@@ -1,0 +1,9 @@
+freertos\font_24.o: ..\Src\font_24.c
+freertos\font_24.o: ..\Middlewares\ST\STemWin\inc\GUI.h
+freertos\font_24.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos\font_24.o: ..\Middlewares\ST\STemWin\inc\GUI_ConfDefaults.h
+freertos\font_24.o: ../Inc/GUIConf.h
+freertos\font_24.o: ..\Middlewares\ST\STemWin\inc\GUI_Type.h
+freertos\font_24.o: ..\Middlewares\ST\STemWin\inc\LCD.h
+freertos\font_24.o: ..\Middlewares\ST\STemWin\inc\Global.h
+freertos\font_24.o: ..\Middlewares\ST\STemWin\inc\GUI_Version.h
