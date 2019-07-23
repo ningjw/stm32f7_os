@@ -36,6 +36,7 @@ freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc.
 freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc_ex.h
 freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h
 freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h
+freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h
 freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h
 freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h
 freertos\stm32f7xx_it.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
@@ -72,6 +73,7 @@ freertos\stm32f7xx_it.o: ..\Middlewares\ST\STemWin\inc\WM.h
 freertos\stm32f7xx_it.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
+freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\stm32f7xx_it.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\stm32f7xx_it.o: ../Inc/STemWin_Demo.h
 freertos\stm32f7xx_it.o: ../Inc/stm32f7xx_it.h

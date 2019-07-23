@@ -48,6 +48,7 @@ extern "C" {
 
 #include "ltdc_driver.h"
 #include "gt9147_iic_driver.h"
+#include "w25q256_driver.h"
 #include "utility.h"
 #include "STemWin_Demo.h"
 /* USER CODE END Includes */

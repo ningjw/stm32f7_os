@@ -47,6 +47,8 @@
 
 CRC_HandleTypeDef hcrc;
 
+QSPI_HandleTypeDef hqspi;
+
 SD_HandleTypeDef hsd1;
 
 UART_HandleTypeDef huart1;
@@ -54,6 +56,7 @@ UART_HandleTypeDef huart1;
 DMA_HandleTypeDef hdma_memtomem_dma2_stream0;
 osThreadId defaultTaskHandle;
 osThreadId touchTaskHandle;
+osThreadId updateFontTaskHandle;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -69,8 +72,10 @@ extern void GRAPHICS_HW_Init(void);
 extern void GRAPHICS_Init(void);
 extern void GRAPHICS_MainTask(void);
 static void MX_SDMMC1_SD_Init(void);
+static void MX_QUADSPI_Init(void);
 void StartDefaultTask(void const * argument);
 void StartTouchTask(void const * argument);
+void StartUpdateFontTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -122,9 +127,10 @@ int main(void)
   MX_USART1_UART_Init();
   MX_CRC_Init();
   MX_SDMMC1_SD_Init();
+  MX_QUADSPI_Init();
   /* USER CODE BEGIN 2 */
   GT9147_Init();//电容触摸屏控制器初始化
-  
+  W25QXX_Init();//SPI Flash初始化
   /* USER CODE END 2 */
 
 /* Initialise the graphical hardware */
@@ -157,8 +163,12 @@ int main(void)
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of touchTask */
-  osThreadDef(touchTask, StartTouchTask, osPriorityIdle, 0, 512);
+  osThreadDef(touchTask, StartTouchTask, osPriorityIdle, 0, 128);
   touchTaskHandle = osThreadCreate(osThread(touchTask), NULL);
+
+  /* definition and creation of updateFontTask */
+  osThreadDef(updateFontTask, StartUpdateFontTask, osPriorityIdle, 0, 128);
+  updateFontTaskHandle = osThreadCreate(osThread(updateFontTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -275,6 +285,41 @@ static void MX_CRC_Init(void)
   /* USER CODE BEGIN CRC_Init 2 */
 
   /* USER CODE END CRC_Init 2 */
+
+}
+
+/**
+  * @brief QUADSPI Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_QUADSPI_Init(void)
+{
+
+  /* USER CODE BEGIN QUADSPI_Init 0 */
+
+  /* USER CODE END QUADSPI_Init 0 */
+
+  /* USER CODE BEGIN QUADSPI_Init 1 */
+
+  /* USER CODE END QUADSPI_Init 1 */
+  /* QUADSPI parameter configuration*/
+  hqspi.Instance = QUADSPI;
+  hqspi.Init.ClockPrescaler = 2;
+  hqspi.Init.FifoThreshold = 4;
+  hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_HALFCYCLE;
+  hqspi.Init.FlashSize = 24;
+  hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_4_CYCLE;
+  hqspi.Init.ClockMode = QSPI_CLOCK_MODE_0;
+  hqspi.Init.FlashID = QSPI_FLASH_ID_1;
+  hqspi.Init.DualFlash = QSPI_DUALFLASH_DISABLE;
+  if (HAL_QSPI_Init(&hqspi) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN QUADSPI_Init 2 */
+
+  /* USER CODE END QUADSPI_Init 2 */
 
 }
 
@@ -478,6 +523,24 @@ void StartTouchTask(void const * argument)
     osDelay(5);
   }
   /* USER CODE END StartTouchTask */
+}
+
+/* USER CODE BEGIN Header_StartUpdateFontTask */
+/**
+* @brief Function implementing the updateFontTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartUpdateFontTask */
+void StartUpdateFontTask(void const * argument)
+{
+  /* USER CODE BEGIN StartUpdateFontTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartUpdateFontTask */
 }
 
 /* MPU Configuration */

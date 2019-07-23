@@ -1,0 +1,233 @@
+#include "main.h"
+
+extern QSPI_HandleTypeDef hqspi;
+
+void W25QXX_WriteEnable(void)
+{
+    QSPI_CommandTypeDef s_command = {0};
+
+    /* ########### 使能写状态寄存器命令 #################### */
+    s_command.Instruction = W25X_WriteEnable;
+    s_command.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+/***************************************************************************************
+  * @brief
+  * @input
+  * @return
+***************************************************************************************/
+void W25QXX_ResetMemory(uint32_t mode)
+{
+    QSPI_CommandTypeDef s_command = {0};
+    /* 初始化复位使能命令 */
+    s_command.InstructionMode   = mode;
+    s_command.Instruction       = RESET_ENABLE_CMD;
+
+    /* 发送命令 */
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    /* 发送复位存储器命令 */
+    s_command.Instruction = RESET_MEMORY_CMD;
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    delay_us(100);
+}
+
+
+uint8_t sta_reg2 = 0xff;
+/***************************************************************************************
+  * @brief   W25QXX进入QSPI模式
+  * @input
+  * @return
+***************************************************************************************/
+void W25QXX_Qspi_EnableQE(void)
+{
+    uint8_t value = 0x02;
+    QSPI_CommandTypeDef s_command = {0};
+
+    /* ########### 使能写状态寄存器命令 #################### */
+    s_command.Instruction = W25X_WriteEnable;
+    s_command.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    /* ########### 写状态寄存器2指令 #################### */
+    s_command.Instruction = W25X_WriteStatusReg2;
+    s_command.DataMode = QSPI_DATA_1_LINE;              //数据模式
+    s_command.NbData = 0x01;
+    /* 发送命令 */
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* 传输数据 */
+    if (HAL_QSPI_Transmit(&hqspi, &value, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    /* ########### 读状态寄存器2指令 #################### */
+    s_command.Instruction = W25X_ReadStatusReg2;        //指令
+    /* 发送命令 */
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    if (HAL_QSPI_Receive(&hqspi, &sta_reg2, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+/***************************************************************************************
+  * @brief
+  * @input
+  * @return
+***************************************************************************************/
+static void W25QXX_EnterQspiMode(void)
+{
+    QSPI_CommandTypeDef s_command = {0};
+    s_command.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
+    s_command.Instruction       = W25X_EnterQPIMode;
+    
+    /* 发送命令 */
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+/***************************************************************************************
+  * @brief
+  * @input
+  * @return
+***************************************************************************************/
+static void W25QXX_Enter4ByteAddr(void)
+{
+    QSPI_CommandTypeDef s_command = {0};
+    s_command.Instruction       = W25X_Enable4ByteAddr;
+    s_command.InstructionMode   = QSPI_INSTRUCTION_4_LINES;
+
+    /* 发送命令 */
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+
+
+/***************************************************************************************
+  * @brief   0XEF18,表示芯片型号为W25Q256
+  * @input
+  * @return
+***************************************************************************************/
+uint16_t W25QXX_Qspi_ReadId(void)
+{
+    QSPI_CommandTypeDef s_command = {0};
+    uint16_t Temp = 0;
+    uint8_t pData[2];
+    /*##-2-读取设备ID测试    ###########################################*/
+    /* 读取制造/设备 ID */
+    s_command.InstructionMode   = QSPI_INSTRUCTION_4_LINES;
+    s_command.Instruction       = W25X_ManufactDeviceID;
+    s_command.AddressMode       = QSPI_ADDRESS_4_LINES;
+    s_command.AddressSize       = QSPI_ADDRESS_24_BITS;
+    s_command.DataMode          = QSPI_DATA_4_LINES;
+    s_command.NbData            = 2;
+
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    if (HAL_QSPI_Receive(&hqspi, pData, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    Temp = pData[1] | ( pData[0] << 8 ) ;
+
+    return Temp;
+}
+
+
+/***************************************************************************************
+  * @brief   读取SPI FLASH,仅支持QPI模式
+  * @input   pBuffer:数据存储区
+             ReadAddr:开始读取的地址(最大32bit)
+             NumByteToRead:要读取的字节数(最大65535)
+  * @return
+***************************************************************************************/
+void W25QXX_Read(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead)
+{
+    QSPI_CommandTypeDef s_command = {0};
+    s_command.Instruction       = W25X_FastReadData;
+    s_command.InstructionMode   = QSPI_INSTRUCTION_4_LINES;
+    s_command.AddressMode       = QSPI_ADDRESS_4_LINES;
+    s_command.AddressSize       = QSPI_ADDRESS_32_BITS;
+    s_command.DataMode          = QSPI_DATA_4_LINES;
+    s_command.DummyCycles       = 2;
+    s_command.NbData            = NumByteToRead;
+    s_command.Address           = ReadAddr;
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    if (HAL_QSPI_Receive(&hqspi, pBuffer, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+void W25X_SetParam(void)
+{
+    QSPI_CommandTypeDef s_command = {0};
+    uint8_t Temp = 3 << 4;
+    /*##-2-读取设备ID测试    ###########################################*/
+    /* 读取制造/设备 ID */
+    s_command.InstructionMode   = QSPI_INSTRUCTION_4_LINES;
+    s_command.Instruction       = W25X_SetReadParam;
+    s_command.DataMode          = QSPI_DATA_4_LINES;
+    s_command.NbData            = 1;
+    
+    if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    if (HAL_QSPI_Receive(&hqspi, &Temp, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+uint16_t W25_ID;
+const uint8_t TEXT_Buffer[] = {"Apollo STM32F7 QSPI TEST"};
+uint8_t W25_RxBuf[50] = {0};
+#define SIZE sizeof(TEXT_Buffer)
+/***************************************************************************************
+  * @brief
+  * @input
+  * @return
+***************************************************************************************/
+void W25QXX_Init(void)
+{
+    W25QXX_ResetMemory(QSPI_INSTRUCTION_4_LINES);
+    W25QXX_Qspi_EnableQE();
+    delay_ms(30);
+    W25QXX_EnterQspiMode();
+    W25QXX_Enter4ByteAddr();
+    W25X_SetParam();
+    W25_ID = W25QXX_Qspi_ReadId();
+    W25QXX_Read(W25_RxBuf, W25Q256_SIZE - 100, SIZE);
+}
+

@@ -50,6 +50,7 @@ extern  WM_HWIN CreateFramewin(void);
   
 
 void GRAPHICS_MainTask(void) {
+
   /* 1- Create a FrameWin using GUIBuilder */
 //  CreateFramewin();
  
@@ -57,13 +58,19 @@ void GRAPHICS_MainTask(void) {
  /* User can implement his graphic application here */
   /* Hello Word example */
   
-  GUI_CURSOR_Show();
+//  GUI_CURSOR_Show();
   
-  extern GUI_FONT GUI_Font24;
+//  extern GUI_FONT GUI_Font24;
   GUI_Clear();
-  GUI_UC_SetEncodeUTF8();   // 设置编码
-  GUI_SetFont(&GUI_Font24); // 设置字体
-  GUI_DispString("你好\n");
+    extern uint16_t W25_ID;
+    extern uint8_t W25_RxBuf[50];
+    
+    GUI_DispHexAt(W25_ID,10,20, 4);
+    GUI_DispStringAt((char *)W25_RxBuf,10,30);
+//  GUI_UC_SetEncodeUTF8();   // 设置编码
+//  GUI_SetFont(&GUI_Font24); // 设置字体
+//  GUI_DispString("你好\n");
+    
 //#define APP_WMOVE
 #ifdef BITMAP_APP
   draw_bitmap();
@@ -90,9 +97,9 @@ void GRAPHICS_MainTask(void) {
 
 /* USER CODE END GRAPHICS_MainTask */
   while(1)
-  {
-        GUI_Delay(100);
-  }
+{
+      GUI_Delay(100);
+}
 }
 
 /*************************** End of file ****************************/

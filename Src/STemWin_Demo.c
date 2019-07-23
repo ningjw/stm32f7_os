@@ -582,7 +582,6 @@ static void _cbWindow(WM_MESSAGE *pMsg)
 ***************************************************************************************/
 void _DemoRedraw(void)
 {
-	WM_CALLBACK *_cbOldBK;
     WM_HWIN hWnd;
     
 	GUI_SetBkColor(GUI_BLACK); 	//设置背景颜色
@@ -594,7 +593,7 @@ void _DemoRedraw(void)
 	while(1)
 	{
 		//为背景窗口设置回调函数
-		_cbOldBK = WM_SetCallback(WM_HBKWIN,_cbBkWindow);
+		WM_SetCallback(WM_HBKWIN,_cbBkWindow);
 		
         //创建前景窗口
         hWnd = WM_CreateWindow(10,50,150,100,WM_CF_SHOW,_cbWindow,0);
