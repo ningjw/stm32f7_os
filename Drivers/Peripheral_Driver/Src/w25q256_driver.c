@@ -4,14 +4,13 @@ extern QSPI_HandleTypeDef hqspi;
 
 #define W25Q_RESET()             QSPI_SendCmd(RESET_ENABLE_CMD,QSPI_INSTRUCTION_1_LINE,0,0,0,0);\
                                  QSPI_SendCmd(RESET_MEMORY_CMD,QSPI_INSTRUCTION_1_LINE,0,0,0,0)
-#define W25Q_ENTER_QSPI()        QSPI_SendCmd(W25X_EnterQPIMode,QSPI_INSTRUCTION_1_LINE,0,0,0,0)
+#define W25QXX_ENTER_QSPI()      QSPI_SendCmd(W25X_EnterQPIMode,QSPI_INSTRUCTION_1_LINE,0,0,0,0)
 #define W25Q_WRITE_ENABLE()      QSPI_SendCmd(W25X_WriteEnable,QSPI_INSTRUCTION_4_LINES,0,0,0,0)
-#define W25Q_ENTER_4BYTEADDR()   QSPI_SendCmd(W25X_Enable4ByteAddr,QSPI_INSTRUCTION_4_LINES,0,0,0,0)
-
+#define W25QXX_ENTER_4BYTEADDR() QSPI_SendCmd(W25X_Enable4ByteAddr,QSPI_INSTRUCTION_4_LINES,0,0,0,0)
 
 
 /***************************************************************************************
-  * @brief   
+  * @brief   发送指令
   * @input   
   * @return  
 ***************************************************************************************/
@@ -65,13 +64,12 @@ uint8_t QSPI_Transmit(uint8_t* buf,uint32_t len)
 }
 
 
-
 /***************************************************************************************
   * @brief   W25QXX进入QSPI模式
   * @input
   * @return
 ***************************************************************************************/
-void W25QXX_EnableQE(void)
+void W25QXX_SetQE(void)
 {
     uint8_t value = 0x02;
     /* 1.写使能 */
@@ -106,7 +104,7 @@ uint16_t W25QXX_ReadId(void)
   * @input   
   * @return  
 ***************************************************************************************/
-void W25QXX_SetParam(void)
+void W25QXX_SetReadParam(void)
 {
     uint8_t para = 3 << 4;
     
@@ -117,33 +115,17 @@ void W25QXX_SetParam(void)
 }
 
 
-
 /***************************************************************************************
-  * @brief   
+  * @brief  等待空闲
   * @input   
   * @return  
 ***************************************************************************************/
 void W25QXX_WaitIdle(void)   
 {
     uint8_t sta_reg1 = 0x00;
-    QSPI_CommandTypeDef s_command = {0};
-    
-    s_command.Instruction       = W25X_ReadStatusReg1;
-    s_command.InstructionMode   = QSPI_INSTRUCTION_4_LINES;
-    s_command.DataMode          = QSPI_DATA_4_LINES;
-    s_command.NbData            = 1;
-    
     do{
-        /* 发送命令 */
-        if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
-        {
-            Error_Handler();
-        }
-        /* 接受数据 */
-        if(HAL_QSPI_Receive(&hqspi, &sta_reg1, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
-        {
-            Error_Handler();
-        }
+        QSPI_SendCmd(W25X_ReadStatusReg1,QSPI_INSTRUCTION_4_LINES,0,0,0,QSPI_DATA_4_LINES);
+        QSPI_Receive(&sta_reg1,1);
     }while( (sta_reg1&0x01) == 0x01 );
 }
 
@@ -307,21 +289,21 @@ void W25QXX_Write(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite)
 
 
 uint16_t W25_ID;
-uint8_t TEXT_Buffer[] = {"1234567890"};
+uint8_t TEXT_Buffer[] = {"abcdefghijklmnopqrstuvwxyz"};
 uint8_t W25_RxBuf[50] = {0};
 #define SIZE sizeof(TEXT_Buffer)
 /***************************************************************************************
-  * @brief
+  * @brief   W25Q256初始化
   * @input
   * @return
 ***************************************************************************************/
 void W25QXX_Init(void)
 {
-    W25QXX_EnableQE();
+    W25QXX_SetQE();
     delay_ms(20);
-    W25Q_ENTER_QSPI();
-    W25Q_ENTER_4BYTEADDR();
-    W25QXX_SetParam();//设置读参数
+    W25QXX_ENTER_QSPI();
+    W25QXX_ENTER_4BYTEADDR();
+    W25QXX_SetReadParam();//设置读参数
     
     W25QXX_Write(TEXT_Buffer,W25Q256_SIZE - 100, SIZE);
     W25_ID = W25QXX_ReadId();

@@ -77,15 +77,13 @@ Section Cross References
     w25q256_driver.o(i.QSPI_Transmit) refers to stm32f7xx_hal_qspi.o(i.HAL_QSPI_Transmit) for HAL_QSPI_Transmit
     w25q256_driver.o(i.QSPI_Transmit) refers to main.o(i.Error_Handler) for Error_Handler
     w25q256_driver.o(i.QSPI_Transmit) refers to main.o(.bss) for hqspi
-    w25q256_driver.o(i.W25QXX_EnableQE) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
-    w25q256_driver.o(i.W25QXX_EnableQE) refers to w25q256_driver.o(i.QSPI_Transmit) for QSPI_Transmit
     w25q256_driver.o(i.W25QXX_EraseSector) refers to memseta.o(.text) for __aeabi_memclr4
     w25q256_driver.o(i.W25QXX_EraseSector) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
     w25q256_driver.o(i.W25QXX_EraseSector) refers to w25q256_driver.o(i.W25QXX_WaitIdle) for W25QXX_WaitIdle
-    w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.W25QXX_EnableQE) for W25QXX_EnableQE
+    w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.W25QXX_SetQE) for W25QXX_SetQE
     w25q256_driver.o(i.W25QXX_Init) refers to utility.o(i.delay_ms) for delay_ms
     w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
-    w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.W25QXX_SetParam) for W25QXX_SetParam
+    w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.W25QXX_SetReadParam) for W25QXX_SetReadParam
     w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.W25QXX_Write) for W25QXX_Write
     w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.W25QXX_ReadId) for W25QXX_ReadId
     w25q256_driver.o(i.W25QXX_Init) refers to w25q256_driver.o(i.W25QXX_Read) for W25QXX_Read
@@ -99,13 +97,12 @@ Section Cross References
     w25q256_driver.o(i.W25QXX_ReadId) refers to memseta.o(.text) for __aeabi_memclr4
     w25q256_driver.o(i.W25QXX_ReadId) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
     w25q256_driver.o(i.W25QXX_ReadId) refers to w25q256_driver.o(i.QSPI_Receive) for QSPI_Receive
-    w25q256_driver.o(i.W25QXX_SetParam) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
-    w25q256_driver.o(i.W25QXX_SetParam) refers to w25q256_driver.o(i.QSPI_Transmit) for QSPI_Transmit
-    w25q256_driver.o(i.W25QXX_WaitIdle) refers to memseta.o(.text) for __aeabi_memclr4
-    w25q256_driver.o(i.W25QXX_WaitIdle) refers to stm32f7xx_hal_qspi.o(i.HAL_QSPI_Command) for HAL_QSPI_Command
-    w25q256_driver.o(i.W25QXX_WaitIdle) refers to main.o(i.Error_Handler) for Error_Handler
-    w25q256_driver.o(i.W25QXX_WaitIdle) refers to stm32f7xx_hal_qspi.o(i.HAL_QSPI_Receive) for HAL_QSPI_Receive
-    w25q256_driver.o(i.W25QXX_WaitIdle) refers to main.o(.bss) for hqspi
+    w25q256_driver.o(i.W25QXX_SetQE) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
+    w25q256_driver.o(i.W25QXX_SetQE) refers to w25q256_driver.o(i.QSPI_Transmit) for QSPI_Transmit
+    w25q256_driver.o(i.W25QXX_SetReadParam) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
+    w25q256_driver.o(i.W25QXX_SetReadParam) refers to w25q256_driver.o(i.QSPI_Transmit) for QSPI_Transmit
+    w25q256_driver.o(i.W25QXX_WaitIdle) refers to w25q256_driver.o(i.QSPI_SendCmd) for QSPI_SendCmd
+    w25q256_driver.o(i.W25QXX_WaitIdle) refers to w25q256_driver.o(i.QSPI_Receive) for QSPI_Receive
     w25q256_driver.o(i.W25QXX_Write) refers to w25q256_driver.o(i.W25QXX_Read) for W25QXX_Read
     w25q256_driver.o(i.W25QXX_Write) refers to w25q256_driver.o(i.W25QXX_EraseSector) for W25QXX_EraseSector
     w25q256_driver.o(i.W25QXX_Write) refers to w25q256_driver.o(i.W25QXX_Write_NoCheck) for W25QXX_Write_NoCheck
@@ -10475,409 +10472,409 @@ Image Symbol Table
     i.UART_WaitOnFlagUntilTimeout            0x002147b8   Section        0  stm32f7xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
     i.USART1_IRQHandler                      0x00214820   Section        0  stm32f7xx_it.o(i.USART1_IRQHandler)
     i.UsageFault_Handler                     0x00214830   Section        0  stm32f7xx_it.o(i.UsageFault_Handler)
-    i.W25QXX_EnableQE                        0x00214834   Section        0  w25q256_driver.o(i.W25QXX_EnableQE)
-    i.W25QXX_EraseSector                     0x0021486e   Section        0  w25q256_driver.o(i.W25QXX_EraseSector)
-    i.W25QXX_Init                            0x002148b0   Section        0  w25q256_driver.o(i.W25QXX_Init)
-    i.W25QXX_Read                            0x00214918   Section        0  w25q256_driver.o(i.W25QXX_Read)
-    i.W25QXX_ReadId                          0x00214974   Section        0  w25q256_driver.o(i.W25QXX_ReadId)
-    i.W25QXX_SetParam                        0x002149b0   Section        0  w25q256_driver.o(i.W25QXX_SetParam)
-    i.W25QXX_WaitIdle                        0x002149d4   Section        0  w25q256_driver.o(i.W25QXX_WaitIdle)
-    i.W25QXX_Write                           0x00214a30   Section        0  w25q256_driver.o(i.W25QXX_Write)
-    i.W25QXX_Write_NoCheck                   0x00214ae8   Section        0  w25q256_driver.o(i.W25QXX_Write_NoCheck)
-    i.W25QXX_Write_Page                      0x00214b2e   Section        0  w25q256_driver.o(i.W25QXX_Write_Page)
-    i._Color2IndexBulk_M1555I_DMA2D          0x00214b6e   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M1555I_DMA2D)
-    _Color2IndexBulk_M1555I_DMA2D            0x00214b6f   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M1555I_DMA2D)
-    i._Color2IndexBulk_M4444I_DMA2D          0x00214b8a   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M4444I_DMA2D)
-    _Color2IndexBulk_M4444I_DMA2D            0x00214b8b   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M4444I_DMA2D)
-    i._Color2IndexBulk_M565_DMA2D            0x00214ba6   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M565_DMA2D)
-    _Color2IndexBulk_M565_DMA2D              0x00214ba7   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M565_DMA2D)
-    i._Color2IndexBulk_M8888I_DMA2D          0x00214bc2   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M8888I_DMA2D)
-    _Color2IndexBulk_M8888I_DMA2D            0x00214bc3   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M8888I_DMA2D)
-    i._Color2IndexBulk_M888_DMA2D            0x00214bde   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M888_DMA2D)
-    _Color2IndexBulk_M888_DMA2D              0x00214bdf   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M888_DMA2D)
-    i._DMA_Color2IndexBulk                   0x00214bfa   Section        0  stemwin_wrapper.o(i._DMA_Color2IndexBulk)
-    _DMA_Color2IndexBulk                     0x00214bfb   Thumb Code    32  stemwin_wrapper.o(i._DMA_Color2IndexBulk)
-    i._DMA_ConvertColor                      0x00214c1c   Section        0  stemwin_wrapper.o(i._DMA_ConvertColor)
-    _DMA_ConvertColor                        0x00214c1d   Thumb Code    82  stemwin_wrapper.o(i._DMA_ConvertColor)
-    i._DMA_DrawAlphaBitmap                   0x00214c78   Section        0  stemwin_wrapper.o(i._DMA_DrawAlphaBitmap)
-    _DMA_DrawAlphaBitmap                     0x00214c79   Thumb Code   100  stemwin_wrapper.o(i._DMA_DrawAlphaBitmap)
-    i._DMA_ExecOperation                     0x00214ce8   Section        0  stemwin_wrapper.o(i._DMA_ExecOperation)
-    _DMA_ExecOperation                       0x00214ce9   Thumb Code    22  stemwin_wrapper.o(i._DMA_ExecOperation)
-    i._DMA_Index2ColorBulk                   0x00214d04   Section        0  stemwin_wrapper.o(i._DMA_Index2ColorBulk)
-    _DMA_Index2ColorBulk                     0x00214d05   Thumb Code    32  stemwin_wrapper.o(i._DMA_Index2ColorBulk)
-    i._Index2ColorBulk_M1555I_DMA2D          0x00214d24   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M1555I_DMA2D)
-    _Index2ColorBulk_M1555I_DMA2D            0x00214d25   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M1555I_DMA2D)
-    i._Index2ColorBulk_M4444I_DMA2D          0x00214d40   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M4444I_DMA2D)
-    _Index2ColorBulk_M4444I_DMA2D            0x00214d41   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M4444I_DMA2D)
-    i._Index2ColorBulk_M565_DMA2D            0x00214d5c   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M565_DMA2D)
-    _Index2ColorBulk_M565_DMA2D              0x00214d5d   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M565_DMA2D)
-    i._Index2ColorBulk_M8888I_DMA2D          0x00214d78   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M8888I_DMA2D)
-    _Index2ColorBulk_M8888I_DMA2D            0x00214d79   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M8888I_DMA2D)
-    i._Index2ColorBulk_M888_DMA2D            0x00214d94   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M888_DMA2D)
-    _Index2ColorBulk_M888_DMA2D              0x00214d95   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M888_DMA2D)
-    i._LCD_DrawBitmapAlpha                   0x00214db0   Section        0  stemwin_wrapper.o(i._LCD_DrawBitmapAlpha)
-    _LCD_DrawBitmapAlpha                     0x00214db1   Thumb Code   150  stemwin_wrapper.o(i._LCD_DrawBitmapAlpha)
-    i._LCD_DrawMemdevAlpha                   0x00214e4c   Section        0  stemwin_wrapper.o(i._LCD_DrawMemdevAlpha)
-    _LCD_DrawMemdevAlpha                     0x00214e4d   Thumb Code    64  stemwin_wrapper.o(i._LCD_DrawMemdevAlpha)
-    i.__0printf$3                            0x00214e8c   Section        0  printf3.o(i.__0printf$3)
-    i.__NVIC_GetPriorityGrouping             0x00214eac   Section        0  stm32f7xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    __NVIC_GetPriorityGrouping               0x00214ead   Thumb Code    10  stm32f7xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
-    i.__NVIC_SetPriority                     0x00214ebc   Section        0  stm32f7xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x00214ebd   Thumb Code    32  stm32f7xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__scatterload_copy                     0x00214ee4   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00214ef2   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00214ef4   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x00214f04   Section        0  printf3.o(i._printf_core)
-    _printf_core                             0x00214f05   Thumb Code   436  printf3.o(i._printf_core)
-    i.delay_ms                               0x002150bc   Section        0  utility.o(i.delay_ms)
-    i.delay_us                               0x002150ce   Section        0  utility.o(i.delay_us)
-    i.fputc                                  0x00215110   Section        0  utility.o(i.fputc)
-    i.inHandlerMode                          0x0021512c   Section        0  cmsis_os.o(i.inHandlerMode)
-    inHandlerMode                            0x0021512d   Thumb Code    16  cmsis_os.o(i.inHandlerMode)
-    i.main                                   0x0021513c   Section        0  main.o(i.main)
-    i.makeFreeRtosPriority                   0x0021530c   Section        0  cmsis_os.o(i.makeFreeRtosPriority)
-    makeFreeRtosPriority                     0x0021530d   Thumb Code    14  cmsis_os.o(i.makeFreeRtosPriority)
-    i.osDelay                                0x0021531a   Section        0  cmsis_os.o(i.osDelay)
-    i.osKernelRunning                        0x00215332   Section        0  cmsis_os.o(i.osKernelRunning)
-    i.osKernelStart                          0x00215344   Section        0  cmsis_os.o(i.osKernelStart)
-    i.osKernelSysTick                        0x0021534e   Section        0  cmsis_os.o(i.osKernelSysTick)
-    i.osMessageCreate                        0x00215362   Section        0  cmsis_os.o(i.osMessageCreate)
-    i.osMessageGet                           0x00215374   Section        0  cmsis_os.o(i.osMessageGet)
-    i.osMessagePut                           0x00215410   Section        0  cmsis_os.o(i.osMessagePut)
-    i.osMutexCreate                          0x00215470   Section        0  cmsis_os.o(i.osMutexCreate)
-    i.osMutexRelease                         0x0021547c   Section        0  cmsis_os.o(i.osMutexRelease)
-    i.osMutexWait                            0x002154cc   Section        0  cmsis_os.o(i.osMutexWait)
-    i.osSemaphoreCreate                      0x00215534   Section        0  cmsis_os.o(i.osSemaphoreCreate)
-    i.osSystickHandler                       0x00215566   Section        0  cmsis_os.o(i.osSystickHandler)
-    i.osThreadCreate                         0x00215576   Section        0  cmsis_os.o(i.osThreadCreate)
-    i.osThreadGetId                          0x002155a6   Section        0  cmsis_os.o(i.osThreadGetId)
-    i.prvAddCurrentTaskToDelayedList         0x002155b0   Section        0  tasks.o(i.prvAddCurrentTaskToDelayedList)
-    prvAddCurrentTaskToDelayedList           0x002155b1   Thumb Code   124  tasks.o(i.prvAddCurrentTaskToDelayedList)
-    i.prvAddNewTaskToReadyList               0x00215648   Section        0  tasks.o(i.prvAddNewTaskToReadyList)
-    prvAddNewTaskToReadyList                 0x00215649   Thumb Code   150  tasks.o(i.prvAddNewTaskToReadyList)
-    i.prvCheckTasksWaitingTermination        0x002156fc   Section        0  tasks.o(i.prvCheckTasksWaitingTermination)
-    prvCheckTasksWaitingTermination          0x002156fd   Thumb Code    60  tasks.o(i.prvCheckTasksWaitingTermination)
-    i.prvCopyDataFromQueue                   0x00215744   Section        0  queue.o(i.prvCopyDataFromQueue)
-    prvCopyDataFromQueue                     0x00215745   Thumb Code    42  queue.o(i.prvCopyDataFromQueue)
-    i.prvCopyDataToQueue                     0x0021576e   Section        0  queue.o(i.prvCopyDataToQueue)
-    prvCopyDataToQueue                       0x0021576f   Thumb Code   124  queue.o(i.prvCopyDataToQueue)
-    i.prvDeleteTCB                           0x002157ea   Section        0  tasks.o(i.prvDeleteTCB)
-    prvDeleteTCB                             0x002157eb   Thumb Code    18  tasks.o(i.prvDeleteTCB)
-    i.prvGetDisinheritPriorityAfterTimeout   0x002157fc   Section        0  queue.o(i.prvGetDisinheritPriorityAfterTimeout)
-    prvGetDisinheritPriorityAfterTimeout     0x002157fd   Thumb Code    20  queue.o(i.prvGetDisinheritPriorityAfterTimeout)
-    i.prvHeapInit                            0x00215810   Section        0  heap_4.o(i.prvHeapInit)
-    prvHeapInit                              0x00215811   Thumb Code    98  heap_4.o(i.prvHeapInit)
-    i.prvIdleTask                            0x0021588c   Section        0  tasks.o(i.prvIdleTask)
-    prvIdleTask                              0x0021588d   Thumb Code    32  tasks.o(i.prvIdleTask)
-    i.prvInitialiseMutex                     0x002158b4   Section        0  queue.o(i.prvInitialiseMutex)
-    prvInitialiseMutex                       0x002158b5   Thumb Code    28  queue.o(i.prvInitialiseMutex)
-    i.prvInitialiseNewQueue                  0x002158d0   Section        0  queue.o(i.prvInitialiseNewQueue)
-    prvInitialiseNewQueue                    0x002158d1   Thumb Code    38  queue.o(i.prvInitialiseNewQueue)
-    i.prvInitialiseNewTask                   0x002158f6   Section        0  tasks.o(i.prvInitialiseNewTask)
-    prvInitialiseNewTask                     0x002158f7   Thumb Code   174  tasks.o(i.prvInitialiseNewTask)
-    i.prvInitialiseTaskLists                 0x002159a4   Section        0  tasks.o(i.prvInitialiseTaskLists)
-    prvInitialiseTaskLists                   0x002159a5   Thumb Code    70  tasks.o(i.prvInitialiseTaskLists)
-    i.prvInsertBlockIntoFreeList             0x00215a0c   Section        0  heap_4.o(i.prvInsertBlockIntoFreeList)
-    prvInsertBlockIntoFreeList               0x00215a0d   Thumb Code    96  heap_4.o(i.prvInsertBlockIntoFreeList)
-    i.prvIsQueueEmpty                        0x00215a74   Section        0  queue.o(i.prvIsQueueEmpty)
-    prvIsQueueEmpty                          0x00215a75   Thumb Code    26  queue.o(i.prvIsQueueEmpty)
-    i.prvIsQueueFull                         0x00215a8e   Section        0  queue.o(i.prvIsQueueFull)
-    prvIsQueueFull                           0x00215a8f   Thumb Code    30  queue.o(i.prvIsQueueFull)
-    i.prvResetNextTaskUnblockTime            0x00215aac   Section        0  tasks.o(i.prvResetNextTaskUnblockTime)
-    prvResetNextTaskUnblockTime              0x00215aad   Thumb Code    42  tasks.o(i.prvResetNextTaskUnblockTime)
-    i.prvTaskExitError                       0x00215ae0   Section        0  port.o(i.prvTaskExitError)
-    prvTaskExitError                         0x00215ae1   Thumb Code    68  port.o(i.prvTaskExitError)
-    i.prvUnlockQueue                         0x00215b28   Section        0  queue.o(i.prvUnlockQueue)
-    prvUnlockQueue                           0x00215b29   Thumb Code   126  queue.o(i.prvUnlockQueue)
-    i.pvPortMalloc                           0x00215ba8   Section        0  heap_4.o(i.pvPortMalloc)
-    i.pvTaskIncrementMutexHeldCount          0x00215cf0   Section        0  tasks.o(i.pvTaskIncrementMutexHeldCount)
-    i.pxPortInitialiseStack                  0x00215d10   Section        0  port.o(i.pxPortInitialiseStack)
-    i.uxListRemove                           0x00215d3c   Section        0  list.o(i.uxListRemove)
-    i.vListInitialise                        0x00215d64   Section        0  list.o(i.vListInitialise)
-    i.vListInitialiseItem                    0x00215d7e   Section        0  list.o(i.vListInitialiseItem)
-    i.vListInsert                            0x00215d84   Section        0  list.o(i.vListInsert)
-    i.vListInsertEnd                         0x00215db8   Section        0  list.o(i.vListInsertEnd)
-    i.vPortEnterCritical                     0x00215dd0   Section        0  port.o(i.vPortEnterCritical)
-    i.vPortExitCritical                      0x00215e2c   Section        0  port.o(i.vPortExitCritical)
-    i.vPortFree                              0x00215e6c   Section        0  heap_4.o(i.vPortFree)
-    i.vPortSetupTimerInterrupt               0x00215f08   Section        0  port.o(i.vPortSetupTimerInterrupt)
-    i.vPortValidateInterruptPriority         0x00215f30   Section        0  port.o(i.vPortValidateInterruptPriority)
-    i.vTaskDelay                             0x00215fb0   Section        0  tasks.o(i.vTaskDelay)
-    i.vTaskInternalSetTimeOutState           0x00216010   Section        0  tasks.o(i.vTaskInternalSetTimeOutState)
-    i.vTaskMissedYield                       0x00216028   Section        0  tasks.o(i.vTaskMissedYield)
-    i.vTaskPlaceOnEventList                  0x00216034   Section        0  tasks.o(i.vTaskPlaceOnEventList)
-    i.vTaskPriorityDisinheritAfterTimeout    0x00216070   Section        0  tasks.o(i.vTaskPriorityDisinheritAfterTimeout)
-    i.vTaskStartScheduler                    0x0021616c   Section        0  tasks.o(i.vTaskStartScheduler)
-    i.vTaskSuspendAll                        0x002161fc   Section        0  tasks.o(i.vTaskSuspendAll)
-    i.vTaskSwitchContext                     0x0021620c   Section        0  tasks.o(i.vTaskSwitchContext)
-    i.xPortStartScheduler                    0x0021629c   Section        0  port.o(i.xPortStartScheduler)
-    i.xPortSysTickHandler                    0x002163b0   Section        0  port.o(i.xPortSysTickHandler)
-    i.xQueueCreateCountingSemaphore          0x002163e8   Section        0  queue.o(i.xQueueCreateCountingSemaphore)
-    i.xQueueCreateMutex                      0x0021644c   Section        0  queue.o(i.xQueueCreateMutex)
-    i.xQueueGenericCreate                    0x0021646e   Section        0  queue.o(i.xQueueGenericCreate)
-    i.xQueueGenericReset                     0x002164cc   Section        0  queue.o(i.xQueueGenericReset)
-    i.xQueueGenericSend                      0x00216568   Section        0  queue.o(i.xQueueGenericSend)
-    i.xQueueGenericSendFromISR               0x00216720   Section        0  queue.o(i.xQueueGenericSendFromISR)
-    i.xQueueGiveFromISR                      0x00216828   Section        0  queue.o(i.xQueueGiveFromISR)
-    i.xQueueReceive                          0x00216918   Section        0  queue.o(i.xQueueReceive)
-    i.xQueueReceiveFromISR                   0x00216a8c   Section        0  queue.o(i.xQueueReceiveFromISR)
-    i.xQueueSemaphoreTake                    0x00216b64   Section        0  queue.o(i.xQueueSemaphoreTake)
-    i.xTaskCheckForTimeOut                   0x00216d2c   Section        0  tasks.o(i.xTaskCheckForTimeOut)
-    i.xTaskCreate                            0x00216dc0   Section        0  tasks.o(i.xTaskCreate)
-    i.xTaskGetCurrentTaskHandle              0x00216e20   Section        0  tasks.o(i.xTaskGetCurrentTaskHandle)
-    i.xTaskGetSchedulerState                 0x00216e2c   Section        0  tasks.o(i.xTaskGetSchedulerState)
-    i.xTaskGetTickCount                      0x00216e4c   Section        0  tasks.o(i.xTaskGetTickCount)
-    i.xTaskGetTickCountFromISR               0x00216e58   Section        0  tasks.o(i.xTaskGetTickCountFromISR)
-    i.xTaskIncrementTick                     0x00216e6c   Section        0  tasks.o(i.xTaskIncrementTick)
-    i.xTaskPriorityDisinherit                0x00216fb8   Section        0  tasks.o(i.xTaskPriorityDisinherit)
-    i.xTaskPriorityInherit                   0x00217088   Section        0  tasks.o(i.xTaskPriorityInherit)
-    i.xTaskRemoveFromEventList               0x00217150   Section        0  tasks.o(i.xTaskRemoveFromEventList)
-    i.xTaskResumeAll                         0x002171ec   Section        0  tasks.o(i.xTaskResumeAll)
-    .constdata                               0x002172f4   Section      194  gt9147_iic_driver.o(.constdata)
-    .constdata                               0x002173b8   Section       60  main.o(.constdata)
-    .constdata                               0x002173f4   Section       28  sd_diskio.o(.constdata)
-    .constdata                               0x00217410   Section       24  system_stm32f7xx.o(.constdata)
-    .constdata                               0x00217428   Section        8  stm32f7xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x00217428   Data           8  stm32f7xx_hal_dma.o(.constdata)
-    .conststring                             0x00217430   Section       39  main.o(.conststring)
-    [Anonymous Symbol]                       0x00217458   Section        0  GUICC_1616I.o(.rodata)
-    [Anonymous Symbol]                       0x00217470   Section        0  GUICC_822216.o(.rodata)
-    [Anonymous Symbol]                       0x00217488   Section        0  GUICC_84444.o(.rodata)
-    [Anonymous Symbol]                       0x002174a0   Section        0  GUICC_8666.o(.rodata)
-    [Anonymous Symbol]                       0x002174b8   Section        0  GUICC_8666_1.o(.rodata)
-    [Anonymous Symbol]                       0x002174d0   Section        0  GUICC_88666I.o(.rodata)
-    [Anonymous Symbol]                       0x002174e8   Section        0  GUICC_M1555I.o(.rodata)
-    [Anonymous Symbol]                       0x00217500   Section        0  GUICC_M4444I.o(.rodata)
-    [Anonymous Symbol]                       0x00217518   Section        0  GUICC_M8888I.o(.rodata)
-    [Anonymous Symbol]                       0x00217530   Section        0  GUICC_565.o(.rodata)
-    [Anonymous Symbol]                       0x00217548   Section        0  GUICC_888.o(.rodata)
-    [Anonymous Symbol]                       0x00217560   Section        0  GUICC_8888.o(.rodata)
-    [Anonymous Symbol]                       0x00217578   Section        0  GUICC_M565.o(.rodata)
-    [Anonymous Symbol]                       0x00217590   Section        0  GUICC_M888.o(.rodata)
-    [Anonymous Symbol]                       0x002175a8   Section        0  GUICC_M8888.o(.rodata)
-    [Anonymous Symbol]                       0x002175c0   Section        0  GUI_Common.o(.rodata)
-    _acHex                                   0x002175e8   Data          16  GUI_Common.o(.rodata)
-    [Anonymous Symbol]                       0x002175f8   Section        0  GUI_Core.o(.rodata)
-    _HL_APIList                              0x002175f8   Data           8  GUI_Core.o(.rodata)
-    [Anonymous Symbol]                       0x00217610   Section        0  LCD.o(.rodata)
-    _SetColorAPI                             0x00217610   Data          12  LCD.o(.rodata)
-    [Anonymous Symbol]                       0x0021761c   Section        0  GUIDRV_Lin_16.o(.rodata)
-    [Anonymous Symbol]                       0x00217650   Section        0  GUICC_16.o(.rodata)
-    [Anonymous Symbol]                       0x00217668   Section        0  GUI_UC_EncodeNone.o(.rodata)
-    [Anonymous Symbol]                       0x00217678   Section        0  GUI__DivTbl.o(.rodata)
-    [Anonymous Symbol]                       0x002179e8   Section        0  LCD_Mirror.o(.rodata)
-    [Anonymous Symbol]                       0x00217ae8   Section        0  F6x8.o(.rodata)
-    GUI_F6x8_Mono                            0x00217b30   Data          20  F6x8.o(.rodata)
-    GUI_F6x8_TI8859_1                        0x00217b44   Data           8  F6x8.o(.rodata)
-    GUI_F6x8_TL8859_1                        0x00217b4c   Data         448  F6x8.o(.rodata)
-    GUI_acFont6x8                            0x00217d0c   Data        1304  F6x8.o(.rodata)
-    [Anonymous Symbol]                       0x00218224   Section        0  GUIDEV_16.o(.rodata)
-    _aID                                     0x00218258   Data          64  GUIDEV_16.o(.rodata)
-    [Anonymous Symbol]                       0x00218298   Section        0  GUIDEV_UsageBM.o(.rodata)
-    API                                      0x00218298   Data          24  GUIDEV_UsageBM.o(.rodata)
-    [Anonymous Symbol]                       0x002182b0   Section        0  GUICC_0.o(.rodata)
-    [Anonymous Symbol]                       0x002182c8   Section        0  GUIDEV_32.o(.rodata)
-    aID                                      0x002182fc   Data          64  GUIDEV_32.o(.rodata)
+    i.W25QXX_EraseSector                     0x00214834   Section        0  w25q256_driver.o(i.W25QXX_EraseSector)
+    i.W25QXX_Init                            0x00214878   Section        0  w25q256_driver.o(i.W25QXX_Init)
+    i.W25QXX_Read                            0x002148e0   Section        0  w25q256_driver.o(i.W25QXX_Read)
+    i.W25QXX_ReadId                          0x0021493c   Section        0  w25q256_driver.o(i.W25QXX_ReadId)
+    i.W25QXX_SetQE                           0x00214978   Section        0  w25q256_driver.o(i.W25QXX_SetQE)
+    i.W25QXX_SetReadParam                    0x002149b2   Section        0  w25q256_driver.o(i.W25QXX_SetReadParam)
+    i.W25QXX_WaitIdle                        0x002149d6   Section        0  w25q256_driver.o(i.W25QXX_WaitIdle)
+    i.W25QXX_Write                           0x00214a0c   Section        0  w25q256_driver.o(i.W25QXX_Write)
+    i.W25QXX_Write_NoCheck                   0x00214ac4   Section        0  w25q256_driver.o(i.W25QXX_Write_NoCheck)
+    i.W25QXX_Write_Page                      0x00214b0a   Section        0  w25q256_driver.o(i.W25QXX_Write_Page)
+    i._Color2IndexBulk_M1555I_DMA2D          0x00214b4a   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M1555I_DMA2D)
+    _Color2IndexBulk_M1555I_DMA2D            0x00214b4b   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M1555I_DMA2D)
+    i._Color2IndexBulk_M4444I_DMA2D          0x00214b66   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M4444I_DMA2D)
+    _Color2IndexBulk_M4444I_DMA2D            0x00214b67   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M4444I_DMA2D)
+    i._Color2IndexBulk_M565_DMA2D            0x00214b82   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M565_DMA2D)
+    _Color2IndexBulk_M565_DMA2D              0x00214b83   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M565_DMA2D)
+    i._Color2IndexBulk_M8888I_DMA2D          0x00214b9e   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M8888I_DMA2D)
+    _Color2IndexBulk_M8888I_DMA2D            0x00214b9f   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M8888I_DMA2D)
+    i._Color2IndexBulk_M888_DMA2D            0x00214bba   Section        0  stemwin_wrapper.o(i._Color2IndexBulk_M888_DMA2D)
+    _Color2IndexBulk_M888_DMA2D              0x00214bbb   Thumb Code    28  stemwin_wrapper.o(i._Color2IndexBulk_M888_DMA2D)
+    i._DMA_Color2IndexBulk                   0x00214bd6   Section        0  stemwin_wrapper.o(i._DMA_Color2IndexBulk)
+    _DMA_Color2IndexBulk                     0x00214bd7   Thumb Code    32  stemwin_wrapper.o(i._DMA_Color2IndexBulk)
+    i._DMA_ConvertColor                      0x00214bf8   Section        0  stemwin_wrapper.o(i._DMA_ConvertColor)
+    _DMA_ConvertColor                        0x00214bf9   Thumb Code    82  stemwin_wrapper.o(i._DMA_ConvertColor)
+    i._DMA_DrawAlphaBitmap                   0x00214c54   Section        0  stemwin_wrapper.o(i._DMA_DrawAlphaBitmap)
+    _DMA_DrawAlphaBitmap                     0x00214c55   Thumb Code   100  stemwin_wrapper.o(i._DMA_DrawAlphaBitmap)
+    i._DMA_ExecOperation                     0x00214cc4   Section        0  stemwin_wrapper.o(i._DMA_ExecOperation)
+    _DMA_ExecOperation                       0x00214cc5   Thumb Code    22  stemwin_wrapper.o(i._DMA_ExecOperation)
+    i._DMA_Index2ColorBulk                   0x00214ce0   Section        0  stemwin_wrapper.o(i._DMA_Index2ColorBulk)
+    _DMA_Index2ColorBulk                     0x00214ce1   Thumb Code    32  stemwin_wrapper.o(i._DMA_Index2ColorBulk)
+    i._Index2ColorBulk_M1555I_DMA2D          0x00214d00   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M1555I_DMA2D)
+    _Index2ColorBulk_M1555I_DMA2D            0x00214d01   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M1555I_DMA2D)
+    i._Index2ColorBulk_M4444I_DMA2D          0x00214d1c   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M4444I_DMA2D)
+    _Index2ColorBulk_M4444I_DMA2D            0x00214d1d   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M4444I_DMA2D)
+    i._Index2ColorBulk_M565_DMA2D            0x00214d38   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M565_DMA2D)
+    _Index2ColorBulk_M565_DMA2D              0x00214d39   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M565_DMA2D)
+    i._Index2ColorBulk_M8888I_DMA2D          0x00214d54   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M8888I_DMA2D)
+    _Index2ColorBulk_M8888I_DMA2D            0x00214d55   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M8888I_DMA2D)
+    i._Index2ColorBulk_M888_DMA2D            0x00214d70   Section        0  stemwin_wrapper.o(i._Index2ColorBulk_M888_DMA2D)
+    _Index2ColorBulk_M888_DMA2D              0x00214d71   Thumb Code    28  stemwin_wrapper.o(i._Index2ColorBulk_M888_DMA2D)
+    i._LCD_DrawBitmapAlpha                   0x00214d8c   Section        0  stemwin_wrapper.o(i._LCD_DrawBitmapAlpha)
+    _LCD_DrawBitmapAlpha                     0x00214d8d   Thumb Code   150  stemwin_wrapper.o(i._LCD_DrawBitmapAlpha)
+    i._LCD_DrawMemdevAlpha                   0x00214e28   Section        0  stemwin_wrapper.o(i._LCD_DrawMemdevAlpha)
+    _LCD_DrawMemdevAlpha                     0x00214e29   Thumb Code    64  stemwin_wrapper.o(i._LCD_DrawMemdevAlpha)
+    i.__0printf$3                            0x00214e68   Section        0  printf3.o(i.__0printf$3)
+    i.__NVIC_GetPriorityGrouping             0x00214e88   Section        0  stm32f7xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    __NVIC_GetPriorityGrouping               0x00214e89   Thumb Code    10  stm32f7xx_hal_cortex.o(i.__NVIC_GetPriorityGrouping)
+    i.__NVIC_SetPriority                     0x00214e98   Section        0  stm32f7xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x00214e99   Thumb Code    32  stm32f7xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__scatterload_copy                     0x00214ec0   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00214ece   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00214ed0   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x00214ee0   Section        0  printf3.o(i._printf_core)
+    _printf_core                             0x00214ee1   Thumb Code   436  printf3.o(i._printf_core)
+    i.delay_ms                               0x00215098   Section        0  utility.o(i.delay_ms)
+    i.delay_us                               0x002150aa   Section        0  utility.o(i.delay_us)
+    i.fputc                                  0x002150ec   Section        0  utility.o(i.fputc)
+    i.inHandlerMode                          0x00215108   Section        0  cmsis_os.o(i.inHandlerMode)
+    inHandlerMode                            0x00215109   Thumb Code    16  cmsis_os.o(i.inHandlerMode)
+    i.main                                   0x00215118   Section        0  main.o(i.main)
+    i.makeFreeRtosPriority                   0x002152e8   Section        0  cmsis_os.o(i.makeFreeRtosPriority)
+    makeFreeRtosPriority                     0x002152e9   Thumb Code    14  cmsis_os.o(i.makeFreeRtosPriority)
+    i.osDelay                                0x002152f6   Section        0  cmsis_os.o(i.osDelay)
+    i.osKernelRunning                        0x0021530e   Section        0  cmsis_os.o(i.osKernelRunning)
+    i.osKernelStart                          0x00215320   Section        0  cmsis_os.o(i.osKernelStart)
+    i.osKernelSysTick                        0x0021532a   Section        0  cmsis_os.o(i.osKernelSysTick)
+    i.osMessageCreate                        0x0021533e   Section        0  cmsis_os.o(i.osMessageCreate)
+    i.osMessageGet                           0x00215350   Section        0  cmsis_os.o(i.osMessageGet)
+    i.osMessagePut                           0x002153ec   Section        0  cmsis_os.o(i.osMessagePut)
+    i.osMutexCreate                          0x0021544c   Section        0  cmsis_os.o(i.osMutexCreate)
+    i.osMutexRelease                         0x00215458   Section        0  cmsis_os.o(i.osMutexRelease)
+    i.osMutexWait                            0x002154a8   Section        0  cmsis_os.o(i.osMutexWait)
+    i.osSemaphoreCreate                      0x00215510   Section        0  cmsis_os.o(i.osSemaphoreCreate)
+    i.osSystickHandler                       0x00215542   Section        0  cmsis_os.o(i.osSystickHandler)
+    i.osThreadCreate                         0x00215552   Section        0  cmsis_os.o(i.osThreadCreate)
+    i.osThreadGetId                          0x00215582   Section        0  cmsis_os.o(i.osThreadGetId)
+    i.prvAddCurrentTaskToDelayedList         0x0021558c   Section        0  tasks.o(i.prvAddCurrentTaskToDelayedList)
+    prvAddCurrentTaskToDelayedList           0x0021558d   Thumb Code   124  tasks.o(i.prvAddCurrentTaskToDelayedList)
+    i.prvAddNewTaskToReadyList               0x00215624   Section        0  tasks.o(i.prvAddNewTaskToReadyList)
+    prvAddNewTaskToReadyList                 0x00215625   Thumb Code   150  tasks.o(i.prvAddNewTaskToReadyList)
+    i.prvCheckTasksWaitingTermination        0x002156d8   Section        0  tasks.o(i.prvCheckTasksWaitingTermination)
+    prvCheckTasksWaitingTermination          0x002156d9   Thumb Code    60  tasks.o(i.prvCheckTasksWaitingTermination)
+    i.prvCopyDataFromQueue                   0x00215720   Section        0  queue.o(i.prvCopyDataFromQueue)
+    prvCopyDataFromQueue                     0x00215721   Thumb Code    42  queue.o(i.prvCopyDataFromQueue)
+    i.prvCopyDataToQueue                     0x0021574a   Section        0  queue.o(i.prvCopyDataToQueue)
+    prvCopyDataToQueue                       0x0021574b   Thumb Code   124  queue.o(i.prvCopyDataToQueue)
+    i.prvDeleteTCB                           0x002157c6   Section        0  tasks.o(i.prvDeleteTCB)
+    prvDeleteTCB                             0x002157c7   Thumb Code    18  tasks.o(i.prvDeleteTCB)
+    i.prvGetDisinheritPriorityAfterTimeout   0x002157d8   Section        0  queue.o(i.prvGetDisinheritPriorityAfterTimeout)
+    prvGetDisinheritPriorityAfterTimeout     0x002157d9   Thumb Code    20  queue.o(i.prvGetDisinheritPriorityAfterTimeout)
+    i.prvHeapInit                            0x002157ec   Section        0  heap_4.o(i.prvHeapInit)
+    prvHeapInit                              0x002157ed   Thumb Code    98  heap_4.o(i.prvHeapInit)
+    i.prvIdleTask                            0x00215868   Section        0  tasks.o(i.prvIdleTask)
+    prvIdleTask                              0x00215869   Thumb Code    32  tasks.o(i.prvIdleTask)
+    i.prvInitialiseMutex                     0x00215890   Section        0  queue.o(i.prvInitialiseMutex)
+    prvInitialiseMutex                       0x00215891   Thumb Code    28  queue.o(i.prvInitialiseMutex)
+    i.prvInitialiseNewQueue                  0x002158ac   Section        0  queue.o(i.prvInitialiseNewQueue)
+    prvInitialiseNewQueue                    0x002158ad   Thumb Code    38  queue.o(i.prvInitialiseNewQueue)
+    i.prvInitialiseNewTask                   0x002158d2   Section        0  tasks.o(i.prvInitialiseNewTask)
+    prvInitialiseNewTask                     0x002158d3   Thumb Code   174  tasks.o(i.prvInitialiseNewTask)
+    i.prvInitialiseTaskLists                 0x00215980   Section        0  tasks.o(i.prvInitialiseTaskLists)
+    prvInitialiseTaskLists                   0x00215981   Thumb Code    70  tasks.o(i.prvInitialiseTaskLists)
+    i.prvInsertBlockIntoFreeList             0x002159e8   Section        0  heap_4.o(i.prvInsertBlockIntoFreeList)
+    prvInsertBlockIntoFreeList               0x002159e9   Thumb Code    96  heap_4.o(i.prvInsertBlockIntoFreeList)
+    i.prvIsQueueEmpty                        0x00215a50   Section        0  queue.o(i.prvIsQueueEmpty)
+    prvIsQueueEmpty                          0x00215a51   Thumb Code    26  queue.o(i.prvIsQueueEmpty)
+    i.prvIsQueueFull                         0x00215a6a   Section        0  queue.o(i.prvIsQueueFull)
+    prvIsQueueFull                           0x00215a6b   Thumb Code    30  queue.o(i.prvIsQueueFull)
+    i.prvResetNextTaskUnblockTime            0x00215a88   Section        0  tasks.o(i.prvResetNextTaskUnblockTime)
+    prvResetNextTaskUnblockTime              0x00215a89   Thumb Code    42  tasks.o(i.prvResetNextTaskUnblockTime)
+    i.prvTaskExitError                       0x00215abc   Section        0  port.o(i.prvTaskExitError)
+    prvTaskExitError                         0x00215abd   Thumb Code    68  port.o(i.prvTaskExitError)
+    i.prvUnlockQueue                         0x00215b04   Section        0  queue.o(i.prvUnlockQueue)
+    prvUnlockQueue                           0x00215b05   Thumb Code   126  queue.o(i.prvUnlockQueue)
+    i.pvPortMalloc                           0x00215b84   Section        0  heap_4.o(i.pvPortMalloc)
+    i.pvTaskIncrementMutexHeldCount          0x00215ccc   Section        0  tasks.o(i.pvTaskIncrementMutexHeldCount)
+    i.pxPortInitialiseStack                  0x00215cec   Section        0  port.o(i.pxPortInitialiseStack)
+    i.uxListRemove                           0x00215d18   Section        0  list.o(i.uxListRemove)
+    i.vListInitialise                        0x00215d40   Section        0  list.o(i.vListInitialise)
+    i.vListInitialiseItem                    0x00215d5a   Section        0  list.o(i.vListInitialiseItem)
+    i.vListInsert                            0x00215d60   Section        0  list.o(i.vListInsert)
+    i.vListInsertEnd                         0x00215d94   Section        0  list.o(i.vListInsertEnd)
+    i.vPortEnterCritical                     0x00215dac   Section        0  port.o(i.vPortEnterCritical)
+    i.vPortExitCritical                      0x00215e08   Section        0  port.o(i.vPortExitCritical)
+    i.vPortFree                              0x00215e48   Section        0  heap_4.o(i.vPortFree)
+    i.vPortSetupTimerInterrupt               0x00215ee4   Section        0  port.o(i.vPortSetupTimerInterrupt)
+    i.vPortValidateInterruptPriority         0x00215f0c   Section        0  port.o(i.vPortValidateInterruptPriority)
+    i.vTaskDelay                             0x00215f8c   Section        0  tasks.o(i.vTaskDelay)
+    i.vTaskInternalSetTimeOutState           0x00215fec   Section        0  tasks.o(i.vTaskInternalSetTimeOutState)
+    i.vTaskMissedYield                       0x00216004   Section        0  tasks.o(i.vTaskMissedYield)
+    i.vTaskPlaceOnEventList                  0x00216010   Section        0  tasks.o(i.vTaskPlaceOnEventList)
+    i.vTaskPriorityDisinheritAfterTimeout    0x0021604c   Section        0  tasks.o(i.vTaskPriorityDisinheritAfterTimeout)
+    i.vTaskStartScheduler                    0x00216148   Section        0  tasks.o(i.vTaskStartScheduler)
+    i.vTaskSuspendAll                        0x002161d8   Section        0  tasks.o(i.vTaskSuspendAll)
+    i.vTaskSwitchContext                     0x002161e8   Section        0  tasks.o(i.vTaskSwitchContext)
+    i.xPortStartScheduler                    0x00216278   Section        0  port.o(i.xPortStartScheduler)
+    i.xPortSysTickHandler                    0x0021638c   Section        0  port.o(i.xPortSysTickHandler)
+    i.xQueueCreateCountingSemaphore          0x002163c4   Section        0  queue.o(i.xQueueCreateCountingSemaphore)
+    i.xQueueCreateMutex                      0x00216428   Section        0  queue.o(i.xQueueCreateMutex)
+    i.xQueueGenericCreate                    0x0021644a   Section        0  queue.o(i.xQueueGenericCreate)
+    i.xQueueGenericReset                     0x002164a8   Section        0  queue.o(i.xQueueGenericReset)
+    i.xQueueGenericSend                      0x00216544   Section        0  queue.o(i.xQueueGenericSend)
+    i.xQueueGenericSendFromISR               0x002166fc   Section        0  queue.o(i.xQueueGenericSendFromISR)
+    i.xQueueGiveFromISR                      0x00216804   Section        0  queue.o(i.xQueueGiveFromISR)
+    i.xQueueReceive                          0x002168f4   Section        0  queue.o(i.xQueueReceive)
+    i.xQueueReceiveFromISR                   0x00216a68   Section        0  queue.o(i.xQueueReceiveFromISR)
+    i.xQueueSemaphoreTake                    0x00216b40   Section        0  queue.o(i.xQueueSemaphoreTake)
+    i.xTaskCheckForTimeOut                   0x00216d08   Section        0  tasks.o(i.xTaskCheckForTimeOut)
+    i.xTaskCreate                            0x00216d9c   Section        0  tasks.o(i.xTaskCreate)
+    i.xTaskGetCurrentTaskHandle              0x00216dfc   Section        0  tasks.o(i.xTaskGetCurrentTaskHandle)
+    i.xTaskGetSchedulerState                 0x00216e08   Section        0  tasks.o(i.xTaskGetSchedulerState)
+    i.xTaskGetTickCount                      0x00216e28   Section        0  tasks.o(i.xTaskGetTickCount)
+    i.xTaskGetTickCountFromISR               0x00216e34   Section        0  tasks.o(i.xTaskGetTickCountFromISR)
+    i.xTaskIncrementTick                     0x00216e48   Section        0  tasks.o(i.xTaskIncrementTick)
+    i.xTaskPriorityDisinherit                0x00216f94   Section        0  tasks.o(i.xTaskPriorityDisinherit)
+    i.xTaskPriorityInherit                   0x00217064   Section        0  tasks.o(i.xTaskPriorityInherit)
+    i.xTaskRemoveFromEventList               0x0021712c   Section        0  tasks.o(i.xTaskRemoveFromEventList)
+    i.xTaskResumeAll                         0x002171c8   Section        0  tasks.o(i.xTaskResumeAll)
+    .constdata                               0x002172d0   Section      194  gt9147_iic_driver.o(.constdata)
+    .constdata                               0x00217394   Section       60  main.o(.constdata)
+    .constdata                               0x002173d0   Section       28  sd_diskio.o(.constdata)
+    .constdata                               0x002173ec   Section       24  system_stm32f7xx.o(.constdata)
+    .constdata                               0x00217404   Section        8  stm32f7xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x00217404   Data           8  stm32f7xx_hal_dma.o(.constdata)
+    .conststring                             0x0021740c   Section       39  main.o(.conststring)
+    [Anonymous Symbol]                       0x00217434   Section        0  GUICC_1616I.o(.rodata)
+    [Anonymous Symbol]                       0x0021744c   Section        0  GUICC_822216.o(.rodata)
+    [Anonymous Symbol]                       0x00217464   Section        0  GUICC_84444.o(.rodata)
+    [Anonymous Symbol]                       0x0021747c   Section        0  GUICC_8666.o(.rodata)
+    [Anonymous Symbol]                       0x00217494   Section        0  GUICC_8666_1.o(.rodata)
+    [Anonymous Symbol]                       0x002174ac   Section        0  GUICC_88666I.o(.rodata)
+    [Anonymous Symbol]                       0x002174c4   Section        0  GUICC_M1555I.o(.rodata)
+    [Anonymous Symbol]                       0x002174dc   Section        0  GUICC_M4444I.o(.rodata)
+    [Anonymous Symbol]                       0x002174f4   Section        0  GUICC_M8888I.o(.rodata)
+    [Anonymous Symbol]                       0x0021750c   Section        0  GUICC_565.o(.rodata)
+    [Anonymous Symbol]                       0x00217524   Section        0  GUICC_888.o(.rodata)
+    [Anonymous Symbol]                       0x0021753c   Section        0  GUICC_8888.o(.rodata)
+    [Anonymous Symbol]                       0x00217554   Section        0  GUICC_M565.o(.rodata)
+    [Anonymous Symbol]                       0x0021756c   Section        0  GUICC_M888.o(.rodata)
+    [Anonymous Symbol]                       0x00217584   Section        0  GUICC_M8888.o(.rodata)
+    [Anonymous Symbol]                       0x0021759c   Section        0  GUI_Common.o(.rodata)
+    _acHex                                   0x002175c4   Data          16  GUI_Common.o(.rodata)
+    [Anonymous Symbol]                       0x002175d4   Section        0  GUI_Core.o(.rodata)
+    _HL_APIList                              0x002175d4   Data           8  GUI_Core.o(.rodata)
+    [Anonymous Symbol]                       0x002175ec   Section        0  LCD.o(.rodata)
+    _SetColorAPI                             0x002175ec   Data          12  LCD.o(.rodata)
+    [Anonymous Symbol]                       0x002175f8   Section        0  GUIDRV_Lin_16.o(.rodata)
+    [Anonymous Symbol]                       0x0021762c   Section        0  GUICC_16.o(.rodata)
+    [Anonymous Symbol]                       0x00217644   Section        0  GUI_UC_EncodeNone.o(.rodata)
+    [Anonymous Symbol]                       0x00217654   Section        0  GUI__DivTbl.o(.rodata)
+    [Anonymous Symbol]                       0x002179c4   Section        0  LCD_Mirror.o(.rodata)
+    [Anonymous Symbol]                       0x00217ac4   Section        0  F6x8.o(.rodata)
+    GUI_F6x8_Mono                            0x00217b0c   Data          20  F6x8.o(.rodata)
+    GUI_F6x8_TI8859_1                        0x00217b20   Data           8  F6x8.o(.rodata)
+    GUI_F6x8_TL8859_1                        0x00217b28   Data         448  F6x8.o(.rodata)
+    GUI_acFont6x8                            0x00217ce8   Data        1304  F6x8.o(.rodata)
+    [Anonymous Symbol]                       0x00218200   Section        0  GUIDEV_16.o(.rodata)
+    _aID                                     0x00218234   Data          64  GUIDEV_16.o(.rodata)
+    [Anonymous Symbol]                       0x00218274   Section        0  GUIDEV_UsageBM.o(.rodata)
+    API                                      0x00218274   Data          24  GUIDEV_UsageBM.o(.rodata)
+    [Anonymous Symbol]                       0x0021828c   Section        0  GUICC_0.o(.rodata)
+    [Anonymous Symbol]                       0x002182a4   Section        0  GUIDEV_32.o(.rodata)
+    aID                                      0x002182d8   Data          64  GUIDEV_32.o(.rodata)
     .data                                    0x20000000   Section        5  gt9147_iic_driver.o(.data)
     .data                                    0x20000008   Section        4  utility.o(.data)
-    .data                                    0x2000000c   Section       13  w25q256_driver.o(.data)
-    .data                                    0x2000001c   Section       12  main.o(.data)
-    .data                                    0x20000028   Section        8  sd_diskio.o(.data)
-    Stat                                     0x20000028   Data           1  sd_diskio.o(.data)
-    SDQueueID                                0x2000002c   Data           4  sd_diskio.o(.data)
-    .data                                    0x20000030   Section        5  fatfs.o(.data)
-    .data                                    0x20000038   Section        8  hw_init.o(.data)
-    FMC_Initialized                          0x20000038   Data           4  hw_init.o(.data)
-    FMC_DeInitialized                        0x2000003c   Data           4  hw_init.o(.data)
-    .data                                    0x20000040   Section        8  stemwin_wrapper.o(.data)
-    apColorConvAPI                           0x20000044   Data           4  stemwin_wrapper.o(.data)
-    .data                                    0x20000048   Section        4  system_stm32f7xx.o(.data)
-    .data                                    0x2000004c   Section        9  stm32f7xx_hal.o(.data)
-    .data                                    0x20000058   Section       60  tasks.o(.data)
-    pxDelayedTaskList                        0x2000005c   Data           4  tasks.o(.data)
-    pxOverflowDelayedTaskList                0x20000060   Data           4  tasks.o(.data)
-    uxDeletedTasksWaitingCleanUp             0x20000064   Data           4  tasks.o(.data)
-    uxCurrentNumberOfTasks                   0x20000068   Data           4  tasks.o(.data)
-    xTickCount                               0x2000006c   Data           4  tasks.o(.data)
-    uxTopReadyPriority                       0x20000070   Data           4  tasks.o(.data)
-    xSchedulerRunning                        0x20000074   Data           4  tasks.o(.data)
-    uxPendedTicks                            0x20000078   Data           4  tasks.o(.data)
-    xYieldPending                            0x2000007c   Data           4  tasks.o(.data)
-    xNumOfOverflows                          0x20000080   Data           4  tasks.o(.data)
-    uxTaskNumber                             0x20000084   Data           4  tasks.o(.data)
-    xNextTaskUnblockTime                     0x20000088   Data           4  tasks.o(.data)
-    xIdleTaskHandle                          0x2000008c   Data           4  tasks.o(.data)
-    uxSchedulerSuspended                     0x20000090   Data           4  tasks.o(.data)
-    .data                                    0x20000094   Section       24  heap_4.o(.data)
-    xStart                                   0x20000094   Data           8  heap_4.o(.data)
-    pxEnd                                    0x2000009c   Data           4  heap_4.o(.data)
-    xFreeBytesRemaining                      0x200000a0   Data           4  heap_4.o(.data)
-    xMinimumEverFreeBytesRemaining           0x200000a4   Data           4  heap_4.o(.data)
-    xBlockAllocatedBit                       0x200000a8   Data           4  heap_4.o(.data)
-    .data                                    0x200000ac   Section       12  port.o(.data)
-    uxCriticalNesting                        0x200000ac   Data           4  port.o(.data)
-    ucMaxSysCallPriority                     0x200000b0   Data           1  port.o(.data)
-    ulMaxPRIGROUPValue                       0x200000b4   Data           4  port.o(.data)
-    .data                                    0x200000b8   Section        8  gui_x_os.o(.data)
-    osMutex                                  0x200000b8   Data           4  gui_x_os.o(.data)
-    osSemaphore                              0x200000bc   Data           4  gui_x_os.o(.data)
-    [Anonymous Symbol]                       0x200000c0   Section        0  GUI_Common.o(.data)
-    _acVersion                               0x200000c0   Data           7  GUI_Common.o(.data)
-    [Anonymous Symbol]                       0x200000c8   Section        0  GUI_Core.o(.data)
-    [Anonymous Symbol]                       0x200000dc   Section        0  GUI_TOUCH_DriverAnalog.o(.data)
-    xLast.9626                               0x200000dc   Data           4  GUI_TOUCH_DriverAnalog.o(.data)
-    yLast.9627                               0x200000e0   Data           4  GUI_TOUCH_DriverAnalog.o(.data)
-    [Anonymous Symbol]                       0x200000e4   Section        0  GUI_Time.o(.data)
-    _TimeSlice                               0x200000e4   Data           4  GUI_Time.o(.data)
-    [Anonymous Symbol]                       0x200000e8   Section        0  GUI__Alpha.o(.data)
-    [Anonymous Symbol]                       0x200000f0   Section        0  LCD.o(.data)
-    [Anonymous Symbol]                       0x200000f4   Section        0  GUI_CharLine.o(.data)
-    [Anonymous Symbol]                       0x200000f8   Section        0  GUI_OnKey.o(.data)
-    _pReadKey                                0x200000f8   Data           4  GUI_OnKey.o(.data)
-    _pWriteKey                               0x200000fc   Data           4  GUI_OnKey.o(.data)
-    [Anonymous Symbol]                       0x20000100   Section        0  GUI_Task.o(.data)
-    _MaxTask                                 0x20000100   Data           4  GUI_Task.o(.data)
-    _CurrentTaskNo                           0x20000104   Data           4  GUI_Task.o(.data)
-    [Anonymous Symbol]                       0x20000108   Section        0  GUI__Private.o(.data)
-    [Anonymous Symbol]                       0x20000110   Section        0  LCD_AA.o(.data)
-    _OrMask                                  0x20000114   Data           4  LCD_AA.o(.data)
-    _aGamma                                  0x20000118   Data          16  LCD_AA.o(.data)
-    [Anonymous Symbol]                       0x20000128   Section        0  LCD_Color.o(.data)
-    _NumColors                               0x20000128   Data           4  LCD_Color.o(.data)
-    [Anonymous Symbol]                       0x2000012c   Section        0  WM_Touch.o(.data)
-    [Anonymous Symbol]                       0x20000130   Section        0  GUI_PID.o(.data)
-    _pRead                                   0x20000130   Data           4  GUI_PID.o(.data)
-    _pWrite                                  0x20000134   Data           4  GUI_PID.o(.data)
-    .bss                                     0x20000138   Section     4146  w25q256_driver.o(.bss)
-    .bss                                     0x2000116c   Section      468  main.o(.bss)
-    .bss                                     0x20001340   Section      512  sd_diskio.o(.bss)
-    scratch                                  0x20001340   Data         512  sd_diskio.o(.bss)
-    .bss                                     0x20001540   Section    204800  guiconf.o(.bss)
-    extMem                                   0x20001540   Data       204800  guiconf.o(.bss)
-    .bss                                     0x20033540   Section      324  hw_init.o(.bss)
-    Command                                  0x20033674   Data          16  hw_init.o(.bss)
-    .bss                                     0x20033684   Section       28  stemwin_wrapper.o(.bss)
-    layer_prop                               0x20033684   Data          28  stemwin_wrapper.o(.bss)
-    .bss                                     0x200336a0   Section       12  ff_gen_drv.o(.bss)
-    .bss                                     0x200336ac   Section      740  tasks.o(.bss)
-    pxReadyTasksLists                        0x200336ac   Data         640  tasks.o(.bss)
-    xDelayedTaskList1                        0x2003392c   Data          20  tasks.o(.bss)
-    xDelayedTaskList2                        0x20033940   Data          20  tasks.o(.bss)
-    xPendingReadyList                        0x20033954   Data          20  tasks.o(.bss)
-    xTasksWaitingTermination                 0x20033968   Data          20  tasks.o(.bss)
-    xSuspendedTaskList                       0x2003397c   Data          20  tasks.o(.bss)
-    .bss                                     0x20033990   Section    15360  heap_4.o(.bss)
-    ucHeap                                   0x20033990   Data       15360  heap_4.o(.bss)
-    [Anonymous Symbol]                       0x20037590   Section        0  GUICC_M1555I.o(.bss)
-    _pfColor2IndexBulk                       0x20037590   Data           4  GUICC_M1555I.o(.bss)
-    _pfIndex2ColorBulk                       0x20037594   Data           4  GUICC_M1555I.o(.bss)
-    [Anonymous Symbol]                       0x20037598   Section        0  GUICC_M4444I.o(.bss)
-    _pfColor2IndexBulk                       0x20037598   Data           4  GUICC_M4444I.o(.bss)
-    _pfIndex2ColorBulk                       0x2003759c   Data           4  GUICC_M4444I.o(.bss)
-    [Anonymous Symbol]                       0x200375a0   Section        0  GUICC_M565.o(.bss)
-    _pfColor2IndexBulk                       0x200375a0   Data           4  GUICC_M565.o(.bss)
-    _pfIndex2ColorBulk                       0x200375a4   Data           4  GUICC_M565.o(.bss)
-    [Anonymous Symbol]                       0x200375a8   Section        0  GUI_Alloc.o(.bss)
-    _Config                                  0x200375a8   Data          12  GUI_Alloc.o(.bss)
-    [Anonymous Symbol]                       0x200375b4   Section        0  GUI_Core.o(.bss)
-    RegisterInit.9719                        0x200375b4   Number         0  GUI_Core.o(.bss)
-    GUI__Context                             0x200375bc   Data         116  GUI_Core.o(.bss)
-    _pFirstExit                              0x20037630   Data           4  GUI_Core.o(.bss)
-    _pFirstInit                              0x20037634   Data           4  GUI_Core.o(.bss)
-    _IsInitialized                           0x20037638   Data           4  GUI_Core.o(.bss)
-    _acSignature                             0x2003763c   Data          20  GUI_Core.o(.bss)
-    RegisterExit.9684                        0x20037650   Data           8  GUI_Core.o(.bss)
-    [Anonymous Symbol]                       0x20037658   Section        0  GUI_SelectLayer.o(.bss)
-    _aCursorLayer                            0x20037658   Data           8  GUI_SelectLayer.o(.bss)
-    [Anonymous Symbol]                       0x20037660   Section        0  GUI_TOUCH_DriverAnalog.o(.bss)
-    _OrientationLog                          0x20037660   Data           4  GUI_TOUCH_DriverAnalog.o(.bss)
-    _xPhys                                   0x20037664   Data           4  GUI_TOUCH_DriverAnalog.o(.bss)
-    _yPhys                                   0x20037668   Data           4  GUI_TOUCH_DriverAnalog.o(.bss)
-    axRef.9609                               0x2003766c   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
-    axSample.9611                            0x20037674   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
-    ayRef.9610                               0x2003767c   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
-    aySample.9612                            0x20037684   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
-    Mask.9608                                0x2003768c   Data           1  GUI_TOUCH_DriverAnalog.o(.bss)
-    ReadState.9622                           0x2003768d   Data           1  GUI_TOUCH_DriverAnalog.o(.bss)
-    IsPressed.9623                           0x2003768e   Data           1  GUI_TOUCH_DriverAnalog.o(.bss)
-    [Anonymous Symbol]                       0x20037690   Section        0  GUI__Alpha.o(.bss)
-    _pCurrent                                0x20037690   Data           4  GUI__Alpha.o(.bss)
-    _pConvert                                0x20037694   Data           4  GUI__Alpha.o(.bss)
-    _pData                                   0x20037698   Data           4  GUI__Alpha.o(.bss)
-    _VXSizeMax                               0x2003769c   Data           4  GUI__Alpha.o(.bss)
-    _IsInitialized                           0x200376a0   Data           4  GUI__Alpha.o(.bss)
-    RegisterExit.9077                        0x200376a4   Data           8  GUI__Alpha.o(.bss)
-    _pfAlphaBlending                         0x200376ac   Data           4  GUI__Alpha.o(.bss)
-    [Anonymous Symbol]                       0x200376b0   Section        0  LCD_GetEx.o(.bss)
-    _xSizeDisplay                            0x200376b0   Data           4  LCD_GetEx.o(.bss)
-    _ySizeDisplay                            0x200376b4   Data           4  LCD_GetEx.o(.bss)
-    [Anonymous Symbol]                       0x200376b8   Section        0  GUIDEV_Banding.o(.bss)
-    _pcbSetAlpha                             0x200376b8   Data           4  GUIDEV_Banding.o(.bss)
-    [Anonymous Symbol]                       0x200376bc   Section        0  WM.o(.bss)
-    _IsInited                                0x200376bc   Data           1  WM.o(.bss)
-    _DeleteWindows                           0x200376c0   Data           4  WM.o(.bss)
-    _NextDrawWin                             0x200376c4   Data           4  WM.o(.bss)
-    _ClipContext                             0x200376c8   Data          24  WM.o(.bss)
-    RegisterExit.10681                       0x200376e0   Data           8  WM.o(.bss)
-    iWin.10693                               0x200376e8   Data           4  WM.o(.bss)
-    [Anonymous Symbol]                       0x200376ec   Section        0  GUI_OnKey.o(.bss)
-    _Key                                     0x200376ec   Data           4  GUI_OnKey.o(.bss)
-    _aState                                  0x200376f0   Data          88  GUI_OnKey.o(.bss)
-    _pfHook                                  0x20037748   Data           4  GUI_OnKey.o(.bss)
-    [Anonymous Symbol]                       0x2003774c   Section        0  GUI_TOUCH.o(.bss)
-    _State                                   0x2003774c   Data          12  GUI_TOUCH.o(.bss)
-    _pfCalibrate                             0x20037758   Data           4  GUI_TOUCH.o(.bss)
-    [Anonymous Symbol]                       0x2003775c   Section        0  GUI_TOUCH_Calibrate.o(.bss)
-    _CoefficientsValid                       0x2003775c   Data           4  GUI_TOUCH_Calibrate.o(.bss)
-    _aCoefficient                            0x20037760   Data          24  GUI_TOUCH_Calibrate.o(.bss)
-    _xSize                                   0x20037778   Data           4  GUI_TOUCH_Calibrate.o(.bss)
-    _ySize                                   0x2003777c   Data           4  GUI_TOUCH_Calibrate.o(.bss)
-    [Anonymous Symbol]                       0x20037780   Section        0  GUI_TOUCH_StoreState.o(.bss)
-    _State                                   0x20037780   Data          12  GUI_TOUCH_StoreState.o(.bss)
-    [Anonymous Symbol]                       0x2003778c   Section        0  GUI_Task.o(.bss)
-    _pSave                                   0x2003778c   Data           4  GUI_Task.o(.bss)
-    _TaskIDLock                              0x20037794   Data           4  GUI_Task.o(.bss)
-    RegisterExit.9010                        0x20037798   Data           8  GUI_Task.o(.bss)
-    [Anonymous Symbol]                       0x200377a0   Section        0  GUI_WaitEvent.o(.bss)
-    _pfSignalEvent                           0x200377a0   Data           4  GUI_WaitEvent.o(.bss)
-    _pfWaitEventTimed                        0x200377a4   Data           4  GUI_WaitEvent.o(.bss)
-    [Anonymous Symbol]                       0x200377a8   Section        0  GUI__ManageCache.o(.bss)
-    _pFuncRefreshHook                        0x200377a8   Data           4  GUI__ManageCache.o(.bss)
-    _pFuncControlHook                        0x200377ac   Data           4  GUI__ManageCache.o(.bss)
-    aLockCnt.8995                            0x200377b0   Data           8  GUI__ManageCache.o(.bss)
-    RegisterExit.8990                        0x200377b8   Data           8  GUI__ManageCache.o(.bss)
-    [Anonymous Symbol]                       0x200377c0   Section        0  LCD_Color.o(.bss)
-    _pfPaletteConversionHook                 0x200377c0   Data           4  LCD_Color.o(.bss)
-    RegisterExit.8993                        0x200377c4   Data           8  LCD_Color.o(.bss)
-    [Anonymous Symbol]                       0x200377cc   Section        0  GUIDEV_16.o(.bss)
-    _pfDrawMemdev16bppFunc                   0x200377cc   Data           4  GUIDEV_16.o(.bss)
-    [Anonymous Symbol]                       0x200377d0   Section        0  GUIDEV_StaticDevices.o(.bss)
-    _FillByte                                0x200377d0   Data           1  GUIDEV_StaticDevices.o(.bss)
-    [Anonymous Symbol]                       0x200377d4   Section        0  WM_Touch.o(.bss)
-    _pcbMotion                               0x200377d4   Data           4  WM_Touch.o(.bss)
-    _pcbToolTip                              0x200377d8   Data           4  WM_Touch.o(.bss)
-    RegisterExit.9857                        0x200377dc   Data           8  WM_Touch.o(.bss)
-    _aStateLast                              0x200377e4   Data          24  WM_Touch.o(.bss)
-    [Anonymous Symbol]                       0x200377fc   Section        0  WM__Private.o(.bss)
-    _EntranceCnt.9896                        0x200377fc   Data           4  WM__Private.o(.bss)
-    [Anonymous Symbol]                       0x20037800   Section        0  GUI_Cursor.o(.bss)
-    _IsInitialized                           0x20037800   Data           4  GUI_Cursor.o(.bss)
-    _aCursorContext                          0x20037804   Data          40  GUI_Cursor.o(.bss)
-    RegisterExit.9014                        0x2003782c   Data           8  GUI_Cursor.o(.bss)
-    _aCursor                                 0x20037834   Data          24  GUI_Cursor.o(.bss)
-    [Anonymous Symbol]                       0x2003784c   Section        0  GUI_PID.o(.bss)
-    _aState                                  0x2003784c   Data          72  GUI_PID.o(.bss)
-    _pfHookPost                              0x20037894   Data           4  GUI_PID.o(.bss)
-    _pfHookPre                               0x20037898   Data           4  GUI_PID.o(.bss)
-    RegisterExit.9631                        0x2003789c   Data           8  GUI_PID.o(.bss)
-    [Anonymous Symbol]                       0x200378a4   Section        0  GUI_Timer.o(.bss)
-    _hFirstTimer                             0x200378a4   Data           4  GUI_Timer.o(.bss)
-    _hActiveTimer                            0x200378a8   Data           4  GUI_Timer.o(.bss)
-    _IsInitialized                           0x200378ac   Data           4  GUI_Timer.o(.bss)
-    RegisterExit.9071                        0x200378b0   Data           8  GUI_Timer.o(.bss)
-    [Anonymous Symbol]                       0x200378b8   Section        0  WM_PID__GetPrevState.o(.bss)
-    _aPrevState                              0x200378b8   Data          24  WM_PID__GetPrevState.o(.bss)
-    STACK                                    0x200379e0   Section     1024  startup_stm32f767xx.o(STACK)
+    .data                                    0x2000000c   Section       29  w25q256_driver.o(.data)
+    .data                                    0x2000002c   Section       12  main.o(.data)
+    .data                                    0x20000038   Section        8  sd_diskio.o(.data)
+    Stat                                     0x20000038   Data           1  sd_diskio.o(.data)
+    SDQueueID                                0x2000003c   Data           4  sd_diskio.o(.data)
+    .data                                    0x20000040   Section        5  fatfs.o(.data)
+    .data                                    0x20000048   Section        8  hw_init.o(.data)
+    FMC_Initialized                          0x20000048   Data           4  hw_init.o(.data)
+    FMC_DeInitialized                        0x2000004c   Data           4  hw_init.o(.data)
+    .data                                    0x20000050   Section        8  stemwin_wrapper.o(.data)
+    apColorConvAPI                           0x20000054   Data           4  stemwin_wrapper.o(.data)
+    .data                                    0x20000058   Section        4  system_stm32f7xx.o(.data)
+    .data                                    0x2000005c   Section        9  stm32f7xx_hal.o(.data)
+    .data                                    0x20000068   Section       60  tasks.o(.data)
+    pxDelayedTaskList                        0x2000006c   Data           4  tasks.o(.data)
+    pxOverflowDelayedTaskList                0x20000070   Data           4  tasks.o(.data)
+    uxDeletedTasksWaitingCleanUp             0x20000074   Data           4  tasks.o(.data)
+    uxCurrentNumberOfTasks                   0x20000078   Data           4  tasks.o(.data)
+    xTickCount                               0x2000007c   Data           4  tasks.o(.data)
+    uxTopReadyPriority                       0x20000080   Data           4  tasks.o(.data)
+    xSchedulerRunning                        0x20000084   Data           4  tasks.o(.data)
+    uxPendedTicks                            0x20000088   Data           4  tasks.o(.data)
+    xYieldPending                            0x2000008c   Data           4  tasks.o(.data)
+    xNumOfOverflows                          0x20000090   Data           4  tasks.o(.data)
+    uxTaskNumber                             0x20000094   Data           4  tasks.o(.data)
+    xNextTaskUnblockTime                     0x20000098   Data           4  tasks.o(.data)
+    xIdleTaskHandle                          0x2000009c   Data           4  tasks.o(.data)
+    uxSchedulerSuspended                     0x200000a0   Data           4  tasks.o(.data)
+    .data                                    0x200000a4   Section       24  heap_4.o(.data)
+    xStart                                   0x200000a4   Data           8  heap_4.o(.data)
+    pxEnd                                    0x200000ac   Data           4  heap_4.o(.data)
+    xFreeBytesRemaining                      0x200000b0   Data           4  heap_4.o(.data)
+    xMinimumEverFreeBytesRemaining           0x200000b4   Data           4  heap_4.o(.data)
+    xBlockAllocatedBit                       0x200000b8   Data           4  heap_4.o(.data)
+    .data                                    0x200000bc   Section       12  port.o(.data)
+    uxCriticalNesting                        0x200000bc   Data           4  port.o(.data)
+    ucMaxSysCallPriority                     0x200000c0   Data           1  port.o(.data)
+    ulMaxPRIGROUPValue                       0x200000c4   Data           4  port.o(.data)
+    .data                                    0x200000c8   Section        8  gui_x_os.o(.data)
+    osMutex                                  0x200000c8   Data           4  gui_x_os.o(.data)
+    osSemaphore                              0x200000cc   Data           4  gui_x_os.o(.data)
+    [Anonymous Symbol]                       0x200000d0   Section        0  GUI_Common.o(.data)
+    _acVersion                               0x200000d0   Data           7  GUI_Common.o(.data)
+    [Anonymous Symbol]                       0x200000d8   Section        0  GUI_Core.o(.data)
+    [Anonymous Symbol]                       0x200000ec   Section        0  GUI_TOUCH_DriverAnalog.o(.data)
+    xLast.9626                               0x200000ec   Data           4  GUI_TOUCH_DriverAnalog.o(.data)
+    yLast.9627                               0x200000f0   Data           4  GUI_TOUCH_DriverAnalog.o(.data)
+    [Anonymous Symbol]                       0x200000f4   Section        0  GUI_Time.o(.data)
+    _TimeSlice                               0x200000f4   Data           4  GUI_Time.o(.data)
+    [Anonymous Symbol]                       0x200000f8   Section        0  GUI__Alpha.o(.data)
+    [Anonymous Symbol]                       0x20000100   Section        0  LCD.o(.data)
+    [Anonymous Symbol]                       0x20000104   Section        0  GUI_CharLine.o(.data)
+    [Anonymous Symbol]                       0x20000108   Section        0  GUI_OnKey.o(.data)
+    _pReadKey                                0x20000108   Data           4  GUI_OnKey.o(.data)
+    _pWriteKey                               0x2000010c   Data           4  GUI_OnKey.o(.data)
+    [Anonymous Symbol]                       0x20000110   Section        0  GUI_Task.o(.data)
+    _MaxTask                                 0x20000110   Data           4  GUI_Task.o(.data)
+    _CurrentTaskNo                           0x20000114   Data           4  GUI_Task.o(.data)
+    [Anonymous Symbol]                       0x20000118   Section        0  GUI__Private.o(.data)
+    [Anonymous Symbol]                       0x20000120   Section        0  LCD_AA.o(.data)
+    _OrMask                                  0x20000124   Data           4  LCD_AA.o(.data)
+    _aGamma                                  0x20000128   Data          16  LCD_AA.o(.data)
+    [Anonymous Symbol]                       0x20000138   Section        0  LCD_Color.o(.data)
+    _NumColors                               0x20000138   Data           4  LCD_Color.o(.data)
+    [Anonymous Symbol]                       0x2000013c   Section        0  WM_Touch.o(.data)
+    [Anonymous Symbol]                       0x20000140   Section        0  GUI_PID.o(.data)
+    _pRead                                   0x20000140   Data           4  GUI_PID.o(.data)
+    _pWrite                                  0x20000144   Data           4  GUI_PID.o(.data)
+    .bss                                     0x20000148   Section     4146  w25q256_driver.o(.bss)
+    .bss                                     0x2000117c   Section      468  main.o(.bss)
+    .bss                                     0x20001350   Section      512  sd_diskio.o(.bss)
+    scratch                                  0x20001350   Data         512  sd_diskio.o(.bss)
+    .bss                                     0x20001550   Section    204800  guiconf.o(.bss)
+    extMem                                   0x20001550   Data       204800  guiconf.o(.bss)
+    .bss                                     0x20033550   Section      324  hw_init.o(.bss)
+    Command                                  0x20033684   Data          16  hw_init.o(.bss)
+    .bss                                     0x20033694   Section       28  stemwin_wrapper.o(.bss)
+    layer_prop                               0x20033694   Data          28  stemwin_wrapper.o(.bss)
+    .bss                                     0x200336b0   Section       12  ff_gen_drv.o(.bss)
+    .bss                                     0x200336bc   Section      740  tasks.o(.bss)
+    pxReadyTasksLists                        0x200336bc   Data         640  tasks.o(.bss)
+    xDelayedTaskList1                        0x2003393c   Data          20  tasks.o(.bss)
+    xDelayedTaskList2                        0x20033950   Data          20  tasks.o(.bss)
+    xPendingReadyList                        0x20033964   Data          20  tasks.o(.bss)
+    xTasksWaitingTermination                 0x20033978   Data          20  tasks.o(.bss)
+    xSuspendedTaskList                       0x2003398c   Data          20  tasks.o(.bss)
+    .bss                                     0x200339a0   Section    15360  heap_4.o(.bss)
+    ucHeap                                   0x200339a0   Data       15360  heap_4.o(.bss)
+    [Anonymous Symbol]                       0x200375a0   Section        0  GUICC_M1555I.o(.bss)
+    _pfColor2IndexBulk                       0x200375a0   Data           4  GUICC_M1555I.o(.bss)
+    _pfIndex2ColorBulk                       0x200375a4   Data           4  GUICC_M1555I.o(.bss)
+    [Anonymous Symbol]                       0x200375a8   Section        0  GUICC_M4444I.o(.bss)
+    _pfColor2IndexBulk                       0x200375a8   Data           4  GUICC_M4444I.o(.bss)
+    _pfIndex2ColorBulk                       0x200375ac   Data           4  GUICC_M4444I.o(.bss)
+    [Anonymous Symbol]                       0x200375b0   Section        0  GUICC_M565.o(.bss)
+    _pfColor2IndexBulk                       0x200375b0   Data           4  GUICC_M565.o(.bss)
+    _pfIndex2ColorBulk                       0x200375b4   Data           4  GUICC_M565.o(.bss)
+    [Anonymous Symbol]                       0x200375b8   Section        0  GUI_Alloc.o(.bss)
+    _Config                                  0x200375b8   Data          12  GUI_Alloc.o(.bss)
+    [Anonymous Symbol]                       0x200375c4   Section        0  GUI_Core.o(.bss)
+    RegisterInit.9719                        0x200375c4   Number         0  GUI_Core.o(.bss)
+    GUI__Context                             0x200375cc   Data         116  GUI_Core.o(.bss)
+    _pFirstExit                              0x20037640   Data           4  GUI_Core.o(.bss)
+    _pFirstInit                              0x20037644   Data           4  GUI_Core.o(.bss)
+    _IsInitialized                           0x20037648   Data           4  GUI_Core.o(.bss)
+    _acSignature                             0x2003764c   Data          20  GUI_Core.o(.bss)
+    RegisterExit.9684                        0x20037660   Data           8  GUI_Core.o(.bss)
+    [Anonymous Symbol]                       0x20037668   Section        0  GUI_SelectLayer.o(.bss)
+    _aCursorLayer                            0x20037668   Data           8  GUI_SelectLayer.o(.bss)
+    [Anonymous Symbol]                       0x20037670   Section        0  GUI_TOUCH_DriverAnalog.o(.bss)
+    _OrientationLog                          0x20037670   Data           4  GUI_TOUCH_DriverAnalog.o(.bss)
+    _xPhys                                   0x20037674   Data           4  GUI_TOUCH_DriverAnalog.o(.bss)
+    _yPhys                                   0x20037678   Data           4  GUI_TOUCH_DriverAnalog.o(.bss)
+    axRef.9609                               0x2003767c   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
+    axSample.9611                            0x20037684   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
+    ayRef.9610                               0x2003768c   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
+    aySample.9612                            0x20037694   Data           8  GUI_TOUCH_DriverAnalog.o(.bss)
+    Mask.9608                                0x2003769c   Data           1  GUI_TOUCH_DriverAnalog.o(.bss)
+    ReadState.9622                           0x2003769d   Data           1  GUI_TOUCH_DriverAnalog.o(.bss)
+    IsPressed.9623                           0x2003769e   Data           1  GUI_TOUCH_DriverAnalog.o(.bss)
+    [Anonymous Symbol]                       0x200376a0   Section        0  GUI__Alpha.o(.bss)
+    _pCurrent                                0x200376a0   Data           4  GUI__Alpha.o(.bss)
+    _pConvert                                0x200376a4   Data           4  GUI__Alpha.o(.bss)
+    _pData                                   0x200376a8   Data           4  GUI__Alpha.o(.bss)
+    _VXSizeMax                               0x200376ac   Data           4  GUI__Alpha.o(.bss)
+    _IsInitialized                           0x200376b0   Data           4  GUI__Alpha.o(.bss)
+    RegisterExit.9077                        0x200376b4   Data           8  GUI__Alpha.o(.bss)
+    _pfAlphaBlending                         0x200376bc   Data           4  GUI__Alpha.o(.bss)
+    [Anonymous Symbol]                       0x200376c0   Section        0  LCD_GetEx.o(.bss)
+    _xSizeDisplay                            0x200376c0   Data           4  LCD_GetEx.o(.bss)
+    _ySizeDisplay                            0x200376c4   Data           4  LCD_GetEx.o(.bss)
+    [Anonymous Symbol]                       0x200376c8   Section        0  GUIDEV_Banding.o(.bss)
+    _pcbSetAlpha                             0x200376c8   Data           4  GUIDEV_Banding.o(.bss)
+    [Anonymous Symbol]                       0x200376cc   Section        0  WM.o(.bss)
+    _IsInited                                0x200376cc   Data           1  WM.o(.bss)
+    _DeleteWindows                           0x200376d0   Data           4  WM.o(.bss)
+    _NextDrawWin                             0x200376d4   Data           4  WM.o(.bss)
+    _ClipContext                             0x200376d8   Data          24  WM.o(.bss)
+    RegisterExit.10681                       0x200376f0   Data           8  WM.o(.bss)
+    iWin.10693                               0x200376f8   Data           4  WM.o(.bss)
+    [Anonymous Symbol]                       0x200376fc   Section        0  GUI_OnKey.o(.bss)
+    _Key                                     0x200376fc   Data           4  GUI_OnKey.o(.bss)
+    _aState                                  0x20037700   Data          88  GUI_OnKey.o(.bss)
+    _pfHook                                  0x20037758   Data           4  GUI_OnKey.o(.bss)
+    [Anonymous Symbol]                       0x2003775c   Section        0  GUI_TOUCH.o(.bss)
+    _State                                   0x2003775c   Data          12  GUI_TOUCH.o(.bss)
+    _pfCalibrate                             0x20037768   Data           4  GUI_TOUCH.o(.bss)
+    [Anonymous Symbol]                       0x2003776c   Section        0  GUI_TOUCH_Calibrate.o(.bss)
+    _CoefficientsValid                       0x2003776c   Data           4  GUI_TOUCH_Calibrate.o(.bss)
+    _aCoefficient                            0x20037770   Data          24  GUI_TOUCH_Calibrate.o(.bss)
+    _xSize                                   0x20037788   Data           4  GUI_TOUCH_Calibrate.o(.bss)
+    _ySize                                   0x2003778c   Data           4  GUI_TOUCH_Calibrate.o(.bss)
+    [Anonymous Symbol]                       0x20037790   Section        0  GUI_TOUCH_StoreState.o(.bss)
+    _State                                   0x20037790   Data          12  GUI_TOUCH_StoreState.o(.bss)
+    [Anonymous Symbol]                       0x2003779c   Section        0  GUI_Task.o(.bss)
+    _pSave                                   0x2003779c   Data           4  GUI_Task.o(.bss)
+    _TaskIDLock                              0x200377a4   Data           4  GUI_Task.o(.bss)
+    RegisterExit.9010                        0x200377a8   Data           8  GUI_Task.o(.bss)
+    [Anonymous Symbol]                       0x200377b0   Section        0  GUI_WaitEvent.o(.bss)
+    _pfSignalEvent                           0x200377b0   Data           4  GUI_WaitEvent.o(.bss)
+    _pfWaitEventTimed                        0x200377b4   Data           4  GUI_WaitEvent.o(.bss)
+    [Anonymous Symbol]                       0x200377b8   Section        0  GUI__ManageCache.o(.bss)
+    _pFuncRefreshHook                        0x200377b8   Data           4  GUI__ManageCache.o(.bss)
+    _pFuncControlHook                        0x200377bc   Data           4  GUI__ManageCache.o(.bss)
+    aLockCnt.8995                            0x200377c0   Data           8  GUI__ManageCache.o(.bss)
+    RegisterExit.8990                        0x200377c8   Data           8  GUI__ManageCache.o(.bss)
+    [Anonymous Symbol]                       0x200377d0   Section        0  LCD_Color.o(.bss)
+    _pfPaletteConversionHook                 0x200377d0   Data           4  LCD_Color.o(.bss)
+    RegisterExit.8993                        0x200377d4   Data           8  LCD_Color.o(.bss)
+    [Anonymous Symbol]                       0x200377dc   Section        0  GUIDEV_16.o(.bss)
+    _pfDrawMemdev16bppFunc                   0x200377dc   Data           4  GUIDEV_16.o(.bss)
+    [Anonymous Symbol]                       0x200377e0   Section        0  GUIDEV_StaticDevices.o(.bss)
+    _FillByte                                0x200377e0   Data           1  GUIDEV_StaticDevices.o(.bss)
+    [Anonymous Symbol]                       0x200377e4   Section        0  WM_Touch.o(.bss)
+    _pcbMotion                               0x200377e4   Data           4  WM_Touch.o(.bss)
+    _pcbToolTip                              0x200377e8   Data           4  WM_Touch.o(.bss)
+    RegisterExit.9857                        0x200377ec   Data           8  WM_Touch.o(.bss)
+    _aStateLast                              0x200377f4   Data          24  WM_Touch.o(.bss)
+    [Anonymous Symbol]                       0x2003780c   Section        0  WM__Private.o(.bss)
+    _EntranceCnt.9896                        0x2003780c   Data           4  WM__Private.o(.bss)
+    [Anonymous Symbol]                       0x20037810   Section        0  GUI_Cursor.o(.bss)
+    _IsInitialized                           0x20037810   Data           4  GUI_Cursor.o(.bss)
+    _aCursorContext                          0x20037814   Data          40  GUI_Cursor.o(.bss)
+    RegisterExit.9014                        0x2003783c   Data           8  GUI_Cursor.o(.bss)
+    _aCursor                                 0x20037844   Data          24  GUI_Cursor.o(.bss)
+    [Anonymous Symbol]                       0x2003785c   Section        0  GUI_PID.o(.bss)
+    _aState                                  0x2003785c   Data          72  GUI_PID.o(.bss)
+    _pfHookPost                              0x200378a4   Data           4  GUI_PID.o(.bss)
+    _pfHookPre                               0x200378a8   Data           4  GUI_PID.o(.bss)
+    RegisterExit.9631                        0x200378ac   Data           8  GUI_PID.o(.bss)
+    [Anonymous Symbol]                       0x200378b4   Section        0  GUI_Timer.o(.bss)
+    _hFirstTimer                             0x200378b4   Data           4  GUI_Timer.o(.bss)
+    _hActiveTimer                            0x200378b8   Data           4  GUI_Timer.o(.bss)
+    _IsInitialized                           0x200378bc   Data           4  GUI_Timer.o(.bss)
+    RegisterExit.9071                        0x200378c0   Data           8  GUI_Timer.o(.bss)
+    [Anonymous Symbol]                       0x200378c8   Section        0  WM_PID__GetPrevState.o(.bss)
+    _aPrevState                              0x200378c8   Data          24  WM_PID__GetPrevState.o(.bss)
+    STACK                                    0x200379f0   Section     1024  startup_stm32f767xx.o(STACK)
     .ARM.__AT_0xC0000000                     0xc0000000   Section    261120  ltdc_driver.o(.ARM.__AT_0xC0000000)
     .ARM.__AT_0xC003FC00                     0xc003fc00   Section    261120  ltdc_driver.o(.ARM.__AT_0xC003FC00)
 
@@ -11499,210 +11496,210 @@ Image Symbol Table
     UART_WaitOnFlagUntilTimeout              0x002147b9   Thumb Code   104  stm32f7xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
     USART1_IRQHandler                        0x00214821   Thumb Code    10  stm32f7xx_it.o(i.USART1_IRQHandler)
     UsageFault_Handler                       0x00214831   Thumb Code     4  stm32f7xx_it.o(i.UsageFault_Handler)
-    W25QXX_EnableQE                          0x00214835   Thumb Code    58  w25q256_driver.o(i.W25QXX_EnableQE)
-    W25QXX_EraseSector                       0x0021486f   Thumb Code    66  w25q256_driver.o(i.W25QXX_EraseSector)
-    W25QXX_Init                              0x002148b1   Thumb Code    86  w25q256_driver.o(i.W25QXX_Init)
-    W25QXX_Read                              0x00214919   Thumb Code    88  w25q256_driver.o(i.W25QXX_Read)
-    W25QXX_ReadId                            0x00214975   Thumb Code    60  w25q256_driver.o(i.W25QXX_ReadId)
-    W25QXX_SetParam                          0x002149b1   Thumb Code    36  w25q256_driver.o(i.W25QXX_SetParam)
-    W25QXX_WaitIdle                          0x002149d5   Thumb Code    88  w25q256_driver.o(i.W25QXX_WaitIdle)
-    W25QXX_Write                             0x00214a31   Thumb Code   180  w25q256_driver.o(i.W25QXX_Write)
-    W25QXX_Write_NoCheck                     0x00214ae9   Thumb Code    70  w25q256_driver.o(i.W25QXX_Write_NoCheck)
-    W25QXX_Write_Page                        0x00214b2f   Thumb Code    64  w25q256_driver.o(i.W25QXX_Write_Page)
-    __0printf$3                              0x00214e8d   Thumb Code    22  printf3.o(i.__0printf$3)
-    __1printf$3                              0x00214e8d   Thumb Code     0  printf3.o(i.__0printf$3)
-    __2printf                                0x00214e8d   Thumb Code     0  printf3.o(i.__0printf$3)
-    __scatterload_copy                       0x00214ee5   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00214ef3   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00214ef5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    delay_ms                                 0x002150bd   Thumb Code    18  utility.o(i.delay_ms)
-    delay_us                                 0x002150cf   Thumb Code    66  utility.o(i.delay_us)
-    fputc                                    0x00215111   Thumb Code    22  utility.o(i.fputc)
-    main                                     0x0021513d   Thumb Code   438  main.o(i.main)
-    osDelay                                  0x0021531b   Thumb Code    24  cmsis_os.o(i.osDelay)
-    osKernelRunning                          0x00215333   Thumb Code    18  cmsis_os.o(i.osKernelRunning)
-    osKernelStart                            0x00215345   Thumb Code    10  cmsis_os.o(i.osKernelStart)
-    osKernelSysTick                          0x0021534f   Thumb Code    20  cmsis_os.o(i.osKernelSysTick)
-    osMessageCreate                          0x00215363   Thumb Code    18  cmsis_os.o(i.osMessageCreate)
-    osMessageGet                             0x00215375   Thumb Code   150  cmsis_os.o(i.osMessageGet)
-    osMessagePut                             0x00215411   Thumb Code    92  cmsis_os.o(i.osMessagePut)
-    osMutexCreate                            0x00215471   Thumb Code    12  cmsis_os.o(i.osMutexCreate)
-    osMutexRelease                           0x0021547d   Thumb Code    76  cmsis_os.o(i.osMutexRelease)
-    osMutexWait                              0x002154cd   Thumb Code   100  cmsis_os.o(i.osMutexWait)
-    osSemaphoreCreate                        0x00215535   Thumb Code    50  cmsis_os.o(i.osSemaphoreCreate)
-    osSystickHandler                         0x00215567   Thumb Code    16  cmsis_os.o(i.osSystickHandler)
-    osThreadCreate                           0x00215577   Thumb Code    48  cmsis_os.o(i.osThreadCreate)
-    osThreadGetId                            0x002155a7   Thumb Code     8  cmsis_os.o(i.osThreadGetId)
-    pvPortMalloc                             0x00215ba9   Thumb Code   308  heap_4.o(i.pvPortMalloc)
-    pvTaskIncrementMutexHeldCount            0x00215cf1   Thumb Code    26  tasks.o(i.pvTaskIncrementMutexHeldCount)
-    pxPortInitialiseStack                    0x00215d11   Thumb Code    38  port.o(i.pxPortInitialiseStack)
-    uxListRemove                             0x00215d3d   Thumb Code    40  list.o(i.uxListRemove)
-    vListInitialise                          0x00215d65   Thumb Code    26  list.o(i.vListInitialise)
-    vListInitialiseItem                      0x00215d7f   Thumb Code     6  list.o(i.vListInitialiseItem)
-    vListInsert                              0x00215d85   Thumb Code    52  list.o(i.vListInsert)
-    vListInsertEnd                           0x00215db9   Thumb Code    24  list.o(i.vListInsertEnd)
-    vPortEnterCritical                       0x00215dd1   Thumb Code    84  port.o(i.vPortEnterCritical)
-    vPortExitCritical                        0x00215e2d   Thumb Code    60  port.o(i.vPortExitCritical)
-    vPortFree                                0x00215e6d   Thumb Code   148  heap_4.o(i.vPortFree)
-    vPortSetupTimerInterrupt                 0x00215f09   Thumb Code    36  port.o(i.vPortSetupTimerInterrupt)
-    vPortValidateInterruptPriority           0x00215f31   Thumb Code   114  port.o(i.vPortValidateInterruptPriority)
-    vTaskDelay                               0x00215fb1   Thumb Code    86  tasks.o(i.vTaskDelay)
-    vTaskInternalSetTimeOutState             0x00216011   Thumb Code    14  tasks.o(i.vTaskInternalSetTimeOutState)
-    vTaskMissedYield                         0x00216029   Thumb Code     8  tasks.o(i.vTaskMissedYield)
-    vTaskPlaceOnEventList                    0x00216035   Thumb Code    56  tasks.o(i.vTaskPlaceOnEventList)
-    vTaskPriorityDisinheritAfterTimeout      0x00216071   Thumb Code   238  tasks.o(i.vTaskPriorityDisinheritAfterTimeout)
-    vTaskStartScheduler                      0x0021616d   Thumb Code   116  tasks.o(i.vTaskStartScheduler)
-    vTaskSuspendAll                          0x002161fd   Thumb Code    12  tasks.o(i.vTaskSuspendAll)
-    vTaskSwitchContext                       0x0021620d   Thumb Code   122  tasks.o(i.vTaskSwitchContext)
-    xPortStartScheduler                      0x0021629d   Thumb Code   252  port.o(i.xPortStartScheduler)
-    xPortSysTickHandler                      0x002163b1   Thumb Code    50  port.o(i.xPortSysTickHandler)
-    xQueueCreateCountingSemaphore            0x002163e9   Thumb Code   100  queue.o(i.xQueueCreateCountingSemaphore)
-    xQueueCreateMutex                        0x0021644d   Thumb Code    34  queue.o(i.xQueueCreateMutex)
-    xQueueGenericCreate                      0x0021646f   Thumb Code    92  queue.o(i.xQueueGenericCreate)
-    xQueueGenericReset                       0x002164cd   Thumb Code   150  queue.o(i.xQueueGenericReset)
-    xQueueGenericSend                        0x00216569   Thumb Code   436  queue.o(i.xQueueGenericSend)
-    xQueueGenericSendFromISR                 0x00216721   Thumb Code   264  queue.o(i.xQueueGenericSendFromISR)
-    xQueueGiveFromISR                        0x00216829   Thumb Code   240  queue.o(i.xQueueGiveFromISR)
-    xQueueReceive                            0x00216919   Thumb Code   368  queue.o(i.xQueueReceive)
-    xQueueReceiveFromISR                     0x00216a8d   Thumb Code   214  queue.o(i.xQueueReceiveFromISR)
-    xQueueSemaphoreTake                      0x00216b65   Thumb Code   450  queue.o(i.xQueueSemaphoreTake)
-    xTaskCheckForTimeOut                     0x00216d2d   Thumb Code   140  tasks.o(i.xTaskCheckForTimeOut)
-    xTaskCreate                              0x00216dc1   Thumb Code    96  tasks.o(i.xTaskCreate)
-    xTaskGetCurrentTaskHandle                0x00216e21   Thumb Code     6  tasks.o(i.xTaskGetCurrentTaskHandle)
-    xTaskGetSchedulerState                   0x00216e2d   Thumb Code    24  tasks.o(i.xTaskGetSchedulerState)
-    xTaskGetTickCount                        0x00216e4d   Thumb Code     6  tasks.o(i.xTaskGetTickCount)
-    xTaskGetTickCountFromISR                 0x00216e59   Thumb Code    16  tasks.o(i.xTaskGetTickCountFromISR)
-    xTaskIncrementTick                       0x00216e6d   Thumb Code   286  tasks.o(i.xTaskIncrementTick)
-    xTaskPriorityDisinherit                  0x00216fb9   Thumb Code   196  tasks.o(i.xTaskPriorityDisinherit)
-    xTaskPriorityInherit                     0x00217089   Thumb Code   186  tasks.o(i.xTaskPriorityInherit)
-    xTaskRemoveFromEventList                 0x00217151   Thumb Code   132  tasks.o(i.xTaskRemoveFromEventList)
-    xTaskResumeAll                           0x002171ed   Thumb Code   228  tasks.o(i.xTaskResumeAll)
-    GT9147_TPX_TBL                           0x002172f4   Data          10  gt9147_iic_driver.o(.constdata)
-    GT9147_CFG_TBL                           0x002172fe   Data         184  gt9147_iic_driver.o(.constdata)
-    SD_Driver                                0x002173f4   Data          20  sd_diskio.o(.constdata)
-    AHBPrescTable                            0x00217410   Data          16  system_stm32f7xx.o(.constdata)
-    APBPrescTable                            0x00217420   Data           8  system_stm32f7xx.o(.constdata)
-    LCD_API_ColorConv_1616I                  0x00217458   Data          24  GUICC_1616I.o(.rodata)
-    LCD_API_ColorConv_822216                 0x00217470   Data          24  GUICC_822216.o(.rodata)
-    LCD_API_ColorConv_84444                  0x00217488   Data          24  GUICC_84444.o(.rodata)
-    LCD_API_ColorConv_8666                   0x002174a0   Data          24  GUICC_8666.o(.rodata)
-    LCD_API_ColorConv_8666_1                 0x002174b8   Data          24  GUICC_8666_1.o(.rodata)
-    LCD_API_ColorConv_88666I                 0x002174d0   Data          24  GUICC_88666I.o(.rodata)
-    LCD_API_ColorConv_M1555I                 0x002174e8   Data          24  GUICC_M1555I.o(.rodata)
-    LCD_API_ColorConv_M4444I                 0x00217500   Data          24  GUICC_M4444I.o(.rodata)
-    LCD_API_ColorConv_M8888I                 0x00217518   Data          24  GUICC_M8888I.o(.rodata)
-    LCD_API_ColorConv_565                    0x00217530   Data          24  GUICC_565.o(.rodata)
-    LCD_API_ColorConv_888                    0x00217548   Data          24  GUICC_888.o(.rodata)
-    LCD_API_ColorConv_8888                   0x00217560   Data          24  GUICC_8888.o(.rodata)
-    LCD_API_ColorConv_M565                   0x00217578   Data          24  GUICC_M565.o(.rodata)
-    LCD_API_ColorConv_M888                   0x00217590   Data          24  GUICC_M888.o(.rodata)
-    LCD_API_ColorConv_M8888                  0x002175a8   Data          24  GUICC_M8888.o(.rodata)
-    GUI_Pow10                                0x002175c0   Data          40  GUI_Common.o(.rodata)
-    GUIDRV_Lin_16_API                        0x0021761c   Data          52  GUIDRV_Lin_16.o(.rodata)
-    LCD_API_ColorConv_16                     0x00217650   Data          24  GUICC_16.o(.rodata)
-    GUI_UC_None                              0x00217668   Data          16  GUI_UC_EncodeNone.o(.rodata)
-    GUI__aConvert_255_63                     0x00217678   Data         256  GUI__DivTbl.o(.rodata)
-    GUI__aConvert_255_31                     0x00217778   Data         256  GUI__DivTbl.o(.rodata)
-    GUI__aConvert_255_15                     0x00217878   Data         256  GUI__DivTbl.o(.rodata)
-    GUI__aConvert_63_255                     0x00217978   Data          64  GUI__DivTbl.o(.rodata)
-    GUI__aConvert_31_255                     0x002179b8   Data          32  GUI__DivTbl.o(.rodata)
-    GUI__aConvert_15_255                     0x002179d8   Data          16  GUI__DivTbl.o(.rodata)
-    LCD_aMirror                              0x002179e8   Data         256  LCD_Mirror.o(.rodata)
-    GUI_Font6x9                              0x00217ae8   Data          36  F6x8.o(.rodata)
-    GUI_Font6x8                              0x00217b0c   Data          36  F6x8.o(.rodata)
-    GUI_MEMDEV_DEVICE_16                     0x00218224   Data          52  GUIDEV_16.o(.rodata)
-    LCD_API_ColorConv_0                      0x002182b0   Data          24  GUICC_0.o(.rodata)
-    GUI_MEMDEV_DEVICE_32                     0x002182c8   Data          52  GUIDEV_32.o(.rodata)
-    Region$$Table$$Base                      0x0021833c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0021835c   Number         0  anon$$obj.o(Region$$Table)
+    W25QXX_EraseSector                       0x00214835   Thumb Code    66  w25q256_driver.o(i.W25QXX_EraseSector)
+    W25QXX_Init                              0x00214879   Thumb Code    86  w25q256_driver.o(i.W25QXX_Init)
+    W25QXX_Read                              0x002148e1   Thumb Code    88  w25q256_driver.o(i.W25QXX_Read)
+    W25QXX_ReadId                            0x0021493d   Thumb Code    60  w25q256_driver.o(i.W25QXX_ReadId)
+    W25QXX_SetQE                             0x00214979   Thumb Code    58  w25q256_driver.o(i.W25QXX_SetQE)
+    W25QXX_SetReadParam                      0x002149b3   Thumb Code    36  w25q256_driver.o(i.W25QXX_SetReadParam)
+    W25QXX_WaitIdle                          0x002149d7   Thumb Code    52  w25q256_driver.o(i.W25QXX_WaitIdle)
+    W25QXX_Write                             0x00214a0d   Thumb Code   180  w25q256_driver.o(i.W25QXX_Write)
+    W25QXX_Write_NoCheck                     0x00214ac5   Thumb Code    70  w25q256_driver.o(i.W25QXX_Write_NoCheck)
+    W25QXX_Write_Page                        0x00214b0b   Thumb Code    64  w25q256_driver.o(i.W25QXX_Write_Page)
+    __0printf$3                              0x00214e69   Thumb Code    22  printf3.o(i.__0printf$3)
+    __1printf$3                              0x00214e69   Thumb Code     0  printf3.o(i.__0printf$3)
+    __2printf                                0x00214e69   Thumb Code     0  printf3.o(i.__0printf$3)
+    __scatterload_copy                       0x00214ec1   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00214ecf   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00214ed1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    delay_ms                                 0x00215099   Thumb Code    18  utility.o(i.delay_ms)
+    delay_us                                 0x002150ab   Thumb Code    66  utility.o(i.delay_us)
+    fputc                                    0x002150ed   Thumb Code    22  utility.o(i.fputc)
+    main                                     0x00215119   Thumb Code   438  main.o(i.main)
+    osDelay                                  0x002152f7   Thumb Code    24  cmsis_os.o(i.osDelay)
+    osKernelRunning                          0x0021530f   Thumb Code    18  cmsis_os.o(i.osKernelRunning)
+    osKernelStart                            0x00215321   Thumb Code    10  cmsis_os.o(i.osKernelStart)
+    osKernelSysTick                          0x0021532b   Thumb Code    20  cmsis_os.o(i.osKernelSysTick)
+    osMessageCreate                          0x0021533f   Thumb Code    18  cmsis_os.o(i.osMessageCreate)
+    osMessageGet                             0x00215351   Thumb Code   150  cmsis_os.o(i.osMessageGet)
+    osMessagePut                             0x002153ed   Thumb Code    92  cmsis_os.o(i.osMessagePut)
+    osMutexCreate                            0x0021544d   Thumb Code    12  cmsis_os.o(i.osMutexCreate)
+    osMutexRelease                           0x00215459   Thumb Code    76  cmsis_os.o(i.osMutexRelease)
+    osMutexWait                              0x002154a9   Thumb Code   100  cmsis_os.o(i.osMutexWait)
+    osSemaphoreCreate                        0x00215511   Thumb Code    50  cmsis_os.o(i.osSemaphoreCreate)
+    osSystickHandler                         0x00215543   Thumb Code    16  cmsis_os.o(i.osSystickHandler)
+    osThreadCreate                           0x00215553   Thumb Code    48  cmsis_os.o(i.osThreadCreate)
+    osThreadGetId                            0x00215583   Thumb Code     8  cmsis_os.o(i.osThreadGetId)
+    pvPortMalloc                             0x00215b85   Thumb Code   308  heap_4.o(i.pvPortMalloc)
+    pvTaskIncrementMutexHeldCount            0x00215ccd   Thumb Code    26  tasks.o(i.pvTaskIncrementMutexHeldCount)
+    pxPortInitialiseStack                    0x00215ced   Thumb Code    38  port.o(i.pxPortInitialiseStack)
+    uxListRemove                             0x00215d19   Thumb Code    40  list.o(i.uxListRemove)
+    vListInitialise                          0x00215d41   Thumb Code    26  list.o(i.vListInitialise)
+    vListInitialiseItem                      0x00215d5b   Thumb Code     6  list.o(i.vListInitialiseItem)
+    vListInsert                              0x00215d61   Thumb Code    52  list.o(i.vListInsert)
+    vListInsertEnd                           0x00215d95   Thumb Code    24  list.o(i.vListInsertEnd)
+    vPortEnterCritical                       0x00215dad   Thumb Code    84  port.o(i.vPortEnterCritical)
+    vPortExitCritical                        0x00215e09   Thumb Code    60  port.o(i.vPortExitCritical)
+    vPortFree                                0x00215e49   Thumb Code   148  heap_4.o(i.vPortFree)
+    vPortSetupTimerInterrupt                 0x00215ee5   Thumb Code    36  port.o(i.vPortSetupTimerInterrupt)
+    vPortValidateInterruptPriority           0x00215f0d   Thumb Code   114  port.o(i.vPortValidateInterruptPriority)
+    vTaskDelay                               0x00215f8d   Thumb Code    86  tasks.o(i.vTaskDelay)
+    vTaskInternalSetTimeOutState             0x00215fed   Thumb Code    14  tasks.o(i.vTaskInternalSetTimeOutState)
+    vTaskMissedYield                         0x00216005   Thumb Code     8  tasks.o(i.vTaskMissedYield)
+    vTaskPlaceOnEventList                    0x00216011   Thumb Code    56  tasks.o(i.vTaskPlaceOnEventList)
+    vTaskPriorityDisinheritAfterTimeout      0x0021604d   Thumb Code   238  tasks.o(i.vTaskPriorityDisinheritAfterTimeout)
+    vTaskStartScheduler                      0x00216149   Thumb Code   116  tasks.o(i.vTaskStartScheduler)
+    vTaskSuspendAll                          0x002161d9   Thumb Code    12  tasks.o(i.vTaskSuspendAll)
+    vTaskSwitchContext                       0x002161e9   Thumb Code   122  tasks.o(i.vTaskSwitchContext)
+    xPortStartScheduler                      0x00216279   Thumb Code   252  port.o(i.xPortStartScheduler)
+    xPortSysTickHandler                      0x0021638d   Thumb Code    50  port.o(i.xPortSysTickHandler)
+    xQueueCreateCountingSemaphore            0x002163c5   Thumb Code   100  queue.o(i.xQueueCreateCountingSemaphore)
+    xQueueCreateMutex                        0x00216429   Thumb Code    34  queue.o(i.xQueueCreateMutex)
+    xQueueGenericCreate                      0x0021644b   Thumb Code    92  queue.o(i.xQueueGenericCreate)
+    xQueueGenericReset                       0x002164a9   Thumb Code   150  queue.o(i.xQueueGenericReset)
+    xQueueGenericSend                        0x00216545   Thumb Code   436  queue.o(i.xQueueGenericSend)
+    xQueueGenericSendFromISR                 0x002166fd   Thumb Code   264  queue.o(i.xQueueGenericSendFromISR)
+    xQueueGiveFromISR                        0x00216805   Thumb Code   240  queue.o(i.xQueueGiveFromISR)
+    xQueueReceive                            0x002168f5   Thumb Code   368  queue.o(i.xQueueReceive)
+    xQueueReceiveFromISR                     0x00216a69   Thumb Code   214  queue.o(i.xQueueReceiveFromISR)
+    xQueueSemaphoreTake                      0x00216b41   Thumb Code   450  queue.o(i.xQueueSemaphoreTake)
+    xTaskCheckForTimeOut                     0x00216d09   Thumb Code   140  tasks.o(i.xTaskCheckForTimeOut)
+    xTaskCreate                              0x00216d9d   Thumb Code    96  tasks.o(i.xTaskCreate)
+    xTaskGetCurrentTaskHandle                0x00216dfd   Thumb Code     6  tasks.o(i.xTaskGetCurrentTaskHandle)
+    xTaskGetSchedulerState                   0x00216e09   Thumb Code    24  tasks.o(i.xTaskGetSchedulerState)
+    xTaskGetTickCount                        0x00216e29   Thumb Code     6  tasks.o(i.xTaskGetTickCount)
+    xTaskGetTickCountFromISR                 0x00216e35   Thumb Code    16  tasks.o(i.xTaskGetTickCountFromISR)
+    xTaskIncrementTick                       0x00216e49   Thumb Code   286  tasks.o(i.xTaskIncrementTick)
+    xTaskPriorityDisinherit                  0x00216f95   Thumb Code   196  tasks.o(i.xTaskPriorityDisinherit)
+    xTaskPriorityInherit                     0x00217065   Thumb Code   186  tasks.o(i.xTaskPriorityInherit)
+    xTaskRemoveFromEventList                 0x0021712d   Thumb Code   132  tasks.o(i.xTaskRemoveFromEventList)
+    xTaskResumeAll                           0x002171c9   Thumb Code   228  tasks.o(i.xTaskResumeAll)
+    GT9147_TPX_TBL                           0x002172d0   Data          10  gt9147_iic_driver.o(.constdata)
+    GT9147_CFG_TBL                           0x002172da   Data         184  gt9147_iic_driver.o(.constdata)
+    SD_Driver                                0x002173d0   Data          20  sd_diskio.o(.constdata)
+    AHBPrescTable                            0x002173ec   Data          16  system_stm32f7xx.o(.constdata)
+    APBPrescTable                            0x002173fc   Data           8  system_stm32f7xx.o(.constdata)
+    LCD_API_ColorConv_1616I                  0x00217434   Data          24  GUICC_1616I.o(.rodata)
+    LCD_API_ColorConv_822216                 0x0021744c   Data          24  GUICC_822216.o(.rodata)
+    LCD_API_ColorConv_84444                  0x00217464   Data          24  GUICC_84444.o(.rodata)
+    LCD_API_ColorConv_8666                   0x0021747c   Data          24  GUICC_8666.o(.rodata)
+    LCD_API_ColorConv_8666_1                 0x00217494   Data          24  GUICC_8666_1.o(.rodata)
+    LCD_API_ColorConv_88666I                 0x002174ac   Data          24  GUICC_88666I.o(.rodata)
+    LCD_API_ColorConv_M1555I                 0x002174c4   Data          24  GUICC_M1555I.o(.rodata)
+    LCD_API_ColorConv_M4444I                 0x002174dc   Data          24  GUICC_M4444I.o(.rodata)
+    LCD_API_ColorConv_M8888I                 0x002174f4   Data          24  GUICC_M8888I.o(.rodata)
+    LCD_API_ColorConv_565                    0x0021750c   Data          24  GUICC_565.o(.rodata)
+    LCD_API_ColorConv_888                    0x00217524   Data          24  GUICC_888.o(.rodata)
+    LCD_API_ColorConv_8888                   0x0021753c   Data          24  GUICC_8888.o(.rodata)
+    LCD_API_ColorConv_M565                   0x00217554   Data          24  GUICC_M565.o(.rodata)
+    LCD_API_ColorConv_M888                   0x0021756c   Data          24  GUICC_M888.o(.rodata)
+    LCD_API_ColorConv_M8888                  0x00217584   Data          24  GUICC_M8888.o(.rodata)
+    GUI_Pow10                                0x0021759c   Data          40  GUI_Common.o(.rodata)
+    GUIDRV_Lin_16_API                        0x002175f8   Data          52  GUIDRV_Lin_16.o(.rodata)
+    LCD_API_ColorConv_16                     0x0021762c   Data          24  GUICC_16.o(.rodata)
+    GUI_UC_None                              0x00217644   Data          16  GUI_UC_EncodeNone.o(.rodata)
+    GUI__aConvert_255_63                     0x00217654   Data         256  GUI__DivTbl.o(.rodata)
+    GUI__aConvert_255_31                     0x00217754   Data         256  GUI__DivTbl.o(.rodata)
+    GUI__aConvert_255_15                     0x00217854   Data         256  GUI__DivTbl.o(.rodata)
+    GUI__aConvert_63_255                     0x00217954   Data          64  GUI__DivTbl.o(.rodata)
+    GUI__aConvert_31_255                     0x00217994   Data          32  GUI__DivTbl.o(.rodata)
+    GUI__aConvert_15_255                     0x002179b4   Data          16  GUI__DivTbl.o(.rodata)
+    LCD_aMirror                              0x002179c4   Data         256  LCD_Mirror.o(.rodata)
+    GUI_Font6x9                              0x00217ac4   Data          36  F6x8.o(.rodata)
+    GUI_Font6x8                              0x00217ae8   Data          36  F6x8.o(.rodata)
+    GUI_MEMDEV_DEVICE_16                     0x00218200   Data          52  GUIDEV_16.o(.rodata)
+    LCD_API_ColorConv_0                      0x0021828c   Data          24  GUICC_0.o(.rodata)
+    GUI_MEMDEV_DEVICE_32                     0x002182a4   Data          52  GUIDEV_32.o(.rodata)
+    Region$$Table$$Base                      0x00218318   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00218338   Number         0  anon$$obj.o(Region$$Table)
     touch_x                                  0x20000000   Data           2  gt9147_iic_driver.o(.data)
     touch_y                                  0x20000002   Data           2  gt9147_iic_driver.o(.data)
     press_sta                                0x20000004   Data           1  gt9147_iic_driver.o(.data)
     __stdout                                 0x20000008   Data           4  utility.o(.data)
     W25_ID                                   0x2000000c   Data           2  w25q256_driver.o(.data)
-    TEXT_Buffer                              0x2000000e   Data          11  w25q256_driver.o(.data)
-    defaultTaskHandle                        0x2000001c   Data           4  main.o(.data)
-    touchTaskHandle                          0x20000020   Data           4  main.o(.data)
-    updateFontTaskHandle                     0x20000024   Data           4  main.o(.data)
-    retSD                                    0x20000030   Data           1  fatfs.o(.data)
-    SDPath                                   0x20000031   Data           4  fatfs.o(.data)
-    TransferInProgress                       0x20000040   Data           1  stemwin_wrapper.o(.data)
-    SystemCoreClock                          0x20000048   Data           4  system_stm32f7xx.o(.data)
-    uwTick                                   0x2000004c   Data           4  stm32f7xx_hal.o(.data)
-    uwTickPrio                               0x20000050   Data           4  stm32f7xx_hal.o(.data)
-    uwTickFreq                               0x20000054   Data           1  stm32f7xx_hal.o(.data)
-    pxCurrentTCB                             0x20000058   Data           4  tasks.o(.data)
-    GUI_pfGetpPalConvTable                   0x200000c8   Data           4  GUI_Core.o(.data)
-    GUI__pFontDefault                        0x200000cc   Data           4  GUI_Core.o(.data)
-    GUI__ColorDefault                        0x200000d0   Data           4  GUI_Core.o(.data)
-    GUI__BkColorDefault                      0x200000d4   Data           4  GUI_Core.o(.data)
-    GUI_pContext                             0x200000d8   Data           4  GUI_Core.o(.data)
-    GUI__pfMixColors                         0x200000e8   Data           4  GUI__Alpha.o(.data)
-    GUI__pfMixColorsBulk                     0x200000ec   Data           4  GUI__Alpha.o(.data)
-    LCD__pSetColorAPI                        0x200000f0   Data           4  LCD.o(.data)
-    GUI_CharLine_pfLog2Vis                   0x200000f4   Data           4  GUI_CharLine.o(.data)
-    GUI__pfMemcpy                            0x20000108   Data           4  GUI__Private.o(.data)
-    GUI__pfMemset                            0x2000010c   Data           4  GUI__Private.o(.data)
-    LCD_AA_pfMixColors16                     0x20000110   Data           4  LCD_AA.o(.data)
-    WM__ModalLayer                           0x2000012c   Data           4  WM_Touch.o(.data)
-    W25QXX_Buffer                            0x20000138   Data        4096  w25q256_driver.o(.bss)
-    W25_RxBuf                                0x20001138   Data          50  w25q256_driver.o(.bss)
-    hcrc                                     0x2000116c   Data          36  main.o(.bss)
-    hqspi                                    0x20001190   Data          76  main.o(.bss)
-    hsd1                                     0x200011dc   Data         132  main.o(.bss)
-    huart1                                   0x20001260   Data         128  main.o(.bss)
-    hdma_memtomem_dma2_stream0               0x200012e0   Data          96  main.o(.bss)
-    hltdc                                    0x20033540   Data         168  hw_init.o(.bss)
-    hdma2d                                   0x200335e8   Data          88  hw_init.o(.bss)
-    hsdram1                                  0x20033640   Data          52  hw_init.o(.bss)
-    disk                                     0x200336a0   Data          12  ff_gen_drv.o(.bss)
-    GUITASK__EntranceCnt                     0x20037790   Data           4  GUI_Task.o(.bss)
-    GUI_AA__ClipX0                           0x200378d0   Data           4  anon$$obj.o(GUI_AA__ClipX0)
-    GUI_ALLOC__Context                       0x200378d4   Data         192  anon$$obj.o(GUI_ALLOC__Context)
-    GUI_DCACHE__pfClearCacheHook             0x20037994   Data           4  anon$$obj.o(GUI_DCACHE__pfClearCacheHook)
-    GUI_DecChar                              0x20037998   Data           1  anon$$obj.o(GUI_DecChar)
-    GUI_OrgX                                 0x2003799a   Data           2  anon$$obj.o(GUI_OrgX)
-    GUI_OrgY                                 0x2003799c   Data           2  anon$$obj.o(GUI_OrgY)
-    GUI__BufferSize                          0x200379a0   Data           4  anon$$obj.o(GUI__BufferSize)
-    GUI__IsInitialized                       0x200379a4   Data           1  anon$$obj.o(GUI__IsInitialized)
-    GUI__NumLayersInUse                      0x200379a5   Data           1  anon$$obj.o(GUI__NumLayersInUse)
-    GUI__PreserveTrans                       0x200379a6   Data           1  anon$$obj.o(GUI__PreserveTrans)
-    GUI__aNumBuffers                         0x200379a8   Data           2  anon$$obj.o(GUI__aNumBuffers)
-    GUI__apDevice                            0x200379ac   Data           8  anon$$obj.o(GUI__apDevice)
-    GUI__pfDrawAlphaBitmapFunc               0x200379b4   Data           4  anon$$obj.o(GUI__pfDrawAlphaBitmapFunc)
-    GUI__pfDrawAlphaMemdevFunc               0x200379b8   Data           4  anon$$obj.o(GUI__pfDrawAlphaMemdevFunc)
-    GUI_pLCD_APIList                         0x200379bc   Data           4  anon$$obj.o(GUI_pLCD_APIList)
-    GUI_pUC_API                              0x200379c0   Data           4  anon$$obj.o(GUI_pUC_API)
-    GUI_pfDispCharLine                       0x200379c4   Data           4  anon$$obj.o(GUI_pfDispCharLine)
-    GUI_pfDispCharStyle                      0x200379c8   Data           4  anon$$obj.o(GUI_pfDispCharStyle)
-    GUI_pfExecAnimations                     0x200379cc   Data           4  anon$$obj.o(GUI_pfExecAnimations)
-    GUI_pfTimerExec                          0x200379d0   Data           4  anon$$obj.o(GUI_pfTimerExec)
-    GUI_pfUpdateSoftLayer                    0x200379d4   Data           4  anon$$obj.o(GUI_pfUpdateSoftLayer)
-    LCD__aConvTable                          0x200379d8   Data           4  anon$$obj.o(LCD__aConvTable)
-    WM_MULTIBUF__pAPI                        0x20037de0   Data           4  anon$$obj.o(WM_MULTIBUF__pAPI)
-    __initial_sp                             0x20037de0   Data           0  startup_stm32f767xx.o(STACK)
-    WM__CaptureReleaseAuto                   0x20037de4   Data           1  anon$$obj.o(WM__CaptureReleaseAuto)
-    WM__CreateFlags                          0x20037de8   Data           4  anon$$obj.o(WM__CreateFlags)
-    WM__FirstWin                             0x20037dec   Data           4  anon$$obj.o(WM__FirstWin)
-    WM__InvalidLayerMask                     0x20037df0   Data           4  anon$$obj.o(WM__InvalidLayerMask)
-    WM__NumInvalidWindows                    0x20037df4   Data           2  anon$$obj.o(WM__NumInvalidWindows)
-    WM__NumWindows                           0x20037df6   Data           2  anon$$obj.o(WM__NumWindows)
-    WM__PaintCallbackCnt                     0x20037df8   Data           1  anon$$obj.o(WM__PaintCallbackCnt)
-    WM__TouchedLayer                         0x20037dfc   Data           4  anon$$obj.o(WM__TouchedLayer)
-    WM__TransWindowCnt                       0x20037e00   Data           4  anon$$obj.o(WM__TransWindowCnt)
-    WM__aBkColor                             0x20037e04   Data           8  anon$$obj.o(WM__aBkColor)
-    WM__aCHWinLast                           0x20037e0c   Data          16  anon$$obj.o(WM__aCHWinLast)
-    WM__aCHWinModal                          0x20037e1c   Data          16  anon$$obj.o(WM__aCHWinModal)
-    WM__aCHWinMouseOver                      0x20037e2c   Data          16  anon$$obj.o(WM__aCHWinMouseOver)
-    WM__ahCapture                            0x20037e3c   Data           8  anon$$obj.o(WM__ahCapture)
-    WM__ahDesktopWin                         0x20037e44   Data           8  anon$$obj.o(WM__ahDesktopWin)
-    WM__ahWinFocus                           0x20037e4c   Data           8  anon$$obj.o(WM__ahWinFocus)
-    WM__hATransWindow                        0x20037e54   Data           4  anon$$obj.o(WM__hATransWindow)
-    WM__hCreateStatic                        0x20037e58   Data           4  anon$$obj.o(WM__hCreateStatic)
-    WM__pExecGestures                        0x20037e5c   Data           4  anon$$obj.o(WM__pExecGestures)
-    WM__pFirstCriticalHandle                 0x20037e60   Data           4  anon$$obj.o(WM__pFirstCriticalHandle)
-    WM_pfHandlePID                           0x20037e64   Data           4  anon$$obj.o(WM_pfHandlePID)
-    WM_pfPollPID                             0x20037e68   Data           4  anon$$obj.o(WM_pfPollPID)
+    TEXT_Buffer                              0x2000000e   Data          27  w25q256_driver.o(.data)
+    defaultTaskHandle                        0x2000002c   Data           4  main.o(.data)
+    touchTaskHandle                          0x20000030   Data           4  main.o(.data)
+    updateFontTaskHandle                     0x20000034   Data           4  main.o(.data)
+    retSD                                    0x20000040   Data           1  fatfs.o(.data)
+    SDPath                                   0x20000041   Data           4  fatfs.o(.data)
+    TransferInProgress                       0x20000050   Data           1  stemwin_wrapper.o(.data)
+    SystemCoreClock                          0x20000058   Data           4  system_stm32f7xx.o(.data)
+    uwTick                                   0x2000005c   Data           4  stm32f7xx_hal.o(.data)
+    uwTickPrio                               0x20000060   Data           4  stm32f7xx_hal.o(.data)
+    uwTickFreq                               0x20000064   Data           1  stm32f7xx_hal.o(.data)
+    pxCurrentTCB                             0x20000068   Data           4  tasks.o(.data)
+    GUI_pfGetpPalConvTable                   0x200000d8   Data           4  GUI_Core.o(.data)
+    GUI__pFontDefault                        0x200000dc   Data           4  GUI_Core.o(.data)
+    GUI__ColorDefault                        0x200000e0   Data           4  GUI_Core.o(.data)
+    GUI__BkColorDefault                      0x200000e4   Data           4  GUI_Core.o(.data)
+    GUI_pContext                             0x200000e8   Data           4  GUI_Core.o(.data)
+    GUI__pfMixColors                         0x200000f8   Data           4  GUI__Alpha.o(.data)
+    GUI__pfMixColorsBulk                     0x200000fc   Data           4  GUI__Alpha.o(.data)
+    LCD__pSetColorAPI                        0x20000100   Data           4  LCD.o(.data)
+    GUI_CharLine_pfLog2Vis                   0x20000104   Data           4  GUI_CharLine.o(.data)
+    GUI__pfMemcpy                            0x20000118   Data           4  GUI__Private.o(.data)
+    GUI__pfMemset                            0x2000011c   Data           4  GUI__Private.o(.data)
+    LCD_AA_pfMixColors16                     0x20000120   Data           4  LCD_AA.o(.data)
+    WM__ModalLayer                           0x2000013c   Data           4  WM_Touch.o(.data)
+    W25QXX_Buffer                            0x20000148   Data        4096  w25q256_driver.o(.bss)
+    W25_RxBuf                                0x20001148   Data          50  w25q256_driver.o(.bss)
+    hcrc                                     0x2000117c   Data          36  main.o(.bss)
+    hqspi                                    0x200011a0   Data          76  main.o(.bss)
+    hsd1                                     0x200011ec   Data         132  main.o(.bss)
+    huart1                                   0x20001270   Data         128  main.o(.bss)
+    hdma_memtomem_dma2_stream0               0x200012f0   Data          96  main.o(.bss)
+    hltdc                                    0x20033550   Data         168  hw_init.o(.bss)
+    hdma2d                                   0x200335f8   Data          88  hw_init.o(.bss)
+    hsdram1                                  0x20033650   Data          52  hw_init.o(.bss)
+    disk                                     0x200336b0   Data          12  ff_gen_drv.o(.bss)
+    GUITASK__EntranceCnt                     0x200377a0   Data           4  GUI_Task.o(.bss)
+    GUI_AA__ClipX0                           0x200378e0   Data           4  anon$$obj.o(GUI_AA__ClipX0)
+    GUI_ALLOC__Context                       0x200378e4   Data         192  anon$$obj.o(GUI_ALLOC__Context)
+    GUI_DCACHE__pfClearCacheHook             0x200379a4   Data           4  anon$$obj.o(GUI_DCACHE__pfClearCacheHook)
+    GUI_DecChar                              0x200379a8   Data           1  anon$$obj.o(GUI_DecChar)
+    GUI_OrgX                                 0x200379aa   Data           2  anon$$obj.o(GUI_OrgX)
+    GUI_OrgY                                 0x200379ac   Data           2  anon$$obj.o(GUI_OrgY)
+    GUI__BufferSize                          0x200379b0   Data           4  anon$$obj.o(GUI__BufferSize)
+    GUI__IsInitialized                       0x200379b4   Data           1  anon$$obj.o(GUI__IsInitialized)
+    GUI__NumLayersInUse                      0x200379b5   Data           1  anon$$obj.o(GUI__NumLayersInUse)
+    GUI__PreserveTrans                       0x200379b6   Data           1  anon$$obj.o(GUI__PreserveTrans)
+    GUI__aNumBuffers                         0x200379b8   Data           2  anon$$obj.o(GUI__aNumBuffers)
+    GUI__apDevice                            0x200379bc   Data           8  anon$$obj.o(GUI__apDevice)
+    GUI__pfDrawAlphaBitmapFunc               0x200379c4   Data           4  anon$$obj.o(GUI__pfDrawAlphaBitmapFunc)
+    GUI__pfDrawAlphaMemdevFunc               0x200379c8   Data           4  anon$$obj.o(GUI__pfDrawAlphaMemdevFunc)
+    GUI_pLCD_APIList                         0x200379cc   Data           4  anon$$obj.o(GUI_pLCD_APIList)
+    GUI_pUC_API                              0x200379d0   Data           4  anon$$obj.o(GUI_pUC_API)
+    GUI_pfDispCharLine                       0x200379d4   Data           4  anon$$obj.o(GUI_pfDispCharLine)
+    GUI_pfDispCharStyle                      0x200379d8   Data           4  anon$$obj.o(GUI_pfDispCharStyle)
+    GUI_pfExecAnimations                     0x200379dc   Data           4  anon$$obj.o(GUI_pfExecAnimations)
+    GUI_pfTimerExec                          0x200379e0   Data           4  anon$$obj.o(GUI_pfTimerExec)
+    GUI_pfUpdateSoftLayer                    0x200379e4   Data           4  anon$$obj.o(GUI_pfUpdateSoftLayer)
+    LCD__aConvTable                          0x200379e8   Data           4  anon$$obj.o(LCD__aConvTable)
+    WM_MULTIBUF__pAPI                        0x20037df0   Data           4  anon$$obj.o(WM_MULTIBUF__pAPI)
+    __initial_sp                             0x20037df0   Data           0  startup_stm32f767xx.o(STACK)
+    WM__CaptureReleaseAuto                   0x20037df4   Data           1  anon$$obj.o(WM__CaptureReleaseAuto)
+    WM__CreateFlags                          0x20037df8   Data           4  anon$$obj.o(WM__CreateFlags)
+    WM__FirstWin                             0x20037dfc   Data           4  anon$$obj.o(WM__FirstWin)
+    WM__InvalidLayerMask                     0x20037e00   Data           4  anon$$obj.o(WM__InvalidLayerMask)
+    WM__NumInvalidWindows                    0x20037e04   Data           2  anon$$obj.o(WM__NumInvalidWindows)
+    WM__NumWindows                           0x20037e06   Data           2  anon$$obj.o(WM__NumWindows)
+    WM__PaintCallbackCnt                     0x20037e08   Data           1  anon$$obj.o(WM__PaintCallbackCnt)
+    WM__TouchedLayer                         0x20037e0c   Data           4  anon$$obj.o(WM__TouchedLayer)
+    WM__TransWindowCnt                       0x20037e10   Data           4  anon$$obj.o(WM__TransWindowCnt)
+    WM__aBkColor                             0x20037e14   Data           8  anon$$obj.o(WM__aBkColor)
+    WM__aCHWinLast                           0x20037e1c   Data          16  anon$$obj.o(WM__aCHWinLast)
+    WM__aCHWinModal                          0x20037e2c   Data          16  anon$$obj.o(WM__aCHWinModal)
+    WM__aCHWinMouseOver                      0x20037e3c   Data          16  anon$$obj.o(WM__aCHWinMouseOver)
+    WM__ahCapture                            0x20037e4c   Data           8  anon$$obj.o(WM__ahCapture)
+    WM__ahDesktopWin                         0x20037e54   Data           8  anon$$obj.o(WM__ahDesktopWin)
+    WM__ahWinFocus                           0x20037e5c   Data           8  anon$$obj.o(WM__ahWinFocus)
+    WM__hATransWindow                        0x20037e64   Data           4  anon$$obj.o(WM__hATransWindow)
+    WM__hCreateStatic                        0x20037e68   Data           4  anon$$obj.o(WM__hCreateStatic)
+    WM__pExecGestures                        0x20037e6c   Data           4  anon$$obj.o(WM__pExecGestures)
+    WM__pFirstCriticalHandle                 0x20037e70   Data           4  anon$$obj.o(WM__pFirstCriticalHandle)
+    WM_pfHandlePID                           0x20037e74   Data           4  anon$$obj.o(WM_pfHandlePID)
+    WM_pfPollPID                             0x20037e78   Data           4  anon$$obj.o(WM_pfPollPID)
     ltdc_layer0                              0xc0000000   Data       261120  ltdc_driver.o(.ARM.__AT_0xC0000000)
     ltdc_layer1                              0xc003fc00   Data       261120  ltdc_driver.o(.ARM.__AT_0xC003FC00)
 
@@ -11714,9 +11711,9 @@ Memory Map of the image
 
   Image Entry point : 0x002001f9
 
-  Load Region LR_IROM1 (Base: 0x00200000, Size: 0x00018494, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x000183dc])
+  Load Region LR_IROM1 (Base: 0x00200000, Size: 0x00018480, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x000183c8])
 
-    Execution Region ER_IROM1 (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x0001835c, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x00018338, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -12393,298 +12390,300 @@ Memory Map of the image
     0x002147b8   0x002147b8   0x00000068   Code   RO         3713    i.UART_WaitOnFlagUntilTimeout  stm32f7xx_hal_uart.o
     0x00214820   0x00214820   0x00000010   Code   RO         1461    i.USART1_IRQHandler  stm32f7xx_it.o
     0x00214830   0x00214830   0x00000004   Code   RO         1462    i.UsageFault_Handler  stm32f7xx_it.o
-    0x00214834   0x00214834   0x0000003a   Code   RO          493    i.W25QXX_EnableQE   w25q256_driver.o
-    0x0021486e   0x0021486e   0x00000042   Code   RO          494    i.W25QXX_EraseSector  w25q256_driver.o
-    0x002148b0   0x002148b0   0x00000068   Code   RO          495    i.W25QXX_Init       w25q256_driver.o
-    0x00214918   0x00214918   0x0000005c   Code   RO          496    i.W25QXX_Read       w25q256_driver.o
-    0x00214974   0x00214974   0x0000003c   Code   RO          497    i.W25QXX_ReadId     w25q256_driver.o
-    0x002149b0   0x002149b0   0x00000024   Code   RO          498    i.W25QXX_SetParam   w25q256_driver.o
-    0x002149d4   0x002149d4   0x0000005c   Code   RO          499    i.W25QXX_WaitIdle   w25q256_driver.o
-    0x00214a30   0x00214a30   0x000000b8   Code   RO          500    i.W25QXX_Write      w25q256_driver.o
-    0x00214ae8   0x00214ae8   0x00000046   Code   RO          501    i.W25QXX_Write_NoCheck  w25q256_driver.o
-    0x00214b2e   0x00214b2e   0x00000040   Code   RO          502    i.W25QXX_Write_Page  w25q256_driver.o
-    0x00214b6e   0x00214b6e   0x0000001c   Code   RO         1259    i._Color2IndexBulk_M1555I_DMA2D  stemwin_wrapper.o
-    0x00214b8a   0x00214b8a   0x0000001c   Code   RO         1260    i._Color2IndexBulk_M4444I_DMA2D  stemwin_wrapper.o
-    0x00214ba6   0x00214ba6   0x0000001c   Code   RO         1261    i._Color2IndexBulk_M565_DMA2D  stemwin_wrapper.o
-    0x00214bc2   0x00214bc2   0x0000001c   Code   RO         1262    i._Color2IndexBulk_M8888I_DMA2D  stemwin_wrapper.o
-    0x00214bde   0x00214bde   0x0000001c   Code   RO         1263    i._Color2IndexBulk_M888_DMA2D  stemwin_wrapper.o
-    0x00214bfa   0x00214bfa   0x00000020   Code   RO         1264    i._DMA_Color2IndexBulk  stemwin_wrapper.o
-    0x00214c1a   0x00214c1a   0x00000002   PAD
-    0x00214c1c   0x00214c1c   0x0000005c   Code   RO         1265    i._DMA_ConvertColor  stemwin_wrapper.o
-    0x00214c78   0x00214c78   0x00000070   Code   RO         1266    i._DMA_DrawAlphaBitmap  stemwin_wrapper.o
-    0x00214ce8   0x00214ce8   0x0000001c   Code   RO         1267    i._DMA_ExecOperation  stemwin_wrapper.o
-    0x00214d04   0x00214d04   0x00000020   Code   RO         1268    i._DMA_Index2ColorBulk  stemwin_wrapper.o
-    0x00214d24   0x00214d24   0x0000001c   Code   RO         1269    i._Index2ColorBulk_M1555I_DMA2D  stemwin_wrapper.o
-    0x00214d40   0x00214d40   0x0000001c   Code   RO         1270    i._Index2ColorBulk_M4444I_DMA2D  stemwin_wrapper.o
-    0x00214d5c   0x00214d5c   0x0000001c   Code   RO         1271    i._Index2ColorBulk_M565_DMA2D  stemwin_wrapper.o
-    0x00214d78   0x00214d78   0x0000001c   Code   RO         1272    i._Index2ColorBulk_M8888I_DMA2D  stemwin_wrapper.o
-    0x00214d94   0x00214d94   0x0000001c   Code   RO         1273    i._Index2ColorBulk_M888_DMA2D  stemwin_wrapper.o
-    0x00214db0   0x00214db0   0x0000009c   Code   RO         1274    i._LCD_DrawBitmapAlpha  stemwin_wrapper.o
-    0x00214e4c   0x00214e4c   0x00000040   Code   RO         1275    i._LCD_DrawMemdevAlpha  stemwin_wrapper.o
-    0x00214e8c   0x00214e8c   0x00000020   Code   RO         9485    i.__0printf$3       mc_w.l(printf3.o)
-    0x00214eac   0x00214eac   0x00000010   Code   RO         2603    i.__NVIC_GetPriorityGrouping  stm32f7xx_hal_cortex.o
-    0x00214ebc   0x00214ebc   0x00000028   Code   RO         2604    i.__NVIC_SetPriority  stm32f7xx_hal_cortex.o
-    0x00214ee4   0x00214ee4   0x0000000e   Code   RO         9801    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00214ef2   0x00214ef2   0x00000002   Code   RO         9802    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00214ef4   0x00214ef4   0x0000000e   Code   RO         9803    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00214f02   0x00214f02   0x00000002   PAD
-    0x00214f04   0x00214f04   0x000001b8   Code   RO         9492    i._printf_core      mc_w.l(printf3.o)
-    0x002150bc   0x002150bc   0x00000012   Code   RO          400    i.delay_ms          utility.o
-    0x002150ce   0x002150ce   0x00000042   Code   RO          401    i.delay_us          utility.o
-    0x00215110   0x00215110   0x0000001c   Code   RO          402    i.fputc             utility.o
-    0x0021512c   0x0021512c   0x00000010   Code   RO         6976    i.inHandlerMode     cmsis_os.o
-    0x0021513c   0x0021513c   0x000001d0   Code   RO          603    i.main              main.o
-    0x0021530c   0x0021530c   0x0000000e   Code   RO         6978    i.makeFreeRtosPriority  cmsis_os.o
-    0x0021531a   0x0021531a   0x00000018   Code   RO         6980    i.osDelay           cmsis_os.o
-    0x00215332   0x00215332   0x00000012   Code   RO         6982    i.osKernelRunning   cmsis_os.o
-    0x00215344   0x00215344   0x0000000a   Code   RO         6983    i.osKernelStart     cmsis_os.o
-    0x0021534e   0x0021534e   0x00000014   Code   RO         6984    i.osKernelSysTick   cmsis_os.o
-    0x00215362   0x00215362   0x00000012   Code   RO         6992    i.osMessageCreate   cmsis_os.o
-    0x00215374   0x00215374   0x0000009c   Code   RO         6994    i.osMessageGet      cmsis_os.o
-    0x00215410   0x00215410   0x00000060   Code   RO         6996    i.osMessagePut      cmsis_os.o
-    0x00215470   0x00215470   0x0000000c   Code   RO         6998    i.osMutexCreate     cmsis_os.o
-    0x0021547c   0x0021547c   0x00000050   Code   RO         7000    i.osMutexRelease    cmsis_os.o
-    0x002154cc   0x002154cc   0x00000068   Code   RO         7001    i.osMutexWait       cmsis_os.o
-    0x00215534   0x00215534   0x00000032   Code   RO         7009    i.osSemaphoreCreate  cmsis_os.o
-    0x00215566   0x00215566   0x00000010   Code   RO         7016    i.osSystickHandler  cmsis_os.o
-    0x00215576   0x00215576   0x00000030   Code   RO         7017    i.osThreadCreate    cmsis_os.o
-    0x002155a6   0x002155a6   0x00000008   Code   RO         7018    i.osThreadGetId     cmsis_os.o
-    0x002155ae   0x002155ae   0x00000002   PAD
-    0x002155b0   0x002155b0   0x00000098   Code   RO         6670    i.prvAddCurrentTaskToDelayedList  tasks.o
-    0x00215648   0x00215648   0x000000b4   Code   RO         6671    i.prvAddNewTaskToReadyList  tasks.o
-    0x002156fc   0x002156fc   0x00000048   Code   RO         6672    i.prvCheckTasksWaitingTermination  tasks.o
-    0x00215744   0x00215744   0x0000002a   Code   RO         6354    i.prvCopyDataFromQueue  queue.o
-    0x0021576e   0x0021576e   0x0000007c   Code   RO         6355    i.prvCopyDataToQueue  queue.o
-    0x002157ea   0x002157ea   0x00000012   Code   RO         6673    i.prvDeleteTCB      tasks.o
-    0x002157fc   0x002157fc   0x00000014   Code   RO         6356    i.prvGetDisinheritPriorityAfterTimeout  queue.o
-    0x00215810   0x00215810   0x0000007c   Code   RO         7345    i.prvHeapInit       heap_4.o
-    0x0021588c   0x0021588c   0x00000028   Code   RO         6674    i.prvIdleTask       tasks.o
-    0x002158b4   0x002158b4   0x0000001c   Code   RO         6357    i.prvInitialiseMutex  queue.o
-    0x002158d0   0x002158d0   0x00000026   Code   RO         6358    i.prvInitialiseNewQueue  queue.o
-    0x002158f6   0x002158f6   0x000000ae   Code   RO         6675    i.prvInitialiseNewTask  tasks.o
-    0x002159a4   0x002159a4   0x00000068   Code   RO         6676    i.prvInitialiseTaskLists  tasks.o
-    0x00215a0c   0x00215a0c   0x00000068   Code   RO         7346    i.prvInsertBlockIntoFreeList  heap_4.o
-    0x00215a74   0x00215a74   0x0000001a   Code   RO         6359    i.prvIsQueueEmpty   queue.o
-    0x00215a8e   0x00215a8e   0x0000001e   Code   RO         6360    i.prvIsQueueFull    queue.o
-    0x00215aac   0x00215aac   0x00000034   Code   RO         6677    i.prvResetNextTaskUnblockTime  tasks.o
-    0x00215ae0   0x00215ae0   0x00000048   Code   RO         7407    i.prvTaskExitError  port.o
-    0x00215b28   0x00215b28   0x0000007e   Code   RO         6361    i.prvUnlockQueue    queue.o
-    0x00215ba6   0x00215ba6   0x00000002   PAD
-    0x00215ba8   0x00215ba8   0x00000148   Code   RO         7347    i.pvPortMalloc      heap_4.o
-    0x00215cf0   0x00215cf0   0x00000020   Code   RO         6679    i.pvTaskIncrementMutexHeldCount  tasks.o
-    0x00215d10   0x00215d10   0x0000002c   Code   RO         7408    i.pxPortInitialiseStack  port.o
-    0x00215d3c   0x00215d3c   0x00000028   Code   RO         6314    i.uxListRemove      list.o
-    0x00215d64   0x00215d64   0x0000001a   Code   RO         6315    i.vListInitialise   list.o
-    0x00215d7e   0x00215d7e   0x00000006   Code   RO         6316    i.vListInitialiseItem  list.o
-    0x00215d84   0x00215d84   0x00000034   Code   RO         6317    i.vListInsert       list.o
-    0x00215db8   0x00215db8   0x00000018   Code   RO         6318    i.vListInsertEnd    list.o
-    0x00215dd0   0x00215dd0   0x0000005c   Code   RO         7410    i.vPortEnterCritical  port.o
-    0x00215e2c   0x00215e2c   0x00000040   Code   RO         7411    i.vPortExitCritical  port.o
-    0x00215e6c   0x00215e6c   0x0000009c   Code   RO         7348    i.vPortFree         heap_4.o
-    0x00215f08   0x00215f08   0x00000028   Code   RO         7412    i.vPortSetupTimerInterrupt  port.o
-    0x00215f30   0x00215f30   0x00000080   Code   RO         7413    i.vPortValidateInterruptPriority  port.o
-    0x00215fb0   0x00215fb0   0x00000060   Code   RO         6685    i.vTaskDelay        tasks.o
-    0x00216010   0x00216010   0x00000018   Code   RO         6688    i.vTaskInternalSetTimeOutState  tasks.o
-    0x00216028   0x00216028   0x0000000c   Code   RO         6689    i.vTaskMissedYield  tasks.o
-    0x00216034   0x00216034   0x0000003c   Code   RO         6691    i.vTaskPlaceOnEventList  tasks.o
-    0x00216070   0x00216070   0x000000fc   Code   RO         6693    i.vTaskPriorityDisinheritAfterTimeout  tasks.o
-    0x0021616c   0x0021616c   0x00000090   Code   RO         6698    i.vTaskStartScheduler  tasks.o
-    0x002161fc   0x002161fc   0x00000010   Code   RO         6700    i.vTaskSuspendAll   tasks.o
-    0x0021620c   0x0021620c   0x00000090   Code   RO         6701    i.vTaskSwitchContext  tasks.o
-    0x0021629c   0x0021629c   0x00000114   Code   RO         7414    i.xPortStartScheduler  port.o
-    0x002163b0   0x002163b0   0x00000038   Code   RO         7415    i.xPortSysTickHandler  port.o
-    0x002163e8   0x002163e8   0x00000064   Code   RO         6368    i.xQueueCreateCountingSemaphore  queue.o
-    0x0021644c   0x0021644c   0x00000022   Code   RO         6369    i.xQueueCreateMutex  queue.o
-    0x0021646e   0x0021646e   0x0000005c   Code   RO         6370    i.xQueueGenericCreate  queue.o
-    0x002164ca   0x002164ca   0x00000002   PAD
-    0x002164cc   0x002164cc   0x0000009c   Code   RO         6371    i.xQueueGenericReset  queue.o
-    0x00216568   0x00216568   0x000001b8   Code   RO         6372    i.xQueueGenericSend  queue.o
-    0x00216720   0x00216720   0x00000108   Code   RO         6373    i.xQueueGenericSendFromISR  queue.o
-    0x00216828   0x00216828   0x000000f0   Code   RO         6374    i.xQueueGiveFromISR  queue.o
-    0x00216918   0x00216918   0x00000174   Code   RO         6380    i.xQueueReceive     queue.o
-    0x00216a8c   0x00216a8c   0x000000d6   Code   RO         6381    i.xQueueReceiveFromISR  queue.o
-    0x00216b62   0x00216b62   0x00000002   PAD
-    0x00216b64   0x00216b64   0x000001c8   Code   RO         6382    i.xQueueSemaphoreTake  queue.o
-    0x00216d2c   0x00216d2c   0x00000094   Code   RO         6702    i.xTaskCheckForTimeOut  tasks.o
-    0x00216dc0   0x00216dc0   0x00000060   Code   RO         6703    i.xTaskCreate       tasks.o
-    0x00216e20   0x00216e20   0x0000000c   Code   RO         6706    i.xTaskGetCurrentTaskHandle  tasks.o
-    0x00216e2c   0x00216e2c   0x00000020   Code   RO         6707    i.xTaskGetSchedulerState  tasks.o
-    0x00216e4c   0x00216e4c   0x0000000c   Code   RO         6708    i.xTaskGetTickCount  tasks.o
-    0x00216e58   0x00216e58   0x00000014   Code   RO         6709    i.xTaskGetTickCountFromISR  tasks.o
-    0x00216e6c   0x00216e6c   0x0000014c   Code   RO         6710    i.xTaskIncrementTick  tasks.o
-    0x00216fb8   0x00216fb8   0x000000d0   Code   RO         6713    i.xTaskPriorityDisinherit  tasks.o
-    0x00217088   0x00217088   0x000000c8   Code   RO         6714    i.xTaskPriorityInherit  tasks.o
-    0x00217150   0x00217150   0x0000009c   Code   RO         6715    i.xTaskRemoveFromEventList  tasks.o
-    0x002171ec   0x002171ec   0x00000108   Code   RO         6716    i.xTaskResumeAll    tasks.o
-    0x002172f4   0x002172f4   0x000000c2   Data   RO           27    .constdata          gt9147_iic_driver.o
-    0x002173b6   0x002173b6   0x00000002   PAD
-    0x002173b8   0x002173b8   0x0000003c   Data   RO          605    .constdata          main.o
-    0x002173f4   0x002173f4   0x0000001c   Data   RO          844    .constdata          sd_diskio.o
-    0x00217410   0x00217410   0x00000018   Data   RO         1609    .constdata          system_stm32f7xx.o
-    0x00217428   0x00217428   0x00000008   Data   RO         4515    .constdata          stm32f7xx_hal_dma.o
-    0x00217430   0x00217430   0x00000027   Data   RO          606    .conststring        main.o
-    0x00217457   0x00217457   0x00000001   PAD
-    0x00217458   0x00217458   0x00000018   Data   RO         7600    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_1616I.o)
-    0x00217470   0x00217470   0x00000018   Data   RO         7607    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_822216.o)
-    0x00217488   0x00217488   0x00000018   Data   RO         7614    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_84444.o)
-    0x002174a0   0x002174a0   0x00000018   Data   RO         7621    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_8666.o)
-    0x002174b8   0x002174b8   0x00000018   Data   RO         7628    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_8666_1.o)
-    0x002174d0   0x002174d0   0x00000018   Data   RO         7637    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_88666I.o)
-    0x002174e8   0x002174e8   0x00000018   Data   RO         7647    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M1555I.o)
-    0x00217500   0x00217500   0x00000018   Data   RO         7657    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M4444I.o)
-    0x00217518   0x00217518   0x00000018   Data   RO         7666    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M8888I.o)
-    0x00217530   0x00217530   0x00000018   Data   RO         7675    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_565.o)
-    0x00217548   0x00217548   0x00000018   Data   RO         7683    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_888.o)
-    0x00217560   0x00217560   0x00000018   Data   RO         7691    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_8888.o)
-    0x00217578   0x00217578   0x00000018   Data   RO         7701    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M565.o)
-    0x00217590   0x00217590   0x00000018   Data   RO         7710    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M888.o)
-    0x002175a8   0x002175a8   0x00000018   Data   RO         7719    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M8888.o)
-    0x002175c0   0x002175c0   0x00000038   Data   RO         7888    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Common.o)
-    0x002175f8   0x002175f8   0x00000017   Data   RO         7917    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Core.o)
-    0x0021760f   0x0021760f   0x00000001   PAD
-    0x00217610   0x00217610   0x0000000c   Data   RO         8167    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(LCD.o)
-    0x0021761c   0x0021761c   0x00000034   Data   RO         8279    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDRV_Lin_16.o)
-    0x00217650   0x00217650   0x00000018   Data   RO         8581    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_16.o)
-    0x00217668   0x00217668   0x00000010   Data   RO         8694    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_UC_EncodeNone.o)
-    0x00217678   0x00217678   0x00000370   Data   RO         8723    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__DivTbl.o)
-    0x002179e8   0x002179e8   0x00000100   Data   RO         8822    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_Mirror.o)
-    0x00217ae8   0x00217ae8   0x0000073c   Data   RO         8874    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(F6x8.o)
-    0x00218224   0x00218224   0x00000074   Data   RO         8891    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_16.o)
-    0x00218298   0x00218298   0x00000018   Data   RO         8970    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_UsageBM.o)
-    0x002182b0   0x002182b0   0x00000018   Data   RO         9131    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_0.o)
-    0x002182c8   0x002182c8   0x00000074   Data   RO         9223    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_32.o)
-    0x0021833c   0x0021833c   0x00000020   Data   RO         9799    Region$$Table       anon$$obj.o
+    0x00214834   0x00214834   0x00000042   Code   RO          493    i.W25QXX_EraseSector  w25q256_driver.o
+    0x00214876   0x00214876   0x00000002   PAD
+    0x00214878   0x00214878   0x00000068   Code   RO          494    i.W25QXX_Init       w25q256_driver.o
+    0x002148e0   0x002148e0   0x0000005c   Code   RO          495    i.W25QXX_Read       w25q256_driver.o
+    0x0021493c   0x0021493c   0x0000003c   Code   RO          496    i.W25QXX_ReadId     w25q256_driver.o
+    0x00214978   0x00214978   0x0000003a   Code   RO          497    i.W25QXX_SetQE      w25q256_driver.o
+    0x002149b2   0x002149b2   0x00000024   Code   RO          498    i.W25QXX_SetReadParam  w25q256_driver.o
+    0x002149d6   0x002149d6   0x00000034   Code   RO          499    i.W25QXX_WaitIdle   w25q256_driver.o
+    0x00214a0a   0x00214a0a   0x00000002   PAD
+    0x00214a0c   0x00214a0c   0x000000b8   Code   RO          500    i.W25QXX_Write      w25q256_driver.o
+    0x00214ac4   0x00214ac4   0x00000046   Code   RO          501    i.W25QXX_Write_NoCheck  w25q256_driver.o
+    0x00214b0a   0x00214b0a   0x00000040   Code   RO          502    i.W25QXX_Write_Page  w25q256_driver.o
+    0x00214b4a   0x00214b4a   0x0000001c   Code   RO         1259    i._Color2IndexBulk_M1555I_DMA2D  stemwin_wrapper.o
+    0x00214b66   0x00214b66   0x0000001c   Code   RO         1260    i._Color2IndexBulk_M4444I_DMA2D  stemwin_wrapper.o
+    0x00214b82   0x00214b82   0x0000001c   Code   RO         1261    i._Color2IndexBulk_M565_DMA2D  stemwin_wrapper.o
+    0x00214b9e   0x00214b9e   0x0000001c   Code   RO         1262    i._Color2IndexBulk_M8888I_DMA2D  stemwin_wrapper.o
+    0x00214bba   0x00214bba   0x0000001c   Code   RO         1263    i._Color2IndexBulk_M888_DMA2D  stemwin_wrapper.o
+    0x00214bd6   0x00214bd6   0x00000020   Code   RO         1264    i._DMA_Color2IndexBulk  stemwin_wrapper.o
+    0x00214bf6   0x00214bf6   0x00000002   PAD
+    0x00214bf8   0x00214bf8   0x0000005c   Code   RO         1265    i._DMA_ConvertColor  stemwin_wrapper.o
+    0x00214c54   0x00214c54   0x00000070   Code   RO         1266    i._DMA_DrawAlphaBitmap  stemwin_wrapper.o
+    0x00214cc4   0x00214cc4   0x0000001c   Code   RO         1267    i._DMA_ExecOperation  stemwin_wrapper.o
+    0x00214ce0   0x00214ce0   0x00000020   Code   RO         1268    i._DMA_Index2ColorBulk  stemwin_wrapper.o
+    0x00214d00   0x00214d00   0x0000001c   Code   RO         1269    i._Index2ColorBulk_M1555I_DMA2D  stemwin_wrapper.o
+    0x00214d1c   0x00214d1c   0x0000001c   Code   RO         1270    i._Index2ColorBulk_M4444I_DMA2D  stemwin_wrapper.o
+    0x00214d38   0x00214d38   0x0000001c   Code   RO         1271    i._Index2ColorBulk_M565_DMA2D  stemwin_wrapper.o
+    0x00214d54   0x00214d54   0x0000001c   Code   RO         1272    i._Index2ColorBulk_M8888I_DMA2D  stemwin_wrapper.o
+    0x00214d70   0x00214d70   0x0000001c   Code   RO         1273    i._Index2ColorBulk_M888_DMA2D  stemwin_wrapper.o
+    0x00214d8c   0x00214d8c   0x0000009c   Code   RO         1274    i._LCD_DrawBitmapAlpha  stemwin_wrapper.o
+    0x00214e28   0x00214e28   0x00000040   Code   RO         1275    i._LCD_DrawMemdevAlpha  stemwin_wrapper.o
+    0x00214e68   0x00214e68   0x00000020   Code   RO         9485    i.__0printf$3       mc_w.l(printf3.o)
+    0x00214e88   0x00214e88   0x00000010   Code   RO         2603    i.__NVIC_GetPriorityGrouping  stm32f7xx_hal_cortex.o
+    0x00214e98   0x00214e98   0x00000028   Code   RO         2604    i.__NVIC_SetPriority  stm32f7xx_hal_cortex.o
+    0x00214ec0   0x00214ec0   0x0000000e   Code   RO         9801    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00214ece   0x00214ece   0x00000002   Code   RO         9802    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00214ed0   0x00214ed0   0x0000000e   Code   RO         9803    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00214ede   0x00214ede   0x00000002   PAD
+    0x00214ee0   0x00214ee0   0x000001b8   Code   RO         9492    i._printf_core      mc_w.l(printf3.o)
+    0x00215098   0x00215098   0x00000012   Code   RO          400    i.delay_ms          utility.o
+    0x002150aa   0x002150aa   0x00000042   Code   RO          401    i.delay_us          utility.o
+    0x002150ec   0x002150ec   0x0000001c   Code   RO          402    i.fputc             utility.o
+    0x00215108   0x00215108   0x00000010   Code   RO         6976    i.inHandlerMode     cmsis_os.o
+    0x00215118   0x00215118   0x000001d0   Code   RO          603    i.main              main.o
+    0x002152e8   0x002152e8   0x0000000e   Code   RO         6978    i.makeFreeRtosPriority  cmsis_os.o
+    0x002152f6   0x002152f6   0x00000018   Code   RO         6980    i.osDelay           cmsis_os.o
+    0x0021530e   0x0021530e   0x00000012   Code   RO         6982    i.osKernelRunning   cmsis_os.o
+    0x00215320   0x00215320   0x0000000a   Code   RO         6983    i.osKernelStart     cmsis_os.o
+    0x0021532a   0x0021532a   0x00000014   Code   RO         6984    i.osKernelSysTick   cmsis_os.o
+    0x0021533e   0x0021533e   0x00000012   Code   RO         6992    i.osMessageCreate   cmsis_os.o
+    0x00215350   0x00215350   0x0000009c   Code   RO         6994    i.osMessageGet      cmsis_os.o
+    0x002153ec   0x002153ec   0x00000060   Code   RO         6996    i.osMessagePut      cmsis_os.o
+    0x0021544c   0x0021544c   0x0000000c   Code   RO         6998    i.osMutexCreate     cmsis_os.o
+    0x00215458   0x00215458   0x00000050   Code   RO         7000    i.osMutexRelease    cmsis_os.o
+    0x002154a8   0x002154a8   0x00000068   Code   RO         7001    i.osMutexWait       cmsis_os.o
+    0x00215510   0x00215510   0x00000032   Code   RO         7009    i.osSemaphoreCreate  cmsis_os.o
+    0x00215542   0x00215542   0x00000010   Code   RO         7016    i.osSystickHandler  cmsis_os.o
+    0x00215552   0x00215552   0x00000030   Code   RO         7017    i.osThreadCreate    cmsis_os.o
+    0x00215582   0x00215582   0x00000008   Code   RO         7018    i.osThreadGetId     cmsis_os.o
+    0x0021558a   0x0021558a   0x00000002   PAD
+    0x0021558c   0x0021558c   0x00000098   Code   RO         6670    i.prvAddCurrentTaskToDelayedList  tasks.o
+    0x00215624   0x00215624   0x000000b4   Code   RO         6671    i.prvAddNewTaskToReadyList  tasks.o
+    0x002156d8   0x002156d8   0x00000048   Code   RO         6672    i.prvCheckTasksWaitingTermination  tasks.o
+    0x00215720   0x00215720   0x0000002a   Code   RO         6354    i.prvCopyDataFromQueue  queue.o
+    0x0021574a   0x0021574a   0x0000007c   Code   RO         6355    i.prvCopyDataToQueue  queue.o
+    0x002157c6   0x002157c6   0x00000012   Code   RO         6673    i.prvDeleteTCB      tasks.o
+    0x002157d8   0x002157d8   0x00000014   Code   RO         6356    i.prvGetDisinheritPriorityAfterTimeout  queue.o
+    0x002157ec   0x002157ec   0x0000007c   Code   RO         7345    i.prvHeapInit       heap_4.o
+    0x00215868   0x00215868   0x00000028   Code   RO         6674    i.prvIdleTask       tasks.o
+    0x00215890   0x00215890   0x0000001c   Code   RO         6357    i.prvInitialiseMutex  queue.o
+    0x002158ac   0x002158ac   0x00000026   Code   RO         6358    i.prvInitialiseNewQueue  queue.o
+    0x002158d2   0x002158d2   0x000000ae   Code   RO         6675    i.prvInitialiseNewTask  tasks.o
+    0x00215980   0x00215980   0x00000068   Code   RO         6676    i.prvInitialiseTaskLists  tasks.o
+    0x002159e8   0x002159e8   0x00000068   Code   RO         7346    i.prvInsertBlockIntoFreeList  heap_4.o
+    0x00215a50   0x00215a50   0x0000001a   Code   RO         6359    i.prvIsQueueEmpty   queue.o
+    0x00215a6a   0x00215a6a   0x0000001e   Code   RO         6360    i.prvIsQueueFull    queue.o
+    0x00215a88   0x00215a88   0x00000034   Code   RO         6677    i.prvResetNextTaskUnblockTime  tasks.o
+    0x00215abc   0x00215abc   0x00000048   Code   RO         7407    i.prvTaskExitError  port.o
+    0x00215b04   0x00215b04   0x0000007e   Code   RO         6361    i.prvUnlockQueue    queue.o
+    0x00215b82   0x00215b82   0x00000002   PAD
+    0x00215b84   0x00215b84   0x00000148   Code   RO         7347    i.pvPortMalloc      heap_4.o
+    0x00215ccc   0x00215ccc   0x00000020   Code   RO         6679    i.pvTaskIncrementMutexHeldCount  tasks.o
+    0x00215cec   0x00215cec   0x0000002c   Code   RO         7408    i.pxPortInitialiseStack  port.o
+    0x00215d18   0x00215d18   0x00000028   Code   RO         6314    i.uxListRemove      list.o
+    0x00215d40   0x00215d40   0x0000001a   Code   RO         6315    i.vListInitialise   list.o
+    0x00215d5a   0x00215d5a   0x00000006   Code   RO         6316    i.vListInitialiseItem  list.o
+    0x00215d60   0x00215d60   0x00000034   Code   RO         6317    i.vListInsert       list.o
+    0x00215d94   0x00215d94   0x00000018   Code   RO         6318    i.vListInsertEnd    list.o
+    0x00215dac   0x00215dac   0x0000005c   Code   RO         7410    i.vPortEnterCritical  port.o
+    0x00215e08   0x00215e08   0x00000040   Code   RO         7411    i.vPortExitCritical  port.o
+    0x00215e48   0x00215e48   0x0000009c   Code   RO         7348    i.vPortFree         heap_4.o
+    0x00215ee4   0x00215ee4   0x00000028   Code   RO         7412    i.vPortSetupTimerInterrupt  port.o
+    0x00215f0c   0x00215f0c   0x00000080   Code   RO         7413    i.vPortValidateInterruptPriority  port.o
+    0x00215f8c   0x00215f8c   0x00000060   Code   RO         6685    i.vTaskDelay        tasks.o
+    0x00215fec   0x00215fec   0x00000018   Code   RO         6688    i.vTaskInternalSetTimeOutState  tasks.o
+    0x00216004   0x00216004   0x0000000c   Code   RO         6689    i.vTaskMissedYield  tasks.o
+    0x00216010   0x00216010   0x0000003c   Code   RO         6691    i.vTaskPlaceOnEventList  tasks.o
+    0x0021604c   0x0021604c   0x000000fc   Code   RO         6693    i.vTaskPriorityDisinheritAfterTimeout  tasks.o
+    0x00216148   0x00216148   0x00000090   Code   RO         6698    i.vTaskStartScheduler  tasks.o
+    0x002161d8   0x002161d8   0x00000010   Code   RO         6700    i.vTaskSuspendAll   tasks.o
+    0x002161e8   0x002161e8   0x00000090   Code   RO         6701    i.vTaskSwitchContext  tasks.o
+    0x00216278   0x00216278   0x00000114   Code   RO         7414    i.xPortStartScheduler  port.o
+    0x0021638c   0x0021638c   0x00000038   Code   RO         7415    i.xPortSysTickHandler  port.o
+    0x002163c4   0x002163c4   0x00000064   Code   RO         6368    i.xQueueCreateCountingSemaphore  queue.o
+    0x00216428   0x00216428   0x00000022   Code   RO         6369    i.xQueueCreateMutex  queue.o
+    0x0021644a   0x0021644a   0x0000005c   Code   RO         6370    i.xQueueGenericCreate  queue.o
+    0x002164a6   0x002164a6   0x00000002   PAD
+    0x002164a8   0x002164a8   0x0000009c   Code   RO         6371    i.xQueueGenericReset  queue.o
+    0x00216544   0x00216544   0x000001b8   Code   RO         6372    i.xQueueGenericSend  queue.o
+    0x002166fc   0x002166fc   0x00000108   Code   RO         6373    i.xQueueGenericSendFromISR  queue.o
+    0x00216804   0x00216804   0x000000f0   Code   RO         6374    i.xQueueGiveFromISR  queue.o
+    0x002168f4   0x002168f4   0x00000174   Code   RO         6380    i.xQueueReceive     queue.o
+    0x00216a68   0x00216a68   0x000000d6   Code   RO         6381    i.xQueueReceiveFromISR  queue.o
+    0x00216b3e   0x00216b3e   0x00000002   PAD
+    0x00216b40   0x00216b40   0x000001c8   Code   RO         6382    i.xQueueSemaphoreTake  queue.o
+    0x00216d08   0x00216d08   0x00000094   Code   RO         6702    i.xTaskCheckForTimeOut  tasks.o
+    0x00216d9c   0x00216d9c   0x00000060   Code   RO         6703    i.xTaskCreate       tasks.o
+    0x00216dfc   0x00216dfc   0x0000000c   Code   RO         6706    i.xTaskGetCurrentTaskHandle  tasks.o
+    0x00216e08   0x00216e08   0x00000020   Code   RO         6707    i.xTaskGetSchedulerState  tasks.o
+    0x00216e28   0x00216e28   0x0000000c   Code   RO         6708    i.xTaskGetTickCount  tasks.o
+    0x00216e34   0x00216e34   0x00000014   Code   RO         6709    i.xTaskGetTickCountFromISR  tasks.o
+    0x00216e48   0x00216e48   0x0000014c   Code   RO         6710    i.xTaskIncrementTick  tasks.o
+    0x00216f94   0x00216f94   0x000000d0   Code   RO         6713    i.xTaskPriorityDisinherit  tasks.o
+    0x00217064   0x00217064   0x000000c8   Code   RO         6714    i.xTaskPriorityInherit  tasks.o
+    0x0021712c   0x0021712c   0x0000009c   Code   RO         6715    i.xTaskRemoveFromEventList  tasks.o
+    0x002171c8   0x002171c8   0x00000108   Code   RO         6716    i.xTaskResumeAll    tasks.o
+    0x002172d0   0x002172d0   0x000000c2   Data   RO           27    .constdata          gt9147_iic_driver.o
+    0x00217392   0x00217392   0x00000002   PAD
+    0x00217394   0x00217394   0x0000003c   Data   RO          605    .constdata          main.o
+    0x002173d0   0x002173d0   0x0000001c   Data   RO          844    .constdata          sd_diskio.o
+    0x002173ec   0x002173ec   0x00000018   Data   RO         1609    .constdata          system_stm32f7xx.o
+    0x00217404   0x00217404   0x00000008   Data   RO         4515    .constdata          stm32f7xx_hal_dma.o
+    0x0021740c   0x0021740c   0x00000027   Data   RO          606    .conststring        main.o
+    0x00217433   0x00217433   0x00000001   PAD
+    0x00217434   0x00217434   0x00000018   Data   RO         7600    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_1616I.o)
+    0x0021744c   0x0021744c   0x00000018   Data   RO         7607    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_822216.o)
+    0x00217464   0x00217464   0x00000018   Data   RO         7614    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_84444.o)
+    0x0021747c   0x0021747c   0x00000018   Data   RO         7621    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_8666.o)
+    0x00217494   0x00217494   0x00000018   Data   RO         7628    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_8666_1.o)
+    0x002174ac   0x002174ac   0x00000018   Data   RO         7637    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_88666I.o)
+    0x002174c4   0x002174c4   0x00000018   Data   RO         7647    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M1555I.o)
+    0x002174dc   0x002174dc   0x00000018   Data   RO         7657    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M4444I.o)
+    0x002174f4   0x002174f4   0x00000018   Data   RO         7666    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M8888I.o)
+    0x0021750c   0x0021750c   0x00000018   Data   RO         7675    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_565.o)
+    0x00217524   0x00217524   0x00000018   Data   RO         7683    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_888.o)
+    0x0021753c   0x0021753c   0x00000018   Data   RO         7691    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_8888.o)
+    0x00217554   0x00217554   0x00000018   Data   RO         7701    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M565.o)
+    0x0021756c   0x0021756c   0x00000018   Data   RO         7710    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M888.o)
+    0x00217584   0x00217584   0x00000018   Data   RO         7719    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M8888.o)
+    0x0021759c   0x0021759c   0x00000038   Data   RO         7888    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Common.o)
+    0x002175d4   0x002175d4   0x00000017   Data   RO         7917    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Core.o)
+    0x002175eb   0x002175eb   0x00000001   PAD
+    0x002175ec   0x002175ec   0x0000000c   Data   RO         8167    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(LCD.o)
+    0x002175f8   0x002175f8   0x00000034   Data   RO         8279    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDRV_Lin_16.o)
+    0x0021762c   0x0021762c   0x00000018   Data   RO         8581    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_16.o)
+    0x00217644   0x00217644   0x00000010   Data   RO         8694    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_UC_EncodeNone.o)
+    0x00217654   0x00217654   0x00000370   Data   RO         8723    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__DivTbl.o)
+    0x002179c4   0x002179c4   0x00000100   Data   RO         8822    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_Mirror.o)
+    0x00217ac4   0x00217ac4   0x0000073c   Data   RO         8874    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(F6x8.o)
+    0x00218200   0x00218200   0x00000074   Data   RO         8891    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_16.o)
+    0x00218274   0x00218274   0x00000018   Data   RO         8970    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_UsageBM.o)
+    0x0021828c   0x0021828c   0x00000018   Data   RO         9131    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_0.o)
+    0x002182a4   0x002182a4   0x00000074   Data   RO         9223    .rodata             STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_32.o)
+    0x00218318   0x00218318   0x00000020   Data   RO         9799    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0021835c, Size: 0x00037e6c, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00000080])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00218338, Size: 0x00037e7c, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x00000090])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000   COMPRESSED   0x00000005   Data   RW           28    .data               gt9147_iic_driver.o
     0x20000005   COMPRESSED   0x00000003   PAD
     0x20000008   COMPRESSED   0x00000004   Data   RW          403    .data               utility.o
-    0x2000000c   COMPRESSED   0x0000000d   Data   RW          504    .data               w25q256_driver.o
-    0x20000019   COMPRESSED   0x00000003   PAD
-    0x2000001c   COMPRESSED   0x0000000c   Data   RW          607    .data               main.o
-    0x20000028   COMPRESSED   0x00000008   Data   RW          845    .data               sd_diskio.o
-    0x20000030   COMPRESSED   0x00000005   Data   RW          940    .data               fatfs.o
-    0x20000035   COMPRESSED   0x00000003   PAD
-    0x20000038   COMPRESSED   0x00000008   Data   RW         1027    .data               hw_init.o
-    0x20000040   COMPRESSED   0x00000008   Data   RW         1277    .data               stemwin_wrapper.o
-    0x20000048   COMPRESSED   0x00000004   Data   RW         1610    .data               system_stm32f7xx.o
-    0x2000004c   COMPRESSED   0x00000009   Data   RW         4894    .data               stm32f7xx_hal.o
-    0x20000055   COMPRESSED   0x00000003   PAD
-    0x20000058   COMPRESSED   0x0000003c   Data   RW         6719    .data               tasks.o
-    0x20000094   COMPRESSED   0x00000018   Data   RW         7353    .data               heap_4.o
-    0x200000ac   COMPRESSED   0x0000000c   Data   RW         7416    .data               port.o
-    0x200000b8   COMPRESSED   0x00000008   Data   RW         7496    .data               gui_x_os.o
-    0x200000c0   COMPRESSED   0x00000007   Data   RW         7801    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Common.o)
-    0x200000c7   COMPRESSED   0x00000001   PAD
-    0x200000c8   COMPRESSED   0x00000014   Data   RW         7890    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Core.o)
-    0x200000dc   COMPRESSED   0x00000008   Data   RW         8109    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_DriverAnalog.o)
-    0x200000e4   COMPRESSED   0x00000004   Data   RW         8117    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Time.o)
-    0x200000e8   COMPRESSED   0x00000008   Data   RW         8132    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__Alpha.o)
-    0x200000f0   COMPRESSED   0x00000004   Data   RW         8146    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(LCD.o)
-    0x200000f4   COMPRESSED   0x00000004   Data   RW         8599    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_CharLine.o)
-    0x200000f8   COMPRESSED   0x00000008   Data   RW         8635    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_OnKey.o)
-    0x20000100   COMPRESSED   0x00000008   Data   RW         8665    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Task.o)
-    0x20000108   COMPRESSED   0x00000008   Data   RW         8742    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__Private.o)
-    0x20000110   COMPRESSED   0x00000018   Data   RW         8783    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_AA.o)
-    0x20000128   COMPRESSED   0x00000004   Data   RW         8798    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_Color.o)
-    0x2000012c   COMPRESSED   0x00000004   Data   RW         9018    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(WM_Touch.o)
-    0x20000130   COMPRESSED   0x00000008   Data   RW         9153    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_PID.o)
-    0x20000138        -       0x00001032   Zero   RW          503    .bss                w25q256_driver.o
-    0x2000116a   COMPRESSED   0x00000002   PAD
-    0x2000116c        -       0x000001d4   Zero   RW          604    .bss                main.o
-    0x20001340        -       0x00000200   Zero   RW          843    .bss                sd_diskio.o
-    0x20001540        -       0x00032000   Zero   RW          998    .bss                guiconf.o
-    0x20033540        -       0x00000144   Zero   RW         1026    .bss                hw_init.o
-    0x20033684        -       0x0000001c   Zero   RW         1276    .bss                stemwin_wrapper.o
-    0x200336a0        -       0x0000000c   Zero   RW         6099    .bss                ff_gen_drv.o
-    0x200336ac        -       0x000002e4   Zero   RW         6718    .bss                tasks.o
-    0x20033990        -       0x00003c00   Zero   RW         7352    .bss                heap_4.o
-    0x20037590        -       0x00000008   Zero   RW         7640    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M1555I.o)
-    0x20037598        -       0x00000008   Zero   RW         7650    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M4444I.o)
-    0x200375a0        -       0x00000008   Zero   RW         7694    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M565.o)
-    0x200375a8        -       0x0000000c   Zero   RW         7730    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Alloc.o)
-    0x200375b4        -       0x000000a4   Zero   RW         7891    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Core.o)
-    0x20037658        -       0x00000008   Zero   RW         8072    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_SelectLayer.o)
-    0x20037660        -       0x0000002f   Zero   RW         8110    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_DriverAnalog.o)
-    0x2003768f   COMPRESSED   0x00000001   PAD
-    0x20037690        -       0x00000020   Zero   RW         8133    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__Alpha.o)
-    0x200376b0        -       0x00000008   Zero   RW         8170    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_GetEx.o)
-    0x200376b8        -       0x00000004   Zero   RW         8338    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_Banding.o)
-    0x200376bc        -       0x00000030   Zero   RW         8343    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM.o)
-    0x200376ec        -       0x00000060   Zero   RW         8636    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_OnKey.o)
-    0x2003774c        -       0x00000010   Zero   RW         8647    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH.o)
-    0x2003775c        -       0x00000024   Zero   RW         8653    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_Calibrate.o)
-    0x20037780        -       0x0000000c   Zero   RW         8660    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_StoreState.o)
-    0x2003778c        -       0x00000014   Zero   RW         8666    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Task.o)
-    0x200377a0        -       0x00000008   Zero   RW         8708    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_WaitEvent.o)
-    0x200377a8        -       0x00000018   Zero   RW         8735    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__ManageCache.o)
-    0x200377c0        -       0x0000000c   Zero   RW         8799    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_Color.o)
-    0x200377cc        -       0x00000004   Zero   RW         8877    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_16.o)
-    0x200377d0        -       0x00000001   Zero   RW         8946    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_StaticDevices.o)
-    0x200377d1   COMPRESSED   0x00000003   PAD
-    0x200377d4        -       0x00000028   Zero   RW         9019    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM_Touch.o)
-    0x200377fc        -       0x00000004   Zero   RW         9037    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM__Private.o)
-    0x20037800        -       0x0000004c   Zero   RW         9134    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Cursor.o)
-    0x2003784c        -       0x00000058   Zero   RW         9154    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_PID.o)
-    0x200378a4        -       0x00000014   Zero   RW         9165    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Timer.o)
-    0x200378b8        -       0x00000018   Zero   RW         9238    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM_PID__GetPrevState.o)
-    0x200378d0        -       0x00000004   Zero   RW         9747    GUI_AA__ClipX0      anon$$obj.o
-    0x200378d4        -       0x000000c0   Zero   RW         9750    GUI_ALLOC__Context  anon$$obj.o
-    0x20037994        -       0x00000004   Zero   RW         9769    GUI_DCACHE__pfClearCacheHook  anon$$obj.o
-    0x20037998        -       0x00000001   Zero   RW         9753    GUI_DecChar         anon$$obj.o
-    0x20037999   COMPRESSED   0x00000001   PAD
-    0x2003799a        -       0x00000002   Zero   RW         9754    GUI_OrgX            anon$$obj.o
-    0x2003799c        -       0x00000002   Zero   RW         9755    GUI_OrgY            anon$$obj.o
-    0x2003799e   COMPRESSED   0x00000002   PAD
-    0x200379a0        -       0x00000004   Zero   RW         9748    GUI__BufferSize     anon$$obj.o
-    0x200379a4        -       0x00000001   Zero   RW         9765    GUI__IsInitialized  anon$$obj.o
-    0x200379a5        -       0x00000001   Zero   RW         9766    GUI__NumLayersInUse  anon$$obj.o
-    0x200379a6        -       0x00000001   Zero   RW         9764    GUI__PreserveTrans  anon$$obj.o
-    0x200379a7   COMPRESSED   0x00000001   PAD
-    0x200379a8        -       0x00000002   Zero   RW         9763    GUI__aNumBuffers    anon$$obj.o
-    0x200379aa   COMPRESSED   0x00000002   PAD
-    0x200379ac        -       0x00000008   Zero   RW         9749    GUI__apDevice       anon$$obj.o
-    0x200379b4        -       0x00000004   Zero   RW         9774    GUI__pfDrawAlphaBitmapFunc  anon$$obj.o
-    0x200379b8        -       0x00000004   Zero   RW         9775    GUI__pfDrawAlphaMemdevFunc  anon$$obj.o
-    0x200379bc        -       0x00000004   Zero   RW         9768    GUI_pLCD_APIList    anon$$obj.o
-    0x200379c0        -       0x00000004   Zero   RW         9761    GUI_pUC_API         anon$$obj.o
-    0x200379c4        -       0x00000004   Zero   RW         9759    GUI_pfDispCharLine  anon$$obj.o
-    0x200379c8        -       0x00000004   Zero   RW         9751    GUI_pfDispCharStyle  anon$$obj.o
-    0x200379cc        -       0x00000004   Zero   RW         9758    GUI_pfExecAnimations  anon$$obj.o
-    0x200379d0        -       0x00000004   Zero   RW         9756    GUI_pfTimerExec     anon$$obj.o
-    0x200379d4        -       0x00000004   Zero   RW         9757    GUI_pfUpdateSoftLayer  anon$$obj.o
-    0x200379d8        -       0x00000004   Zero   RW         9798    LCD__aConvTable     anon$$obj.o
-    0x200379dc   COMPRESSED   0x00000004   PAD
-    0x200379e0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f767xx.o
-    0x20037de0        -       0x00000004   Zero   RW         9780    WM_MULTIBUF__pAPI   anon$$obj.o
-    0x20037de4        -       0x00000001   Zero   RW         9796    WM__CaptureReleaseAuto  anon$$obj.o
-    0x20037de5   COMPRESSED   0x00000003   PAD
-    0x20037de8        -       0x00000004   Zero   RW         9779    WM__CreateFlags     anon$$obj.o
-    0x20037dec        -       0x00000004   Zero   RW         9790    WM__FirstWin        anon$$obj.o
-    0x20037df0        -       0x00000004   Zero   RW         9789    WM__InvalidLayerMask  anon$$obj.o
-    0x20037df4        -       0x00000002   Zero   RW         9788    WM__NumInvalidWindows  anon$$obj.o
-    0x20037df6        -       0x00000002   Zero   RW         9793    WM__NumWindows      anon$$obj.o
-    0x20037df8        -       0x00000001   Zero   RW         9795    WM__PaintCallbackCnt  anon$$obj.o
-    0x20037df9   COMPRESSED   0x00000003   PAD
-    0x20037dfc        -       0x00000004   Zero   RW         9773    WM__TouchedLayer    anon$$obj.o
-    0x20037e00        -       0x00000004   Zero   RW         9777    WM__TransWindowCnt  anon$$obj.o
-    0x20037e04        -       0x00000008   Zero   RW         9792    WM__aBkColor        anon$$obj.o
-    0x20037e0c        -       0x00000010   Zero   RW         9786    WM__aCHWinLast      anon$$obj.o
-    0x20037e1c        -       0x00000010   Zero   RW         9785    WM__aCHWinModal     anon$$obj.o
-    0x20037e2c        -       0x00000010   Zero   RW         9787    WM__aCHWinMouseOver  anon$$obj.o
-    0x20037e3c        -       0x00000008   Zero   RW         9782    WM__ahCapture       anon$$obj.o
-    0x20037e44        -       0x00000008   Zero   RW         9783    WM__ahDesktopWin    anon$$obj.o
-    0x20037e4c        -       0x00000008   Zero   RW         9781    WM__ahWinFocus      anon$$obj.o
-    0x20037e54        -       0x00000004   Zero   RW         9778    WM__hATransWindow   anon$$obj.o
-    0x20037e58        -       0x00000004   Zero   RW         9791    WM__hCreateStatic   anon$$obj.o
-    0x20037e5c        -       0x00000004   Zero   RW         9784    WM__pExecGestures   anon$$obj.o
-    0x20037e60        -       0x00000004   Zero   RW         9776    WM__pFirstCriticalHandle  anon$$obj.o
-    0x20037e64        -       0x00000004   Zero   RW         9762    WM_pfHandlePID      anon$$obj.o
-    0x20037e68        -       0x00000004   Zero   RW         9794    WM_pfPollPID        anon$$obj.o
+    0x2000000c   COMPRESSED   0x0000001d   Data   RW          504    .data               w25q256_driver.o
+    0x20000029   COMPRESSED   0x00000003   PAD
+    0x2000002c   COMPRESSED   0x0000000c   Data   RW          607    .data               main.o
+    0x20000038   COMPRESSED   0x00000008   Data   RW          845    .data               sd_diskio.o
+    0x20000040   COMPRESSED   0x00000005   Data   RW          940    .data               fatfs.o
+    0x20000045   COMPRESSED   0x00000003   PAD
+    0x20000048   COMPRESSED   0x00000008   Data   RW         1027    .data               hw_init.o
+    0x20000050   COMPRESSED   0x00000008   Data   RW         1277    .data               stemwin_wrapper.o
+    0x20000058   COMPRESSED   0x00000004   Data   RW         1610    .data               system_stm32f7xx.o
+    0x2000005c   COMPRESSED   0x00000009   Data   RW         4894    .data               stm32f7xx_hal.o
+    0x20000065   COMPRESSED   0x00000003   PAD
+    0x20000068   COMPRESSED   0x0000003c   Data   RW         6719    .data               tasks.o
+    0x200000a4   COMPRESSED   0x00000018   Data   RW         7353    .data               heap_4.o
+    0x200000bc   COMPRESSED   0x0000000c   Data   RW         7416    .data               port.o
+    0x200000c8   COMPRESSED   0x00000008   Data   RW         7496    .data               gui_x_os.o
+    0x200000d0   COMPRESSED   0x00000007   Data   RW         7801    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Common.o)
+    0x200000d7   COMPRESSED   0x00000001   PAD
+    0x200000d8   COMPRESSED   0x00000014   Data   RW         7890    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Core.o)
+    0x200000ec   COMPRESSED   0x00000008   Data   RW         8109    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_DriverAnalog.o)
+    0x200000f4   COMPRESSED   0x00000004   Data   RW         8117    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Time.o)
+    0x200000f8   COMPRESSED   0x00000008   Data   RW         8132    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__Alpha.o)
+    0x20000100   COMPRESSED   0x00000004   Data   RW         8146    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(LCD.o)
+    0x20000104   COMPRESSED   0x00000004   Data   RW         8599    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_CharLine.o)
+    0x20000108   COMPRESSED   0x00000008   Data   RW         8635    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_OnKey.o)
+    0x20000110   COMPRESSED   0x00000008   Data   RW         8665    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Task.o)
+    0x20000118   COMPRESSED   0x00000008   Data   RW         8742    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__Private.o)
+    0x20000120   COMPRESSED   0x00000018   Data   RW         8783    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_AA.o)
+    0x20000138   COMPRESSED   0x00000004   Data   RW         8798    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_Color.o)
+    0x2000013c   COMPRESSED   0x00000004   Data   RW         9018    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(WM_Touch.o)
+    0x20000140   COMPRESSED   0x00000008   Data   RW         9153    .data               STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_PID.o)
+    0x20000148        -       0x00001032   Zero   RW          503    .bss                w25q256_driver.o
+    0x2000117a   COMPRESSED   0x00000002   PAD
+    0x2000117c        -       0x000001d4   Zero   RW          604    .bss                main.o
+    0x20001350        -       0x00000200   Zero   RW          843    .bss                sd_diskio.o
+    0x20001550        -       0x00032000   Zero   RW          998    .bss                guiconf.o
+    0x20033550        -       0x00000144   Zero   RW         1026    .bss                hw_init.o
+    0x20033694        -       0x0000001c   Zero   RW         1276    .bss                stemwin_wrapper.o
+    0x200336b0        -       0x0000000c   Zero   RW         6099    .bss                ff_gen_drv.o
+    0x200336bc        -       0x000002e4   Zero   RW         6718    .bss                tasks.o
+    0x200339a0        -       0x00003c00   Zero   RW         7352    .bss                heap_4.o
+    0x200375a0        -       0x00000008   Zero   RW         7640    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M1555I.o)
+    0x200375a8        -       0x00000008   Zero   RW         7650    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M4444I.o)
+    0x200375b0        -       0x00000008   Zero   RW         7694    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUICC_M565.o)
+    0x200375b8        -       0x0000000c   Zero   RW         7730    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Alloc.o)
+    0x200375c4        -       0x000000a4   Zero   RW         7891    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Core.o)
+    0x20037668        -       0x00000008   Zero   RW         8072    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_SelectLayer.o)
+    0x20037670        -       0x0000002f   Zero   RW         8110    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_DriverAnalog.o)
+    0x2003769f   COMPRESSED   0x00000001   PAD
+    0x200376a0        -       0x00000020   Zero   RW         8133    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__Alpha.o)
+    0x200376c0        -       0x00000008   Zero   RW         8170    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_GetEx.o)
+    0x200376c8        -       0x00000004   Zero   RW         8338    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_Banding.o)
+    0x200376cc        -       0x00000030   Zero   RW         8343    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM.o)
+    0x200376fc        -       0x00000060   Zero   RW         8636    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_OnKey.o)
+    0x2003775c        -       0x00000010   Zero   RW         8647    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH.o)
+    0x2003776c        -       0x00000024   Zero   RW         8653    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_Calibrate.o)
+    0x20037790        -       0x0000000c   Zero   RW         8660    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_TOUCH_StoreState.o)
+    0x2003779c        -       0x00000014   Zero   RW         8666    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Task.o)
+    0x200377b0        -       0x00000008   Zero   RW         8708    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_WaitEvent.o)
+    0x200377b8        -       0x00000018   Zero   RW         8735    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI__ManageCache.o)
+    0x200377d0        -       0x0000000c   Zero   RW         8799    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(LCD_Color.o)
+    0x200377dc        -       0x00000004   Zero   RW         8877    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_16.o)
+    0x200377e0        -       0x00000001   Zero   RW         8946    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUIDEV_StaticDevices.o)
+    0x200377e1   COMPRESSED   0x00000003   PAD
+    0x200377e4        -       0x00000028   Zero   RW         9019    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM_Touch.o)
+    0x2003780c        -       0x00000004   Zero   RW         9037    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM__Private.o)
+    0x20037810        -       0x0000004c   Zero   RW         9134    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Cursor.o)
+    0x2003785c        -       0x00000058   Zero   RW         9154    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_PID.o)
+    0x200378b4        -       0x00000014   Zero   RW         9165    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(GUI_Timer.o)
+    0x200378c8        -       0x00000018   Zero   RW         9238    .bss                STemWin_CM7_OS_wc16_ot_ARGB.a(WM_PID__GetPrevState.o)
+    0x200378e0        -       0x00000004   Zero   RW         9747    GUI_AA__ClipX0      anon$$obj.o
+    0x200378e4        -       0x000000c0   Zero   RW         9750    GUI_ALLOC__Context  anon$$obj.o
+    0x200379a4        -       0x00000004   Zero   RW         9769    GUI_DCACHE__pfClearCacheHook  anon$$obj.o
+    0x200379a8        -       0x00000001   Zero   RW         9753    GUI_DecChar         anon$$obj.o
+    0x200379a9   COMPRESSED   0x00000001   PAD
+    0x200379aa        -       0x00000002   Zero   RW         9754    GUI_OrgX            anon$$obj.o
+    0x200379ac        -       0x00000002   Zero   RW         9755    GUI_OrgY            anon$$obj.o
+    0x200379ae   COMPRESSED   0x00000002   PAD
+    0x200379b0        -       0x00000004   Zero   RW         9748    GUI__BufferSize     anon$$obj.o
+    0x200379b4        -       0x00000001   Zero   RW         9765    GUI__IsInitialized  anon$$obj.o
+    0x200379b5        -       0x00000001   Zero   RW         9766    GUI__NumLayersInUse  anon$$obj.o
+    0x200379b6        -       0x00000001   Zero   RW         9764    GUI__PreserveTrans  anon$$obj.o
+    0x200379b7   COMPRESSED   0x00000001   PAD
+    0x200379b8        -       0x00000002   Zero   RW         9763    GUI__aNumBuffers    anon$$obj.o
+    0x200379ba   COMPRESSED   0x00000002   PAD
+    0x200379bc        -       0x00000008   Zero   RW         9749    GUI__apDevice       anon$$obj.o
+    0x200379c4        -       0x00000004   Zero   RW         9774    GUI__pfDrawAlphaBitmapFunc  anon$$obj.o
+    0x200379c8        -       0x00000004   Zero   RW         9775    GUI__pfDrawAlphaMemdevFunc  anon$$obj.o
+    0x200379cc        -       0x00000004   Zero   RW         9768    GUI_pLCD_APIList    anon$$obj.o
+    0x200379d0        -       0x00000004   Zero   RW         9761    GUI_pUC_API         anon$$obj.o
+    0x200379d4        -       0x00000004   Zero   RW         9759    GUI_pfDispCharLine  anon$$obj.o
+    0x200379d8        -       0x00000004   Zero   RW         9751    GUI_pfDispCharStyle  anon$$obj.o
+    0x200379dc        -       0x00000004   Zero   RW         9758    GUI_pfExecAnimations  anon$$obj.o
+    0x200379e0        -       0x00000004   Zero   RW         9756    GUI_pfTimerExec     anon$$obj.o
+    0x200379e4        -       0x00000004   Zero   RW         9757    GUI_pfUpdateSoftLayer  anon$$obj.o
+    0x200379e8        -       0x00000004   Zero   RW         9798    LCD__aConvTable     anon$$obj.o
+    0x200379ec   COMPRESSED   0x00000004   PAD
+    0x200379f0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f767xx.o
+    0x20037df0        -       0x00000004   Zero   RW         9780    WM_MULTIBUF__pAPI   anon$$obj.o
+    0x20037df4        -       0x00000001   Zero   RW         9796    WM__CaptureReleaseAuto  anon$$obj.o
+    0x20037df5   COMPRESSED   0x00000003   PAD
+    0x20037df8        -       0x00000004   Zero   RW         9779    WM__CreateFlags     anon$$obj.o
+    0x20037dfc        -       0x00000004   Zero   RW         9790    WM__FirstWin        anon$$obj.o
+    0x20037e00        -       0x00000004   Zero   RW         9789    WM__InvalidLayerMask  anon$$obj.o
+    0x20037e04        -       0x00000002   Zero   RW         9788    WM__NumInvalidWindows  anon$$obj.o
+    0x20037e06        -       0x00000002   Zero   RW         9793    WM__NumWindows      anon$$obj.o
+    0x20037e08        -       0x00000001   Zero   RW         9795    WM__PaintCallbackCnt  anon$$obj.o
+    0x20037e09   COMPRESSED   0x00000003   PAD
+    0x20037e0c        -       0x00000004   Zero   RW         9773    WM__TouchedLayer    anon$$obj.o
+    0x20037e10        -       0x00000004   Zero   RW         9777    WM__TransWindowCnt  anon$$obj.o
+    0x20037e14        -       0x00000008   Zero   RW         9792    WM__aBkColor        anon$$obj.o
+    0x20037e1c        -       0x00000010   Zero   RW         9786    WM__aCHWinLast      anon$$obj.o
+    0x20037e2c        -       0x00000010   Zero   RW         9785    WM__aCHWinModal     anon$$obj.o
+    0x20037e3c        -       0x00000010   Zero   RW         9787    WM__aCHWinMouseOver  anon$$obj.o
+    0x20037e4c        -       0x00000008   Zero   RW         9782    WM__ahCapture       anon$$obj.o
+    0x20037e54        -       0x00000008   Zero   RW         9783    WM__ahDesktopWin    anon$$obj.o
+    0x20037e5c        -       0x00000008   Zero   RW         9781    WM__ahWinFocus      anon$$obj.o
+    0x20037e64        -       0x00000004   Zero   RW         9778    WM__hATransWindow   anon$$obj.o
+    0x20037e68        -       0x00000004   Zero   RW         9791    WM__hCreateStatic   anon$$obj.o
+    0x20037e6c        -       0x00000004   Zero   RW         9784    WM__pExecGestures   anon$$obj.o
+    0x20037e70        -       0x00000004   Zero   RW         9776    WM__pFirstCriticalHandle  anon$$obj.o
+    0x20037e74        -       0x00000004   Zero   RW         9762    WM_pfHandlePID      anon$$obj.o
+    0x20037e78        -       0x00000004   Zero   RW         9794    WM_pfPollPID        anon$$obj.o
 
 
 
@@ -12757,12 +12756,12 @@ Image component sizes
        100         18         24          4          0       1083   system_stm32f7xx.o
       3052        388          0         60        740      24992   tasks.o
        112          6          0          4          0       3528   utility.o
-       978         48          0         13       4146       9956   w25q256_driver.o
+       938         44          0         29       4146       9877   w25q256_driver.o
 
     ----------------------------------------------------------------------
-     36916       1962        892        192     750068    1344911   Object Totals
+     36880       1958        892        208     750068    1344832   Object Totals
          0          0         32          0        396          0   (incl. Generated)
-        50          0          3         12         18          0   (incl. Padding)
+        54          0          3         12         18          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -12897,15 +12896,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     94460       4404       4704        312     750900    1312255   Grand Totals
-     94460       4404       4704        128     750900    1312255   ELF Image Totals (compressed)
-     94460       4404       4704        128          0          0   ROM Totals
+     94424       4400       4704        328     750900    1312176   Grand Totals
+     94424       4400       4704        144     750900    1312176   ELF Image Totals (compressed)
+     94424       4400       4704        144          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                99164 (  96.84kB)
-    Total RW  Size (RW Data + ZI Data)            751212 ( 733.61kB)
-    Total ROM Size (Code + RO Data + RW Data)      99292 (  96.96kB)
+    Total RO  Size (Code + RO Data)                99128 (  96.80kB)
+    Total RW  Size (RW Data + ZI Data)            751228 ( 733.62kB)
+    Total ROM Size (Code + RO Data + RW Data)      99272 (  96.95kB)
 
 ==============================================================================
 
