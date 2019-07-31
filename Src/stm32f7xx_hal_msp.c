@@ -24,6 +24,9 @@
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
+extern DMA_HandleTypeDef hdma_sdmmc1_rx;
+
+extern DMA_HandleTypeDef hdma_sdmmc1_tx;
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -262,6 +265,52 @@ void HAL_SD_MspInit(SD_HandleTypeDef* hsd)
     GPIO_InitStruct.Alternate = GPIO_AF12_SDMMC1;
     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+    /* SDMMC1 DMA Init */
+    /* SDMMC1_RX Init */
+    hdma_sdmmc1_rx.Instance = DMA2_Stream3;
+    hdma_sdmmc1_rx.Init.Channel = DMA_CHANNEL_4;
+    hdma_sdmmc1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_sdmmc1_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_sdmmc1_rx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_sdmmc1_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+    hdma_sdmmc1_rx.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+    hdma_sdmmc1_rx.Init.Mode = DMA_PFCTRL;
+    hdma_sdmmc1_rx.Init.Priority = DMA_PRIORITY_MEDIUM;
+    hdma_sdmmc1_rx.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
+    hdma_sdmmc1_rx.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
+    hdma_sdmmc1_rx.Init.MemBurst = DMA_MBURST_INC4;
+    hdma_sdmmc1_rx.Init.PeriphBurst = DMA_PBURST_INC4;
+    if (HAL_DMA_Init(&hdma_sdmmc1_rx) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(hsd,hdmarx,hdma_sdmmc1_rx);
+
+    /* SDMMC1_TX Init */
+    hdma_sdmmc1_tx.Instance = DMA2_Stream6;
+    hdma_sdmmc1_tx.Init.Channel = DMA_CHANNEL_4;
+    hdma_sdmmc1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+    hdma_sdmmc1_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_sdmmc1_tx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_sdmmc1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+    hdma_sdmmc1_tx.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+    hdma_sdmmc1_tx.Init.Mode = DMA_PFCTRL;
+    hdma_sdmmc1_tx.Init.Priority = DMA_PRIORITY_MEDIUM;
+    hdma_sdmmc1_tx.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
+    hdma_sdmmc1_tx.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
+    hdma_sdmmc1_tx.Init.MemBurst = DMA_MBURST_INC4;
+    hdma_sdmmc1_tx.Init.PeriphBurst = DMA_PBURST_INC4;
+    if (HAL_DMA_Init(&hdma_sdmmc1_tx) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(hsd,hdmatx,hdma_sdmmc1_tx);
+
+    /* SDMMC1 interrupt Init */
+    HAL_NVIC_SetPriority(SDMMC1_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(SDMMC1_IRQn);
   /* USER CODE BEGIN SDMMC1_MspInit 1 */
 
   /* USER CODE END SDMMC1_MspInit 1 */
@@ -298,6 +347,12 @@ void HAL_SD_MspDeInit(SD_HandleTypeDef* hsd)
 
     HAL_GPIO_DeInit(GPIOD, GPIO_PIN_2);
 
+    /* SDMMC1 DMA DeInit */
+    HAL_DMA_DeInit(hsd->hdmarx);
+    HAL_DMA_DeInit(hsd->hdmatx);
+
+    /* SDMMC1 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(SDMMC1_IRQn);
   /* USER CODE BEGIN SDMMC1_MspDeInit 1 */
 
   /* USER CODE END SDMMC1_MspDeInit 1 */

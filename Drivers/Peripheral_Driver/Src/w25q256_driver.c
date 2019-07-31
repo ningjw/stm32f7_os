@@ -54,7 +54,7 @@ void QSPI_Receive(uint8_t* buf,uint32_t len)
              len:要传输的数据长度
   * @return  
 ***************************************************************************************/
-uint8_t QSPI_Transmit(uint8_t* buf,uint32_t len)
+void QSPI_Transmit(uint8_t* buf,uint32_t len)
 {
     hqspi.Instance->DLR = len - 1;                            //配置数据长度
     if(HAL_QSPI_Transmit(&hqspi, buf, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
@@ -88,8 +88,6 @@ void W25QXX_SetQE(void)
 ***************************************************************************************/
 uint16_t W25QXX_ReadId(void)
 {
-    QSPI_CommandTypeDef s_command = {0};
-    
     uint8_t pData[2];
 
     QSPI_SendCmd(W25X_ManufactDeviceID,QSPI_INSTRUCTION_4_LINES,
@@ -136,7 +134,6 @@ void W25QXX_WaitIdle(void)
 ***************************************************************************************/
 void W25QXX_EraseSector(uint32_t sector_id)
 {
-    QSPI_CommandTypeDef s_command = {0};
     uint32_t addr = sector_id * 4096;
 	
     W25Q_WRITE_ENABLE();

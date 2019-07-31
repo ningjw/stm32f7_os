@@ -50,6 +50,8 @@ CRC_HandleTypeDef hcrc;
 QSPI_HandleTypeDef hqspi;
 
 SD_HandleTypeDef hsd1;
+DMA_HandleTypeDef hdma_sdmmc1_rx;
+DMA_HandleTypeDef hdma_sdmmc1_tx;
 
 UART_HandleTypeDef huart1;
 
@@ -93,7 +95,7 @@ void StartUpdateFontTask(void const * argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+    
   /* USER CODE END 1 */
   
   /* MPU Configuration--------------------------------------------------------*/
@@ -131,6 +133,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   GT9147_Init();//电容触摸屏控制器初始化
   W25QXX_Init();//SPI Flash初始化
+  
   /* USER CODE END 2 */
 
 /* Initialise the graphical hardware */
@@ -169,7 +172,7 @@ int main(void)
   /* definition and creation of updateFontTask */
   osThreadDef(updateFontTask, StartUpdateFontTask, osPriorityIdle, 0, 128);
   updateFontTaskHandle = osThreadCreate(osThread(updateFontTask), NULL);
-
+  
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -332,7 +335,7 @@ static void MX_SDMMC1_SD_Init(void)
 {
 
   /* USER CODE BEGIN SDMMC1_Init 0 */
-
+  
   /* USER CODE END SDMMC1_Init 0 */
 
   /* USER CODE BEGIN SDMMC1_Init 1 */
@@ -414,6 +417,14 @@ static void MX_DMA_Init(void)
   {
     Error_Handler( );
   }
+
+  /* DMA interrupt init */
+  /* DMA2_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
+  /* DMA2_Stream6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream6_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream6_IRQn);
 
 }
 
@@ -534,11 +545,20 @@ void StartTouchTask(void const * argument)
 /* USER CODE END Header_StartUpdateFontTask */
 void StartUpdateFontTask(void const * argument)
 {
+  #define WK_UP       HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)  //WKUP按键PA0
   /* USER CODE BEGIN StartUpdateFontTask */
+  Fatfs_test();
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    if(WK_UP == 1){
+        osDelay(1000);
+        if(WK_UP == 1){
+            printf("WK_UP\r\n");
+            
+        }
+    }
+    osDelay(10);
   }
   /* USER CODE END StartUpdateFontTask */
 }
