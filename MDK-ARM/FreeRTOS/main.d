@@ -71,11 +71,13 @@ freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\main.o: ..\Middlewares\ST\STemWin\inc\WM.h
 freertos\main.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
+freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\main.o: ../Inc/STemWin_Demo.h
+freertos\main.o: ../Inc/STemWin_Font.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\main.o: ../Inc/fatfs.h
 freertos\main.o: ../Middlewares/Third_Party/FatFs/src/ff.h

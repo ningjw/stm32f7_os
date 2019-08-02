@@ -100,10 +100,10 @@ int main(void)
   
   /* MPU Configuration--------------------------------------------------------*/
   MPU_Config();
-
+  
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
-
+  
   /* Enable D-Cache---------------------------------------------------------*/
   SCB_EnableDCache();
 
@@ -170,7 +170,7 @@ int main(void)
   touchTaskHandle = osThreadCreate(osThread(touchTask), NULL);
 
   /* definition and creation of updateFontTask */
-  osThreadDef(updateFontTask, StartUpdateFontTask, osPriorityIdle, 0, 128);
+  osThreadDef(updateFontTask, StartUpdateFontTask, osPriorityIdle, 0, 256);
   updateFontTaskHandle = osThreadCreate(osThread(updateFontTask), NULL);
   
   /* USER CODE BEGIN RTOS_THREADS */
@@ -547,7 +547,6 @@ void StartUpdateFontTask(void const * argument)
 {
   #define WK_UP       HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)  //WKUP°´¼üPA0
   /* USER CODE BEGIN StartUpdateFontTask */
-  Fatfs_test();
   /* Infinite loop */
   for(;;)
   {
@@ -555,7 +554,7 @@ void StartUpdateFontTask(void const * argument)
         osDelay(1000);
         if(WK_UP == 1){
             printf("WK_UP\r\n");
-            
+            update_font();
         }
     }
     osDelay(10);

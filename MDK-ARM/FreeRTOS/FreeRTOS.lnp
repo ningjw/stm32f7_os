@@ -21,6 +21,8 @@
 "freertos\stemwin_demo.o"
 "freertos\font_24.o"
 "freertos\framewindlg_1.o"
+"freertos\stemwin_font.o"
+"freertos\gui_uc_encodenone.o"
 "freertos\stm32f7xx_hal_dma2d.o"
 "freertos\stm32f7xx_ll_fmc.o"
 "freertos\stm32f7xx_hal_sdram.o"

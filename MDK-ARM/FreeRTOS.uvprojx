@@ -512,6 +512,16 @@
               <FileType>1</FileType>
               <FilePath>../STemWin/App/FramewinDLG.c</FilePath>
             </File>
+            <File>
+              <FileName>STemWin_Font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\STemWin_Font.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_UC_EncodeNone.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\GUI_UC_EncodeNone.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

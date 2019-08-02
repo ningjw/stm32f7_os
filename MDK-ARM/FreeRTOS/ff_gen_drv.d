@@ -76,10 +76,12 @@ freertos\ff_gen_drv.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\ff_gen_drv.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\ff_gen_drv.o: ..\Middlewares\ST\STemWin\inc\WM.h
 freertos\ff_gen_drv.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
+freertos\ff_gen_drv.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\ff_gen_drv.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\ff_gen_drv.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\ff_gen_drv.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\ff_gen_drv.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\ff_gen_drv.o: ../Inc/STemWin_Demo.h
+freertos\ff_gen_drv.o: ../Inc/STemWin_Font.h
 freertos\ff_gen_drv.o: ../Inc/bsp_driver_sd.h
 freertos\ff_gen_drv.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

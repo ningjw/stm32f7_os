@@ -71,8 +71,10 @@ freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\w25q256_driver.o: ..\Middlewares\ST\STemWin\inc\WM.h
 freertos\w25q256_driver.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
+freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\w25q256_driver.o: ../Inc/STemWin_Demo.h
+freertos\w25q256_driver.o: ../Inc/STemWin_Font.h

@@ -45,12 +45,14 @@ extern "C" {
 #include "math.h"
 #include "stdlib.h"
 #include "WM.h"
+#include "string.h"
 
 #include "ltdc_driver.h"
 #include "gt9147_iic_driver.h"
 #include "w25q256_driver.h"
 #include "utility.h"
 #include "STemWin_Demo.h"
+#include "STemWin_Font.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

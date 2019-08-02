@@ -1,0 +1,257 @@
+/**
+  ******************************************************************************
+  * @file   fatfs.c
+  * @brief  Code for fatfs applications
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under Ultimate Liberty license
+  * SLA0044, the "License"; You may not use this file except in compliance with
+  * the License. You may obtain a copy of the License at:
+  *                             www.st.com/SLA0044
+  *
+  ******************************************************************************
+  */
+
+#include "fatfs.h"
+
+uint8_t retSD;    /* Return value for SD */
+char SDPath[4];   /* SD logical drive path */
+FATFS SDFatFS;    /* File system object for SD logical drive */
+FIL SDFile;       /* File object for SD */
+
+/* USER CODE BEGIN Variables */
+//字库区域占用的总扇区数大小(4个字库+unigbk表+字库信息=6302984字节,约占1539个W25QXX扇区,一个扇区4K字节)
+#define FONTSECSIZE	 	1539
+//字库存放起始地址 
+#define FONTINFOADDR 	1024*1024*25 	//前面25M被fatfs占用了;从25M地址以后开始存放字库;
+										//25M以后紧跟4个字库+UNIGBK.BIN,总大小6.01M;31.01M以后,用户可以自由使用.
+
+//字库存放在磁盘中的路径
+char* const GBK_PATH[5]=
+{
+    "FONT/UNIGBK.BIN",	//UNIGBK.BIN的存放位置
+    "FONT/GBK12.FON",	//GBK12的存放位置
+    "FONT/GBK16.FON",	//GBK16的存放位置
+    "FONT/GBK24.FON",	//GBK24的存放位置
+    "FONT/GBK32.FON",	//GBK32的存放位置
+};
+
+//用来保存字库基本信息，地址，大小等
+_font_info ftinfo;
+
+DIR      dirSD;
+FILINFO  fileInfo;	//文件信息
+uint32_t sd_total_size,sd_free_size;
+extern   SD_HandleTypeDef hsd1;
+
+
+/* USER CODE END Variables */    
+
+void MX_FATFS_Init(void) 
+{
+  /*## FatFS: Link the SD driver ###########################*/
+  retSD = FATFS_LinkDriver(&SD_Driver, SDPath);
+
+  /* USER CODE BEGIN Init */
+  /* additional user code for init */     
+  /* USER CODE END Init */
+}
+
+/**
+  * @brief  Gets Time from RTC 
+  * @param  None
+  * @retval Time in DWORD
+  */
+DWORD get_fattime(void)
+{
+  /* USER CODE BEGIN get_fattime */
+  return 0;
+  /* USER CODE END get_fattime */  
+}
+
+/* USER CODE BEGIN Application */
+
+/***************************************************************************************
+  * @brief   遍历文件
+  * @input   path:路径
+  * @return  
+***************************************************************************************/
+uint8_t sd_scan_files(char * path)
+{
+	FRESULT res;	 
+    res = f_opendir(&dirSD, (const TCHAR*)path); //打开一个目录
+    if (res == FR_OK) 
+	{
+		printf("\r\n"); 
+		for(;;)
+		{
+	        res = f_readdir(&dirSD, &fileInfo);                   //读取目录下的一个文件
+	        if (res != FR_OK || fileInfo.fname[0] == 0) 
+                break;  //错误了/到末尾了,退出
+
+            if(fileInfo.fattrib == AM_DIR){//目录
+                printf("dir :");
+            }else if(fileInfo.fattrib == AM_ARC){//文档
+                printf("file:");
+            }else{
+                printf("null:");
+            }
+			printf("%s  %dByte %d-%d-%d %02d:%02d\r\n", 
+                    fileInfo.fname, (int)fileInfo.fsize,
+                    1980+((fileInfo.fdate & 0xFE00)>>9), (fileInfo.fdate & 0x1E0)>>5, fileInfo.fdate & 0x1F,
+                    ((fileInfo.ftime & 0xF800)>>11), ((fileInfo.ftime & 0x1E0)>>5));
+		}
+        f_closedir(&dirSD);
+    }
+    return res;	  
+}
+
+/***************************************************************************************
+  * @brief   Search a directory for objects and display it
+  * @input   
+  * @return  
+***************************************************************************************/
+void find_txt_file (void)
+{
+    FRESULT fr;     /* Return value */
+
+//    fr = f_opendir(&dirSD, (const TCHAR*)SDPath); //打开一个目录
+    
+    fr = f_findfirst(&dirSD, &fileInfo, "", "DATA*");  /* Start to search for photo files */
+    
+    while (fr == FR_OK && fileInfo.fname[0]) {            /* Repeat while an item is found */
+        printf("%s\n", fileInfo.fname);                   /* Display the object name */
+        fr = f_findnext(&dirSD, &fileInfo);               /* Search for next item */
+    }
+
+    f_closedir(&dirSD);
+}
+
+								  
+/***************************************************************************************
+  * @brief   更新字体文件,UNIGBK,GBK12,GBK16,GBK24,GBK32一起更新
+  * @input   src:字库来源磁盘."0:",SD卡;"1:",FLASH盘,"2:",U盘.
+  * @return  
+***************************************************************************************/
+char    font_path[64];
+uint8_t font_buf[4096];
+uint8_t update_font(uint8_t* src)
+{
+    uint8_t rval;
+    UINT br;
+    uint32_t  offx = 0,flashaddr=0;
+    for(uint8_t i=0; i<5; i++)	//先查找文件UNIGBK,GBK12,GBK16,GBK24,GBK32是否正常 
+	{
+		strcpy(font_path,SDPath);			//copy src内容到pname
+		strcat(font_path,GBK_PATH[i]);		//追加具体文件路径 
+		retSD = f_open(&SDFile, (const TCHAR*)font_path, FA_READ);	//尝试打开
+		if(retSD)
+		{
+			rval|=1<<7;	//标记打开文件失败  
+			break;		//出错了,直接退出
+		}
+	}
+    
+    if(rval==0)			//字库文件都存在.
+	{
+        for(uint32_t i=0;i<FONTSECSIZE; i++)			//先擦除字库区域,提高写入速度
+		{
+			W25QXX_EraseSector((FONTINFOADDR/4096)+i);	//需要擦除的扇区
+		}
+        for(uint8_t i=0; i<5; i++)	//依次更新UNIGBK,GBK12,GBK16,GBK24,GBK32
+		{
+            strcpy(font_path,SDPath);			//copy src内容到pname
+            strcat(font_path,GBK_PATH[i]);		//追加具体文件路径
+            if(f_open(&SDFile, (const TCHAR*)font_path, FA_READ) == FR_OK) {
+                switch(i)
+                {
+                    case 0:												//更新UNIGBK.BIN
+				ftinfo.ugbkaddr=FONTINFOADDR+sizeof(ftinfo);	//信息头之后，紧跟UNIGBK转换码表
+				ftinfo.ugbksize=fftemp->obj.objsize;					//UNIGBK大小
+				flashaddr=ftinfo.ugbkaddr;
+				break;
+			case 1:
+				ftinfo.f12addr=ftinfo.ugbkaddr+ftinfo.ugbksize;	//UNIGBK之后，紧跟GBK12字库
+				ftinfo.gbk12size=fftemp->obj.objsize;					//GBK12字库大小
+				flashaddr=ftinfo.f12addr;						//GBK12的起始地址
+				break;
+			case 2:
+				ftinfo.f16addr=ftinfo.f12addr+ftinfo.gbk12size;	//GBK12之后，紧跟GBK16字库
+				ftinfo.gbk16size=fftemp->obj.objsize;					//GBK16字库大小
+				flashaddr=ftinfo.f16addr;						//GBK16的起始地址
+				break;
+			case 3:
+				ftinfo.f24addr=ftinfo.f16addr+ftinfo.gbk16size;	//GBK16之后，紧跟GBK24字库
+				ftinfo.gbk24size=fftemp->obj.objsize;					//GBK24字库大小
+				flashaddr=ftinfo.f24addr;						//GBK24的起始地址
+				break;
+			case 4:
+				ftinfo.f32addr=ftinfo.f24addr+ftinfo.gbk24size;	//GBK24之后，紧跟GBK32字库
+				ftinfo.gbk32size=fftemp->obj.objsize;					//GBK32字库大小
+				flashaddr=ftinfo.f32addr;						//GBK32的起始地址
+				break;
+                }
+                while(retSD == FR_OK)//死循环执行
+                {
+                    retSD = f_read(&SDFile, font_buf, 4096, (UINT *)&br);//读取数据	
+                    if(retSD != FR_OK)break;
+                    W25QXX_Write_NoCheck(font_buf,offx+flashaddr,4096);	  //从0开始写入4096个数据
+                    offx+=br;
+                    if(br!=4096)break;								//读完了.
+                }
+            }
+        }
+    }
+}
+
+/***************************************************************************************
+  * @brief   
+  * @input   
+  * @return  
+***************************************************************************************/
+void Fatfs_test(void)
+{
+//    char read_buff[100]; /* Line buffer */
+    
+    /*##-1- Register the file system object to the FatFs module ##############*/
+    retSD = f_mount(&SDFatFS, SDPath, 1); 					//挂载SD卡
+    if(retSD)
+    {
+        Error_Handler();
+    }
+    sd_total_size = (hsd1.SdCard.BlockNbr >> 20) *  hsd1.SdCard.BlockSize;
+    sd_total_size = (SDFatFS.csize * (SDFatFS.n_fatent-2) / 2) >> 10;
+    sd_free_size  = (SDFatFS.csize * SDFatFS.free_clst / 2) >> 10;
+    
+    GUI_DispStringAt("SD Capacity:      M",10,40);
+    GUI_DispDecAt(sd_free_size , 85, 40, 4);
+    printf("SD Capacity: = %d M", (hsd1.SdCard.BlockNbr >> 20) *  hsd1.SdCard.BlockSize);
+    printf("SD Total Size = %d M", sd_total_size);
+    printf("SD Free  Size = %d M", sd_free_size);
+    
+//    sd_scan_files(SDPath);
+    
+//    retSD = f_mkdir("DATA");
+
+    find_txt_file();
+//    
+//    /*##-2- Create and Open new text file objects with write access ######*/
+//    retSD = f_open(&SDFile, "fatfs_test.txt", FA_CREATE_ALWAYS | FA_WRITE);
+//    if(retSD)
+//        printf(" open file error : %d\r\n",retSD);
+//    else
+//        printf(" open file sucess!!! \r\n");
+//    
+//    /* Read every line and display it */
+//    while (f_gets(read_buff, sizeof read_buff, &SDFile)) {
+//        printf("%s",read_buff);
+//    }
+}
+
+/* USER CODE END Application */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

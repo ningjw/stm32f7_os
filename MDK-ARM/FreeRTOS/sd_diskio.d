@@ -82,6 +82,7 @@ freertos\sd_diskio.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\sd_diskio.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\sd_diskio.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\sd_diskio.o: ../Inc/STemWin_Demo.h
+freertos\sd_diskio.o: ../Inc/STemWin_Font.h
 freertos\sd_diskio.o: ../Inc/bsp_driver_sd.h
 freertos\sd_diskio.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\sd_diskio.o: ../Inc/sd_diskio.h

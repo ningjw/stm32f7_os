@@ -137,9 +137,8 @@ void W25QXX_EraseSector(uint32_t sector_id)
     uint32_t addr = sector_id * 4096;
 	
     W25Q_WRITE_ENABLE();
-    
+    W25QXX_WaitIdle();
     QSPI_SendCmd(W25X_SectorErase,QSPI_INSTRUCTION_4_LINES,addr,QSPI_ADDRESS_4_LINES,QSPI_ADDRESS_32_BITS,0);
-    
     W25QXX_WaitIdle();
 }
 
@@ -185,6 +184,7 @@ void W25QXX_Read(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead)
 void W25QXX_Write_Page(uint8_t* pBuffer,uint32_t WriteAddr,uint16_t NumByteToWrite)
 {
 	W25Q_WRITE_ENABLE();				//写使能
+    W25QXX_WaitIdle();
     QSPI_SendCmd(W25X_PageProgram,QSPI_INSTRUCTION_4_LINES,
                  WriteAddr,QSPI_ADDRESS_4_LINES,QSPI_ADDRESS_32_BITS,QSPI_DATA_4_LINES);
 	QSPI_Transmit(pBuffer, NumByteToWrite);	         	      
@@ -250,7 +250,7 @@ void W25QXX_Write(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite)
     
 	while(1) 
 	{
-		W25QXX_Read(W25Q_Buf,sec_id*4096,4096);//读出整个扇区的内容
+		W25QXX_Read(W25Q_Buf, sec_id*4096, 4096);//读出整个扇区的内容
 		for(i=0; i<sec_remain; i++)//校验数据
 		{
 			if(W25Q_Buf[sec_offset+i] != 0xFF)

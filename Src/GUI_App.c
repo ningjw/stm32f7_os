@@ -60,12 +60,14 @@ void GRAPHICS_MainTask(void) {
   
   GUI_CURSOR_Show();
   
-  GUI_Clear();
+//  GUI_Clear();
     
     extern uint16_t W25_ID;
     extern uint8_t W25_RxBuf[50];
     GUI_DispHexAt(W25_ID,10,20, 4);
     GUI_DispStringAt((char *)W25_RxBuf,10,30);
+    
+    font_init();
     
 //  extern GUI_FONT GUI_Font24;
 //  GUI_UC_SetEncodeUTF8();   // 设置编码

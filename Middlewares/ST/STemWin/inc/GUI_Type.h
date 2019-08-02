@@ -428,6 +428,14 @@ DECLARE_FONT(PROP_AA4_EXT);
   (GUI_GETCHARINFO *)0,             \
   &GUI_ENC_APIList_SJIS
 
+//声明一种新的字体结构
+#define GUI_FONTTYPE_PROP_USER      \
+   GUIPROP_X_DispChar,             	\
+  (GUI_GETCHARDISTX*)GUIPROP_X_GetCharDistX,\
+   GUIMONO_GetFontInfo,          	\
+   GUIMONO_IsInFont,             	\
+  (GUI_GETCHARINFO *)0,         	\
+  (tGUI_ENC_APIList*)0  
 #if defined(__cplusplus)
   }
 #endif

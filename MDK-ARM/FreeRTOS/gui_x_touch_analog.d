@@ -71,8 +71,10 @@ freertos\gui_x_touch_analog.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\gui_x_touch_analog.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\gui_x_touch_analog.o: ..\Middlewares\ST\STemWin\inc\WM.h
 freertos\gui_x_touch_analog.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
+freertos\gui_x_touch_analog.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\gui_x_touch_analog.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\gui_x_touch_analog.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\gui_x_touch_analog.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\gui_x_touch_analog.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\gui_x_touch_analog.o: ../Inc/STemWin_Demo.h
+freertos\gui_x_touch_analog.o: ../Inc/STemWin_Font.h

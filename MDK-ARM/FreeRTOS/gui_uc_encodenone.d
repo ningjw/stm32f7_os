@@ -1,0 +1,13 @@
+freertos\gui_uc_encodenone.o: ..\Src\GUI_UC_EncodeNone.c
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI_Private.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI.h
+freertos\gui_uc_encodenone.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI_ConfDefaults.h
+freertos\gui_uc_encodenone.o: ../Inc/GUIConf.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI_Type.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\LCD.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\Global.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI_Version.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\LCD_Protected.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI_Debug.h
+freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h

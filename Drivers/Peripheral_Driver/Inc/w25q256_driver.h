@@ -1,6 +1,8 @@
 #ifndef __W25Q256_DRIVER_H
 #define __W25Q256_DRIVER_H
 
+#include "stdint.h"
+
 #define W25Q256_SIZE (32*1024*1024)
 
 /* ¸´Î»²Ù×÷ */
@@ -34,4 +36,8 @@
 #define W25X_ExitQPIMode        0xFF
 
 void W25QXX_Init(void);
+void W25QXX_EraseSector(uint32_t sector_id);
+void W25QXX_Write_NoCheck(uint8_t* pBuffer,uint32_t WriteAddr,uint16_t NumByteToWrite);
+void W25QXX_Write(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite);
+void W25QXX_Read(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead);
 #endif

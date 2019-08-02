@@ -72,11 +72,13 @@ freertos\stemwin_wrapper.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\stemwin_wrapper.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\stemwin_wrapper.o: ..\Middlewares\ST\STemWin\inc\WM.h
 freertos\stemwin_wrapper.o: ..\Middlewares\ST\STemWin\inc\WM_GUI.h
+freertos\stemwin_wrapper.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\stemwin_wrapper.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\stemwin_wrapper.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stemwin_wrapper.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\stemwin_wrapper.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\stemwin_wrapper.o: ../Inc/STemWin_Demo.h
+freertos\stemwin_wrapper.o: ../Inc/STemWin_Font.h
 freertos\stemwin_wrapper.o: ..\Middlewares\ST\STemWin\inc\GUI_Private.h
 freertos\stemwin_wrapper.o: ..\Middlewares\ST\STemWin\inc\LCD_Protected.h
 freertos\stemwin_wrapper.o: ..\Middlewares\ST\STemWin\inc\GUI_Debug.h
