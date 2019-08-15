@@ -1,4 +1,4 @@
-freertos\stemwin_font.o: ..\Src\STemWin_Font.c
+freertos\stemwin_font.o: ../STemWin/App/STemWin_Font.c
 freertos\stemwin_font.o: ../Inc/main.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\stemwin_font.o: ../Inc/stm32f7xx_hal_conf.h
@@ -6,12 +6,12 @@ freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 freertos\stemwin_font.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 freertos\stemwin_font.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h
-freertos\stemwin_font.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm7.h
+freertos\stemwin_font.o: ../Drivers/CMSIS/Include/core_cm7.h
 freertos\stemwin_font.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-freertos\stemwin_font.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h
-freertos\stemwin_font.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h
-freertos\stemwin_font.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h
-freertos\stemwin_font.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h
+freertos\stemwin_font.o: ../Drivers/CMSIS/Include/cmsis_version.h
+freertos\stemwin_font.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+freertos\stemwin_font.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+freertos\stemwin_font.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 freertos\stemwin_font.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
@@ -25,7 +25,6 @@ freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_e
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h
-freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 freertos\stemwin_font.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sdram.h
@@ -76,8 +75,10 @@ freertos\stemwin_font.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\stemwin_font.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stemwin_font.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\stemwin_font.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\stemwin_font.o: ../Inc/STemWin_Demo.h
-freertos\stemwin_font.o: ../Inc/STemWin_Font.h
+freertos\stemwin_font.o: ..\STemWin\Inc\STemWin_BasicDemo.h
+freertos\stemwin_font.o: ..\STemWin\Inc\STemWin_Font.h
+freertos\stemwin_font.o: ..\STemWin\Inc\STemWin_Picture.h
+freertos\stemwin_font.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
 freertos\stemwin_font.o: ../Inc/fatfs.h
 freertos\stemwin_font.o: ../Middlewares/Third_Party/FatFs/src/ff.h
 freertos\stemwin_font.o: ../Middlewares/Third_Party/FatFs/src/integer.h

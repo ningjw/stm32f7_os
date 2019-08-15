@@ -55,7 +55,7 @@
 //
 // Define the available number of bytes available for the GUI
 //
-#define GUI_NUMBYTES  (1024) *  200   // x KByte
+#define GUI_NUMBYTES  (1024) *  5120   // x KByte
 
 /*********************************************************************
 *
@@ -65,7 +65,7 @@
 */
 
 /* 32 bit aligned memory area */
-static U32 extMem[GUI_NUMBYTES / 4];
+static U32 extMem[GUI_NUMBYTES / 4] __attribute__((at(0xc0100000)));
 
 /*********************************************************************
 *

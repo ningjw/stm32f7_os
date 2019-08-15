@@ -147,10 +147,21 @@ void draw_bitmap(void)
 {
     extern GUI_BITMAP bmbitmap;
     GUI_Clear();
-    GUI_SetTextMode(GUI_TM_TRANS);	//透明显示
-    GUI_DrawBitmap(&bmbitmap, 150, 30); //绘制 ALIENTEK 图标
-    GUI_Delay(1000);
-    GUI_Clear();
+//    GUI_SetTextMode(GUI_TM_TRANS);	//透明显示
+//    GUI_DrawBitmap(&bmzhenji_bitmap, 0, 0); 
+    
+//    GUI_Delay(1000);
+//    GUI_Clear();
+//    //位图中坐标为(0,0)的对应显示在LCD的(150,30)点,且缩放倍数为500/1000 = 0.85
+//    GUI_DrawBitmapEx(&bmzhenji_bitmap, 150, 30, 0, 0, 850, 850);
+//    
+//    GUI_Delay(1000);
+//    GUI_Clear();
+//    //位图中坐标为(0,0)的对应显示在LCD的(150,30)点,且缩放倍数为500/1000 = 0.6
+//    GUI_DrawBitmapEx(&bmzhenji_bitmap, 150, 30, 0, 0, 600, 600);
+//    
+//    GUI_Delay(1000);
+//    GUI_Clear();
     //位图中坐标为(0,0)的对应显示在LCD的(150,30)点,且缩放倍数为500/1000 = 0.5
     GUI_DrawBitmapEx(&bmbitmap, 150, 30, 0, 0, 500, 500);
 }

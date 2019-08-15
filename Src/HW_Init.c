@@ -56,11 +56,9 @@
 
 LTDC_HandleTypeDef            hltdc; 
 
-DMA2D_HandleTypeDef           hdma2d;
-
 SDRAM_HandleTypeDef hsdram1;
 
-#define REFRESH_COUNT        1750
+#define REFRESH_COUNT        1752
 
 #define SDRAM_TIMEOUT                            ((uint32_t)0xFFFF)
 #define SDRAM_MODEREG_BURST_LENGTH_1             ((uint16_t)0x0000)
@@ -96,14 +94,14 @@ void MX_LCD_Init(void)
   hltdc.Init.VSPolarity = LTDC_VSPOLARITY_AL;
   hltdc.Init.DEPolarity = LTDC_DEPOLARITY_AL;
   hltdc.Init.PCPolarity = LTDC_PCPOLARITY_IPC;
-  hltdc.Init.HorizontalSync = 0;
-  hltdc.Init.VerticalSync = 0;
-  hltdc.Init.AccumulatedHBP = 40;
-  hltdc.Init.AccumulatedVBP = 8;
-  hltdc.Init.AccumulatedActiveW = 520;
-  hltdc.Init.AccumulatedActiveH = 280;
-  hltdc.Init.TotalWidth = 525;
-  hltdc.Init.TotalHeigh = 288;
+  hltdc.Init.HorizontalSync = 9;
+  hltdc.Init.VerticalSync = 1;
+  hltdc.Init.AccumulatedHBP = 29;
+  hltdc.Init.AccumulatedVBP = 3;
+  hltdc.Init.AccumulatedActiveW = 509;
+  hltdc.Init.AccumulatedActiveH = 275;
+  hltdc.Init.TotalWidth = 519;
+  hltdc.Init.TotalHeigh = 279;
   hltdc.Init.Backcolor.Blue = 0;
   hltdc.Init.Backcolor.Green = 0;
   hltdc.Init.Backcolor.Red = 0;
@@ -139,6 +137,7 @@ void MX_LCD_Init(void)
   */ 
 void MX_FMC_Init(void) 
 {  
+
 /* FMC initialization function */
 
   /* USER CODE BEGIN FMC_Init 0 */
@@ -241,33 +240,6 @@ void MX_SDRAM_InitEx(void)
   /* Step 6: Set the refresh rate counter */
   /* Set the device refresh rate */
   HAL_SDRAM_ProgramRefreshRate(&hsdram1, REFRESH_COUNT); 
-}
-
-/* DMA2D init function */
-void MX_DMA2D_Init(void) 
-{
-/* Configure the DMA2D default mode */ 
-
-  hdma2d.Instance = DMA2D;
-  hdma2d.Init.Mode = DMA2D_M2M;
-  hdma2d.Init.ColorMode = DMA2D_OUTPUT_RGB565;
-  hdma2d.Init.OutputOffset = 0;
-  hdma2d.LayerCfg[1].InputOffset = 0;
-  hdma2d.LayerCfg[1].InputColorMode = DMA2D_INPUT_RGB565;
-  hdma2d.LayerCfg[1].AlphaMode = DMA2D_NO_MODIF_ALPHA;
-  hdma2d.LayerCfg[1].InputAlpha = 0;
-  hdma2d.LayerCfg[1].AlphaInverted = DMA2D_REGULAR_ALPHA;
-  hdma2d.LayerCfg[1].RedBlueSwap = DMA2D_RB_REGULAR;
-  if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
-  {
-    Error_Handler( );
-  }
-
-  if (HAL_DMA2D_ConfigLayer(&hdma2d, 1) != HAL_OK)
-  {
-    Error_Handler( );
-  }
-
 }
 
 /*  MSPInit/deInit Implementation */
@@ -589,44 +561,6 @@ void HAL_SDRAM_MspDeInit(SDRAM_HandleTypeDef* hsdram){
   /* USER CODE BEGIN SDRAM_MspDeInit 1 */
 
   /* USER CODE END SDRAM_MspDeInit 1 */
-}
-
-void HAL_DMA2D_MspInit(DMA2D_HandleTypeDef* dma2dHandle)
-{
-  if(dma2dHandle->Instance==DMA2D)
-  {
-  /* USER CODE BEGIN DMA2D_MspInit 0 */
-
-  /* USER CODE END DMA2D_MspInit 0 */
-    /* Enable Peripheral clock */
-    __HAL_RCC_DMA2D_CLK_ENABLE();
-
-    /* Peripheral interrupt init */
-    HAL_NVIC_SetPriority(DMA2D_IRQn, 5, 0);
-    HAL_NVIC_EnableIRQ(DMA2D_IRQn);
-  /* USER CODE BEGIN DMA2D_MspInit 1 */
-
-  /* USER CODE END DMA2D_MspInit 1 */
-  }
-}
-
-void HAL_DMA2D_MspDeInit(DMA2D_HandleTypeDef* dma2dHandle)
-{
-  if(dma2dHandle->Instance==DMA2D)
-  {
-  /* USER CODE BEGIN DMA2D_MspDeInit 0 */
-
-  /* USER CODE END DMA2D_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_DMA2D_CLK_DISABLE();
-
-    /* Peripheral interrupt Deinit*/
-    HAL_NVIC_DisableIRQ(DMA2D_IRQn);
-
-  /* USER CODE BEGIN DMA2D_MspDeInit 1 */
-
-  /* USER CODE END DMA2D_MspDeInit 1 */
-  }
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

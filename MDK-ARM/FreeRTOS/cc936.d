@@ -9,12 +9,12 @@ freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 freertos\cc936.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 freertos\cc936.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h
-freertos\cc936.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm7.h
+freertos\cc936.o: ../Drivers/CMSIS/Include/core_cm7.h
 freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-freertos\cc936.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h
-freertos\cc936.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h
-freertos\cc936.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h
-freertos\cc936.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h
+freertos\cc936.o: ../Drivers/CMSIS/Include/cmsis_version.h
+freertos\cc936.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+freertos\cc936.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+freertos\cc936.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 freertos\cc936.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
@@ -28,7 +28,6 @@ freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h
-freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sdram.h
@@ -79,7 +78,9 @@ freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\cc936.o: ../Inc/STemWin_Demo.h
-freertos\cc936.o: ../Inc/STemWin_Font.h
+freertos\cc936.o: ..\STemWin\Inc\STemWin_BasicDemo.h
+freertos\cc936.o: ..\STemWin\Inc\STemWin_Font.h
+freertos\cc936.o: ..\STemWin\Inc\STemWin_Picture.h
+freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
 freertos\cc936.o: ../Inc/bsp_driver_sd.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

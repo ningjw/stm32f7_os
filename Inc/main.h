@@ -51,8 +51,11 @@ extern "C" {
 #include "gt9147_iic_driver.h"
 #include "w25q256_driver.h"
 #include "utility.h"
-#include "STemWin_Demo.h"
+#include "STemWin_BasicDemo.h"
 #include "STemWin_Font.h"
+#include "STemWin_Picture.h"
+#include "malloc.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -90,6 +93,10 @@ void Error_Handler(void);
 #define KEY_DOWN_GPIO_Port GPIOH
 #define KEY_RIGHT_Pin GPIO_PIN_3
 #define KEY_RIGHT_GPIO_Port GPIOH
+#define LED_DS1_Pin GPIO_PIN_0
+#define LED_DS1_GPIO_Port GPIOB
+#define LED_DS1B1_Pin GPIO_PIN_1
+#define LED_DS1B1_GPIO_Port GPIOB
 #define TOUCH_INT_Pin GPIO_PIN_7
 #define TOUCH_INT_GPIO_Port GPIOH
 #define TOUCH_INT_EXTI_IRQn EXTI9_5_IRQn

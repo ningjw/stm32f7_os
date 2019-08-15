@@ -23,23 +23,22 @@ char SDPath[4];   /* SD logical drive path */
 FATFS SDFatFS;    /* File system object for SD logical drive */
 FIL SDFile;       /* File object for SD */
 
+/* USER CODE BEGIN Variables */
 DIR      dirSD;
 FILINFO  fileInfo;	//文件信息
 uint32_t sd_total_size, sd_free_size;
-extern   SD_HandleTypeDef hsd1;
 
+extern SD_HandleTypeDef hsd1;
 
 uint8_t sd_scan_files(char * path);
-void find_file (char *str);
+/* USER CODE END Variables */    
 
-/* USER CODE END Variables */
-
-void MX_FATFS_Init(void)
+void MX_FATFS_Init(void) 
 {
-    /*## FatFS: Link the SD driver ###########################*/
-    retSD = FATFS_LinkDriver(&SD_Driver, SDPath);
+  /*## FatFS: Link the SD driver ###########################*/
+  retSD = FATFS_LinkDriver(&SD_Driver, SDPath);
 
-    /* USER CODE BEGIN Init */
+  /* USER CODE BEGIN Init */
     /* additional user code for init */
     retSD = f_mount(&SDFatFS, SDPath, 1); 					//挂载SD卡
     if(retSD)
@@ -55,26 +54,26 @@ void MX_FATFS_Init(void)
     printf("SD Capacity: = %d M", (hsd1.SdCard.BlockNbr >> 20) *  hsd1.SdCard.BlockSize);
     printf("SD Total Size = %d M", sd_total_size);
     printf("SD Free  Size = %d M", sd_free_size);
-
-//    sd_scan_files(SDPath);
+    
+    sd_scan_files(SDPath);
     
 //    find_txt_file();
     
-    /* USER CODE END Init */
+  /* USER CODE END Init */
 }
 
 /**
-  * @brief  Gets Time from RTC
+  * @brief  Gets Time from RTC 
   * @param  None
   * @retval Time in DWORD
   */
 DWORD get_fattime(void)
 {
-    /* USER CODE BEGIN get_fattime */
+  /* USER CODE BEGIN get_fattime */
     return 0;
 //    return ((Year-1980) << 25) | (Mon << 21) | (Day << 16)|
 //                    (Hour << 11) | (Min << 5) | (Sec >> 1);
-    /* USER CODE END get_fattime */
+  /* USER CODE END get_fattime */  
 }
 
 /* USER CODE BEGIN Application */
@@ -133,7 +132,26 @@ void find_file (char *str)
     f_closedir(&dirSD);
 }
 
-
+/***************************************************************************************
+  * @brief   获取文件后缀
+  * @input
+  * @return
+***************************************************************************************/
+void get_extension(const char *file_name, char *extension)
+{
+    int i=0, length;
+    length = strlen(file_name);
+    while(file_name[i])
+    {
+        if(file_name[i]=='.')
+            break;
+        i++;
+    }
+    if( i < length )
+        strcpy(extension,file_name+i+1);
+    else
+        strcpy(extension,"\0");
+}
 
 
 /* USER CODE END Application */

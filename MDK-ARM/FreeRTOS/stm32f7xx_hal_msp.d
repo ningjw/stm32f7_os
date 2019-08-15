@@ -6,12 +6,12 @@ freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h
-freertos\stm32f7xx_hal_msp.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm7.h
+freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Include/core_cm7.h
 freertos\stm32f7xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-freertos\stm32f7xx_hal_msp.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h
-freertos\stm32f7xx_hal_msp.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h
-freertos\stm32f7xx_hal_msp.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h
-freertos\stm32f7xx_hal_msp.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h
+freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Include/cmsis_version.h
+freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
@@ -25,7 +25,6 @@ freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h
-freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 freertos\stm32f7xx_hal_msp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sdram.h
@@ -76,5 +75,7 @@ freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\stm32f7xx_hal_msp.o: ../Inc/STemWin_Demo.h
-freertos\stm32f7xx_hal_msp.o: ../Inc/STemWin_Font.h
+freertos\stm32f7xx_hal_msp.o: ..\STemWin\Inc\STemWin_BasicDemo.h
+freertos\stm32f7xx_hal_msp.o: ..\STemWin\Inc\STemWin_Font.h
+freertos\stm32f7xx_hal_msp.o: ..\STemWin\Inc\STemWin_Picture.h
+freertos\stm32f7xx_hal_msp.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h

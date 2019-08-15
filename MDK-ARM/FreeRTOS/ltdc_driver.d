@@ -6,12 +6,12 @@ freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h
 freertos\ltdc_driver.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 freertos\ltdc_driver.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h
-freertos\ltdc_driver.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\core_cm7.h
+freertos\ltdc_driver.o: ../Drivers/CMSIS/Include/core_cm7.h
 freertos\ltdc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-freertos\ltdc_driver.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_version.h
-freertos\ltdc_driver.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_compiler.h
-freertos\ltdc_driver.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\cmsis_armcc.h
-freertos\ltdc_driver.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include\mpu_armv7.h
+freertos\ltdc_driver.o: ../Drivers/CMSIS/Include/cmsis_version.h
+freertos\ltdc_driver.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+freertos\ltdc_driver.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+freertos\ltdc_driver.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 freertos\ltdc_driver.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
@@ -25,7 +25,6 @@ freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h
-freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sdram.h
@@ -76,5 +75,7 @@ freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\ltdc_driver.o: ../Inc/STemWin_Demo.h
-freertos\ltdc_driver.o: ../Inc/STemWin_Font.h
+freertos\ltdc_driver.o: ..\STemWin\Inc\STemWin_BasicDemo.h
+freertos\ltdc_driver.o: ..\STemWin\Inc\STemWin_Font.h
+freertos\ltdc_driver.o: ..\STemWin\Inc\STemWin_Picture.h
+freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h

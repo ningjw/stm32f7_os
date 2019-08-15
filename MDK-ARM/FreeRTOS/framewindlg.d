@@ -1,4 +1,4 @@
-freertos\framewindlg.o: ..\STemWin\App\FramewinDLG.c
+freertos\framewindlg.o: ../STemWin/App/FramewinDLG.c
 freertos\framewindlg.o: ..\Middlewares\ST\STemWin\inc\DIALOG.h
 freertos\framewindlg.o: ..\Middlewares\ST\STemWin\inc\WM.h
 freertos\framewindlg.o: ..\Middlewares\ST\STemWin\inc\GUI_ConfDefaults.h

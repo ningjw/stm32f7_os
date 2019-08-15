@@ -4,11 +4,7 @@
 #include "GUI_Private.h"
 #include "EmWin_ASCII_Font.h"
 /* USER CODE BEGIN Variables */
-//字库区域占用的总扇区数大小(4个字库+unigbk表+字库信息=6302984字节,约占1539个W25QXX扇区,一个扇区4K字节)
-#define FONTSECSIZE	 	1539
-//字库存放起始地址
-#define FONTINFOADDR 	1024*1024*25 	//前面25M被fatfs占用了;从25M地址以后开始存放字库;
-//25M以后紧跟4个字库+UNIGBK.BIN,总大小6.01M;31.01M以后,用户可以自由使用.
+
 
 //字库存放在磁盘中的路径
 char* const FONT_PATH[5] =
@@ -24,7 +20,6 @@ char* const FONT_PATH[5] =
 _font_info ftinfo;
 char     full_font_path[64];
 uint8_t  font_buf[4096];
-uint8_t  test_buf[4096];
 uint32_t fontSectorSize;  
 uint32_t offx = 0, flashaddr = 0;
 
@@ -33,22 +28,22 @@ uint32_t offx = 0, flashaddr = 0;
 #define BYTES_PER_FONT	1024	//32*32=1024，最大显示32*32点阵字库	
 U8 GUI_FontDataBuf[BYTES_PER_FONT];
 
-////声明一种新的字体结构
-//#define GUI_FONTTYPE_PROP_USER      \
-//   GUIPROP_X_DispChar,             	\
-//  (GUI_GETCHARDISTX*)GUIPROP_X_GetCharDistX,\
-//   GUIMONO_GetFontInfo,          	\
-//   GUIMONO_IsInFont,             	\
-//  (GUI_GETCHARINFO *)0,         	\
-//  (tGUI_ENC_APIList*)0  
+//声明一种新的字体结构
+#define GUI_FONTTYPE_PROP_USER      \
+   GUIPROP_X_DispChar,             	\
+  (GUI_GETCHARDISTX*)GUIPROP_X_GetCharDistX,\
+   GUIMONO_GetFontInfo,          	\
+   GUIMONO_IsInFont,             	\
+  (GUI_GETCHARINFO *)0,         	\
+  (tGUI_ENC_APIList*)0  
 
 void GUIPROP_X_DispChar(U16P c);
 int GUIPROP_X_GetCharDistX(U16P c);
 /*-----12×12字体----------------------------------------------------------*/
 GUI_CONST_STORAGE GUI_CHARINFO GUI_FontHZ12_CharInfo[2] = 
 {    
-	{ 6, 	6, 	1, (void*)"0"},  
-	{ 12, 	12, 2, (void*)"0"},
+	{ 6, 	6, 	1, (void*)"0"},  //
+	{ 12, 	12, 2, (void*)"0"},  //表示此点阵字符的X轴长度是12个像素点，实际显示也是12个像素点，显示一行需要2字节，使用字符“0”作为标识
 };
 
 GUI_CONST_STORAGE GUI_FONT_PROP GUI_FontHZ12_PropHZ = {
@@ -74,13 +69,13 @@ GUI_CONST_STORAGE  GUI_FONT GUI_FontHZ12 =
       1,  
       (void GUI_CONST_STORAGE *)&GUI_FontHZ12_PropASC
 };
-
+/*-----16×16字体----------------------------------------------------------*/
 GUI_CONST_STORAGE GUI_CHARINFO GUI_FontHZ16_CharInfo[2] = 
 {    
 	{ 8, 	8, 	1, (void*)"0"},  
 	{ 16, 	16, 2, (void*)"0"},
 };
-/*-----16×16字体----------------------------------------------------------*/
+
 GUI_CONST_STORAGE GUI_FONT_PROP GUI_FontHZ16_PropHZ = {
       0x4081, 
       0xFFFF, 
@@ -176,17 +171,6 @@ GUI_CONST_STORAGE  GUI_FONT GUI_FontHZ32 =
       (void GUI_CONST_STORAGE *)&GUI_FontHZ32_PropASC
 };
 
-/***************************************************************************************
-  * @brief   
-  * @input   
-  * @return  
-***************************************************************************************/
-void font_init(void)
-{
-    W25QXX_Read((uint8_t*)&ftinfo, FONTINFOADDR, sizeof(ftinfo));//读出ftinfo结构体数据
-    GUI_SetFont(&GUI_FontHZ16); // 设置字体
-    GUI_DispStringAt("设置字体为16!!\n",100,160);
-}
 
 /***************************************************************************************
   * @brief   更新字体文件,UNIGBK,GBK12,GBK16,GBK24,GBK32一起更新
@@ -212,7 +196,8 @@ void update_font(void)
         fontSectorSize += SDFile.obj.objsize;
         f_close(&SDFile);
     }
-    GUI_DispStringAt("开始更新字体!!\n",100,180);
+    GUI_SetFont(&GUI_FontHZ16); // 设置字体
+    GUI_DispStringAt("开始更新字库!!",100,180);
     if(rval == 0)			//字库文件都存在.
     {
         fontSectorSize = fontSectorSize / 4096  + (fontSectorSize%4096 ? 1 : 0);
@@ -273,7 +258,7 @@ void update_font(void)
 		ftinfo.fontok = 0xAA;
 		W25QXX_Write((uint8_t*)&ftinfo, FONTINFOADDR, sizeof(ftinfo));	//保存字库信息
         GUI_SetFont(&GUI_FontHZ32); // 设置字体
-        GUI_DispStringAt("成功更新字体!!\n",100,200);
+        GUI_DispStringAt("成功更新字库!!\n",100,200);
     }
 }
 

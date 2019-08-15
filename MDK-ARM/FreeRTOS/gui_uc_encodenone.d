@@ -1,4 +1,4 @@
-freertos\gui_uc_encodenone.o: ..\Src\GUI_UC_EncodeNone.c
+freertos\gui_uc_encodenone.o: ../STemWin/App/GUI_UC_EncodeNone.c
 freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI_Private.h
 freertos\gui_uc_encodenone.o: ..\Middlewares\ST\STemWin\inc\GUI.h
 freertos\gui_uc_encodenone.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

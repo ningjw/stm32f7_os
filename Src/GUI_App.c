@@ -67,14 +67,15 @@ void GRAPHICS_MainTask(void) {
     GUI_DispHexAt(W25_ID,10,20, 4);
     GUI_DispStringAt((char *)W25_RxBuf,10,30);
     
-    font_init();
-    
 //  extern GUI_FONT GUI_Font24;
-//  GUI_UC_SetEncodeUTF8();   // ËÆæÁΩÆÁºñÁ†Å
-//  GUI_SetFont(&GUI_Font24); // ËÆæÁΩÆÂ≠ó‰Ωì
+//  GUI_UC_SetEncodeUTF8();   
+//  GUI_SetFont(&GUI_Font24); 
 //  GUI_DispString("‰Ω†Â•Ω\n");
     
-//#define APP_WMOVE
+    GUI_SetFont(&GUI_FontHZ16); 
+    GUI_DispStringAt("…Ë÷√◊÷ÃÂŒ™16!!",100,160);
+    
+//#define BITMAP_APP
 #ifdef BITMAP_APP
   draw_bitmap();
 #elif defined ALPHA_APP
@@ -91,8 +92,10 @@ void GRAPHICS_MainTask(void) {
     _DemoScale();
 #elif defined APP_WMOVE
     _DemoRedraw();
-  #endif
-
+#endif
+//    ReadDisp_bmp("0:/PICTURE/mn.bmp");
+//    ReadDisp_jpg("0:/PICTURE/mn.jpg");
+    ReadDisp_gif("0:/PICTURE/ª≤Ò»À.gif");
 /* USER CODE END GRAPHICS_MainTask */
   while(1)
 {

@@ -1,4 +1,4 @@
-freertos\bitmap.o: ..\Src\bitmap.c
+freertos\bitmap.o: ../STemWin/App/bitmap.c
 freertos\bitmap.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\bitmap.o: ..\Middlewares\ST\STemWin\inc\GUI.h
 freertos\bitmap.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

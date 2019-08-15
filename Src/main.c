@@ -100,10 +100,10 @@ int main(void)
   
   /* MPU Configuration--------------------------------------------------------*/
   MPU_Config();
-  
+
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
-  
+
   /* Enable D-Cache---------------------------------------------------------*/
   SCB_EnableDCache();
 
@@ -133,7 +133,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   GT9147_Init();//电容触摸屏控制器初始化
   W25QXX_Init();//SPI Flash初始化
-  
+  W25QXX_Read((uint8_t*)&ftinfo, FONTINFOADDR, sizeof(ftinfo));//读出ftinfo结构体数据
   /* USER CODE END 2 */
 
 /* Initialise the graphical hardware */
@@ -166,13 +166,13 @@ int main(void)
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of touchTask */
-  osThreadDef(touchTask, StartTouchTask, osPriorityIdle, 0, 128);
+  osThreadDef(touchTask, StartTouchTask, osPriorityLow, 0, 128);
   touchTaskHandle = osThreadCreate(osThread(touchTask), NULL);
 
   /* definition and creation of updateFontTask */
-  osThreadDef(updateFontTask, StartUpdateFontTask, osPriorityIdle, 0, 256);
+  osThreadDef(updateFontTask, StartUpdateFontTask, osPriorityLow, 0, 256);
   updateFontTaskHandle = osThreadCreate(osThread(updateFontTask), NULL);
-  
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -396,6 +396,7 @@ static void MX_USART1_UART_Init(void)
   */
 static void MX_DMA_Init(void) 
 {
+
   /* DMA controller clock enable */
   __HAL_RCC_DMA2_CLK_ENABLE();
 
@@ -449,7 +450,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED_DS1_Pin|LED_DS1B1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_SET);
@@ -472,8 +473,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PB0 PB1 LCD_BL_Pin */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|LCD_BL_Pin;
+  /*Configure GPIO pins : LED_DS1_Pin LED_DS1B1_Pin LCD_BL_Pin */
+  GPIO_InitStruct.Pin = LED_DS1_Pin|LED_DS1B1_Pin|LCD_BL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -504,6 +505,11 @@ static void MX_GPIO_Init(void)
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
 {
+    
+    
+           
+          
+                 
   /* init code for FATFS */
   MX_FATFS_Init();
 
@@ -545,8 +551,8 @@ void StartTouchTask(void const * argument)
 /* USER CODE END Header_StartUpdateFontTask */
 void StartUpdateFontTask(void const * argument)
 {
-  #define WK_UP       HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)  //WKUP按键PA0
   /* USER CODE BEGIN StartUpdateFontTask */
+#define WK_UP HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0)
   /* Infinite loop */
   for(;;)
   {
@@ -582,6 +588,21 @@ void MPU_Config(void)
   MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;
   MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
   MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
+  MPU_InitStruct.IsBufferable = MPU_ACCESS_BUFFERABLE;
+
+  HAL_MPU_ConfigRegion(&MPU_InitStruct);
+  /** Initializes and configures the Region and the memory to be protected 
+  */
+  MPU_InitStruct.Enable = MPU_REGION_ENABLE;
+  MPU_InitStruct.Number = MPU_REGION_NUMBER1;
+  MPU_InitStruct.BaseAddress = 0xC0000000;
+  MPU_InitStruct.Size = MPU_REGION_SIZE_32MB;
+  MPU_InitStruct.SubRegionDisable = 0x0;
+  MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
+  MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+  MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;
+  MPU_InitStruct.IsShareable = MPU_ACCESS_SHAREABLE;
+  MPU_InitStruct.IsCacheable = MPU_ACCESS_CACHEABLE;
   MPU_InitStruct.IsBufferable = MPU_ACCESS_BUFFERABLE;
 
   HAL_MPU_ConfigRegion(&MPU_InitStruct);
