@@ -77,7 +77,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 F (..\Drivers\Peripheral_Driver\Src\ltdc_driver.c)(0x5D2E9AA9)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\ltdc_driver.o --depend freertos\ltdc_driver.d)
 I (../Inc/main.h)(0x5D5521B6)
@@ -156,7 +156,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 F (..\Drivers\Peripheral_Driver\Src\utility.c)(0x5D138D33)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\utility.o --depend freertos\utility.d)
 I (../Inc/main.h)(0x5D5521B6)
@@ -235,7 +235,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 F (..\Drivers\Peripheral_Driver\Src\GUI_X_Touch_Analog.c)(0x5D2EEBA1)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\gui_x_touch_analog.o --depend freertos\gui_x_touch_analog.d)
 I (../Inc/main.h)(0x5D5521B6)
@@ -314,7 +314,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 F (..\Drivers\Peripheral_Driver\Src\w25q256_driver.c)(0x5D43B1A0)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\w25q256_driver.o --depend freertos\w25q256_driver.d)
 I (../Inc/main.h)(0x5D5521B6)
@@ -393,9 +393,9 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
-F (..\Drivers\Peripheral_Driver\Src\malloc.c)(0x5D527906)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\malloc.o --depend freertos\malloc.d)
+F (..\Drivers\Peripheral_Driver\Src\malloc.c)(0x5D5627CD)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\malloc.o --depend freertos\malloc.d)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
@@ -477,7 +477,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)
 I (../Inc/fatfs.h)(0x5D5521B1)
@@ -611,7 +611,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/bsp_driver_sd.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)
@@ -697,7 +697,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/bsp_driver_sd.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)
@@ -781,7 +781,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 F (../Src/GUIConf.c)(0x5D552294)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\guiconf.o --depend freertos\guiconf.d)
 I (..\Middlewares\ST\STemWin\inc\GUI.h)(0x5CD6E335)
@@ -869,9 +869,9 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
-F (../Src/GUI_App.c)(0x5D55229C)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\gui_app.o --depend freertos\gui_app.d)
+F (../Src/GUI_App.c)(0x5D565303)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\gui_app.o --depend freertos\gui_app.d)
 I (../Inc/GUI_App.h)(0x5D5521B4)
 I (../Inc/main.h)(0x5D5521B6)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x5CD6E333)
@@ -948,7 +948,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (..\Middlewares\ST\STemWin\inc\DIALOG.h)(0x5CD6E335)
 I (..\Middlewares\ST\STemWin\inc\BUTTON.h)(0x5CD6E335)
@@ -1061,7 +1061,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (..\Middlewares\ST\STemWin\inc\GUI_Private.h)(0x5CD6E335)
 I (..\Middlewares\ST\STemWin\inc\LCD_Protected.h)(0x5CD6E336)
@@ -1143,7 +1143,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/stm32f7xx_it.h)(0x5D5521B5)
 F (../Src/stm32f7xx_hal_msp.c)(0x5D5521B5)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\stm32f7xx_hal_msp.o --depend freertos\stm32f7xx_hal_msp.d)
@@ -1223,7 +1223,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 F (../Src/system_stm32f7xx.c)(0x5CD6E31B)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\system_stm32f7xx.o --depend freertos\system_stm32f7xx.d)
 I (../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h)(0x5CD6E31B)
@@ -1362,7 +1362,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 F (../STemWin/App/font_24.c)(0x5D312387)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\font_24.o --depend freertos\font_24.d)
 I (..\Middlewares\ST\STemWin\inc\GUI.h)(0x5CD6E335)
@@ -1450,7 +1450,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/fatfs.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5CD6E344)
@@ -1478,7 +1478,7 @@ I (..\Middlewares\ST\STemWin\inc\GUI_Version.h)(0x5CD6E335)
 I (..\Middlewares\ST\STemWin\inc\LCD_Protected.h)(0x5CD6E336)
 I (..\Middlewares\ST\STemWin\inc\GUI_Debug.h)(0x5CD6E335)
 I (..\Middlewares\ST\STemWin\inc\WM_GUI.h)(0x5CD6E336)
-F (..\STemWin\App\STemWin_Picture.c)(0x5D55240A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\stemwin_picture.o --depend freertos\stemwin_picture.d)
+F (..\STemWin\App\STemWin_Picture.c)(0x5D565D31)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\stemwin_picture.o --depend freertos\stemwin_picture.d)
 I (../Inc/main.h)(0x5D5521B6)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x5CD6E333)
 I (../Inc/stm32f7xx_hal_conf.h)(0x5D5521B5)
@@ -1555,7 +1555,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/fatfs.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x5CD6E344)
@@ -1611,6 +1611,7 @@ I (..\Middlewares\ST\STemWin\inc\SWIPELIST.h)(0x5CD6E336)
 I (..\Middlewares\ST\STemWin\inc\TEXT.h)(0x5CD6E336)
 I (..\Middlewares\ST\STemWin\inc\TREEVIEW.h)(0x5CD6E336)
 I (..\Middlewares\ST\STemWin\inc\KNOB.h)(0x5CD6E336)
+F (..\STemWin\App\STemWin_Movie.c)(0x5D565191)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\stemwin_movie.o --depend freertos\stemwin_movie.d)
 F (..\Middlewares\Third_Party\FatFs\src\option\cc936_flash.c)(0x5D4A82E5)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ..\Drivers\Peripheral_Driver\Inc -I ../Inc -I ..\Middlewares\ST\STemWin\inc -I ../Middlewares/Third_Party/FatFs/src -I ..\STemWin\Inc -I ../Drivers/CMSIS/Include-I.\RTE\_FreeRTOS-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o freertos\cc936_flash.o --depend freertos\cc936_flash.d)
 I (..\Middlewares\Third_Party\FatFs\src\option\../ff.h)(0x5CD6E344)
 I (..\Middlewares\Third_Party\FatFs\src\option\../integer.h)(0x5CD6E344)
@@ -1691,7 +1692,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/bsp_driver_sd.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)
@@ -1777,7 +1778,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/bsp_driver_sd.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)
@@ -1861,7 +1862,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/bsp_driver_sd.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)
@@ -1949,7 +1950,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/bsp_driver_sd.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)
@@ -2033,7 +2034,7 @@ I (..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h)(0x5D4391D8)
 I (..\Drivers\Peripheral_Driver\Inc\utility.h)(0x5D0BA3F1)
 I (..\STemWin\Inc\STemWin_BasicDemo.h)(0x5D316D96)
 I (..\STemWin\Inc\STemWin_Font.h)(0x5D4BD45B)
-I (..\STemWin\Inc\STemWin_Picture.h)(0x5D54F3E2)
+I (..\STemWin\Inc\STemWin_Picture.h)(0x5D5652CE)
 I (..\Drivers\Peripheral_Driver\Inc\malloc.h)(0x5D5272A1)
 I (../Inc/bsp_driver_sd.h)(0x5D5521B1)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5CD6E344)

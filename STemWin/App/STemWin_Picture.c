@@ -6,8 +6,8 @@
 //绘制无需加载到RAM中的BMP图片时，图片每行的字节数
 #define BMP_PERLINE_SIZE	2*1024	
 
-static FIL PicFile;
-static char bmpBuffer[BMP_PERLINE_SIZE];
+FIL PicFile;
+char bmpBuffer[BMP_PERLINE_SIZE];
 /*********************************************************************
 *
 *       BmpGetData
@@ -28,7 +28,7 @@ static char bmpBuffer[BMP_PERLINE_SIZE];
 * Return value:
 *   Number of data bytes available.
 */
-static int GetData(void * p, const U8 ** ppData, unsigned NumBytesReq, U32 Off) 
+static int _GetData(void * p, const U8 ** ppData, unsigned NumBytesReq, U32 Off) 
 {
 	static int readAddr = 0;
 	FIL * phFile;
@@ -70,14 +70,14 @@ uint8_t ReadDisp_bmp(char *fileName)
     }
     
     /*######2. 获取bmp图像尺寸#######*/
-    XSize = GUI_BMP_GetXSizeEx(GetData, &PicFile);	//获取图片的X轴大小
-    YSize = GUI_BMP_GetYSizeEx(GetData, &PicFile);	//获取图片的Y轴大小
+    XSize = GUI_BMP_GetXSizeEx(_GetData, &PicFile);	//获取图片的X轴大小
+    YSize = GUI_BMP_GetYSizeEx(_GetData, &PicFile);	//获取图片的Y轴大小
     
     /*######3. 通过GUI_BMP_GetXSizeEx函数在LCD中间显示bmp图像#######*/
-    GUI_BMP_DrawEx(GetData, &PicFile, (LCD_WIDTH-XSize)/2-1, (LCD_HEIGHT-YSize)/2-1);
+    GUI_BMP_DrawEx(_GetData, &PicFile, (LCD_WIDTH-XSize)/2-1, (LCD_HEIGHT-YSize)/2-1);
     
-    
-    GUI_BMP_DrawScaledEx(GetData, &PicFile, (LCD_WIDTH - XSize * 0.5)/2, (LCD_HEIGHT - YSize * 0.5)/2, 1, 2);
+    /*######4. 通过GUI_BMP_GetXSizeEx函数在LCD中间显示0.5倍的bmp图像#######*/
+    GUI_BMP_DrawScaledEx(_GetData, &PicFile, (LCD_WIDTH - XSize * 0.5)/2, (LCD_HEIGHT - YSize * 0.5)/2, 1, 2);
     
     f_close(&PicFile);
     
@@ -100,13 +100,13 @@ uint8_t ReadDisp_jpg(char *FileName)
         return 1;
     }
     
-    /*######3. 在LCD中间显示jpg图像#######*/
-    GUI_JPEG_DrawEx(GetData, &PicFile,(LCD_WIDTH-JpegInfo.XSize)/2, (LCD_HEIGHT-JpegInfo.YSize)/2);
+    /*######2. 在LCD中间显示jpg图像#######*/
+    GUI_JPEG_DrawEx(_GetData, &PicFile,(LCD_WIDTH-JpegInfo.XSize)/2, (LCD_HEIGHT-JpegInfo.YSize)/2);
     GUI_Delay(500);
     GUI_Clear();
     
-    /*######4. 按0.5倍在LCD中间显示jpg图像#######*/
-    GUI_JPEG_DrawScaledEx(GetData, &PicFile, (LCD_WIDTH - JpegInfo.XSize * 0.5)/2, (LCD_HEIGHT - JpegInfo.YSize * 0.5)/2, 1, 2);
+    /*######3. 按0.5倍在LCD中间显示jpg图像#######*/
+    GUI_JPEG_DrawScaledEx(_GetData, &PicFile, (LCD_WIDTH - JpegInfo.XSize * 0.5)/2, (LCD_HEIGHT - JpegInfo.YSize * 0.5)/2, 1, 2);
     
     f_close(&PicFile);
     return 0;
@@ -149,9 +149,7 @@ uint8_t ReadDisp_gif(char *FileName)
     /*######5. 在LCD中间显示gif图像#######*/
     for(int i = 0; i < GifInfo.NumImages; i++)
     {
-        GUI_MULTIBUF_Begin();
         GUI_GIF_DrawSub(bmpBuf, PicFile.obj.objsize, (LCD_WIDTH - GifInfo.xSize)/2, (LCD_HEIGHT - GifInfo.ySize)/2,i);
-        GUI_GIF_GetImageInfo(bmpBuf, PicFile.obj.objsize, &ImageInfo, i);
         GUI_Delay(ImageInfo.Delay ? ImageInfo.Delay*10 : 100 );//延时
     }
     
@@ -159,7 +157,6 @@ uint8_t ReadDisp_gif(char *FileName)
     for(int i=0; i < GifInfo.NumImages; i++)
     {
         GUI_GIF_DrawSubScaled(bmpBuf, PicFile.obj.objsize, (LCD_WIDTH - GifInfo.xSize * 0.5)/2, (LCD_HEIGHT - GifInfo.ySize * 0.5)/2, i, 1 ,2);
-        GUI_GIF_GetImageInfo(bmpBuf, PicFile.obj.objsize, &ImageInfo, i);
         GUI_Delay(ImageInfo.Delay ? ImageInfo.Delay*10 : 100 );//延时
     }
     
@@ -167,6 +164,8 @@ uint8_t ReadDisp_gif(char *FileName)
     f_close(&PicFile);
     return 0;
 }
+
+
 /***************************************************************************************
   * @brief   
   * @input   FileName:图片在SD卡或者其他存储设备中的路径(需文件系统支持！)
@@ -174,22 +173,82 @@ uint8_t ReadDisp_gif(char *FileName)
 ***************************************************************************************/
 uint8_t ReadDisp_png(char *FileName)
 {
-    int XSize,YSize;
+//    int XSize,YSize;
     
     /*######1. 打开png文件,判断文件大小#######*/
+//    retSD = f_open(&PicFile, (const TCHAR*)FileName, FA_READ);
+//    if(retSD != FR_OK || PicFile.obj.objsize > BMP_MAX_SIZE){
+//        return 1;
+//    }
+
+    /*######2. 获取png尺寸#######*/
+//    XSize = GUI_PNG_GetXSizeEx(_GetData, &PicFile);//PNG图片X大小
+//	YSize = GUI_PNG_GetYSizeEx(_GetData, &PicFile);//PNG图片Y大小
+//    
+//    /*######3. 在LCD中间显示png图像#######*/
+//    GUI_PNG_DrawEx(_GetData,&PicFile,(LCD_WIDTH - XSize)/2,(LCD_HEIGHT - YSize)/2);
+    
+//    f_close(&PicFile);
+    return 0;
+}
+
+
+/*********************************************************************
+*
+*       _cbNotify
+*
+* Function description
+*   Callback function for movie player. Uses multiple buffering if
+*   available to avoid tearing effects.
+*/
+static void _cbNotify(GUI_HMEM hMem, int Notification, U32 CurrentFrame) {
+  switch (Notification) {
+  case GUI_MOVIE_NOTIFICATION_PREDRAW:
+    GUI_MULTIBUF_Begin();
+    break;
+  case GUI_MOVIE_NOTIFICATION_POSTDRAW:
+    GUI_MULTIBUF_End();
+    break;
+  case GUI_MOVIE_NOTIFICATION_STOP:
+    break;
+  }
+}
+
+/***************************************************************************************
+  * @brief   
+  * @input   FileName:图片在SD卡或者其他存储设备中的路径(需文件系统支持！)
+  * @return  
+***************************************************************************************/
+uint8_t ReadDisp_movies(char *FileName)
+{
+    GUI_MOVIE_INFO   Info;
+    GUI_MOVIE_HANDLE hMovie;
+    
+    /*######1. 打开emf文件,判断文件大小#######*/
     retSD = f_open(&PicFile, (const TCHAR*)FileName, FA_READ);
     if(retSD != FR_OK || PicFile.obj.objsize > BMP_MAX_SIZE){
         return 1;
     }
     
-    /*######2. 获取png尺寸#######*/
-//    XSize = GUI_PNG_GetXSizeEx(GetData, &PicFile);//PNG图片X大小
-//	YSize = GUI_PNG_GetYSizeEx(GetData, &PicFile);//PNG图片Y大小
-//    
-//    /*######3. 在LCD中间显示png图像#######*/
-//    GUI_PNG_DrawEx(GetData,&PicFile,(LCD_WIDTH - XSize)/2,(LCD_HEIGHT - YSize)/2);
+    /*######2. 获取emf文件信息#######*/
+    retSD = GUI_MOVIE_GetInfoEx(_GetData, &PicFile, &Info);
     
-    f_close(&PicFile);
+    /*######3. 创建播放器，并播放emf文件#######*/
+    hMovie = GUI_MOVIE_CreateEx(_GetData, &PicFile, _cbNotify);
+    if (hMovie) {
+        GUI_MOVIE_Show(hMovie, (LCD_WIDTH - Info.xSize) / 2, (LCD_HEIGHT - Info.ySize) / 2, 1);
+    }
+    
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
 

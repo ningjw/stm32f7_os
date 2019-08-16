@@ -5,8 +5,7 @@ uint8_t   mem_rdy; 				//内存管理是否就绪
 //内存池(32字节对齐), 外部SDRAM内存池,前面2M给LTDC用了(1280*800*2)
 __align(32) uint8_t mem_base[MEM_MAX_SIZE] __attribute__((at(0xC0600000)));	
 
-//内存管理表
-uint32_t mem_map[MEM_MAP_SIZE] __attribute__((at(0xC0600000 + MEM_MAX_SIZE)));
+uint32_t mem_map[MEM_MAP_SIZE] __attribute__((at(0xC0600000 + MEM_MAX_SIZE)));//内存管理表
 
 /***************************************************************************************
   * @brief   内存管理初始化  
@@ -111,7 +110,7 @@ void *mem_malloc(uint32_t size)
 {
     uint32_t offset;   
 	offset = sdram_malloc(size);  	   	 	   
-    if(offset == 0XFFFFFFFF)
+    if(offset == 0xFFFFFFFF)
         return NULL;  
     else 
         return (void*)((uint32_t)mem_base + offset);  

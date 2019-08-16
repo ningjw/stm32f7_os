@@ -73,7 +73,7 @@ void GRAPHICS_MainTask(void) {
 //  GUI_DispString("浣犲ソ\n");
     
     GUI_SetFont(&GUI_FontHZ16); 
-    GUI_DispStringAt("设置字体为16!!",100,160);
+    GUI_DispStringAt("设置字体为16!!",10,60);
     
 //#define BITMAP_APP
 #ifdef BITMAP_APP
@@ -95,7 +95,8 @@ void GRAPHICS_MainTask(void) {
 #endif
 //    ReadDisp_bmp("0:/PICTURE/mn.bmp");
 //    ReadDisp_jpg("0:/PICTURE/mn.jpg");
-    ReadDisp_gif("0:/PICTURE/火柴人.gif");
+//    ReadDisp_gif("0:/PICTURE/火柴人.gif");
+    ReadDisp_movies("0:/PICTURE/MOVIE_ShowFromFS.emf");
 /* USER CODE END GRAPHICS_MainTask */
   while(1)
 {
