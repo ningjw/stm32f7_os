@@ -1,0 +1,13 @@
+freertos\applicationfontprovider.o: ../touchgfx/generated/fonts/src/applicationfontprovider.cpp
+freertos\applicationfontprovider.o: ../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Font.hpp
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TextProvider.hpp
+freertos\applicationfontprovider.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Unicode.hpp
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
+freertos\applicationfontprovider.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\applicationfontprovider.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/InternalFlashFont.hpp
+freertos\applicationfontprovider.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/ConstFont.hpp

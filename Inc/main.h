@@ -30,11 +30,6 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
 
-#include "GUI.h"
-#include "HW_Init.h"
-#include "GUI_App.h"
-#include "STemwin_wrapper.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
@@ -44,16 +39,16 @@ extern "C" {
 #include "stdio.h"
 #include "math.h"
 #include "stdlib.h"
-#include "WM.h"
+//#include "WM.h"
 #include "string.h"
 
 #include "ltdc_driver.h"
 #include "gt9147_iic_driver.h"
 #include "w25q256_driver.h"
 #include "utility.h"
-#include "STemWin_BasicDemo.h"
-#include "STemWin_Font.h"
-#include "STemWin_Picture.h"
+//#include "STemWin_BasicDemo.h"
+//#include "STemWin_Font.h"
+//#include "STemWin_Picture.h"
 #include "malloc.h"
 
 /* USER CODE END Includes */

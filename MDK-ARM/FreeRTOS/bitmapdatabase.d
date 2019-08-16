@@ -1,0 +1,9 @@
+freertos\bitmapdatabase.o: ../touchgfx/generated/images/src/bitmapdatabase.cpp
+freertos\bitmapdatabase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Bitmap.hpp
+freertos\bitmapdatabase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+freertos\bitmapdatabase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\bitmapdatabase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
+freertos\bitmapdatabase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\bitmapdatabase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\bitmapdatabase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp
+freertos\bitmapdatabase.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp

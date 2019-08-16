@@ -25,6 +25,7 @@ freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h
+freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_flash_ex.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sdram.h
@@ -38,5 +39,7 @@ freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h
+freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
+freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h

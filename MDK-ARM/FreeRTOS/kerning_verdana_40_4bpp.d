@@ -1,0 +1,9 @@
+freertos\kerning_verdana_40_4bpp.o: ../touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp
+freertos\kerning_verdana_40_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Font.hpp
+freertos\kerning_verdana_40_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TextProvider.hpp
+freertos\kerning_verdana_40_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\kerning_verdana_40_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Unicode.hpp
+freertos\kerning_verdana_40_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
+freertos\kerning_verdana_40_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\kerning_verdana_40_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\kerning_verdana_40_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp

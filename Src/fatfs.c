@@ -48,9 +48,7 @@ void MX_FATFS_Init(void)
     sd_total_size = (hsd1.SdCard.BlockNbr >> 20) *  hsd1.SdCard.BlockSize;
     sd_total_size = (SDFatFS.csize * (SDFatFS.n_fatent - 2) / 2) >> 10;
     sd_free_size  = (SDFatFS.csize * SDFatFS.free_clst / 2) >> 10;
-    GUI_Clear();
-    GUI_DispStringAt("SD Capacity:      M", 10, 40);
-    GUI_DispDecAt(sd_free_size , 85, 40, 4);
+    
     printf("SD Capacity: = %d M", (hsd1.SdCard.BlockNbr >> 20) *  hsd1.SdCard.BlockSize);
     printf("SD Total Size = %d M", sd_total_size);
     printf("SD Free  Size = %d M", sd_free_size);

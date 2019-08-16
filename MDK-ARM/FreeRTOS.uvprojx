@@ -188,7 +188,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx,USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;        ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;        ../Middlewares/Third_Party/FreeRTOS/Source/include;        ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;        ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;        ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;        ..\Drivers\Peripheral_Driver\Inc;        ../Inc;        ..\Middlewares\ST\STemWin\inc;        ../Middlewares/Third_Party/FatFs/src;        ..\STemWin\Inc;       ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;             ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;             ../Middlewares/Third_Party/FreeRTOS/Source/include;             ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;             ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;             ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;             ..\Drivers\Peripheral_Driver\Inc;             ../Inc;             ..\Middlewares\ST\STemWin\inc;             ../Middlewares/Third_Party/FatFs/src;             ..\STemWin\Inc;            ../Drivers/CMSIS/Include;    ../Src;    ../TouchGFX/generated/fonts/include;    ../TouchGFX/generated/texts/include;    ../TouchGFX/generated/images/include;    ../TouchGFX/generated/gui_generated/include;    ../TouchGFX/gui/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;  ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -433,9 +433,9 @@
               <FilePath>..\readme.txt</FilePath>
             </File>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/main.c</FilePath>
+              <FileName>main.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/main.cpp</FilePath>
             </File>
             <File>
               <FileName>bsp_driver_sd.c</FileName>
@@ -458,24 +458,39 @@
               <FilePath>../Src/freertos.c</FilePath>
             </File>
             <File>
-              <FileName>GUIConf.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/GUIConf.c</FilePath>
+              <FileName>BoardConfiguration.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/BoardConfiguration.cpp</FilePath>
             </File>
             <File>
-              <FileName>HW_Init.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/HW_Init.c</FilePath>
+              <FileName>GPIO.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/GPIO.cpp</FilePath>
             </File>
             <File>
-              <FileName>GUI_App.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/GUI_App.c</FilePath>
+              <FileName>STM32F7DMA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/STM32F7DMA.cpp</FilePath>
             </File>
             <File>
-              <FileName>STemwin_wrapper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/STemwin_wrapper.c</FilePath>
+              <FileName>STM32F7HAL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/STM32F7HAL.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7TouchController.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/STM32F7TouchController.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7Instrumentation.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/STM32F7Instrumentation.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HW_Init.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Src/HW_Init.cpp</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_it.c</FileName>
@@ -501,6 +516,75 @@
         </Group>
         <Group>
           <GroupName>Application/User/STemWin/App</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>0</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <uGnu>2</uGnu>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>2</vShortEn>
+                <vShortWch>2</vShortWch>
+                <v6Lto>2</v6Lto>
+                <v6WtE>2</v6WtE>
+                <v6Rtti>2</v6Rtti>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <uClangAs>2</uClangAs>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
           <Files>
             <File>
               <FileName>bitmap.c</FileName>
@@ -589,11 +673,6 @@
               <FilePath>..\STemWin\App\STemWin_Picture.c</FilePath>
             </File>
             <File>
-              <FileName>FramewinDLG.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../STemWin/App/FramewinDLG.c</FilePath>
-            </File>
-            <File>
               <FileName>STemWin_Movie.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STemWin\App\STemWin_Movie.c</FilePath>
@@ -658,31 +737,6 @@
               <FileName>cc936_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\Third_Party\FatFs\src\option\cc936_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>diskio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/diskio.c</FilePath>
-            </File>
-            <File>
-              <FileName>ff.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/ff.c</FilePath>
-            </File>
-            <File>
-              <FileName>ff_gen_drv.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c</FilePath>
-            </File>
-            <File>
-              <FileName>syscall.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/option/syscall.c</FilePath>
-            </File>
-            <File>
-              <FileName>cc936.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/option/cc936.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -735,11 +789,41 @@
                 </FileArmAds>
               </FileOption>
             </File>
+            <File>
+              <FileName>diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff_gen_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>syscall.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/option/syscall.c</FilePath>
+            </File>
+            <File>
+              <FileName>cc936.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/option/cc936.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Drivers/STM32F7xx_HAL_Driver</GroupName>
           <Files>
+            <File>
+              <FileName>stm32f7xx_hal_dma2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma2d.c</FilePath>
+            </File>
             <File>
               <FileName>stm32f7xx_ll_fmc.c</FileName>
               <FileType>1</FileType>
@@ -764,6 +848,16 @@
               <FileName>stm32f7xx_hal_dsi.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dsi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_hal_cortex.c</FileName>
@@ -794,16 +888,6 @@
               <FileName>stm32f7xx_hal_sd.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f7xx_hal_tim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f7xx_hal_tim_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_hal_uart.c</FileName>
@@ -938,17 +1022,137 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Middlewares/STemWin</GroupName>
+          <GroupName>Middlewares/TouchGFX</GroupName>
           <Files>
             <File>
-              <FileName>STemWin_CM7_OS_wc16_ot_ARGB.a</FileName>
+              <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/STemWin/Lib/STemWin_CM7_OS_wc16_ot_ARGB.a</FilePath>
+              <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
-              <FileName>GUI_X_OS.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/ST/STemWin/OS/GUI_X_OS.c</FilePath>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappers.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/TouchGFX/gui</GroupName>
+          <Files>
+            <File>
+              <FileName>FrontendApplication.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/common/frontendapplication.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Model.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Screen1Presenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/screen1_screen/screen1presenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Screen1View.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/screen1_screen/screen1view.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/User/TouchGFX/generated</GroupName>
+          <Files>
+            <File>
+              <FileName>ApplicationFontProvider.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/applicationfontprovider.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BitmapDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_verdana_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FontGetters.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/fontgetters.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FrontendApplicationBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>mn.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/mn.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Screen1ViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_verdana_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Texts.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/texts/src/texts.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>TypedTextDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/texts/src/typedtextdatabase.cpp</FilePath>
             </File>
           </Files>
         </Group>
