@@ -12,19 +12,24 @@ using namespace touchgfx;
 extern touchgfx::InternalFlashFont& getFont_verdana_20_4bpp();
 extern touchgfx::InternalFlashFont& getFont_verdana_40_4bpp();
 extern touchgfx::InternalFlashFont& getFont_verdana_10_4bpp();
+extern touchgfx::InternalFlashFont& getFont_STSONG_TTF_40_4bpp();
 
 const touchgfx::Font* const _fonts[] =
 {
     &(getFont_verdana_20_4bpp()),
     &(getFont_verdana_40_4bpp()),
-    &(getFont_verdana_10_4bpp())
+    &(getFont_verdana_10_4bpp()),
+    &(getFont_STSONG_TTF_40_4bpp())
 };
 
 TEXT_LOCATION_FLASH_PRAGMA
 const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCATION_FLASH_ATTRIBUTE =
 {
-    { 0, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
-
+    { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
 };
 
 

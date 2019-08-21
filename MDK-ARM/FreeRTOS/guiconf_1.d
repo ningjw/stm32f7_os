@@ -1,9 +1,0 @@
-freertos\guiconf_1.o: ../Src/GUIConf.c
-freertos\guiconf_1.o: ..\Middlewares\ST\STemWin\inc\GUI.h
-freertos\guiconf_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos\guiconf_1.o: ..\Middlewares\ST\STemWin\inc\GUI_ConfDefaults.h
-freertos\guiconf_1.o: ../Inc/GUIConf.h
-freertos\guiconf_1.o: ..\Middlewares\ST\STemWin\inc\GUI_Type.h
-freertos\guiconf_1.o: ..\Middlewares\ST\STemWin\inc\LCD.h
-freertos\guiconf_1.o: ..\Middlewares\ST\STemWin\inc\Global.h
-freertos\guiconf_1.o: ..\Middlewares\ST\STemWin\inc\GUI_Version.h

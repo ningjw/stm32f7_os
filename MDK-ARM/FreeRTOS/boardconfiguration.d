@@ -65,6 +65,11 @@ freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/model/ModelListener.h
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Image.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 freertos\boardconfiguration.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp
+freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
+freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
+freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
+freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 freertos\boardconfiguration.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/BoardConfiguration.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/GPIO.hpp

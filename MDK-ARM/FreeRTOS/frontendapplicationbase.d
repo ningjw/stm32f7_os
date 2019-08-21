@@ -57,5 +57,14 @@ freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/model/ModelListe
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Image.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 freertos\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
-freertos\frontendapplicationbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
+freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp
+freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
+freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
+freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp
+freertos\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+freertos\frontendapplicationbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
+freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
+freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
+freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp

@@ -53,4 +53,16 @@ freertos\screen1viewbase.o: ../TouchGFX/gui/include/gui/model/ModelListener.hpp
 freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Image.hpp
 freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 freertos\screen1viewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TypedText.hpp
+freertos\screen1viewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cassert
+freertos\screen1viewbase.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Texts.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
 freertos\screen1viewbase.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp
+freertos\screen1viewbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp

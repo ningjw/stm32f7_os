@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx,USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;             ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;             ../Middlewares/Third_Party/FreeRTOS/Source/include;             ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;             ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;             ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;             ..\Drivers\Peripheral_Driver\Inc;             ../Inc;             ..\Middlewares\ST\STemWin\inc;             ../Middlewares/Third_Party/FatFs/src;             ..\STemWin\Inc;            ../Drivers/CMSIS/Include;    ../Src;    ../TouchGFX/generated/fonts/include;    ../TouchGFX/generated/texts/include;    ../TouchGFX/generated/images/include;    ../TouchGFX/generated/gui_generated/include;    ../TouchGFX/gui/include;   ../middlewares/st/touchgfx/touchgfx/framework/include;  ../Middlewares/ST/TouchGFX/touchgfx/framework/include</IncludePath>
+              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;               ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;               ../Middlewares/Third_Party/FreeRTOS/Source/include;               ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;               ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;               ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;               ..\Drivers\Peripheral_Driver\Inc;               ../Inc;               ..\Middlewares\ST\STemWin\inc;               ../Middlewares/Third_Party/FatFs/src;               ..\STemWin\Inc;              ../Drivers/CMSIS/Include;      ../Src;      ../TouchGFX/generated/fonts/include;      ../TouchGFX/generated/texts/include;      ../TouchGFX/generated/images/include;      ../TouchGFX/generated/gui_generated/include;      ../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1030,11 +1030,6 @@
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappers.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../Middlewares/ST/TouchGFX/touchgfx/os/OSWrappers.cpp</FilePath>
@@ -1080,6 +1075,21 @@
               <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
             </File>
             <File>
+              <FileName>blue_buttons_round_edge_icon_button.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_edge_icon_button.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_buttons_round_edge_icon_button_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_edge_icon_button_pressed.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_STSONG_TTF_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_stsong_ttf_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Font_verdana_10_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
@@ -1105,6 +1115,11 @@
               <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
             </File>
             <File>
+              <FileName>Kerning_STSONG_TTF_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_stsong_ttf_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
@@ -1120,6 +1135,11 @@
               <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp</FilePath>
             </File>
             <File>
+              <FileName>LanguageGb.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/texts/src/languagegb.cpp</FilePath>
+            </File>
+            <File>
               <FileName>mn.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/mn.cpp</FilePath>
@@ -1128,6 +1148,11 @@
               <FileName>Screen1ViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_STSONG_TTF_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_stsong_ttf_40_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_verdana_10_4bpp.cpp</FileName>

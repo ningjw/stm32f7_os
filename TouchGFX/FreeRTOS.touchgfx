@@ -9,9 +9,94 @@
             "Name": "Image1",
             "X": 0,
             "Y": 0,
-            "Width": 426,
-            "Height": 271,
+            "Width": 480,
+            "Height": 272,
             "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "__designer\\blue_buttons_round_edge_icon_button_pressed.png",
+            "Released": "__designer\\blue_buttons_round_edge_icon_button.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId2",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Name": "buttonUp",
+            "X": 0,
+            "Y": 0,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "__designer\\blue_buttons_round_edge_icon_button_pressed.png",
+            "Released": "__designer\\blue_buttons_round_edge_icon_button.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId3",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style1",
+            "Name": "buttonDown",
+            "X": 0,
+            "Y": 106,
+            "Width": 60,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 222,
+              "Green": 15,
+              "Blue": 15
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId8",
+              "UseBuffer": true,
+              "BufferSize": 5
+            },
+            "Name": "textArea1",
+            "X": 5,
+            "Y": 57,
+            "Width": 67,
+            "Height": 49,
+            "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -19,13 +104,60 @@
             "Moveable": false
           }
         ],
-        "Interactions": [],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionButtonDown",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonDown",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonDownClicked",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonUp",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonUp",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "buttonUpClicked",
+              "Type": "ActionCustom"
+            }
+          }
+        ],
         "Name": "Screen1",
         "OverrideDefaultBufferSize": false,
         "CanvasBufferSize": 0
       }
     ],
     "CustomContainerDefinitions": [],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId2",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId3",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "TextValue",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId7",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId8",
+        "IsResource": false
+      }
+    ],
     "Name": "MyApplication",
     "Resolution": {
       "Width": 480,

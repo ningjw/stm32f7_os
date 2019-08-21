@@ -19,7 +19,7 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
       frontendHeap(heap),
       model(m)
 {
-
+    Texts::setLanguage(GB);
 }
 
 /*

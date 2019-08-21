@@ -19,14 +19,20 @@ void STM32F7TouchController::init()
 
   /* Add code for touch controller Initialization */
    /* BSP_TS_Init(LCD_GetXSize(), LCD_GetYSize());  */
-
+    GT9147_Init();//µçÈÝ´¥ÃþÆÁ¿ØÖÆÆ÷³õÊ¼»¯
 /* USER CODE END F4TouchController_init */
 }
 
 bool STM32F7TouchController::sampleTouch(int32_t& x, int32_t& y)
 {
 /* USER CODE BEGIN  F4TouchController_sampleTouch  */
-
+    if(touch_x == 0xffff){
+        return false;
+    }
+    
+    x = touch_x;
+    y = touch_y;
+    return true;
  /* TS_StateTypeDef state = { 0 };
     BSP_TS_GetState(&state);
     if (state.touchDetected)
@@ -36,7 +42,7 @@ bool STM32F7TouchController::sampleTouch(int32_t& x, int32_t& y)
 
         return true;
     }*/
-    return false; 
+//    return false; 
 
 /* USER CODE END F4TouchController_sampleTouch  */
 }
