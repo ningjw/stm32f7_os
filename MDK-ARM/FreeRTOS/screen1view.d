@@ -64,3 +64,4 @@ freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/to
 freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
 freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
+freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp

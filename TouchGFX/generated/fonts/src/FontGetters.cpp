@@ -14,7 +14,7 @@ touchgfx::InternalFlashFont& getFont_STSONG_TTF_40_4bpp();
 
 touchgfx::InternalFlashFont& getFont_STSONG_TTF_40_4bpp()
 {
-    static touchgfx::InternalFlashFont STSONG_TTF_40_4bpp(glyphs_STSONG_TTF_40_4bpp, 15, 40, 7, 4, 0, 0, unicodes_STSONG_TTF_40_4bpp, kerning_STSONG_TTF_40_4bpp, 63, 0);
+    static touchgfx::InternalFlashFont STSONG_TTF_40_4bpp(glyphs_STSONG_TTF_40_4bpp, 13, 40, 7, 4, 0, 0, unicodes_STSONG_TTF_40_4bpp, kerning_STSONG_TTF_40_4bpp, 63, 0);
     return STSONG_TTF_40_4bpp;
 }
 
@@ -38,7 +38,7 @@ touchgfx::InternalFlashFont& getFont_verdana_20_4bpp();
 
 touchgfx::InternalFlashFont& getFont_verdana_20_4bpp()
 {
-    static touchgfx::InternalFlashFont verdana_20_4bpp(glyphs_verdana_20_4bpp, 10, 20, 0, 4, 0, 0, unicodes_verdana_20_4bpp, kerning_verdana_20_4bpp, 0, 0);
+    static touchgfx::InternalFlashFont verdana_20_4bpp(glyphs_verdana_20_4bpp, 19, 20, 4, 4, 0, 0, unicodes_verdana_20_4bpp, kerning_verdana_20_4bpp, 0, 0);
     return verdana_20_4bpp;
 }
 

@@ -19,9 +19,7 @@ KEEP extern const touchgfx::GlyphNode glyphs_STSONG_TTF_40_4bpp[] FONT_LOCATION_
     {  1777,  56,  16,  26,  26,   2,  19, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     {  1985,  57,  16,  27,  26,   1,  19, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
     {  2201,  63,  13,  26,  26,   1,  15, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    {  2383,20540,  38,  37,  31,   1,  40, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    {  3086,20943,  38,  38,  31,   1,  40, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    {  3808,21152,  38,  37,  31,   1,  40, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
-    {  4511,65306,   6,  20,  19,   7,  40, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
+    {  2383,20943,  38,  38,  31,   1,  40, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0},
+    {  3105,21152,  38,  37,  31,   1,  40, 255,   0, touchgfx::GLYPH_DATA_FORMAT_A4 | 0}
 };
 

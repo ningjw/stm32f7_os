@@ -63,6 +63,7 @@ freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/includ
 freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
 freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
+freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp
 freertos\screen1viewbase.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp
 freertos\screen1viewbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
 freertos\screen1viewbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Color.hpp

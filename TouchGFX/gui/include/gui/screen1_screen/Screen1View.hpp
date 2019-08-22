@@ -13,7 +13,11 @@ public:
     virtual void tearDownScreen();
     virtual void buttonUpClicked();
     virtual void buttonDownClicked();
+    // Declaring callback handler for HiddenBox
+    void TextAreaClickHandler(const TextAreaWithOneWildcard& ta, const ClickEvent& e);
 protected:
+    // Declaring callback type of box and clickEvent
+    Callback<Screen1View, const TextAreaWithOneWildcard&, const ClickEvent&> TextAreaClickedCallback;
     int TextValue;
 };
 
