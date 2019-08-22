@@ -1,5 +1,5 @@
-freertos\modaldialog.o: ../touchgfx/gui/src/modal_dialog/modaldialog.cpp
-freertos\modaldialog.o: ../TouchGFX/gui/include/gui/modal_dialog/ModalDialog.hpp
+freertos\modaldialog.o: ../touchgfx/gui/src/common/modaldialog.cpp
+freertos\modaldialog.o: ../TouchGFX/gui/include/gui/common/ModalDialog.hpp
 freertos\modaldialog.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/Container.hpp
 freertos\modaldialog.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Drawable.hpp
 freertos\modaldialog.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Application.hpp

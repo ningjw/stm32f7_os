@@ -176,12 +176,29 @@
                 "Moveable": false
               }
             ],
-            "Name": "modalDialog",
+            "Name": "containerlDialog",
             "X": 100,
             "Y": 46,
             "Width": 280,
             "Height": 180,
             "Type": "Container",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "__designer\\blue_buttons_round_icon_button_pressed.png",
+            "Released": "__designer\\blue_buttons_round_icon_button.png",
+            "Alpha": 255,
+            "Style": "Style5",
+            "Name": "buttonShowDialog",
+            "X": 0,
+            "Y": 212,
+            "Width": 60,
+            "Height": 60,
+            "Type": "Button",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -222,7 +239,7 @@
               "Type": "TriggerClicked"
             },
             "Action": {
-              "ActionComponent": "modalDialog",
+              "ActionComponent": "containerlDialog",
               "Type": "ActionHide"
             }
           },
@@ -234,8 +251,20 @@
               "Type": "TriggerClicked"
             },
             "Action": {
-              "ActionComponent": "modalDialog",
+              "ActionComponent": "containerlDialog",
               "Type": "ActionHide"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonShowDialog",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "buttonShowDialog",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "ActionComponent": "containerlDialog",
+              "Type": "ActionShow"
             }
           }
         ],

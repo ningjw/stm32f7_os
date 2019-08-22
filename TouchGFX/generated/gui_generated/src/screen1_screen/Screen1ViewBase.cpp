@@ -33,34 +33,40 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea1.setWildcard(textArea1Buffer);
     textArea1.setTypedText(TypedText(T_SINGLEUSEID7));
 
-    modalDialog.setPosition(100, 46, 280, 180);
+    containerlDialog.setPosition(100, 46, 280, 180);
+    containerlDialog.setVisible(false);
 
     imageDialogBg.setXY(0, 0);
     imageDialogBg.setBitmap(Bitmap(BITMAP_MODAL_BACKGROUND_ID));
     imageDialogBg.setAlpha(229);
-    modalDialog.add(imageDialogBg);
+    containerlDialog.add(imageDialogBg);
 
     dialogMsg.setPosition(37, 34, 213, 56);
     dialogMsg.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     dialogMsg.setLinespacing(0);
     dialogMsg.setTypedText(TypedText(T_DIALOGMSG));
-    modalDialog.add(dialogMsg);
+    containerlDialog.add(dialogMsg);
 
     buttonCancel.setXY(18, 113);
     buttonCancel.setBitmaps(Bitmap(BITMAP_CANCEL_ID), Bitmap(BITMAP_CANCEL_PRESSED_ID));
     buttonCancel.setAction(buttonCallback);
-    modalDialog.add(buttonCancel);
+    containerlDialog.add(buttonCancel);
 
     buttonOk.setXY(154, 112);
     buttonOk.setBitmaps(Bitmap(BITMAP_OK_ID), Bitmap(BITMAP_OK_PRESSED_ID));
     buttonOk.setAction(buttonCallback);
-    modalDialog.add(buttonOk);
+    containerlDialog.add(buttonOk);
+
+    buttonShowDialog.setXY(0, 212);
+    buttonShowDialog.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID));
+    buttonShowDialog.setAction(buttonCallback);
 
     add(Image1);
     add(buttonUp);
     add(buttonDown);
     add(textArea1);
-    add(modalDialog);
+    add(containerlDialog);
+    add(buttonShowDialog);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -87,17 +93,25 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     else if (&src == &buttonCancel)
     {
         //InteractionButtonCancel
-        //When buttonCancel clicked hide modalDialog
-        //Hide modalDialog
-        modalDialog.setVisible(false);
-        modalDialog.invalidate();
+        //When buttonCancel clicked hide containerlDialog
+        //Hide containerlDialog
+        containerlDialog.setVisible(false);
+        containerlDialog.invalidate();
     }
     else if (&src == &buttonOk)
     {
         //InteractionButtonOk
-        //When buttonOk clicked hide modalDialog
-        //Hide modalDialog
-        modalDialog.setVisible(false);
-        modalDialog.invalidate();
+        //When buttonOk clicked hide containerlDialog
+        //Hide containerlDialog
+        containerlDialog.setVisible(false);
+        containerlDialog.invalidate();
+    }
+    else if (&src == &buttonShowDialog)
+    {
+        //InteractionButtonShowDialog
+        //When buttonShowDialog clicked show containerlDialog
+        //Show containerlDialog
+        containerlDialog.setVisible(true);
+        containerlDialog.invalidate();
     }
 }

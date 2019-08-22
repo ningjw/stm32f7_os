@@ -8,12 +8,14 @@
 
 const uint16_t BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID = 0; // Size: 60x60 pixels
 const uint16_t BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID = 1; // Size: 60x60 pixels
-const uint16_t BITMAP_CANCEL_ID = 2; // Size: 111x57 pixels
-const uint16_t BITMAP_CANCEL_PRESSED_ID = 3; // Size: 111x57 pixels
-const uint16_t BITMAP_MN_ID = 4; // Size: 480x272 pixels
-const uint16_t BITMAP_MODAL_BACKGROUND_ID = 5; // Size: 280x180 pixels
-const uint16_t BITMAP_OK_ID = 6; // Size: 112x58 pixels
-const uint16_t BITMAP_OK_PRESSED_ID = 7; // Size: 112x58 pixels
+const uint16_t BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID = 2; // Size: 60x60 pixels
+const uint16_t BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID = 3; // Size: 60x60 pixels
+const uint16_t BITMAP_CANCEL_ID = 4; // Size: 111x57 pixels
+const uint16_t BITMAP_CANCEL_PRESSED_ID = 5; // Size: 111x57 pixels
+const uint16_t BITMAP_MN_ID = 6; // Size: 480x272 pixels
+const uint16_t BITMAP_MODAL_BACKGROUND_ID = 7; // Size: 280x180 pixels
+const uint16_t BITMAP_OK_ID = 8; // Size: 112x58 pixels
+const uint16_t BITMAP_OK_PRESSED_ID = 9; // Size: 112x58 pixels
 
 namespace BitmapDatabase
 {

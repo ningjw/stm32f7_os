@@ -1,8 +1,9 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 
 Screen1View::Screen1View():
-    // In constructor for callback, bind to this view object and bind which function to handle the event.
-  TextAreaClickedCallback(this, &Screen1View::TextAreaClickHandler)
+      onModalAnswered(this, &Screen1View::modalAnswered),
+          // In constructor for callback, bind to this view object and bind which function to handle the event.
+          TextAreaClickedCallback(this, &Screen1View::TextAreaClickHandler)
 {
 
 }
@@ -10,8 +11,14 @@ Screen1View::Screen1View():
 void Screen1View::setupScreen()
 {
     Screen1ViewBase::setupScreen();
-    // Add the callback to HiddenBox
+    // Add the callback to textArea1
     textArea1.setClickAction(TextAreaClickedCallback);
+    
+    // Add the modalDialog to Screen1
+    modalDialog.setXY(HAL::DISPLAY_WIDTH / 2 - modalDialog.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - modalDialog.getHeight() / 2);
+    modalDialog.setText(T_DIALOGMSG);
+    modalDialog.setAnsweredCallback(onModalAnswered);
+    add(modalDialog);
 }
 
 void Screen1View::tearDownScreen()
@@ -42,3 +49,20 @@ void Screen1View::TextAreaClickHandler(const TextAreaWithOneWildcard& ta, const 
         textArea1.invalidate();
     }
 }
+
+void Screen1View::handleClickEvent(const ClickEvent& evt)
+{
+    if (evt.getType() == ClickEvent::RELEASED && !modalDialog.isVisible())
+    {
+        modalDialog.setVisible(true);
+        modalDialog.invalidate();
+    }
+    View::handleClickEvent(evt);
+}
+
+void Screen1View::modalAnswered(ModalDialog::Answer answer)
+{
+    modalDialog.setVisible(false);
+    modalDialog.invalidate();
+}
+

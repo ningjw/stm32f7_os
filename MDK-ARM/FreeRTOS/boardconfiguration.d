@@ -71,6 +71,8 @@ freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/inc
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp
+freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/common/ModalDialog.hpp
+freertos\boardconfiguration.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
 freertos\boardconfiguration.o: ../TouchGFX/generated/images/include/BitmapDatabase.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/BoardConfiguration.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/GPIO.hpp

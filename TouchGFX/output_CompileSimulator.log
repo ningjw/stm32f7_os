@@ -1,2 +1,4 @@
 Converting images
+Compiling gui/src/screen1_screen/Screen1View.cpp
+Compiling gui/src/common/ModalDialog.cpp
 Linking build/bin/simulator.exe

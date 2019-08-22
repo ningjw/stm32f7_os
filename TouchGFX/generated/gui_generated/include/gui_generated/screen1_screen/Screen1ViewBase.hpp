@@ -48,12 +48,13 @@ protected:
     touchgfx::ButtonWithLabel buttonUp;
     touchgfx::ButtonWithLabel buttonDown;
     touchgfx::ClickListener< touchgfx::TextAreaWithOneWildcard > textArea1;
-    touchgfx::Container modalDialog;
+    touchgfx::Container containerlDialog;
     touchgfx::Image imageDialogBg;
     touchgfx::TextArea dialogMsg;
     touchgfx::Button buttonCancel;
     touchgfx::Button buttonOk;
 
+    touchgfx::Button buttonShowDialog;
 
     /*
      * Wildcard Buffers

@@ -4,6 +4,11 @@
   <FilePath>../touchgfx/gui/src/common/frontendapplication.cpp</FilePath>
 </File>
 <File>
+  <FileName>ModalDialog.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/common/modaldialog.cpp</FilePath>
+</File>
+<File>
   <FileName>Model.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
@@ -37,6 +42,16 @@
   <FileName>blue_buttons_round_edge_icon_button_pressed.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_edge_icon_button_pressed.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_buttons_round_icon_button.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_icon_button.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_buttons_round_icon_button_pressed.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_icon_button_pressed.cpp</FilePath>
 </File>
 <File>
   <FileName>cancel.cpp</FileName>
