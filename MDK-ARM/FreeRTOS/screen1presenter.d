@@ -64,6 +64,11 @@ freertos\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/inclu
 freertos\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
 freertos\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 freertos\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
+freertos\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp
 freertos\screen1presenter.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp
 freertos\screen1presenter.o: ../TouchGFX/gui/include/gui/common/ModalDialog.hpp
 freertos\screen1presenter.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
+freertos\screen1presenter.o: ../TouchGFX/gui/include/gui/containers/CustomContainer1.hpp
+freertos\screen1presenter.o: ../TouchGFX/generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp
+freertos\screen1presenter.o: ../TouchGFX/gui/include/gui/model/QRCodeWidget.hpp
+freertos\screen1presenter.o: ../TouchGFX/gui/include/gui/model/QRCode.hpp

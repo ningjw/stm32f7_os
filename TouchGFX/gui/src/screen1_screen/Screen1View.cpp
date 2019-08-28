@@ -15,10 +15,19 @@ void Screen1View::setupScreen()
     textArea1.setClickAction(TextAreaClickedCallback);
     
     // Add the modalDialog to Screen1
-    modalDialog.setXY(HAL::DISPLAY_WIDTH / 2 - modalDialog.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - modalDialog.getHeight() / 2);
-    modalDialog.setText(T_DIALOGMSG);
-    modalDialog.setAnsweredCallback(onModalAnswered);
-    add(modalDialog);
+//    modalDialog.setXY(HAL::DISPLAY_WIDTH / 2 - modalDialog.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - modalDialog.getHeight() / 2);
+//    modalDialog.setText(T_DIALOGMSG);
+//    modalDialog.setAnsweredCallback(onModalAnswered);
+//    add(modalDialog);
+    
+    // Add the customContainer to Screen1
+//    customContainer.setXY(HAL::DISPLAY_WIDTH / 2 - customContainer.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - customContainer.getHeight() / 2);
+//    add(customContainer);
+    
+//    qrCode.setXY(400,0);
+//    qrCode.setQRCode(&code);
+//    qrCode.setScale(4);
+//    add(qrCode);
 }
 
 void Screen1View::tearDownScreen()

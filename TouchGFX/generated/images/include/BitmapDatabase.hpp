@@ -6,16 +6,20 @@
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 
-const uint16_t BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID = 0; // Size: 60x60 pixels
-const uint16_t BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID = 1; // Size: 60x60 pixels
-const uint16_t BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID = 2; // Size: 60x60 pixels
-const uint16_t BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID = 3; // Size: 60x60 pixels
-const uint16_t BITMAP_CANCEL_ID = 4; // Size: 111x57 pixels
-const uint16_t BITMAP_CANCEL_PRESSED_ID = 5; // Size: 111x57 pixels
-const uint16_t BITMAP_MN_ID = 6; // Size: 480x272 pixels
-const uint16_t BITMAP_MODAL_BACKGROUND_ID = 7; // Size: 280x180 pixels
-const uint16_t BITMAP_OK_ID = 8; // Size: 112x58 pixels
-const uint16_t BITMAP_OK_PRESSED_ID = 9; // Size: 112x58 pixels
+const uint16_t BITMAP_BK2_ID = 0; // Size: 480x272 pixels
+const uint16_t BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID = 1; // Size: 60x60 pixels
+const uint16_t BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID = 2; // Size: 60x60 pixels
+const uint16_t BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID = 3; // Size: 60x60 pixels
+const uint16_t BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID = 4; // Size: 60x60 pixels
+const uint16_t BITMAP_BLUE_ICONS_BACK_ARROW_32_ID = 5; // Size: 17x30 pixels
+const uint16_t BITMAP_BLUE_ICONS_NEXT_ARROW_32_ID = 6; // Size: 17x30 pixels
+const uint16_t BITMAP_CANCEL_ID = 7; // Size: 111x57 pixels
+const uint16_t BITMAP_CANCEL_PRESSED_ID = 8; // Size: 111x57 pixels
+const uint16_t BITMAP_IMAGE00_ID = 9; // Size: 100x100 pixels
+const uint16_t BITMAP_MN_ID = 10; // Size: 480x272 pixels
+const uint16_t BITMAP_MODAL_BACKGROUND_ID = 11; // Size: 280x180 pixels
+const uint16_t BITMAP_OK_ID = 12; // Size: 112x58 pixels
+const uint16_t BITMAP_OK_PRESSED_ID = 13; // Size: 112x58 pixels
 
 namespace BitmapDatabase
 {

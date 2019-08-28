@@ -1,4 +1,9 @@
 <File>
+  <FileName>CustomContainer1.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/containers/customcontainer1.cpp</FilePath>
+</File>
+<File>
   <FileName>FrontendApplication.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/common/frontendapplication.cpp</FilePath>
@@ -14,6 +19,16 @@
   <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
 </File>
 <File>
+  <FileName>QRCode.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/model/qrcode.cpp</FilePath>
+</File>
+<File>
+  <FileName>QRCodeWidget.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/model/qrcodewidget.cpp</FilePath>
+</File>
+<File>
   <FileName>Screen1Presenter.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/screen1_screen/screen1presenter.cpp</FilePath>
@@ -24,6 +39,16 @@
   <FilePath>../touchgfx/gui/src/screen1_screen/screen1view.cpp</FilePath>
 </File>
 <File>
+  <FileName>Screen2Presenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/screen2_screen/screen2presenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>Screen2View.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/screen2_screen/screen2view.cpp</FilePath>
+</File>
+<File>
   <FileName>ApplicationFontProvider.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/applicationfontprovider.cpp</FilePath>
@@ -32,6 +57,11 @@
   <FileName>BitmapDatabase.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+</File>
+<File>
+  <FileName>bk2.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/bk2.cpp</FilePath>
 </File>
 <File>
   <FileName>blue_buttons_round_edge_icon_button.cpp</FileName>
@@ -54,6 +84,16 @@
   <FilePath>../touchgfx/generated/images/src/__designer/blue_buttons_round_icon_button_pressed.cpp</FilePath>
 </File>
 <File>
+  <FileName>blue_icons_back_arrow_32.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/__designer/blue_icons_back_arrow_32.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_icons_next_arrow_32.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/__designer/blue_icons_next_arrow_32.cpp</FilePath>
+</File>
+<File>
   <FileName>cancel.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/images/src/cancel.cpp</FilePath>
@@ -64,24 +104,19 @@
   <FilePath>../touchgfx/generated/images/src/cancel_pressed.cpp</FilePath>
 </File>
 <File>
+  <FileName>CustomContainer1Base.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/gui_generated/src/containers/customcontainer1base.cpp</FilePath>
+</File>
+<File>
   <FileName>Font_STSONG_TTF_40_4bpp.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/font_stsong_ttf_40_4bpp.cpp</FilePath>
 </File>
 <File>
-  <FileName>Font_verdana_10_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
-</File>
-<File>
   <FileName>Font_verdana_20_4bpp.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Font_verdana_40_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/font_verdana_40_4bpp.cpp</FilePath>
 </File>
 <File>
   <FileName>FontGetters.cpp</FileName>
@@ -94,24 +129,24 @@
   <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
 </File>
 <File>
+  <FileName>image00.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/image00.cpp</FilePath>
+</File>
+<File>
+  <FileName>image01.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/image01.cpp</FilePath>
+</File>
+<File>
   <FileName>Kerning_STSONG_TTF_40_4bpp.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/kerning_stsong_ttf_40_4bpp.cpp</FilePath>
 </File>
 <File>
-  <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
-</File>
-<File>
   <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_20_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Kerning_verdana_40_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp</FilePath>
 </File>
 <File>
   <FileName>LanguageGb.cpp</FileName>
@@ -144,24 +179,19 @@
   <FilePath>../touchgfx/generated/gui_generated/src/screen1_screen/screen1viewbase.cpp</FilePath>
 </File>
 <File>
+  <FileName>Screen2ViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/gui_generated/src/screen2_screen/screen2viewbase.cpp</FilePath>
+</File>
+<File>
   <FileName>Table_STSONG_TTF_40_4bpp.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/table_stsong_ttf_40_4bpp.cpp</FilePath>
 </File>
 <File>
-  <FileName>Table_verdana_10_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/table_verdana_10_4bpp.cpp</FilePath>
-</File>
-<File>
   <FileName>Table_verdana_20_4bpp.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/table_verdana_20_4bpp.cpp</FilePath>
-</File>
-<File>
-  <FileName>Table_verdana_40_4bpp.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/fonts/src/table_verdana_40_4bpp.cpp</FilePath>
 </File>
 <File>
   <FileName>Texts.cpp</FileName>

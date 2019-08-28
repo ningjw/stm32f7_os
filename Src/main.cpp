@@ -137,7 +137,7 @@ int main(void)
 
 /* Initialise the graphical hardware */
   GRAPHICS_HW_Init();
-  
+
   /* Initialise the graphical stack engine */
   GRAPHICS_Init();
       
@@ -503,7 +503,12 @@ static void MX_GPIO_Init(void)
   */
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)
-{         
+{
+    
+    
+           
+          
+                 
   /* init code for FATFS */
   MX_FATFS_Init();
 

@@ -8,11 +8,16 @@
 #include <common/Partition.hpp>
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
+#include <touchgfx/transitions/CoverTransition.hpp>
+#include <touchgfx/transitions/SlideTransition.hpp>
+
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/screen2_screen/Screen2View.hpp>
+#include <gui/screen2_screen/Screen2Presenter.hpp>
 
 
 /**
@@ -36,7 +41,8 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef meta::TypeList< Screen1View,
-            meta::Nil
+            meta::TypeList< Screen2View,
+            meta::Nil >
             > GeneratedViewTypes;
 
     /**
@@ -49,7 +55,8 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef meta::TypeList< Screen1Presenter,
-            meta::Nil
+            meta::TypeList< Screen2Presenter,
+            meta::Nil >
             > GeneratedPresenterTypes;
 
     /**
@@ -62,7 +69,9 @@ public:
      * @note All transition types used in the application MUST be added to this list!
      */
     typedef meta::TypeList< NoTransition,
-            meta::Nil
+            meta::TypeList< CoverTransition<EAST>,
+            meta::TypeList< SlideTransition<WEST>,
+            meta::Nil > >
             > GeneratedTransitionTypes;
 
     /**

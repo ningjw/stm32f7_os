@@ -53,9 +53,13 @@ build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1Presenter.o: \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextArea.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/FontManager.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/mixins/ClickListener.hpp \
  gui/include/gui/common/ModalDialog.hpp \
- generated/texts/include/texts/TextKeysAndLanguages.hpp
+ generated/texts/include/texts/TextKeysAndLanguages.hpp \
+ gui/include/gui/containers/CustomContainer1.hpp \
+ generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp \
+ gui/include/gui/model/QRCodeWidget.hpp gui/include/gui/model/QRCode.hpp
 
 gui/include/gui/screen1_screen/Screen1View.hpp:
 
@@ -163,8 +167,18 @@ gui/include/gui/model/ModelListener.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/FontManager.hpp:
 
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ButtonWithIcon.hpp:
+
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/mixins/ClickListener.hpp:
 
 gui/include/gui/common/ModalDialog.hpp:
 
 generated/texts/include/texts/TextKeysAndLanguages.hpp:
+
+gui/include/gui/containers/CustomContainer1.hpp:
+
+generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp:
+
+gui/include/gui/model/QRCodeWidget.hpp:
+
+gui/include/gui/model/QRCode.hpp:

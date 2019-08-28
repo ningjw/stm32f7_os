@@ -6,6 +6,8 @@
 #include <mvp/View.hpp>
 #include <gui/common/ModalDialog.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <gui/containers/CustomContainer1.hpp>
+#include <gui/model/QRCodeWidget.hpp>
 
 class Screen1View : public Screen1ViewBase
 {
@@ -16,17 +18,20 @@ public:
     virtual void tearDownScreen();
     virtual void buttonUpClicked();
     virtual void buttonDownClicked();
-    // Declaring callback handler for HiddenBox
+    // Declaring callback handler for TextAreaWithOneWildcard
     void TextAreaClickHandler(const TextAreaWithOneWildcard& ta, const ClickEvent& e);
-        
+     
     virtual void handleClickEvent(const ClickEvent& evt);    
 protected:
-    ModalDialog modalDialog;
-
+    QRCodeWidget      qrCode;
+    QRCode                code;
+    CustomContainer1  customContainer;
+    ModalDialog       modalDialog;
+    
     Callback<Screen1View, ModalDialog::Answer> onModalAnswered;
     void modalAnswered(ModalDialog::Answer answer);
-    
-    // Declaring callback type of box and clickEvent
+
+    // Declaring callback type of ta and clickEvent
     Callback<Screen1View, const TextAreaWithOneWildcard&, const ClickEvent&> TextAreaClickedCallback;
     int TextValue;
 };

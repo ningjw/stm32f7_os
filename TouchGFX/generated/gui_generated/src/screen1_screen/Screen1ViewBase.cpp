@@ -19,7 +19,7 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonUp.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     buttonUp.setAction(buttonCallback);
 
-    buttonDown.setXY(0, 106);
+    buttonDown.setXY(60, 0);
     buttonDown.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
     buttonDown.setLabelText(TypedText(T_SINGLEUSEID3));
     buttonDown.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
@@ -33,40 +33,17 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea1.setWildcard(textArea1Buffer);
     textArea1.setTypedText(TypedText(T_SINGLEUSEID7));
 
-    containerlDialog.setPosition(100, 46, 280, 180);
-    containerlDialog.setVisible(false);
-
-    imageDialogBg.setXY(0, 0);
-    imageDialogBg.setBitmap(Bitmap(BITMAP_MODAL_BACKGROUND_ID));
-    imageDialogBg.setAlpha(229);
-    containerlDialog.add(imageDialogBg);
-
-    dialogMsg.setPosition(37, 34, 213, 56);
-    dialogMsg.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-    dialogMsg.setLinespacing(0);
-    dialogMsg.setTypedText(TypedText(T_DIALOGMSG));
-    containerlDialog.add(dialogMsg);
-
-    buttonCancel.setXY(18, 113);
-    buttonCancel.setBitmaps(Bitmap(BITMAP_CANCEL_ID), Bitmap(BITMAP_CANCEL_PRESSED_ID));
-    buttonCancel.setAction(buttonCallback);
-    containerlDialog.add(buttonCancel);
-
-    buttonOk.setXY(154, 112);
-    buttonOk.setBitmaps(Bitmap(BITMAP_OK_ID), Bitmap(BITMAP_OK_PRESSED_ID));
-    buttonOk.setAction(buttonCallback);
-    containerlDialog.add(buttonOk);
-
-    buttonShowDialog.setXY(0, 212);
-    buttonShowDialog.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID));
-    buttonShowDialog.setAction(buttonCallback);
+    buttonGotoScreen2.setXY(420, 118);
+    buttonGotoScreen2.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID), Bitmap(BITMAP_BLUE_ICONS_NEXT_ARROW_32_ID), Bitmap(BITMAP_BLUE_ICONS_NEXT_ARROW_32_ID));
+    buttonGotoScreen2.setIconXY(22, 15);
+    buttonGotoScreen2.setAction(buttonCallback);
+    buttonGotoScreen2.setAlpha(135);
 
     add(Image1);
     add(buttonUp);
     add(buttonDown);
     add(textArea1);
-    add(containerlDialog);
-    add(buttonShowDialog);
+    add(buttonGotoScreen2);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -90,28 +67,11 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //Call buttonDownClicked
         buttonDownClicked();
     }
-    else if (&src == &buttonCancel)
+    else if (&src == &buttonGotoScreen2)
     {
-        //InteractionButtonCancel
-        //When buttonCancel clicked hide containerlDialog
-        //Hide containerlDialog
-        containerlDialog.setVisible(false);
-        containerlDialog.invalidate();
-    }
-    else if (&src == &buttonOk)
-    {
-        //InteractionButtonOk
-        //When buttonOk clicked hide containerlDialog
-        //Hide containerlDialog
-        containerlDialog.setVisible(false);
-        containerlDialog.invalidate();
-    }
-    else if (&src == &buttonShowDialog)
-    {
-        //InteractionButtonShowDialog
-        //When buttonShowDialog clicked show containerlDialog
-        //Show containerlDialog
-        containerlDialog.setVisible(true);
-        containerlDialog.invalidate();
+        //InteractionButtonGotoScreen2
+        //When buttonGotoScreen2 clicked change screen to Screen2
+        //Go to Screen2 with screen transition towards East
+        application().gotoScreen2ScreenCoverTransitionEast();
     }
 }

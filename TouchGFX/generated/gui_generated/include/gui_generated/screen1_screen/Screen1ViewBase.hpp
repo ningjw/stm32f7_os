@@ -10,11 +10,9 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/Button.hpp>
-
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
+
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
 public:
@@ -48,13 +46,7 @@ protected:
     touchgfx::ButtonWithLabel buttonUp;
     touchgfx::ButtonWithLabel buttonDown;
     touchgfx::ClickListener< touchgfx::TextAreaWithOneWildcard > textArea1;
-    touchgfx::Container containerlDialog;
-    touchgfx::Image imageDialogBg;
-    touchgfx::TextArea dialogMsg;
-    touchgfx::Button buttonCancel;
-    touchgfx::Button buttonOk;
-
-    touchgfx::Button buttonShowDialog;
+    touchgfx::ButtonWithIcon buttonGotoScreen2;
 
     /*
      * Wildcard Buffers
