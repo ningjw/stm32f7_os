@@ -1012,7 +1012,7 @@ ARM Macro Assembler    Page 16
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.dp --apcs=
 interwork --depend=freertos\startup_stm32f767xx.d -ofreertos\startup_stm32f767x
 x.o -I..\Core\Inc -I..\\Inc -I.\RTE\_FreeRTOS -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5
-.6.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.11.0\Drivers
+.6.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.12.0\Drivers
 \CMSIS\Device\ST\STM32F7xx\Include --predefine="__UVISION_VERSION SETA 528" --p
 redefine="_RTE_ SETA 1" --predefine="STM32F767xx SETA 1" --list=startup_stm32f7
 67xx.lst startup_stm32f767xx.s

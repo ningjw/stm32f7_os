@@ -284,9 +284,42 @@ void W25QXX_Write(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite)
 	}
 }
 
+/**
+* @brief Configure the QSPI in memory-mapped mode
+* @param None 
+* @retval QSPI memory status
+*/
+void W25QXX_MemoryMappedMode(void)
+{
+  QSPI_CommandTypeDef s_command;
+  QSPI_MemoryMappedTypeDef s_mem_mapped_cfg;
+
+  /* Configure the command for the read instruction */
+  s_command.InstructionMode = QSPI_INSTRUCTION_4_LINES;
+  s_command.Instruction = W25X_FastReadData;
+  s_command.AddressMode = QSPI_ADDRESS_4_LINES;
+  s_command.AddressSize = QSPI_ADDRESS_32_BITS;
+  s_command.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
+  s_command.DataMode = QSPI_DATA_4_LINES;
+  s_command.DummyCycles = 8;
+  s_command.DdrMode = QSPI_DDR_MODE_DISABLE;
+  s_command.DdrHoldHalfCycle = QSPI_DDR_HHC_ANALOG_DELAY;
+  s_command.SIOOMode = QSPI_SIOO_INST_EVERY_CMD;
+
+  /* Configure the memory mapped mode */
+  s_mem_mapped_cfg.TimeOutActivation = QSPI_TIMEOUT_COUNTER_DISABLE;
+  s_mem_mapped_cfg.TimeOutPeriod = 0; //1;
+
+  if (HAL_QSPI_MemoryMapped(&hqspi, &s_command, &s_mem_mapped_cfg) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
 
 uint16_t W25_ID;
 uint8_t TEXT_Buffer[] = {"abcdefghijklmnopqrstuvwxyz"};
+//uint16_t test_buf[10] __attribute__((at(0x90000000)));
 uint8_t W25_RxBuf[50] = {0};
 #define SIZE sizeof(TEXT_Buffer)
 /***************************************************************************************
@@ -301,9 +334,11 @@ void W25QXX_Init(void)
     W25QXX_ENTER_QSPI();
     W25QXX_ENTER_4BYTEADDR();
     W25QXX_SetReadParam();//…Ë÷√∂¡≤Œ ˝
+    W25QXX_MemoryMappedMode();
+//    test_buf[0] = 0xAA;
     
-    W25QXX_Write(TEXT_Buffer,W25Q256_SIZE - 100, SIZE);
-    W25_ID = W25QXX_ReadId();
-    W25QXX_Read(W25_RxBuf, W25Q256_SIZE - 100, SIZE);
+//    W25QXX_Write(TEXT_Buffer,W25Q256_SIZE - 100, SIZE);
+//    W25_ID = W25QXX_ReadId();
+//    W25QXX_Read(W25_RxBuf, W25Q256_SIZE - 100, SIZE);
 }
 
