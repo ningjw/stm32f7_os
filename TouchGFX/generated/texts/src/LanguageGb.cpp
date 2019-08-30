@@ -18,14 +18,20 @@ TEXT_LOCATION_FLASH_PRAGMA
 KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId7_Gb[2] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x2, 0x0 };
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId8_Gb[2] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x30, 0x0 };
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId9_Gb[2] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x2b, 0x0 };
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP const touchgfx::Unicode::UnicodeChar T_SingleUseId10_Gb[2] TEXT_LOCATION_FLASH_ATTRIBUTE = { 0x5f, 0x0 };
 
 TEXT_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[5] TEXT_LOCATION_FLASH_ATTRIBUTE =
+KEEP extern const touchgfx::Unicode::UnicodeChar* const textsGb[7] TEXT_LOCATION_FLASH_ATTRIBUTE =
 {
     T_SingleUseId2_Gb,
     T_SingleUseId3_Gb,
     T_dialogMsg_Gb,
     T_SingleUseId7_Gb,
-    T_SingleUseId8_Gb
+    T_SingleUseId8_Gb,
+    T_SingleUseId9_Gb,
+    T_SingleUseId10_Gb
 };
 

@@ -102,6 +102,8 @@
 "freertos\ok_pressed.o"
 "freertos\screen1viewbase.o"
 "freertos\screen2viewbase.o"
+"freertos\speedctrl.o"
+"freertos\speedctrlpressed.o"
 "freertos\table_stsong_ttf_40_4bpp.o"
 "freertos\table_verdana_20_4bpp.o"
 "freertos\texts.o"

@@ -69,9 +69,23 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  gui/include/gui/screen2_screen/Screen2View.hpp \
  generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
  gui/include/gui/screen2_screen/Screen2Presenter.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/scrollers/ScrollList.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/AnimatedImage.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TiledImage.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextureMapper.hpp
 
 generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
@@ -216,10 +230,38 @@ generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp
 
 gui/include/gui/screen2_screen/Screen2Presenter.hpp:
 
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/scrollers/ScrollList.hpp:
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp:
 
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:
 
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/AnimatedImage.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TiledImage.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TextureMapper.hpp:

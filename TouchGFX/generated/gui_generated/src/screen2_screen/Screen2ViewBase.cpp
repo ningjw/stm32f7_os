@@ -3,10 +3,12 @@
 /*********************************************************************************/
 #include <gui_generated/screen2_screen/Screen2ViewBase.hpp>
 #include "BitmapDatabase.hpp"
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/Color.hpp>
 
 Screen2ViewBase::Screen2ViewBase() :
     buttonCallback(this, &Screen2ViewBase::buttonCallbackHandler),
-    updateItemCallback(this, &Screen2ViewBase::updateItemCallbackHandler)
+    flexButtonCallback(this, &Screen2ViewBase::flexButtonCallbackHandler)
 {
     image.setXY(0, 0);
     image.setBitmap(Bitmap(BITMAP_BK2_ID));
@@ -17,24 +19,35 @@ Screen2ViewBase::Screen2ViewBase() :
     buttonGotoScreen1.setAction(buttonCallback);
     buttonGotoScreen1.setAlpha(132);
 
-    scrollList1.setPosition(258, 22, 100, 129);
-    scrollList1.setHorizontal(false);
-    scrollList1.setCircular(true);
-    scrollList1.setEasingEquation(EasingEquations::backEaseOut);
-    scrollList1.setSwipeAcceleration(10);
-    scrollList1.setDragAcceleration(10);
-    scrollList1.setNumberOfItems(10);
-    scrollList1.setPadding(0, 0);
-    scrollList1.setSnapping(false);
+    flexButtonSpeedAdd.setDelay(12);
+    flexButtonSpeedAdd.setInterval(60);
+    flexButtonSpeedAdd.setBitmaps(Bitmap(BITMAP_SPEEDCTRL_ID), Bitmap(BITMAP_SPEEDCTRLPRESSED_ID));
+    flexButtonSpeedAdd.setBitmapXY(0, 0);
+    flexButtonSpeedAdd.setText(TypedText(T_SINGLEUSEID9));
+    flexButtonSpeedAdd.setTextPosition(0, 15, 80, 80);
+    flexButtonSpeedAdd.setTextColors(touchgfx::Color::getColorFrom24BitRGB(10, 10, 10), touchgfx::Color::getColorFrom24BitRGB(10, 10, 10));
+    flexButtonSpeedAdd.setPosition(400, 192, 80, 80);
+    flexButtonSpeedAdd.setAction(flexButtonCallback);
+
+    flexButtonSpeedMinus.setDelay(12);
+    flexButtonSpeedMinus.setInterval(60);
+    flexButtonSpeedMinus.setBitmaps(Bitmap(BITMAP_SPEEDCTRL_ID), Bitmap(BITMAP_SPEEDCTRLPRESSED_ID));
+    flexButtonSpeedMinus.setBitmapXY(0, 0);
+    flexButtonSpeedMinus.setText(TypedText(T_SINGLEUSEID10));
+    flexButtonSpeedMinus.setTextPosition(0, 0, 80, 80);
+    flexButtonSpeedMinus.setTextColors(touchgfx::Color::getColorFrom24BitRGB(10, 10, 10), touchgfx::Color::getColorFrom24BitRGB(10, 10, 10));
+    flexButtonSpeedMinus.setPosition(314, 192, 80, 80);
+    flexButtonSpeedMinus.setAction(flexButtonCallback);
 
     add(image);
     add(buttonGotoScreen1);
-    add(scrollList1);
+    add(flexButtonSpeedAdd);
+    add(flexButtonSpeedMinus);
 }
 
 void Screen2ViewBase::setupScreen()
 {
-    scrollList1.initialize();
+
 }
 
 void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -48,6 +61,20 @@ void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     }
 }
 
-void Screen2ViewBase::updateItemCallbackHandler(DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
+void Screen2ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
 {
+    if (&src == &flexButtonSpeedAdd)
+    {
+        //InteractionSpeedAdd
+        //When flexButtonSpeedAdd clicked call virtual function
+        //Call addFanSpeed
+        addFanSpeed();
+    }
+    else if (&src == &flexButtonSpeedMinus)
+    {
+        //InteractionSpeedMinus
+        //When flexButtonSpeedMinus clicked call virtual function
+        //Call minusFanSpeed
+        minusFanSpeed();
+    }
 }

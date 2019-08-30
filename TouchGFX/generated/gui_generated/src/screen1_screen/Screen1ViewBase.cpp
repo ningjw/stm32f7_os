@@ -26,7 +26,7 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonDown.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     buttonDown.setAction(buttonCallback);
 
-    textArea1.setPosition(5, 57, 67, 49);
+    textArea1.setPosition(130, 6, 67, 49);
     textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(222, 15, 15));
     textArea1.setLinespacing(0);
     Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", TypedText(T_SINGLEUSEID8).getText());

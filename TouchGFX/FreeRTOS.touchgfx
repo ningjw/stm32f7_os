@@ -92,8 +92,8 @@
               "BufferSize": 5
             },
             "Name": "textArea1",
-            "X": 5,
-            "Y": 57,
+            "X": 130,
+            "Y": 6,
             "Width": 67,
             "Height": 49,
             "Type": "TextArea",
@@ -212,24 +212,91 @@
             "Moveable": false
           },
           {
-            "PaddingBefore": 0,
-            "PaddingAfter": 0,
-            "Snapping": false,
-            "IsHorizontal": false,
-            "IsCircular": true,
-            "NumberofItems": 10,
-            "InitialElement": 0,
-            "ItemMargin": 10,
-            "Easing": "Back",
-            "EasingOption": "Out",
-            "SwipeAcceleration": 1.0,
-            "DragAcceleration": 1.0,
-            "Name": "scrollList1",
-            "X": 258,
-            "Y": 22,
-            "Width": 100,
-            "Height": 129,
-            "Type": "ScrollList",
+            "Alpha": 255,
+            "ButtonTrigger": {
+              "Type": "RepeatButtonTrigger",
+              "Delay": 200,
+              "Interval": 1000
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "X": 0,
+                "Y": 15,
+                "TextId": "SingleUseId9",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "X": 0,
+                "Y": 0,
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "speedctrl.png",
+                "ImagePressed": "speedctrlpressed.png"
+              }
+            ],
+            "Name": "flexButtonSpeedAdd",
+            "X": 400,
+            "Y": 192,
+            "Width": 80,
+            "Height": 80,
+            "Type": "FlexButton",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Alpha": 255,
+            "ButtonTrigger": {
+              "Type": "RepeatButtonTrigger",
+              "Delay": 200,
+              "Interval": 1000
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "X": 0,
+                "Y": 0,
+                "TextId": "SingleUseId10",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "X": 0,
+                "Y": 0,
+                "LockFlexButtonToImageSize": true,
+                "ImageReleased": "speedctrl.png",
+                "ImagePressed": "speedctrlpressed.png"
+              }
+            ],
+            "Name": "flexButtonSpeedMinus",
+            "X": 314,
+            "Y": 192,
+            "Width": 80,
+            "Height": 80,
+            "Type": "FlexButton",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -250,6 +317,30 @@
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Screen1",
               "Type": "ActionGotoScreen"
+            }
+          },
+          {
+            "InteractionName": "InteractionSpeedAdd",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "flexButtonSpeedAdd",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "addFanSpeed",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "InteractionSpeedMinus",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "flexButtonSpeedMinus",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "minusFanSpeed",
+              "Type": "ActionCustom"
             }
           }
         ],
@@ -390,6 +481,14 @@
       },
       {
         "TextEntryId": "SingleUseId8",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId9",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId10",
         "IsResource": false
       }
     ],

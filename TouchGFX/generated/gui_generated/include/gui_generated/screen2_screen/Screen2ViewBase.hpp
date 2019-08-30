@@ -9,7 +9,7 @@
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
-#include <touchgfx/containers/scrollers/ScrollList.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
 {
@@ -18,6 +18,19 @@ public:
     virtual ~Screen2ViewBase() {}
 
     virtual void setupScreen();
+
+    /*
+     * Custom Action Handlers
+     */
+    virtual void addFanSpeed()
+    {
+        // Override and implement this function in Screen2View
+    }
+
+    virtual void minusFanSpeed()
+    {
+        // Override and implement this function in Screen2View
+    }
 
 protected:
     FrontendApplication& application() {
@@ -29,8 +42,8 @@ protected:
      */
     touchgfx::Image image;
     touchgfx::ButtonWithIcon buttonGotoScreen1;
-    touchgfx::ScrollList scrollList1;
-
+    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > flexButtonSpeedAdd;
+    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > flexButtonSpeedMinus;
 
 private:
 
@@ -38,13 +51,13 @@ private:
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
-    void updateItemCallbackHandler(DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
     /*
      * Callback Declarations
      */
     touchgfx::Callback<Screen2ViewBase, const touchgfx::AbstractButton&> buttonCallback;
-    touchgfx::Callback<Screen2ViewBase, DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
+    touchgfx::Callback<Screen2ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
 };
 

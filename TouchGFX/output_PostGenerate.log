@@ -134,11 +134,6 @@
   <FilePath>../touchgfx/generated/images/src/image00.cpp</FilePath>
 </File>
 <File>
-  <FileName>image01.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/images/src/image01.cpp</FilePath>
-</File>
-<File>
   <FileName>Kerning_STSONG_TTF_40_4bpp.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/fonts/src/kerning_stsong_ttf_40_4bpp.cpp</FilePath>
@@ -182,6 +177,16 @@
   <FileName>Screen2ViewBase.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/gui_generated/src/screen2_screen/screen2viewbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>speedCtrl.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/speedctrl.cpp</FilePath>
+</File>
+<File>
+  <FileName>speedCtrlPressed.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/images/src/speedctrlpressed.cpp</FilePath>
 </File>
 <File>
   <FileName>Table_STSONG_TTF_40_4bpp.cpp</FileName>
