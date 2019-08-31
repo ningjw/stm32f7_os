@@ -10,6 +10,7 @@ struct Typography
 {
     static const touchgfx::FontId DEFAULT = 0;
     static const touchgfx::FontId SONGTI_LARGE = 1;
+    static const touchgfx::FontId SONGTI_DEFAULT = 2;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

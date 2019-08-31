@@ -8,8 +8,11 @@
 
 Screen2ViewBase::Screen2ViewBase() :
     buttonCallback(this, &Screen2ViewBase::buttonCallbackHandler),
-    flexButtonCallback(this, &Screen2ViewBase::flexButtonCallbackHandler)
+    flexButtonCallback(this, &Screen2ViewBase::flexButtonCallbackHandler),
+    sliderValueChangedCallback(this, &Screen2ViewBase::sliderValueChangedCallbackHandler)
 {
+    CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
+
     image.setXY(0, 0);
     image.setBitmap(Bitmap(BITMAP_BK2_ID));
 
@@ -19,8 +22,8 @@ Screen2ViewBase::Screen2ViewBase() :
     buttonGotoScreen1.setAction(buttonCallback);
     buttonGotoScreen1.setAlpha(132);
 
-    flexButtonSpeedAdd.setDelay(12);
-    flexButtonSpeedAdd.setInterval(60);
+    flexButtonSpeedAdd.setDelay(6);
+    flexButtonSpeedAdd.setInterval(30);
     flexButtonSpeedAdd.setBitmaps(Bitmap(BITMAP_SPEEDCTRL_ID), Bitmap(BITMAP_SPEEDCTRLPRESSED_ID));
     flexButtonSpeedAdd.setBitmapXY(0, 0);
     flexButtonSpeedAdd.setText(TypedText(T_SINGLEUSEID9));
@@ -29,8 +32,8 @@ Screen2ViewBase::Screen2ViewBase() :
     flexButtonSpeedAdd.setPosition(400, 192, 80, 80);
     flexButtonSpeedAdd.setAction(flexButtonCallback);
 
-    flexButtonSpeedMinus.setDelay(12);
-    flexButtonSpeedMinus.setInterval(60);
+    flexButtonSpeedMinus.setDelay(6);
+    flexButtonSpeedMinus.setInterval(30);
     flexButtonSpeedMinus.setBitmaps(Bitmap(BITMAP_SPEEDCTRL_ID), Bitmap(BITMAP_SPEEDCTRLPRESSED_ID));
     flexButtonSpeedMinus.setBitmapXY(0, 0);
     flexButtonSpeedMinus.setText(TypedText(T_SINGLEUSEID10));
@@ -39,10 +42,37 @@ Screen2ViewBase::Screen2ViewBase() :
     flexButtonSpeedMinus.setPosition(314, 192, 80, 80);
     flexButtonSpeedMinus.setAction(flexButtonCallback);
 
+    sliderSetFanSpeed.setXY(378, 0);
+    sliderSetFanSpeed.setBitmaps(Bitmap(BITMAP_SLIDER_BACKGROUND_VERTICAL_ID), Bitmap(BITMAP_SLIDER_BACKGROUND_VERTICAL_FILLED_ID), Bitmap(BITMAP_SLIDER_KNOB_SHAPE_ID));
+    sliderSetFanSpeed.setupVerticalSlider(15, 22, 0, 0, 176);
+    sliderSetFanSpeed.setValueRange(0, 10);
+    sliderSetFanSpeed.setValue(0);
+    sliderSetFanSpeed.setNewValueCallback(sliderValueChangedCallback);
+
+    lineRotate.setPosition(10, 180, 80, 80);
+    lineRotatePainter.setColor(touchgfx::Color::getColorFrom24BitRGB(133, 15, 240));
+    lineRotate.setPainter(lineRotatePainter);
+    lineRotate.setStart(40, 10);
+    lineRotate.setEnd(40, 70);
+    lineRotate.setLineWidth(10);
+    lineRotate.setLineEndingStyle(Line::ROUND_CAP_ENDING);
+
+    circleRotate.setPosition(14, 7, 80, 80);
+    circleRotate.setCenter(40, 40);
+    circleRotate.setRadius(32);
+    circleRotate.setLineWidth(10);
+    circleRotate.setArc(77, 360);
+    circleRotate.setCapPrecision(180);
+    circleRotatePainter.setColor(touchgfx::Color::getColorFrom24BitRGB(245, 6, 127));
+    circleRotate.setPainter(circleRotatePainter);
+
     add(image);
     add(buttonGotoScreen1);
     add(flexButtonSpeedAdd);
     add(flexButtonSpeedMinus);
+    add(sliderSetFanSpeed);
+    add(lineRotate);
+    add(circleRotate);
 }
 
 void Screen2ViewBase::setupScreen()
@@ -76,5 +106,16 @@ void Screen2ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
         //When flexButtonSpeedMinus clicked call virtual function
         //Call minusFanSpeed
         minusFanSpeed();
+    }
+}
+
+void Screen2ViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+    if (&src == &sliderSetFanSpeed)
+    {
+        //InteractionSliderSetFanSpeed
+        //When sliderSetFanSpeed value changed call virtual function
+        //Call setFanSpeed
+        setFanSpeed(value);
     }
 }

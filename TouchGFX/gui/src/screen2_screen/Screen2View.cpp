@@ -36,6 +36,8 @@ void Screen2View::tearDownScreen()
 
 void Screen2View::handleTickEvent()
 {
+    int x, y;
+    
     zAngle2D += deltaZangle2D;
     
     // Update the images with the new angles
@@ -43,6 +45,50 @@ void Screen2View::handleTickEvent()
     // If any of the set..() methods (e.g. setOrigo, setCamera, setRenderingAlgorithm...) are used
     // remember to manually invalidate the image afterwards (textureMapperImage2D.invalidate()).
     textureMapperImage2D.updateAngles(0.0F, 0.0F, zAngle2D);
+    
+    // sets the new angle to rotate circleRotate //
+    circleRotate.invalidate();
+    circleRotate.setArc(circleRotate.getArcStart() + 1, circleRotate.getArcEnd() + 1);
+    circleRotate.invalidate();
+    
+        // Updates the coordinates to rotate lineRotate //
+    lineRotate.invalidate();
+    lineRotate.getStart(x, y);
+    if (moveX)
+    {
+        if (x <= 10){
+            lineRotateChangeFactor = -1;
+            moveX = false;
+        } else if (x >= 70){
+            lineRotateChangeFactor = 1;
+            moveX = false;
+        }
+    }
+    else
+    {
+        if (y <= 10){
+            lineRotateChangeFactor = 1;
+            moveX = true;
+        } else if (y >= 70) {
+            lineRotateChangeFactor = -1;
+            moveX = true;
+        }
+    }
+
+    if (moveX)
+    {
+        lineRotate.setStart(x + lineRotateChangeFactor, y);
+        lineRotate.getEnd(x, y);
+        lineRotate.setEnd(x + (-lineRotateChangeFactor), y);
+    }
+    else
+    {
+        lineRotate.setStart(x, y + lineRotateChangeFactor);
+        lineRotate.getEnd(x, y);
+        lineRotate.setEnd(x, y + (-lineRotateChangeFactor));
+    }
+
+    lineRotate.invalidate();
 }
 
 void Screen2View::addFanSpeed()
@@ -60,3 +106,7 @@ void Screen2View::minusFanSpeed()
     }
 }
 
+void Screen2View::setFanSpeed(int value)
+{
+    deltaZangle2D = value/10.0f;
+}

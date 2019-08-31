@@ -12,7 +12,7 @@ void Screen1View::setupScreen()
 {
     Screen1ViewBase::setupScreen();
     // Add the callback to textArea1
-    textArea1.setClickAction(TextAreaClickedCallback);
+    textShowValue.setClickAction(TextAreaClickedCallback);
     
     // Add the modalDialog to Screen1
 //    modalDialog.setXY(HAL::DISPLAY_WIDTH / 2 - modalDialog.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - modalDialog.getHeight() / 2);
@@ -38,24 +38,24 @@ void Screen1View::tearDownScreen()
 void Screen1View::buttonUpClicked()
 {
     ++TextValue;
-    Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d", TextValue);
-    textArea1.invalidate();
+    Unicode::snprintf(textShowValueBuffer, TEXTSHOWVALUE_SIZE, "%d", TextValue);
+    textShowValue.invalidate();
 }
 
 void Screen1View::buttonDownClicked()
 {
     --TextValue;
-    Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d", TextValue);
-    textArea1.invalidate();
+    Unicode::snprintf(textShowValueBuffer, TEXTSHOWVALUE_SIZE, "%d", TextValue);
+    textShowValue.invalidate();
 }
 
 void Screen1View::TextAreaClickHandler(const TextAreaWithOneWildcard& ta, const ClickEvent& evt)
 {
-    if (&ta == &textArea1)
+    if (&ta == &textShowValue)
     {
         TextValue = 50;
-        Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%d", TextValue);
-        textArea1.invalidate();
+        Unicode::snprintf(textShowValueBuffer, TEXTSHOWVALUE_SIZE, "%d", TextValue);
+        textShowValue.invalidate();
     }
 }
 

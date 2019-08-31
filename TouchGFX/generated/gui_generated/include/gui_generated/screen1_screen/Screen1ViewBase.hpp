@@ -11,8 +11,10 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
-#include <touchgfx/mixins/ClickListener.hpp>
+#include <touchgfx/containers/ScrollableContainer.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
+#include <touchgfx/mixins/ClickListener.hpp>
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
 public:
@@ -45,14 +47,17 @@ protected:
     touchgfx::Image Image1;
     touchgfx::ButtonWithLabel buttonUp;
     touchgfx::ButtonWithLabel buttonDown;
-    touchgfx::ClickListener< touchgfx::TextAreaWithOneWildcard > textArea1;
+    touchgfx::ClickListener< touchgfx::TextAreaWithOneWildcard > textShowValue;
     touchgfx::ButtonWithIcon buttonGotoScreen2;
+    touchgfx::ScrollableContainer scrollableContainer1;
+    touchgfx::TextArea textShowAll;
+
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTAREA1_SIZE = 5;
-    touchgfx::Unicode::UnicodeChar textArea1Buffer[TEXTAREA1_SIZE];
+    static const uint16_t TEXTSHOWVALUE_SIZE = 5;
+    touchgfx::Unicode::UnicodeChar textShowValueBuffer[TEXTSHOWVALUE_SIZE];
 
 private:
 

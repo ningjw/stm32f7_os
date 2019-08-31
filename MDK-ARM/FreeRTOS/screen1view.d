@@ -65,6 +65,8 @@ freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/to
 freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/FontManager.hpp
 freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp
+freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/ScrollableContainer.hpp
+freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Box.hpp
 freertos\screen1view.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp
 freertos\screen1view.o: ../TouchGFX/gui/include/gui/common/ModalDialog.hpp
 freertos\screen1view.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp

@@ -1,0 +1,9 @@
+freertos\table_stsong_ttf_20_4bpp.o: ../touchgfx/generated/fonts/src/table_stsong_ttf_20_4bpp.cpp
+freertos\table_stsong_ttf_20_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Font.hpp
+freertos\table_stsong_ttf_20_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/TextProvider.hpp
+freertos\table_stsong_ttf_20_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\table_stsong_ttf_20_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/Unicode.hpp
+freertos\table_stsong_ttf_20_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
+freertos\table_stsong_ttf_20_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\table_stsong_ttf_20_4bpp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\table_stsong_ttf_20_4bpp.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Config.hpp

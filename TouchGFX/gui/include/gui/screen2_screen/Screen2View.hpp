@@ -16,11 +16,15 @@ public:
     virtual void handleTickEvent();
     virtual void addFanSpeed();
     virtual void minusFanSpeed();
+    virtual void setFanSpeed(int value);
 protected:
     TextureMapper textureMapperImage2D;
     
     float zAngle2D;
     float deltaZangle2D;
+
+    int lineRotateChangeFactor;
+    bool moveX;
 };
 
 #endif // SCREEN2_VIEW_HPP

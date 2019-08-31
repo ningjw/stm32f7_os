@@ -1088,6 +1088,11 @@
           <GroupName>Application/User/TouchGFX/gui</GroupName>
           <Files>
             <File>
+              <FileName>ContainerKeyboard.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/containers/containerkeyboard.cpp</FilePath>
+            </File>
+            <File>
               <FileName>CustomContainer1.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/containers/customcontainer1.cpp</FilePath>
@@ -1198,9 +1203,19 @@
               <FilePath>../touchgfx/generated/images/src/cancel_pressed.cpp</FilePath>
             </File>
             <File>
+              <FileName>ContainerKeyboardBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/containers/containerkeyboardbase.cpp</FilePath>
+            </File>
+            <File>
               <FileName>CustomContainer1Base.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/containers/customcontainer1base.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_STSONG_TTF_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_stsong_ttf_20_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Font_STSONG_TTF_40_4bpp.cpp</FileName>
@@ -1228,6 +1243,11 @@
               <FilePath>../touchgfx/generated/images/src/image00.cpp</FilePath>
             </File>
             <File>
+              <FileName>Kerning_STSONG_TTF_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_stsong_ttf_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Kerning_STSONG_TTF_40_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/kerning_stsong_ttf_40_4bpp.cpp</FilePath>
@@ -1236,6 +1256,16 @@
               <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>key.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/key.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>key_panel.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/key_panel.cpp</FilePath>
             </File>
             <File>
               <FileName>LanguageGb.cpp</FileName>
@@ -1273,6 +1303,21 @@
               <FilePath>../touchgfx/generated/gui_generated/src/screen2_screen/screen2viewbase.cpp</FilePath>
             </File>
             <File>
+              <FileName>slider_background_vertical.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/slider_background_vertical.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>slider_background_vertical_filled.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/slider_background_vertical_filled.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>slider_knob_shape.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/slider_knob_shape.cpp</FilePath>
+            </File>
+            <File>
               <FileName>speedCtrl.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/speedctrl.cpp</FilePath>
@@ -1281,6 +1326,11 @@
               <FileName>speedCtrlPressed.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/speedctrlpressed.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_STSONG_TTF_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_stsong_ttf_20_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_STSONG_TTF_40_4bpp.cpp</FileName>

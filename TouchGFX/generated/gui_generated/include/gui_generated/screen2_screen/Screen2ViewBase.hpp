@@ -10,6 +10,10 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/canvas/Circle.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
 {
@@ -32,6 +36,11 @@ public:
         // Override and implement this function in Screen2View
     }
 
+    virtual void setFanSpeed(int value)
+    {
+        // Override and implement this function in Screen2View
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(Application::getInstance());
@@ -44,6 +53,11 @@ protected:
     touchgfx::ButtonWithIcon buttonGotoScreen1;
     touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > flexButtonSpeedAdd;
     touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > flexButtonSpeedMinus;
+    touchgfx::Slider sliderSetFanSpeed;
+    touchgfx::Line lineRotate;
+    touchgfx::PainterRGB565 lineRotatePainter;
+    touchgfx::Circle circleRotate;
+    touchgfx::PainterRGB565 circleRotatePainter;
 
 private:
 
@@ -52,12 +66,20 @@ private:
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
 
     /*
      * Callback Declarations
      */
     touchgfx::Callback<Screen2ViewBase, const touchgfx::AbstractButton&> buttonCallback;
     touchgfx::Callback<Screen2ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<Screen2ViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 7200;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
 };
 

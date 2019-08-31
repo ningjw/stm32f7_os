@@ -26,12 +26,12 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonDown.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     buttonDown.setAction(buttonCallback);
 
-    textArea1.setPosition(130, 6, 67, 49);
-    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(222, 15, 15));
-    textArea1.setLinespacing(0);
-    Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", TypedText(T_SINGLEUSEID8).getText());
-    textArea1.setWildcard(textArea1Buffer);
-    textArea1.setTypedText(TypedText(T_SINGLEUSEID7));
+    textShowValue.setPosition(130, 6, 67, 49);
+    textShowValue.setColor(touchgfx::Color::getColorFrom24BitRGB(222, 15, 15));
+    textShowValue.setLinespacing(0);
+    Unicode::snprintf(textShowValueBuffer, TEXTSHOWVALUE_SIZE, "%s", TypedText(T_SINGLEUSEID8).getText());
+    textShowValue.setWildcard(textShowValueBuffer);
+    textShowValue.setTypedText(TypedText(T_SINGLEUSEID7));
 
     buttonGotoScreen2.setXY(420, 118);
     buttonGotoScreen2.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID), Bitmap(BITMAP_BLUE_ICONS_NEXT_ARROW_32_ID), Bitmap(BITMAP_BLUE_ICONS_NEXT_ARROW_32_ID));
@@ -39,11 +39,23 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonGotoScreen2.setAction(buttonCallback);
     buttonGotoScreen2.setAlpha(135);
 
+    scrollableContainer1.setPosition(0, 60, 197, 212);
+    scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+
+    textShowAll.setPosition(0, 0, 197, 290);
+    textShowAll.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textShowAll.setLinespacing(0);
+    textShowAll.setTypedText(TypedText(T_LONGTEXT));
+    scrollableContainer1.add(textShowAll);
+    scrollableContainer1.setScrollbarsPermanentlyVisible();
+    scrollableContainer1.setScrollbarsVisible(false);
+
     add(Image1);
     add(buttonUp);
     add(buttonDown);
-    add(textArea1);
+    add(textShowValue);
     add(buttonGotoScreen2);
+    add(scrollableContainer1);
 }
 
 void Screen1ViewBase::setupScreen()

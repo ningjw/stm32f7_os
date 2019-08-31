@@ -91,7 +91,7 @@
               "UseBuffer": true,
               "BufferSize": 5
             },
-            "Name": "textArea1",
+            "Name": "textShowValue",
             "X": 130,
             "Y": 6,
             "Width": 67,
@@ -120,6 +120,54 @@
             "Width": 60,
             "Height": 60,
             "Type": "ButtonWithIcon",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Components": [
+              {
+                "TextId": "longText",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 0,
+                  "Green": 0,
+                  "Blue": 0
+                },
+                "Alpha": 255,
+                "AutoSize": false,
+                "LineSpacing": 0,
+                "Name": "textShowAll",
+                "X": 0,
+                "Y": 0,
+                "Width": 197,
+                "Height": 290,
+                "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              }
+            ],
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisible": true,
+            "ScrollbarsVisibleOnPressed": false,
+            "ScrollbarsColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "ScrollbarsAlpha": 255,
+            "Name": "scrollableContainer1",
+            "X": 0,
+            "Y": 60,
+            "Width": 197,
+            "Height": 212,
+            "Type": "ScrollableContainer",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -215,8 +263,8 @@
             "Alpha": 255,
             "ButtonTrigger": {
               "Type": "RepeatButtonTrigger",
-              "Delay": 200,
-              "Interval": 1000
+              "Delay": 100,
+              "Interval": 500
             },
             "ButtonStyles": [
               {
@@ -261,8 +309,8 @@
             "Alpha": 255,
             "ButtonTrigger": {
               "Type": "RepeatButtonTrigger",
-              "Delay": 200,
-              "Interval": 1000
+              "Delay": 100,
+              "Interval": 500
             },
             "ButtonStyles": [
               {
@@ -297,6 +345,82 @@
             "Width": 80,
             "Height": 80,
             "Type": "FlexButton",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "IsHorizontalSlider": false,
+            "BackgroundUnselected": "slider_background_vertical.png",
+            "BackgroundSelected": "slider_background_vertical_filled.png",
+            "Indicator": "slider_knob_shape.png",
+            "BackgroundX": 15,
+            "BackgroundY": 22,
+            "IndicatorPos": 0,
+            "IndicatorMax": 176,
+            "IndicatorMin": 0,
+            "ValueMax": 10,
+            "ValueMin": 0,
+            "InitValue": 0,
+            "Name": "sliderSetFanSpeed",
+            "X": 378,
+            "Y": 0,
+            "Width": 35,
+            "Height": 211,
+            "Type": "Slider",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 133,
+              "Green": 15,
+              "Blue": 240
+            },
+            "Alpha": 255,
+            "StartX": 40,
+            "StartY": 10,
+            "EndX": 40,
+            "EndY": 70,
+            "LineWidth": 10,
+            "LineEndingStyle": "Round",
+            "Name": "lineRotate",
+            "X": 10,
+            "Y": 180,
+            "Width": 80,
+            "Height": 80,
+            "Type": "Line",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 245,
+              "Green": 6,
+              "Blue": 127
+            },
+            "CenterX": 40,
+            "CenterY": 40,
+            "Radius": 32,
+            "LineWidth": 10,
+            "StartAngle": 77,
+            "EndAngle": 360,
+            "CapPrecision": "Butt",
+            "Alpha": 255,
+            "Name": "circleRotate",
+            "X": 14,
+            "Y": 7,
+            "Width": 80,
+            "Height": 80,
+            "Type": "Circle",
             "Visible": true,
             "Draggable": false,
             "Clickable": false,
@@ -342,11 +466,23 @@
               "FunctionName": "minusFanSpeed",
               "Type": "ActionCustom"
             }
+          },
+          {
+            "InteractionName": "InteractionSliderSetFanSpeed",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "sliderSetFanSpeed",
+              "Type": "TriggerSliderValueChanged"
+            },
+            "Action": {
+              "FunctionName": "setFanSpeed",
+              "Type": "ActionCustom"
+            }
           }
         ],
         "Name": "Screen2",
         "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 0
+        "CanvasBufferSize": 7200
       }
     ],
     "CustomContainerDefinitions": [
@@ -490,6 +626,10 @@
       {
         "TextEntryId": "SingleUseId10",
         "IsResource": false
+      },
+      {
+        "TextEntryId": "longText",
+        "IsResource": true
       }
     ],
     "Name": "MyApplication",
