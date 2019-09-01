@@ -87,10 +87,8 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  generated/texts/include/texts/TextKeysAndLanguages.hpp \
  gui/include/gui/containers/CustomContainer1.hpp \
  generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp \
- gui/include/gui/model/QRCodeWidget.hpp gui/include/gui/model/QRCode.hpp \
- gui/include/gui/screen2_screen/Screen2View.hpp \
- generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
- gui/include/gui/screen2_screen/Screen2Presenter.hpp \
+ gui/include/gui/containers/ContainerKeyboard.hpp \
+ generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
@@ -108,6 +106,10 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TiledImage.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
+ gui/include/gui/model/QRCodeWidget.hpp gui/include/gui/model/QRCode.hpp \
+ gui/include/gui/screen2_screen/Screen2View.hpp \
+ generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
+ gui/include/gui/screen2_screen/Screen2Presenter.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/Slider.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/canvas/Line.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/canvas/Canvas.hpp \
@@ -308,15 +310,9 @@ gui/include/gui/containers/CustomContainer1.hpp:
 
 generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp:
 
-gui/include/gui/model/QRCodeWidget.hpp:
+gui/include/gui/containers/ContainerKeyboard.hpp:
 
-gui/include/gui/model/QRCode.hpp:
-
-gui/include/gui/screen2_screen/Screen2View.hpp:
-
-generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:
-
-gui/include/gui/screen2_screen/Screen2Presenter.hpp:
+generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp:
 
@@ -351,6 +347,16 @@ gui/include/gui/screen2_screen/Screen2Presenter.hpp:
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
+
+gui/include/gui/model/QRCodeWidget.hpp:
+
+gui/include/gui/model/QRCode.hpp:
+
+gui/include/gui/screen2_screen/Screen2View.hpp:
+
+generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:
+
+gui/include/gui/screen2_screen/Screen2Presenter.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/Slider.hpp:
 

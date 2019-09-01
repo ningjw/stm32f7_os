@@ -17,16 +17,21 @@ const uint16_t BITMAP_CANCEL_ID = 7; // Size: 111x57 pixels
 const uint16_t BITMAP_CANCEL_PRESSED_ID = 8; // Size: 111x57 pixels
 const uint16_t BITMAP_IMAGE00_ID = 9; // Size: 194x194 pixels
 const uint16_t BITMAP_KEY_ID = 10; // Size: 40x40 pixels
-const uint16_t BITMAP_KEY_PANEL_ID = 11; // Size: 480x160 pixels
-const uint16_t BITMAP_MN_ID = 12; // Size: 480x272 pixels
-const uint16_t BITMAP_MODAL_BACKGROUND_ID = 13; // Size: 280x180 pixels
-const uint16_t BITMAP_OK_ID = 14; // Size: 112x58 pixels
-const uint16_t BITMAP_OK_PRESSED_ID = 15; // Size: 112x58 pixels
-const uint16_t BITMAP_SLIDER_BACKGROUND_VERTICAL_ID = 16; // Size: 6x166 pixels
-const uint16_t BITMAP_SLIDER_BACKGROUND_VERTICAL_FILLED_ID = 17; // Size: 6x166 pixels
-const uint16_t BITMAP_SLIDER_KNOB_SHAPE_ID = 18; // Size: 35x35 pixels
-const uint16_t BITMAP_SPEEDCTRL_ID = 19; // Size: 80x80 pixels
-const uint16_t BITMAP_SPEEDCTRLPRESSED_ID = 20; // Size: 80x80 pixels
+const uint16_t BITMAP_KEY_BACK_ID = 11; // Size: 40x40 pixels
+const uint16_t BITMAP_KEY_BACK_PRESSED_ID = 12; // Size: 40x40 pixels
+const uint16_t BITMAP_KEY_ENTER_ID = 13; // Size: 40x40 pixels
+const uint16_t BITMAP_KEY_ENTER_PRESSED_ID = 14; // Size: 40x40 pixels
+const uint16_t BITMAP_KEY_PANEL_ID = 15; // Size: 481x250 pixels
+const uint16_t BITMAP_KEY_PRESS_ID = 16; // Size: 40x40 pixels
+const uint16_t BITMAP_MN_ID = 17; // Size: 480x272 pixels
+const uint16_t BITMAP_MODAL_BACKGROUND_ID = 18; // Size: 280x180 pixels
+const uint16_t BITMAP_OK_ID = 19; // Size: 112x58 pixels
+const uint16_t BITMAP_OK_PRESSED_ID = 20; // Size: 112x58 pixels
+const uint16_t BITMAP_SLIDER_BACKGROUND_VERTICAL_ID = 21; // Size: 6x166 pixels
+const uint16_t BITMAP_SLIDER_BACKGROUND_VERTICAL_FILLED_ID = 22; // Size: 6x166 pixels
+const uint16_t BITMAP_SLIDER_KNOB_SHAPE_ID = 23; // Size: 35x35 pixels
+const uint16_t BITMAP_SPEEDCTRL_ID = 24; // Size: 80x80 pixels
+const uint16_t BITMAP_SPEEDCTRLPRESSED_ID = 25; // Size: 80x80 pixels
 
 namespace BitmapDatabase
 {

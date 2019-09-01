@@ -79,11 +79,8 @@ freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/common/ModalDial
 freertos\frontendapplicationbase.o: ../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
 freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/containers/CustomContainer1.hpp
 freertos\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp
-freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/model/QRCodeWidget.hpp
-freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/model/QRCode.hpp
-freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp
-freertos\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp
-freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/containers/ContainerKeyboard.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp
@@ -101,6 +98,11 @@ freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framewor
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/model/QRCodeWidget.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/model/QRCode.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp
+freertos\frontendapplicationbase.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/Slider.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp
 freertos\frontendapplicationbase.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp

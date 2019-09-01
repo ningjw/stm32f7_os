@@ -1,9 +1,2 @@
 Converting images
-Compiling gui/src/screen2_screen/Screen2View.cpp
-Compiling gui/src/common/ModalDialog.cpp
-Compiling generated/gui_generated/src/containers/CustomContainer1Base.cpp
-Compiling generated/gui_generated/src/screen2_screen/Screen2ViewBase.cpp
-Compiling generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp
-Compiling generated/images/src/BitmapDatabase.cpp
-Compiling simulator/main.cpp
 Linking build/bin/simulator.exe

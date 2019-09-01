@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
+
   <SchemaVersion>2.1</SchemaVersion>
+
   <Header>### uVision Project, (C) Keil Software</Header>
+
   <Targets>
     <Target>
       <TargetName>FreeRTOS</TargetName>
@@ -1263,9 +1266,34 @@
               <FilePath>../touchgfx/generated/images/src/key.cpp</FilePath>
             </File>
             <File>
+              <FileName>key_back.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/key_back.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>key_back_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/key_back_pressed.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>key_enter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/key_enter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>key_enter_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/key_enter_pressed.cpp</FilePath>
+            </File>
+            <File>
               <FileName>key_panel.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/key_panel.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>key_press.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/key_press.cpp</FilePath>
             </File>
             <File>
               <FileName>LanguageGb.cpp</FileName>
@@ -1360,16 +1388,18 @@
       </Groups>
     </Target>
   </Targets>
+
   <RTE>
-    <apis></apis>
+    <apis/>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"></package>
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
         <targetInfos>
-          <targetInfo name="FreeRTOS"></targetInfo>
+          <targetInfo name="FreeRTOS"/>
         </targetInfos>
       </component>
     </components>
-    <files></files>
+    <files/>
   </RTE>
+
 </Project>

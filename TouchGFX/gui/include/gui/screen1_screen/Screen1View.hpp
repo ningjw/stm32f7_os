@@ -7,6 +7,7 @@
 #include <gui/common/ModalDialog.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 #include <gui/containers/CustomContainer1.hpp>
+#include <gui/containers/ContainerKeyboard.hpp>
 #include <gui/model/QRCodeWidget.hpp>
 
 class Screen1View : public Screen1ViewBase
@@ -26,6 +27,7 @@ protected:
     QRCodeWidget      qrCode;
     QRCode                code;
     CustomContainer1  customContainer;
+    ContainerKeyboard containerKeyboard;
     ModalDialog       modalDialog;
     
     Callback<Screen1View, ModalDialog::Answer> onModalAnswered;

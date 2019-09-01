@@ -23,7 +23,7 @@ void Screen1View::setupScreen()
     // Add the customContainer to Screen1
 //    customContainer.setXY(HAL::DISPLAY_WIDTH / 2 - customContainer.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - customContainer.getHeight() / 2);
 //    add(customContainer);
-    
+      
 //    qrCode.setXY(400,0);
 //    qrCode.setQRCode(&code);
 //    qrCode.setScale(4);
@@ -57,6 +57,8 @@ void Screen1View::TextAreaClickHandler(const TextAreaWithOneWildcard& ta, const 
         Unicode::snprintf(textShowValueBuffer, TEXTSHOWVALUE_SIZE, "%d", TextValue);
         textShowValue.invalidate();
     }
+    containerKeyboard.setXY(HAL::DISPLAY_WIDTH / 2 - containerKeyboard.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - containerKeyboard.getHeight() / 2);
+    add(containerKeyboard);
 }
 
 void Screen1View::handleClickEvent(const ClickEvent& evt)
