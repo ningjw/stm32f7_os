@@ -84,6 +84,13 @@ freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/containers/CustomCont
 freertos\boardconfiguration.o: ../TouchGFX/generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp
 freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/containers/ContainerKeyboard.hpp
 freertos\boardconfiguration.o: ../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp
+freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp
+freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp
+freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/model/QRCodeWidget.hpp
+freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/model/QRCode.hpp
+freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp
+freertos\boardconfiguration.o: ../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp
+freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp
@@ -91,7 +98,6 @@ freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/inc
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp
-freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp
@@ -101,11 +107,6 @@ freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/inc
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp
-freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/model/QRCodeWidget.hpp
-freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/model/QRCode.hpp
-freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp
-freertos\boardconfiguration.o: ../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp
-freertos\boardconfiguration.o: ../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/containers/Slider.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp
 freertos\boardconfiguration.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.hpp

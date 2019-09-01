@@ -6,9 +6,13 @@
 
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class ContainerKeyboardBase : public touchgfx::Container
 {
@@ -26,47 +30,49 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::Image image;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_q;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_w;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_e;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_r;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_t;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_y;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_u;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_i;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_o;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_p;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_a;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_s;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_d;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_f;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_g;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_h;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_j;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_k;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_l;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_z;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_x;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_c;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_v;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_b;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_n;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_m;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_1;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_2;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_3;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_4;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_5;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_6;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_7;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_8;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_9;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > > key_0;
-    touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > key_back;
-    touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ToggleButtonTrigger > > key_caps;
-    touchgfx::ImageButtonStyle< touchgfx::RepeatButtonTrigger > key_sure;
+    touchgfx::Box boxKeyboardBg;
+    touchgfx::BoxWithBorder boxWithKeyValue;
     touchgfx::TextAreaWithOneWildcard textKeyValues;
+    touchgfx::ButtonWithLabel key_0;
+    touchgfx::ButtonWithLabel key_1;
+    touchgfx::ButtonWithLabel key_2;
+    touchgfx::ButtonWithLabel key_3;
+    touchgfx::ButtonWithLabel key_4;
+    touchgfx::ButtonWithLabel key_5;
+    touchgfx::ButtonWithLabel key_6;
+    touchgfx::ButtonWithLabel key_7;
+    touchgfx::ButtonWithLabel key_8;
+    touchgfx::ButtonWithLabel key_9;
+    touchgfx::ButtonWithLabel key_q;
+    touchgfx::ButtonWithLabel key_w;
+    touchgfx::ButtonWithLabel key_e;
+    touchgfx::ButtonWithLabel key_r;
+    touchgfx::ButtonWithLabel key_t;
+    touchgfx::ButtonWithLabel key_y;
+    touchgfx::ButtonWithLabel key_u;
+    touchgfx::ButtonWithLabel key_i;
+    touchgfx::ButtonWithLabel key_o;
+    touchgfx::ButtonWithLabel key_p;
+    touchgfx::ButtonWithLabel key_a;
+    touchgfx::ButtonWithLabel key_s;
+    touchgfx::ButtonWithLabel key_d;
+    touchgfx::ButtonWithLabel key_f;
+    touchgfx::ButtonWithLabel key_g;
+    touchgfx::ButtonWithLabel key_h;
+    touchgfx::ButtonWithLabel key_j;
+    touchgfx::ButtonWithLabel key_k;
+    touchgfx::ButtonWithLabel key_l;
+    touchgfx::ButtonWithLabel key_z;
+    touchgfx::ButtonWithLabel key_x;
+    touchgfx::ButtonWithLabel key_c;
+    touchgfx::ButtonWithLabel key_v;
+    touchgfx::ButtonWithLabel key_b;
+    touchgfx::ButtonWithLabel key_n;
+    touchgfx::ButtonWithLabel key_m;
+    touchgfx::Button key_back;
+    touchgfx::ToggleButton key_caps;
+    touchgfx::Button key_enter;
+    touchgfx::TextArea textKeyCaps;
 
     /*
      * Wildcard Buffers

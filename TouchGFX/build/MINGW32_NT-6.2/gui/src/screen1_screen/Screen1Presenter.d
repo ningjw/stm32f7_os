@@ -63,23 +63,8 @@ build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1Presenter.o: \
  generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp \
  gui/include/gui/containers/ContainerKeyboard.hpp \
  generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/AnimatedImage.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TiledImage.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ToggleButton.hpp \
  gui/include/gui/model/QRCodeWidget.hpp gui/include/gui/model/QRCode.hpp
 
 gui/include/gui/screen1_screen/Screen1View.hpp:
@@ -208,39 +193,9 @@ gui/include/gui/containers/ContainerKeyboard.hpp:
 
 generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp:
 
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/RepeatButtonTrigger.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:
-
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp:
 
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/AnimatedImage.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TiledImageButtonStyle.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TiledImage.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ToggleButton.hpp:
 
 gui/include/gui/model/QRCodeWidget.hpp:
 

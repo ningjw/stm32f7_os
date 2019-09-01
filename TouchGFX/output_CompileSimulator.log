@@ -1,2 +1,8 @@
 Converting images
+Compiling gui/src/containers/ContainerKeyboard.cpp
+Compiling gui/src/screen1_screen/Screen1Presenter.cpp
+Compiling gui/src/screen1_screen/Screen1View.cpp
+Compiling generated/gui_generated/src/containers/ContainerKeyboardBase.cpp
+Compiling generated/gui_generated/src/common/FrontendApplicationBase.cpp
+Compiling simulator/main.cpp
 Linking build/bin/simulator.exe

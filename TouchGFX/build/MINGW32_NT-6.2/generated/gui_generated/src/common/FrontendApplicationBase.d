@@ -69,6 +69,12 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp \
  gui/include/gui/containers/ContainerKeyboard.hpp \
  generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp \
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ToggleButton.hpp \
+ gui/include/gui/model/QRCodeWidget.hpp gui/include/gui/model/QRCode.hpp \
+ gui/include/gui/screen2_screen/Screen2View.hpp \
+ generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
+ gui/include/gui/screen2_screen/Screen2Presenter.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
@@ -76,7 +82,6 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
@@ -86,10 +91,6 @@ build/MINGW32_NT-6.2/generated/gui_generated/src/common/FrontendApplicationBase.
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/TiledImage.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
- gui/include/gui/model/QRCodeWidget.hpp gui/include/gui/model/QRCode.hpp \
- gui/include/gui/screen2_screen/Screen2View.hpp \
- generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
- gui/include/gui/screen2_screen/Screen2Presenter.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/Slider.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/canvas/Line.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/canvas/Canvas.hpp \
@@ -249,6 +250,20 @@ gui/include/gui/containers/ContainerKeyboard.hpp:
 
 generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp:
 
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp:
+
+../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ToggleButton.hpp:
+
+gui/include/gui/model/QRCodeWidget.hpp:
+
+gui/include/gui/model/QRCode.hpp:
+
+gui/include/gui/screen2_screen/Screen2View.hpp:
+
+generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:
+
+gui/include/gui/screen2_screen/Screen2Presenter.hpp:
+
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/Buttons.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:
@@ -262,8 +277,6 @@ generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.h
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:
-
-../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:
 
@@ -282,16 +295,6 @@ generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.h
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
-
-gui/include/gui/model/QRCodeWidget.hpp:
-
-gui/include/gui/model/QRCode.hpp:
-
-gui/include/gui/screen2_screen/Screen2View.hpp:
-
-generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:
-
-gui/include/gui/screen2_screen/Screen2Presenter.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/containers/Slider.hpp:
 
