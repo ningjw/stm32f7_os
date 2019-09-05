@@ -59,13 +59,12 @@ build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1View.o: \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/mixins/ClickListener.hpp \
  gui/include/gui/common/ModalDialog.hpp \
  generated/texts/include/texts/TextKeysAndLanguages.hpp \
- gui/include/gui/containers/CustomContainer1.hpp \
- generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp \
+ gui/include/gui/containers/ContainerDialog.hpp \
+ generated/gui_generated/include/gui_generated/containers/ContainerDialogBase.hpp \
  gui/include/gui/containers/ContainerKeyboard.hpp \
  generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.hpp \
  ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp \
- ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ToggleButton.hpp \
- gui/include/gui/model/QRCodeWidget.hpp gui/include/gui/model/QRCode.hpp
+ ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ToggleButton.hpp
 
 gui/include/gui/screen1_screen/Screen1View.hpp:
 
@@ -185,9 +184,9 @@ gui/include/gui/common/ModalDialog.hpp:
 
 generated/texts/include/texts/TextKeysAndLanguages.hpp:
 
-gui/include/gui/containers/CustomContainer1.hpp:
+gui/include/gui/containers/ContainerDialog.hpp:
 
-generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp:
+generated/gui_generated/include/gui_generated/containers/ContainerDialogBase.hpp:
 
 gui/include/gui/containers/ContainerKeyboard.hpp:
 
@@ -196,7 +195,3 @@ generated/gui_generated/include/gui_generated/containers/ContainerKeyboardBase.h
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/BoxWithBorder.hpp:
 
 ../Middlewares/ST/TouchGFX/touchgfx///framework/include/touchgfx/widgets/ToggleButton.hpp:
-
-gui/include/gui/model/QRCodeWidget.hpp:
-
-gui/include/gui/model/QRCode.hpp:

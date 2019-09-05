@@ -173,6 +173,34 @@
             "Clickable": false,
             "Fadeable": false,
             "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId126",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": false,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId127",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "textAreaEdit",
+            "X": 306,
+            "Y": 216,
+            "Width": 160,
+            "Height": 50,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": true,
+            "Fadeable": false,
+            "Moveable": false
           }
         ],
         "Interactions": [
@@ -585,7 +613,7 @@
             }
           }
         ],
-        "Name": "CustomContainer1",
+        "Name": "ContainerDialog",
         "X": 100,
         "Y": 46,
         "Width": 280,
@@ -659,10 +687,10 @@
               "BufferSize": 20
             },
             "Name": "textKeyValues",
-            "X": 12,
-            "Y": 9,
+            "X": 11,
+            "Y": 0,
             "Width": 454,
-            "Height": 42,
+            "Height": 51,
             "Type": "TextArea",
             "Visible": true,
             "Draggable": false,
@@ -1952,6 +1980,14 @@
       },
       {
         "TextEntryId": "SingleUseId125",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId126",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId127",
         "IsResource": false
       }
     ],

@@ -10,7 +10,7 @@ class ModalDialog : public touchgfx::Container
 {
 public:
     typedef enum { OK, CANCEL } Answer;
-
+    
     ModalDialog();
 
     void setText(touchgfx::TypedTextId textId);

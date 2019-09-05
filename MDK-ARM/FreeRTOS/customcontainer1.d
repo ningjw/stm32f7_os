@@ -1,6 +1,6 @@
 freertos\customcontainer1.o: ../touchgfx/gui/src/containers/customcontainer1.cpp
 freertos\customcontainer1.o: ../TouchGFX/gui/include/gui/containers/CustomContainer1.hpp
-freertos\customcontainer1.o: ../TouchGFX/generated/gui_generated/include/gui_generated/containers/CustomContainer1Base.hpp
+freertos\customcontainer1.o: ../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerDialogBase.hpp
 freertos\customcontainer1.o: ../TouchGFX/gui/include/gui/common/FrontendApplication.hpp
 freertos\customcontainer1.o: ../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp
 freertos\customcontainer1.o: ../middlewares/st/touchgfx/touchgfx/framework/include/mvp/MVPApplication.hpp

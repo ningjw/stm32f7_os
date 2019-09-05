@@ -26,7 +26,7 @@ touchgfx::InternalFlashFont& getFont_STSONG_TTF_40_4bpp();
 
 touchgfx::InternalFlashFont& getFont_STSONG_TTF_40_4bpp()
 {
-    static touchgfx::InternalFlashFont STSONG_TTF_40_4bpp(glyphs_STSONG_TTF_40_4bpp, 16, 40, 7, 4, 1, 1, unicodes_STSONG_TTF_40_4bpp, kerning_STSONG_TTF_40_4bpp, 63, 0);
+    static touchgfx::InternalFlashFont STSONG_TTF_40_4bpp(glyphs_STSONG_TTF_40_4bpp, 69, 40, 11, 4, 4, 4, unicodes_STSONG_TTF_40_4bpp, kerning_STSONG_TTF_40_4bpp, 63, 0);
     return STSONG_TTF_40_4bpp;
 }
 

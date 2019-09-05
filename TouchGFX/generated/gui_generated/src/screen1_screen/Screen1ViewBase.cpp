@@ -50,12 +50,20 @@ Screen1ViewBase::Screen1ViewBase() :
     scrollableContainer1.setScrollbarsPermanentlyVisible();
     scrollableContainer1.setScrollbarsVisible(false);
 
+    textAreaEdit.setPosition(306, 216, 160, 50);
+    textAreaEdit.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+    textAreaEdit.setLinespacing(0);
+    Unicode::snprintf(textAreaEditBuffer, TEXTAREAEDIT_SIZE, "%s", TypedText(T_SINGLEUSEID127).getText());
+    textAreaEdit.setWildcard(textAreaEditBuffer);
+    textAreaEdit.setTypedText(TypedText(T_SINGLEUSEID126));
+
     add(Image1);
     add(buttonUp);
     add(buttonDown);
     add(textShowValue);
     add(buttonGotoScreen2);
     add(scrollableContainer1);
+    add(textAreaEdit);
 }
 
 void Screen1ViewBase::setupScreen()

@@ -52,12 +52,15 @@ protected:
     touchgfx::ScrollableContainer scrollableContainer1;
     touchgfx::TextArea textShowAll;
 
+    touchgfx::ClickListener< touchgfx::TextAreaWithOneWildcard > textAreaEdit;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t TEXTSHOWVALUE_SIZE = 5;
     touchgfx::Unicode::UnicodeChar textShowValueBuffer[TEXTSHOWVALUE_SIZE];
+    static const uint16_t TEXTAREAEDIT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAreaEditBuffer[TEXTAREAEDIT_SIZE];
 
 private:
 

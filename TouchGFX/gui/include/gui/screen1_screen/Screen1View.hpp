@@ -6,9 +6,9 @@
 #include <mvp/View.hpp>
 #include <gui/common/ModalDialog.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-#include <gui/containers/CustomContainer1.hpp>
+#include <gui/containers/ContainerDialog.hpp>
 #include <gui/containers/ContainerKeyboard.hpp>
-#include <gui/model/QRCodeWidget.hpp>
+
 
 class Screen1View : public Screen1ViewBase
 {
@@ -24,15 +24,18 @@ public:
      
     virtual void handleClickEvent(const ClickEvent& evt);    
 protected:
-    QRCodeWidget      qrCode;
-    QRCode                code;
-    CustomContainer1  customContainer;
+    ContainerDialog   containerDialog;
+
     ContainerKeyboard containerKeyboard;
+
     ModalDialog       modalDialog;
     
     Callback<Screen1View, ModalDialog::Answer> onModalAnswered;
     void modalAnswered(ModalDialog::Answer answer);
-
+    
+    Callback<Screen1View, ContainerKeyboard::SpecialKey> onSpecialKeyPressed;
+    void keyboardFinished(ContainerKeyboard::SpecialKey keyType);
+    
     // Declaring callback type of ta and clickEvent
     Callback<Screen1View, const TextAreaWithOneWildcard&, const ClickEvent&> TextAreaClickedCallback;
     int TextValue;

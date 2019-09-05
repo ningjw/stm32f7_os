@@ -19,7 +19,7 @@ ContainerKeyboardBase::ContainerKeyboardBase()
     boxWithKeyValue.setBorderColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     boxWithKeyValue.setBorderSize(2);
 
-    textKeyValues.setPosition(12, 9, 454, 42);
+    textKeyValues.setPosition(11, 0, 454, 51);
     textKeyValues.setColor(touchgfx::Color::getColorFrom24BitRGB(250, 248, 248));
     textKeyValues.setLinespacing(0);
     textKeyValuesBuffer[0] = 0;

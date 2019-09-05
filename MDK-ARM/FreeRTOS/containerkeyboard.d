@@ -64,3 +64,4 @@ freertos\containerkeyboard.o: ../middlewares/st/touchgfx/touchgfx/framework/incl
 freertos\containerkeyboard.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/Button.hpp
 freertos\containerkeyboard.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
 freertos\containerkeyboard.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp
+freertos\containerkeyboard.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

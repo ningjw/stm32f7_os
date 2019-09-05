@@ -1,8 +1,24 @@
 Converting images
 Compiling gui/src/containers/ContainerKeyboard.cpp
-Compiling gui/src/screen1_screen/Screen1Presenter.cpp
-Compiling gui/src/screen1_screen/Screen1View.cpp
-Compiling generated/gui_generated/src/containers/ContainerKeyboardBase.cpp
-Compiling generated/gui_generated/src/common/FrontendApplicationBase.cpp
-Compiling simulator/main.cpp
-Linking build/bin/simulator.exe
+In file included from gui/src/containers/ContainerKeyboard.cpp:1:0:
+gui/include/gui/containers/ContainerKeyboard.hpp: In constructor 'ContainerKeyboard::ContainerKeyboard()':
+gui/include/gui/containers/ContainerKeyboard.hpp:34:76: error: 'ContainerKeyboard::usualKeyPressed' will be initialized after [-Werror=reorder]
+     touchgfx::Callback<ContainerKeyboard, const touchgfx::AbstractButton&> usualKeyPressed;
+                                                                            ^~~~~~~~~~~~~~~
+gui/include/gui/containers/ContainerKeyboard.hpp:30:76: error:   'touchgfx::Callback<ContainerKeyboard, const touchgfx::AbstractButton&> ContainerKeyboard::specialKeyPressed' [-Werror=reorder]
+     touchgfx::Callback<ContainerKeyboard, const touchgfx::AbstractButton&> specialKeyPressed;
+                                                                            ^~~~~~~~~~~~~~~~~
+gui/src/containers/ContainerKeyboard.cpp:3:1: error:   when initialized here [-Werror=reorder]
+ ContainerKeyboard::ContainerKeyboard():
+ ^~~~~~~~~~~~~~~~~
+gui/src/containers/ContainerKeyboard.cpp: In member function 'void ContainerKeyboard::usualKeyPressedhandler(const touchgfx::AbstractButton&)':
+gui/src/containers/ContainerKeyboard.cpp:153:27: error: comparison between signed and unsigned integer expressions [-Werror=sign-compare]
+     if(strlen(key_values) < textBuffSize-1){
+        ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+cc1plus.exe: all warnings being treated as errors
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/containers/ContainerKeyboard.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/containers/ContainerKeyboard.o] Error 1
+simulator/gcc/Makefile:182: recipe for target 'generate_assets' failed
+make[1]: *** [generate_assets] Error 2
+simulator/gcc/Makefile:40: recipe for target 'all' failed
+make: *** [all] Error 2

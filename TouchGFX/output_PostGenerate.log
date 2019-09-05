@@ -1,12 +1,12 @@
 <File>
+  <FileName>ContainerDialog.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/gui/src/containers/containerdialog.cpp</FilePath>
+</File>
+<File>
   <FileName>ContainerKeyboard.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/containers/containerkeyboard.cpp</FilePath>
-</File>
-<File>
-  <FileName>CustomContainer1.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/gui/src/containers/customcontainer1.cpp</FilePath>
 </File>
 <File>
   <FileName>FrontendApplication.cpp</FileName>
@@ -22,16 +22,6 @@
   <FileName>Model.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
-</File>
-<File>
-  <FileName>QRCode.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/gui/src/model/qrcode.cpp</FilePath>
-</File>
-<File>
-  <FileName>QRCodeWidget.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/gui/src/model/qrcodewidget.cpp</FilePath>
 </File>
 <File>
   <FileName>Screen1Presenter.cpp</FileName>
@@ -109,14 +99,14 @@
   <FilePath>../touchgfx/generated/images/src/cancel_pressed.cpp</FilePath>
 </File>
 <File>
+  <FileName>ContainerDialogBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>../touchgfx/generated/gui_generated/src/containers/containerdialogbase.cpp</FilePath>
+</File>
+<File>
   <FileName>ContainerKeyboardBase.cpp</FileName>
   <FileType>8</FileType>
   <FilePath>../touchgfx/generated/gui_generated/src/containers/containerkeyboardbase.cpp</FilePath>
-</File>
-<File>
-  <FileName>CustomContainer1Base.cpp</FileName>
-  <FileType>8</FileType>
-  <FilePath>../touchgfx/generated/gui_generated/src/containers/customcontainer1base.cpp</FilePath>
 </File>
 <File>
   <FileName>Font_STSONG_TTF_20_4bpp.cpp</FileName>
