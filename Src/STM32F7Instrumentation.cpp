@@ -11,7 +11,7 @@
 
 namespace touchgfx
 {
-static TIM_HandleTypeDef htim7;
+static TIM_HandleTypeDef htim1;
 
 void STM32F7Instrumentation::init()
 {
@@ -22,19 +22,32 @@ void STM32F7Instrumentation::init()
     __TIM2_CLK_ENABLE();
 
   TIM_MasterConfigTypeDef sMasterConfig = {0};
-  htim7.Instance = TIM7;
-  htim7.Init.Prescaler = 0;
-  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 0;
-  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
+  TIM_IC_InitTypeDef sConfigIC = {0};
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 215;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 10000;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_IC_Init(&htim1) != HAL_OK)
   {
     Error_Handler( );
   }
 
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler( );
+  }
+
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+  sConfigIC.ICFilter = 3;
+  if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler( );
   }
@@ -52,7 +65,7 @@ void STM32F7Instrumentation::init()
 
     m_sysclkRatio = HAL_RCC_GetHCLKFreq() / uwTimclock;
 
-    HAL_TIM_Base_Start(&htim7);
+    HAL_TIM_Base_Start(&htim1);
 }
 
 //Board specific clockfrequency
@@ -63,7 +76,7 @@ unsigned int STM32F7Instrumentation::getElapsedUS(unsigned int start, unsigned i
 
 unsigned int STM32F7Instrumentation::getCPUCycles()
 {
-    return __HAL_TIM_GET_COUNTER(&htim7) * m_sysclkRatio;
+    return __HAL_TIM_GET_COUNTER(&htim1) * m_sysclkRatio;
 }
 
 void STM32F7Instrumentation::setMCUActive(bool active)

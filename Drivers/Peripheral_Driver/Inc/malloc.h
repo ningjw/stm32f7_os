@@ -15,6 +15,6 @@
 
 
 //用户调用函数
-void mem_free(void *ptr)  ;  			//内存释放(外部调用)
-void *mem_malloc(uint32_t size);			//内存分配(外部调用)
+void sdram_mem_free(void *ptr)  ;  			//内存释放(外部调用)
+void *sdram_mem_malloc(uint32_t size);			//内存分配(外部调用)
 #endif

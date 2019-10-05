@@ -24,15 +24,17 @@ public:
      
     virtual void handleClickEvent(const ClickEvent& evt);    
 protected:
+    Image image;
+
     ContainerDialog   containerDialog;
-
-    ContainerKeyboard containerKeyboard;
-
-    ModalDialog       modalDialog;
+    Callback<Screen1View, ContainerDialog::Answer> onDialogAnswered;
+    void dialogAnswered(ContainerDialog::Answer answer);
     
+    ModalDialog       modalDialog;
     Callback<Screen1View, ModalDialog::Answer> onModalAnswered;
     void modalAnswered(ModalDialog::Answer answer);
     
+    ContainerKeyboard containerKeyboard;
     Callback<Screen1View, ContainerKeyboard::SpecialKey> onSpecialKeyPressed;
     void keyboardFinished(ContainerKeyboard::SpecialKey keyType);
     

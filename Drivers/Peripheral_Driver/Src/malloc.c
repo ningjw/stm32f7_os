@@ -12,7 +12,7 @@ uint32_t mem_map[MEM_MAP_SIZE] __attribute__((at(0xC0600000 + MEM_MAX_SIZE)));//
   * @input   
   * @return  
 ***************************************************************************************/
-static void mem_init(void)
+static void sdram_mem_init(void)
 {
     memset(mem_map, 0, MEM_MAP_SIZE *4);	//内存状态表数据清零  
  	mem_rdy = 1;						//内存管理初始化OK  
@@ -31,7 +31,7 @@ static uint32_t sdram_malloc(uint32_t size)
 	uint32_t cmemb = 0;//连续空内存块数
     uint32_t i;
     if( !mem_rdy ){
-        mem_init();//未初始化,先执行初始化 
+        sdram_mem_init();//未初始化,先执行初始化 
     }
     if(size == 0){
         return 0xFFFFFFFF;//不需要分配
@@ -69,7 +69,7 @@ static uint8_t sdram_free(uint32_t offset)
     int i;
     if( !mem_rdy )//未初始化,先执行初始化
 	{
-		mem_init();    
+		sdram_mem_init();    
         return 1;//未初始化  
     }
     if(offset < MEM_MAX_SIZE)                 //偏移在内存池内. 
@@ -91,7 +91,7 @@ static uint8_t sdram_free(uint32_t offset)
   * @input   ptr:内存首地址 
   * @return  
 ***************************************************************************************/
-void mem_free(void *ptr)  
+void sdram_mem_free(void *ptr)  
 {
 	uint32_t offset;   
 	if(ptr == NULL) 
@@ -106,7 +106,7 @@ void mem_free(void *ptr)
   * @input   size:内存大小(字节)
   * @return  
 ***************************************************************************************/
-void *mem_malloc(uint32_t size)  
+void *sdram_mem_malloc(uint32_t size)  
 {
     uint32_t offset;   
 	offset = sdram_malloc(size);  	   	 	   

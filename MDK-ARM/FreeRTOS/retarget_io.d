@@ -1,0 +1,15 @@
+freertos\retarget_io.o: C:\Keil_v5\ARM\PACK\Keil\ARM_Compiler\1.6.1\Source\retarget_io.c
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rt_sys.h
+freertos\retarget_io.o: .\RTE\_FreeRTOS\RTE_Components.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs_lib.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Driver\Include\Driver_NAND.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Driver\Include\Driver_Common.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+freertos\retarget_io.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h

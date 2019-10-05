@@ -19,7 +19,7 @@ void Screen2View::setupScreen()
     
     int imageWidth = textureMapperImage2D.getBitmap().getWidth();//获图片的宽度
     int imageHeight = textureMapperImage2D.getBitmap().getHeight();//获取图片的高度
-
+    
     textureMapperImage2D.setXY(100, 0);
     textureMapperImage2D.setWidth(imageWidth + borderWidth * 2);
     textureMapperImage2D.setHeight(imageHeight + borderHeight * 2);

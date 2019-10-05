@@ -18,19 +18,6 @@ public:
 
     virtual void initialize();
 
-    /*
-     * Custom Action Handlers
-     */
-    virtual void buttonOkClicked()
-    {
-        // Override and implement this function in ContainerDialog
-    }
-
-    virtual void buttonCancelClicked()
-    {
-        // Override and implement this function in ContainerDialog
-    }
-
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(Application::getInstance());
@@ -45,16 +32,6 @@ protected:
     touchgfx::Button buttonOk;
 
 private:
-
-    /*
-     * Callback Handler Declarations
-     */
-    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<ContainerDialogBase, const touchgfx::AbstractButton&> buttonCallback;
 
 };
 

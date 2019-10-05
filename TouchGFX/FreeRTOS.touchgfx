@@ -587,32 +587,7 @@
             "Moveable": false
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "InteractionButtonOk",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "TriggerComponent": "buttonOk",
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "FunctionName": "buttonOkClicked",
-              "Type": "ActionCustom"
-            }
-          },
-          {
-            "InteractionName": "InteractionButtonCancel",
-            "HasCompletedTrigger": false,
-            "Trigger": {
-              "TriggerComponent": "buttonCancel",
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "FunctionName": "buttonCancelClicked",
-              "Type": "ActionCustom"
-            }
-          }
-        ],
+        "Interactions": [],
         "Name": "ContainerDialog",
         "X": 100,
         "Y": 46,

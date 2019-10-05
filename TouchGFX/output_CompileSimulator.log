@@ -1,5 +1,6 @@
 Converting images
 Compiling gui/src/containers/ContainerKeyboard.cpp
+Compiling gui/src/screen1_screen/Screen1View.cpp
 In file included from gui/src/containers/ContainerKeyboard.cpp:1:0:
 gui/include/gui/containers/ContainerKeyboard.hpp: In constructor 'ContainerKeyboard::ContainerKeyboard()':
 gui/include/gui/containers/ContainerKeyboard.hpp:34:76: error: 'ContainerKeyboard::usualKeyPressed' will be initialized after [-Werror=reorder]
@@ -15,9 +16,24 @@ gui/src/containers/ContainerKeyboard.cpp: In member function 'void ContainerKeyb
 gui/src/containers/ContainerKeyboard.cpp:153:27: error: comparison between signed and unsigned integer expressions [-Werror=sign-compare]
      if(strlen(key_values) < textBuffSize-1){
         ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+In file included from gui/src/screen1_screen/Screen1View.cpp:1:0:
+gui/include/gui/screen1_screen/Screen1View.hpp: In constructor 'Screen1View::Screen1View()':
+gui/include/gui/screen1_screen/Screen1View.hpp:32:48: error: 'Screen1View::onModalAnswered' will be initialized after [-Werror=reorder]
+     Callback<Screen1View, ModalDialog::Answer> onModalAnswered;
+                                                ^~~~~~~~~~~~~~~
+gui/include/gui/screen1_screen/Screen1View.hpp:28:52: error:   'touchgfx::Callback<Screen1View, ContainerDialog::Answer> Screen1View::onDialogAnswered' [-Werror=reorder]
+     Callback<Screen1View, ContainerDialog::Answer> onDialogAnswered;
+                                                    ^~~~~~~~~~~~~~~~
+gui/src/screen1_screen/Screen1View.cpp:3:1: error:   when initialized here [-Werror=reorder]
+ Screen1View::Screen1View():
+ ^~~~~~~~~~~
 cc1plus.exe: all warnings being treated as errors
 simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/containers/ContainerKeyboard.o' failed
 make[2]: *** [build/MINGW32_NT-6.2/gui/src/containers/ContainerKeyboard.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+cc1plus.exe: all warnings being treated as errors
+simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1View.o' failed
+make[2]: *** [build/MINGW32_NT-6.2/gui/src/screen1_screen/Screen1View.o] Error 1
 simulator/gcc/Makefile:182: recipe for target 'generate_assets' failed
 make[1]: *** [generate_assets] Error 2
 simulator/gcc/Makefile:40: recipe for target 'all' failed

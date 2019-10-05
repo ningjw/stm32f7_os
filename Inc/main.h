@@ -44,13 +44,11 @@ extern "C" {
 
 #include "ltdc_driver.h"
 #include "gt9147_iic_driver.h"
+#include "pcf8574_iic_driver.h"
 #include "w25q256_driver.h"
 #include "utility.h"
-//#include "STemWin_BasicDemo.h"
-//#include "STemWin_Font.h"
-//#include "STemWin_Picture.h"
 #include "malloc.h"
-
+#include "nand_driver.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -80,8 +78,6 @@ void Error_Handler(void);
 #define LAYER0_ADDR 0xC0000000
 #define LCD_WIDTH 480
 #define LCD_HEIGHT 272
-#define KEY_LEFT_Pin GPIO_PIN_13
-#define KEY_LEFT_GPIO_Port GPIOC
 #define KEY_UP_Pin GPIO_PIN_0
 #define KEY_UP_GPIO_Port GPIOA
 #define KEY_DOWN_Pin GPIO_PIN_2
@@ -90,8 +86,6 @@ void Error_Handler(void);
 #define KEY_RIGHT_GPIO_Port GPIOH
 #define LED_DS1_Pin GPIO_PIN_0
 #define LED_DS1_GPIO_Port GPIOB
-#define LED_DS1B1_Pin GPIO_PIN_1
-#define LED_DS1B1_GPIO_Port GPIOB
 #define TOUCH_INT_Pin GPIO_PIN_7
 #define TOUCH_INT_GPIO_Port GPIOH
 #define TOUCH_INT_EXTI_IRQn EXTI9_5_IRQn

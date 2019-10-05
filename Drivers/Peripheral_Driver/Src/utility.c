@@ -1,5 +1,5 @@
 #include "main.h"
-#include "stdio.h"
+
 void delay_ms(uint16_t nms)
 {
     delay_us((uint32_t)(nms * 1000));				//普通方式延时
@@ -37,7 +37,7 @@ struct __FILE
     int handle;
 };
 
-FILE __stdout;
+//FILE __stdout;
 
 //定义_sys_exit()以避免使用半主机模式
 void _sys_exit(int x)

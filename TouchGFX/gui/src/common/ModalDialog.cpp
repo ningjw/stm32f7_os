@@ -1,6 +1,7 @@
 #include <gui/common/ModalDialog.hpp>
 #include <BitmapDatabase.hpp>
 
+
 ModalDialog::ModalDialog() :
     callback(0),
     onButtonClicked(this, &ModalDialog::buttonClicked)

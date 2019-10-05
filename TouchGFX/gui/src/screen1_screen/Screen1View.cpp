@@ -1,7 +1,8 @@
 #include <gui/screen1_screen/Screen1View.hpp>
-
+#include "ff.h"
 Screen1View::Screen1View():
       onModalAnswered(this, &Screen1View::modalAnswered),
+          onDialogAnswered(this, &Screen1View::dialogAnswered),
           onSpecialKeyPressed(this, &Screen1View::keyboardFinished),
           // In constructor for callback, bind to this view object and bind which function to handle the event.
           TextAreaClickedCallback(this, &Screen1View::TextAreaClickHandler)
@@ -11,6 +12,12 @@ Screen1View::Screen1View():
 
 void Screen1View::setupScreen()
 {
+//    uint16_t width, height;
+//    FILE* f = fopen("image.jpg", "rb");
+//    BitmapId bmpId;
+//    
+
+    
     Screen1ViewBase::setupScreen();
     // Add the callback to textArea1
     textShowValue.setClickAction(TextAreaClickedCallback);
@@ -22,17 +29,25 @@ void Screen1View::setupScreen()
 //    add(modalDialog);
     
     // Add the customContainer to Screen1
-//    containerDialog.setXY(HAL::DISPLAY_WIDTH / 2 - customContainer.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - customContainer.getHeight() / 2);
+//    containerDialog.setXY(HAL::DISPLAY_WIDTH / 2 - containerDialog.getWidth() / 2, HAL::DISPLAY_HEIGHT / 2 - containerDialog.getHeight() / 2);
+//    containerDialog.setText(T_DIALOGMSG);
+//    containerDialog.setAnsweredCallback(onDialogAnswered);
 //    add(containerDialog);
     
     containerKeyboard.setXY(HAL::DISPLAY_WIDTH / 2 - containerKeyboard.getWidth() / 2, HAL::DISPLAY_HEIGHT - containerKeyboard.getHeight());
     containerKeyboard.setVisible(false);
     add(containerKeyboard);
     
-//    qrCode.setXY(400,0);
-//    qrCode.setQRCode(&code);
-//    qrCode.setScale(4);
-//    add(qrCode);
+//    BMPFileLoader::getBMP24Dimensions(f, width, height);
+    //Create (16bit) dynamic bitmap
+//    bmpId = Bitmap::dynamicBitmapCreate(width, height, Bitmap::RGB565);
+    //Load BMP file
+//    BMPFileLoader::readBMP24File(Bitmap(bmpId), f);
+//    //make Image show the loaded bitmap
+//    image.setBitmap(Bitmap(bmpId));
+//    //Position image and add to View
+//    image.setXY(20, 20);
+//    add(image);
 }
 
 void Screen1View::tearDownScreen()
@@ -83,10 +98,15 @@ void Screen1View::handleClickEvent(const ClickEvent& evt)
 
 void Screen1View::modalAnswered(ModalDialog::Answer answer)
 {
+    containerDialog.setVisible(false);
+    containerDialog.invalidate();
+}
+
+void Screen1View::dialogAnswered(ContainerDialog::Answer answer)
+{
     modalDialog.setVisible(false);
     modalDialog.invalidate();
 }
-
 
 /***************************************************************************************
   * @brief   按键盘中的Enter与Cancel键后的回调函数

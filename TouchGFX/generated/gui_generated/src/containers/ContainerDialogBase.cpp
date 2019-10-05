@@ -6,8 +6,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Color.hpp>
 
-ContainerDialogBase::ContainerDialogBase() :
-    buttonCallback(this, &ContainerDialogBase::buttonCallbackHandler)
+ContainerDialogBase::ContainerDialogBase()
 {
     setWidth(280);
     setHeight(180);
@@ -22,12 +21,10 @@ ContainerDialogBase::ContainerDialogBase() :
 
     buttonCancel.setXY(18, 119);
     buttonCancel.setBitmaps(Bitmap(BITMAP_CANCEL_ID), Bitmap(BITMAP_CANCEL_PRESSED_ID));
-    buttonCancel.setAction(buttonCallback);
     buttonCancel.setAlpha(211);
 
     buttonOk.setXY(159, 118);
     buttonOk.setBitmaps(Bitmap(BITMAP_OK_ID), Bitmap(BITMAP_OK_PRESSED_ID));
-    buttonOk.setAction(buttonCallback);
 
     add(image);
     add(textArea1);
@@ -38,22 +35,4 @@ ContainerDialogBase::ContainerDialogBase() :
 void ContainerDialogBase::initialize()
 {
 	
-}
-
-void ContainerDialogBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
-{
-    if (&src == &buttonCancel)
-    {
-        //InteractionButtonCancel
-        //When buttonCancel clicked call virtual function
-        //Call buttonCancelClicked
-        buttonCancelClicked();
-    }
-    else if (&src == &buttonOk)
-    {
-        //InteractionButtonOk
-        //When buttonOk clicked call virtual function
-        //Call buttonOkClicked
-        buttonOkClicked();
-    }
 }

@@ -81,7 +81,7 @@ void GRAPHICS_HW_Init()
     MX_LCD_Init();
     GPIO::init();
 
-    //Deactivate speculative/cache access to first FMC Bank to save FMC bandwidth
+//Deactivate speculative/cache access to first FMC Bank to save FMC bandwidth
     FMC_Bank1->BTCR[0] = 0x000030D2;
 }
 
@@ -100,7 +100,7 @@ void touchgfx_init()
   uint16_t dispHeight = LCD_HEIGHT;  
   
     HAL& hal = touchgfx_generic_init<STM32F7HAL>(dma, display, tc, dispWidth, dispHeight,(uint16_t*) 0xC0100000, 
-                                               0xC0600000, 20);
+                                               0x500000, 20);
 
     hal.setFrameBufferStartAddress((uint16_t*)frameBuf0, bitdepth ,true , true);
 
