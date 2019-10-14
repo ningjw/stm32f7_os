@@ -1,4 +1,4 @@
-#include "main.h"
+#include "gt9147_iic_driver.h"
 #include "GUI.h"
 void GUI_TOUCH_X_ActivateX(void) 
 {

@@ -76,14 +76,9 @@ freertos\usbh_ioreq.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.
 freertos\usbh_ioreq.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\usbh_ioreq.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\usbh_ioreq.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-freertos\usbh_ioreq.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\usbh_ioreq.o: ../Inc/main.h
 freertos\usbh_ioreq.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\usbh_ioreq.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\usbh_ioreq.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\usbh_ioreq.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\usbh_ioreq.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\usbh_ioreq.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
 freertos\usbh_ioreq.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\usbh_ioreq.o: ../Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_core.h
 freertos\usbh_ioreq.o: ../Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_def.h

@@ -70,15 +70,9 @@ freertos\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 freertos\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-freertos\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\freertos.o: ../Inc/main.h
 freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\freertos.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h

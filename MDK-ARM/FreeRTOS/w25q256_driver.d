@@ -70,15 +70,9 @@ freertos\w25q256_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/se
 freertos\w25q256_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\w25q256_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\w25q256_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\w25q256_driver.o: ../Inc/main.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h

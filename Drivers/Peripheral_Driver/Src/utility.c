@@ -1,4 +1,6 @@
-#include "main.h"
+#include "stm32f7xx_hal.h"
+#include "utility.h"
+#include "stdio.h"
 
 void delay_ms(uint16_t nms)
 {

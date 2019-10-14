@@ -36,19 +36,20 @@ extern "C" {
 #include "task.h"
 #include "semphr.h"
 #include "event_groups.h"
-#include "stdio.h"
+
 #include "math.h"
 #include "stdlib.h"
 //#include "WM.h"
 #include "string.h"
 
-#include "ltdc_driver.h"
+
 #include "gt9147_iic_driver.h"
 #include "pcf8574_iic_driver.h"
+    
 #include "w25q256_driver.h"
-#include "utility.h"
-#include "malloc.h"
-#include "nand_driver.h"
+
+
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

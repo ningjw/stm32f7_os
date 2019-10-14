@@ -1,4 +1,4 @@
-#include "main.h"
+#include "stm32f7xx_hal.h"
 
 #define BUSY_GPIO	GPIOD
 #define BUSY_PIN	GPIO_PIN_6

@@ -27,7 +27,7 @@ void QSPI_SendCmd(uint32_t cmd,uint32_t cmdMode,uint32_t addr,uint32_t addrMode,
     
     if (HAL_QSPI_Command(&hqspi, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        //Error_Handler();
     }
 }
 

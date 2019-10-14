@@ -1,4 +1,5 @@
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Src\ltdc_driver.c
+freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
 freertos\ltdc_driver.o: ../Inc/main.h
 freertos\ltdc_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 freertos\ltdc_driver.o: ../Inc/stm32f7xx_hal_conf.h
@@ -70,15 +71,9 @@ freertos\ltdc_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semph
 freertos\ltdc_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\ltdc_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\ltdc_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-freertos\ltdc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\ltdc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\ltdc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\ltdc_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\ltdc_driver.o: ../Inc/main.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h

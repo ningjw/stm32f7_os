@@ -1,155 +1,94 @@
-#include "main.h"
+/**
+  ******************************************************************************
+  * @file   
+  * @author  
+  * @brief   PCF8574为IO扩展芯片，使用软件模拟IIC驱动
+  ******************************************************************************
+  */
+  
+#include "pcf8574_iic_driver.h"
+#include "stm32f7xx_hal.h"
+#include "utility.h"
+#include "soft_iic_driver.h"
+#include "stdint.h"
 
-//控制I2C速度的延时
-void PCF8574_Delay(void)
-{
-    delay_us(2);
-}
 
-/***************************************************************************************
-  * @brief  电容触摸芯片IIC接口初始化
-***************************************************************************************/
-void PCF8574_IIC_Init(void)
+//初始化PCF8574
+uint8_t PCF8574_Init(void)
 {
+    uint8_t temp=0;
     GPIO_InitTypeDef GPIO_Initure;
-    __HAL_RCC_GPIOH_CLK_ENABLE();			//开启GPIOH时钟
-    __HAL_RCC_GPIOI_CLK_ENABLE();			//开启GPIOI时钟
-
-    GPIO_Initure.Pin = GPIO_PIN_6;          //PH6
-    GPIO_Initure.Mode = GPIO_MODE_OUTPUT_PP; //推挽输出
-    GPIO_Initure.Pull = GPIO_PULLUP;        //上拉
-    GPIO_Initure.Speed = GPIO_SPEED_HIGH;   //高速
-    HAL_GPIO_Init(GPIOH, &GPIO_Initure);    //初始化
-
-    GPIO_Initure.Pin = GPIO_PIN_3;          //PI3
-    HAL_GPIO_Init(GPIOI, &GPIO_Initure);    //初始化
+    __HAL_RCC_GPIOB_CLK_ENABLE();           //使能GPIOB时钟
+	
+    GPIO_Initure.Pin=GPIO_PIN_12;           //PB12
+    GPIO_Initure.Mode=GPIO_MODE_INPUT;      //输入
+    GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
+    GPIO_Initure.Speed=GPIO_SPEED_HIGH;     //高速
+    HAL_GPIO_Init(GPIOB,&GPIO_Initure);     //初始化
+    
+    SOFT_IIC_Init();					    //IIC初始化
+    
+	//检查PCF8574是否在位
+    SOFT_IIC_Start();    	 	   
+	SOFT_IIC_Send_Byte(PCF8574_ADDR);            //写地址			   
+	temp = SOFT_IIC_Wait_Ack();		            //等待应答,通过判断是否有ACK应答,来判断PCF8574的状态
+    SOFT_IIC_Stop();					            //产生一个停止条件
+    PCF8574_WriteOneByte(0XFF);	            //默认情况下所有IO输出高电平
+	return temp;
 }
 
-/***************************************************************************************
-  * @brief  产生IIC起始信号,当SCL为高期间，SDA由高到低的跳变
-***************************************************************************************/
-void PCF8574_IIC_Start(void)
+//读取PCF8574的8位IO值
+//返回值:读到的数据
+uint8_t PCF8574_ReadOneByte(void)
 {
-    PCF8574_SDA_OUT();     //sda线输出
-    PCF8574_IIC_SCL(1);
-    PCF8574_IIC_SDA(1);
-    PCF8574_Delay();
-    PCF8574_IIC_SDA(0);
+	uint8_t temp=0;		  	    																 
+    SOFT_IIC_Start();    	 	   
+	SOFT_IIC_Send_Byte(PCF8574_ADDR|0X01);   //进入接收模式			   
+	SOFT_IIC_Wait_Ack();	 
+    temp = SOFT_IIC_Read_Byte(0);		   
+    SOFT_IIC_Stop();							//产生一个停止条件	    
+	return temp;
 }
 
 
-/***************************************************************************************
-  * @brief  产生IIC停止信号,当SCL为高期间，SDA由低到高的跳变
-***************************************************************************************/
-void PCF8574_IIC_Stop(void)
+//向PCF8574写入8位IO值  
+//DataToWrite:要写入的数据
+void PCF8574_WriteOneByte(uint8_t DataToWrite)
+{				   	  	    																 
+    SOFT_IIC_Start();  
+    SOFT_IIC_Send_Byte(PCF8574_ADDR|0X00);   //发送器件地址0X40,写数据 	 
+	SOFT_IIC_Wait_Ack();	    										  		   
+	SOFT_IIC_Send_Byte(DataToWrite);    	 	//发送字节							   
+	SOFT_IIC_Wait_Ack();      
+    SOFT_IIC_Stop();							//产生一个停止条件 
+	delay_ms(10);	 
+}
+
+//设置PCF8574某个IO的高低电平
+//bit:要设置的IO编号,0~7
+//sta:IO的状态;0或1
+void PCF8574_WriteBit(uint8_t bit,uint8_t sta)
 {
-    PCF8574_SDA_OUT();//sda线输出
-    PCF8574_IIC_SCL(1);
-    PCF8574_Delay();
-    PCF8574_IIC_SDA(0);//STOP:when CLK is high DATA change form low to high
-    PCF8574_Delay();
-    PCF8574_IIC_SDA(1);
+    uint8_t data;
+    data = PCF8574_ReadOneByte(); //先读出原来的设置
+    if(sta==0)
+        data&=~(1<<bit);     
+    else 
+        data|=1<<bit;
+    
+    PCF8574_WriteOneByte(data); //写入新的数据
 }
 
-/***************************************************************************************
-  * @brief   等待应答信号到来,等待接受数据端拉低SDA
-  * @input
-  * @return  1，接收应答失败 ; 0，接收应答成功
-***************************************************************************************/
-uint8_t PCF8574_IIC_Wait_Ack(void)
+//读取PCF8574的某个IO的值
+//bit：要读取的IO编号,0~7
+//返回值:此IO的值,0或1
+uint8_t PCF8574_ReadBit(uint8_t bit)
 {
-    uint8_t ucErrTime = 0;
-    PCF8574_IIC_SDA(1);
-    PCF8574_IIC_SCL(1);
-    PCF8574_SDA_IN();      //SDA设置为输入
-    while(PCF8574_READ_SDA)
-    {
-        ucErrTime++;
-        if(ucErrTime > 250) {
-            PCF8574_IIC_Stop();
-            return 1;
-        }
-        PCF8574_Delay();
-    }
-    PCF8574_IIC_SCL(0);
-    return 0;
-}
-
-/***************************************************************************************
-  * @brief  产生ACK应答,在SCL高电平期间，SDA为低电平状态
-***************************************************************************************/
-void PCF8574_IIC_Ack(void)
-{
-    PCF8574_IIC_SCL(0);
-    PCF8574_Delay();
-    PCF8574_SDA_OUT();
-    PCF8574_IIC_SDA(0);
-    PCF8574_IIC_SCL(1);
-    PCF8574_Delay();
-    PCF8574_IIC_SCL(0);
-}
-
-/***************************************************************************************
-  * @brief  不产生ACK应答
-***************************************************************************************/
-void PCF8574_IIC_NAck(void)
-{
-    PCF8574_IIC_SCL(0);
-    PCF8574_Delay();
-    PCF8574_SDA_OUT();
-    PCF8574_IIC_SDA(1);
-    PCF8574_IIC_SCL(1);
-    PCF8574_Delay();
-    PCF8574_IIC_SCL(0);
-}
-
-/***************************************************************************************
-  * @brief   IIC发送一个字节
-  * @input
-  * @return
-***************************************************************************************/
-void PCF8574_IIC_Send_Byte(uint8_t txd)
-{
-    uint8_t t;
-    PCF8574_SDA_OUT();
-    PCF8574_IIC_SCL(0);//拉低时钟开始数据传输
-    PCF8574_Delay();
-    for(t = 0; t < 8; t++)
-    {
-        PCF8574_IIC_SDA((txd & 0x80) >> 7); //先发送高字节
-        txd <<= 1;
-        PCF8574_IIC_SCL(1);
-        PCF8574_Delay();
-        PCF8574_IIC_SCL(0);
-        PCF8574_Delay();
-    }
-}
-
-/***************************************************************************************
-  * @brief   读1个字节
-  * @input   ack=1时，发送ACK，ack=0，发送nACK
-  * @return
-***************************************************************************************/
-uint8_t PCF8574_IIC_Read_Byte(unsigned char ack)
-{
-    uint8_t i, receive = 0;
-    PCF8574_SDA_IN();//SDA设置为输入
-    PCF8574_Delay();
-    for(i = 0; i < 8; i++ )
-    {
-        PCF8574_IIC_SCL(0);
-        PCF8574_Delay();
-        PCF8574_IIC_SCL(1);
-        receive <<= 1;
-        if(PCF8574_READ_SDA)receive++;
-    }
-    if (!ack)
-        PCF8574_IIC_NAck();//发送nACK
-    else
-        PCF8574_IIC_Ack(); //发送ACK
-    return receive;
-}
-
-
-
+    uint8_t data;
+    data = PCF8574_ReadOneByte(); //先读取这个8位IO的值 
+    if(data&(1<<bit))
+        return 1;
+    else 
+        return 0;   
+}  
 

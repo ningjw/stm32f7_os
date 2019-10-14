@@ -2,18 +2,24 @@
 #define __PCF8574_IIC_DRIVER_H
 
 
-#define PCF8574_SDA_GPIO  GPIOH
-#define PCF8574_SDA_PIN   GPIO_PIN_5
-#define PCF8574_SCL_GPIO  GPIOH
-#define PCF8574_SCL_PIN   GPIO_PIN_4
+#define PCF8574_INT     HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12)//PCF8574 INT脚
+#define PCF8574_ADDR 	0X40	//PCF8574地址(左移了一位)
 
-#define PCF8574_SDA_IN()  MODIFY_REG(PCF8574_SDA_GPIO->MODER, (GPIO_MODER_MODER0 << (POSITION_VAL(PCF8574_SDA_PIN) * 2U)), (GPIO_MODE_INPUT << (POSITION_VAL(PCF8574_SDA_PIN) * 2U)));
-#define PCF8574_SDA_OUT() MODIFY_REG(PCF8574_SDA_GPIO->MODER, (GPIO_MODER_MODER0 << (POSITION_VAL(PCF8574_SDA_PIN) * 2U)), (GPIO_MODE_OUTPUT_PP << (POSITION_VAL(PCF8574_SDA_PIN) * 2U)));
+//PCF8574各个IO的功能
+#define BEEP_IO         0		//蜂鸣器控制引脚  	P0
+#define AP_INT_IO       1   	//AP3216C中断引脚	P1
+#define DCMI_PWDN_IO    2    	//DCMI的电源控制引脚P2
+#define USB_PWR_IO      3    	//USB电源控制引脚	P3
+#define EX_IO      		4    	//扩展IO,自定义使用 P4
+#define MPU_INT_IO      5   	//MPU9250中断引脚	P5
+#define RS485_RE_IO     6    	//RS485_RE引脚		P6
+#define ETH_RESET_IO    7    	//以太网复位引脚	P7
 
+unsigned char PCF8574_Init(void);
+unsigned char  PCF8574_ReadOneByte(void); 
+void PCF8574_WriteOneByte(unsigned char  DataToWrite);
+void PCF8574_WriteBit(unsigned char  bit,unsigned char  sta);
+unsigned char  PCF8574_ReadBit(unsigned char  bit);
 
-//IO操作函数
-#define PCF8574_IIC_SCL(n) (n?HAL_GPIO_WritePin(PCF8574_SCL_GPIO,PCF8574_SCL_PIN,GPIO_PIN_SET):HAL_GPIO_WritePin(PCF8574_SCL_GPIO,PCF8574_SCL_PIN,GPIO_PIN_RESET)) //SCL
-#define PCF8574_IIC_SDA(n) (n?HAL_GPIO_WritePin(PCF8574_SDA_GPIO,PCF8574_SDA_PIN,GPIO_PIN_SET):HAL_GPIO_WritePin(PCF8574_SDA_GPIO,PCF8574_SDA_PIN,GPIO_PIN_RESET)) //SDA 
-#define PCF8574_READ_SDA   HAL_GPIO_ReadPin(PCF8574_SDA_GPIO,PCF8574_SDA_PIN)  //输入SDA
 
 #endif

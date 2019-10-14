@@ -1,7 +1,7 @@
 #include "STM32F7TouchController.hpp"
 
 /* USER CODE BEGIN BSP user includes */
-
+#include "gt9147_iic_driver.h"
 /* USER CODE END BSP user includes */
 
 extern "C"

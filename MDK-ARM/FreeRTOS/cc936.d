@@ -73,17 +73,11 @@ freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\cc936.o: ../Inc/main.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
 freertos\cc936.o: ../Inc/bsp_driver_sd.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

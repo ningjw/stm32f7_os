@@ -80,8 +80,6 @@ freertos\jcmaster.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\jcmaster.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\jcmaster.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\jcmaster.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\jcmaster.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\jcmaster.o: ../Inc/main.h
 freertos\jcmaster.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\jcmaster.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\jcmaster.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h

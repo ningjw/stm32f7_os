@@ -75,15 +75,9 @@ freertos\stm32f7touchcontroller.o: ../Middlewares/Third_Party/FreeRTOS/Source/in
 freertos\stm32f7touchcontroller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\stm32f7touchcontroller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\stm32f7touchcontroller.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-freertos\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\stm32f7touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\stm32f7touchcontroller.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\stm32f7touchcontroller.o: ../Inc/main.h
 freertos\stm32f7touchcontroller.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stm32f7touchcontroller.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\stm32f7touchcontroller.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\stm32f7touchcontroller.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\stm32f7touchcontroller.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\stm32f7touchcontroller.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h

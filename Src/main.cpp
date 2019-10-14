@@ -22,12 +22,13 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "fatfs.h"
-#include "libjpeg.h"
+//#include "libjpeg.h"
 #include "lwip.h"
 #include "usb_host.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 
 /* USER CODE END Includes */
 
@@ -119,7 +120,7 @@ void StartUpdateFontTask(void const * argument);
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-
+uint8_t ret;
 /**
   * @brief  The application entry point.
   * @retval int
@@ -173,7 +174,8 @@ int main(void)
   MX_TIM2_Init();
   MX_SPDIFRX_Init();
   /* USER CODE BEGIN 2 */
-  
+  ret = PCF8574_Init();
+  PCF8574_WriteBit(BEEP_IO,1);	//控制蜂鸣器
   W25QXX_Init();//SPI Flash初始化
   /* USER CODE END 2 */
 
@@ -1012,7 +1014,7 @@ void StartDefaultTask(void const * argument)
   MX_FATFS_Init();
 
   /* init code for LIBJPEG */
-  MX_LIBJPEG_Init();
+//  MX_LIBJPEG_Init();
 
   /* init code for USB_HOST */
   MX_USB_HOST_Init();
@@ -1067,6 +1069,10 @@ void StartUpdateFontTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+    if(PCF8574_INT == 0)				//PCF8574的中断低电平有效
+    {
+        PCF8574_ReadBit(EX_IO);	//读取EXIO状态,同时清除PCF8574的中断输出(INT恢复高电平)
+    }
     osDelay(1);
   }
   /* USER CODE END StartUpdateFontTask */

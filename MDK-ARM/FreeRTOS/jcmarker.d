@@ -80,8 +80,6 @@ freertos\jcmarker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\jcmarker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\jcmarker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\jcmarker.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\jcmarker.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\jcmarker.o: ../Inc/main.h
 freertos\jcmarker.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\jcmarker.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\jcmarker.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h

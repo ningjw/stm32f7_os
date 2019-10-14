@@ -148,17 +148,11 @@ freertos\screen1view.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semph
 freertos\screen1view.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 freertos\screen1view.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 freertos\screen1view.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-freertos\screen1view.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 freertos\screen1view.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\screen1view.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\screen1view.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\screen1view.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\screen1view.o: ../Inc/main.h
 freertos\screen1view.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\screen1view.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\screen1view.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\screen1view.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\screen1view.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\screen1view.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
 freertos\screen1view.o: ../Inc/bsp_driver_sd.h
 freertos\screen1view.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

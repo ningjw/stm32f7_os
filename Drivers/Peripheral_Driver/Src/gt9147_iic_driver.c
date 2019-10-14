@@ -9,7 +9,11 @@
   INT -----> PH7
   ******************************************************************************
   */
-#include "main.h"
+  
+#include "stm32f7xx_hal.h"
+#include "gt9147_iic_driver.h"
+#include "utility.h"
+#include "stdio.h"
 
 uint16_t touch_x,touch_y;
 

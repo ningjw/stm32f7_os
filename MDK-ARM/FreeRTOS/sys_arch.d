@@ -82,14 +82,9 @@ freertos\sys_arch.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_gr
 freertos\sys_arch.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\sys_arch.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\sys_arch.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-freertos\sys_arch.o: ..\Drivers\Peripheral_Driver\Inc\ltdc_driver.h
-freertos\sys_arch.o: ../Inc/main.h
 freertos\sys_arch.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\sys_arch.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\sys_arch.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
-freertos\sys_arch.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
-freertos\sys_arch.o: ..\Drivers\Peripheral_Driver\Inc\malloc.h
-freertos\sys_arch.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
 freertos\sys_arch.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h
 freertos\sys_arch.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/def.h
 freertos\sys_arch.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/sys.h
