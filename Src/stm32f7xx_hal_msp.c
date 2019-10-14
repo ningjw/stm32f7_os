@@ -24,10 +24,6 @@
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
-extern DMA_HandleTypeDef hdma_jpeg_in;
-
-extern DMA_HandleTypeDef hdma_jpeg_out;
-
 extern DMA_HandleTypeDef hdma_sdmmc1_rx;
 
 extern DMA_HandleTypeDef hdma_sdmmc1_tx;
@@ -248,104 +244,6 @@ void HAL_DAC_MspDeInit(DAC_HandleTypeDef* hdac)
   /* USER CODE BEGIN DAC_MspDeInit 1 */
 
   /* USER CODE END DAC_MspDeInit 1 */
-  }
-
-}
-
-/**
-* @brief JPEG MSP Initialization
-* This function configures the hardware resources used in this example
-* @param hjpeg: JPEG handle pointer
-* @retval None
-*/
-void HAL_JPEG_MspInit(JPEG_HandleTypeDef* hjpeg)
-{
-  if(hjpeg->Instance==JPEG)
-  {
-  /* USER CODE BEGIN JPEG_MspInit 0 */
-
-  /* USER CODE END JPEG_MspInit 0 */
-    /* Peripheral clock enable */
-    __HAL_RCC_JPEG_CLK_ENABLE();
-  
-    /* JPEG DMA Init */
-    /* JPEG_IN Init */
-    hdma_jpeg_in.Instance = DMA2_Stream0;
-    hdma_jpeg_in.Init.Channel = DMA_CHANNEL_9;
-    hdma_jpeg_in.Init.Direction = DMA_MEMORY_TO_PERIPH;
-    hdma_jpeg_in.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_jpeg_in.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_jpeg_in.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
-    hdma_jpeg_in.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-    hdma_jpeg_in.Init.Mode = DMA_NORMAL;
-    hdma_jpeg_in.Init.Priority = DMA_PRIORITY_MEDIUM;
-    hdma_jpeg_in.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
-    hdma_jpeg_in.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
-    hdma_jpeg_in.Init.MemBurst = DMA_MBURST_INC4;
-    hdma_jpeg_in.Init.PeriphBurst = DMA_PBURST_INC4;
-    if (HAL_DMA_Init(&hdma_jpeg_in) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
-    __HAL_LINKDMA(hjpeg,hdmain,hdma_jpeg_in);
-
-    /* JPEG_OUT Init */
-    hdma_jpeg_out.Instance = DMA2_Stream4;
-    hdma_jpeg_out.Init.Channel = DMA_CHANNEL_9;
-    hdma_jpeg_out.Init.Direction = DMA_PERIPH_TO_MEMORY;
-    hdma_jpeg_out.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_jpeg_out.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_jpeg_out.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
-    hdma_jpeg_out.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-    hdma_jpeg_out.Init.Mode = DMA_NORMAL;
-    hdma_jpeg_out.Init.Priority = DMA_PRIORITY_MEDIUM;
-    hdma_jpeg_out.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
-    hdma_jpeg_out.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
-    hdma_jpeg_out.Init.MemBurst = DMA_MBURST_INC4;
-    hdma_jpeg_out.Init.PeriphBurst = DMA_PBURST_INC4;
-    if (HAL_DMA_Init(&hdma_jpeg_out) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
-    __HAL_LINKDMA(hjpeg,hdmaout,hdma_jpeg_out);
-
-    /* JPEG interrupt Init */
-    HAL_NVIC_SetPriority(JPEG_IRQn, 5, 0);
-    HAL_NVIC_EnableIRQ(JPEG_IRQn);
-  /* USER CODE BEGIN JPEG_MspInit 1 */
-
-  /* USER CODE END JPEG_MspInit 1 */
-  }
-
-}
-
-/**
-* @brief JPEG MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param hjpeg: JPEG handle pointer
-* @retval None
-*/
-void HAL_JPEG_MspDeInit(JPEG_HandleTypeDef* hjpeg)
-{
-  if(hjpeg->Instance==JPEG)
-  {
-  /* USER CODE BEGIN JPEG_MspDeInit 0 */
-
-  /* USER CODE END JPEG_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_JPEG_CLK_DISABLE();
-
-    /* JPEG DMA DeInit */
-    HAL_DMA_DeInit(hjpeg->hdmain);
-    HAL_DMA_DeInit(hjpeg->hdmaout);
-
-    /* JPEG interrupt DeInit */
-    HAL_NVIC_DisableIRQ(JPEG_IRQn);
-  /* USER CODE BEGIN JPEG_MspDeInit 1 */
-
-  /* USER CODE END JPEG_MspDeInit 1 */
   }
 
 }
@@ -759,10 +657,15 @@ void HAL_TIM_IC_MspInit(TIM_HandleTypeDef* htim_ic)
     GPIO_InitStruct.Pin = GPIO_PIN_8;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF1_TIM1;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+    /* TIM1 interrupt Init */
+    HAL_NVIC_SetPriority(TIM1_UP_TIM10_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
+    HAL_NVIC_SetPriority(TIM1_CC_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(TIM1_CC_IRQn);
   /* USER CODE BEGIN TIM1_MspInit 1 */
 
   /* USER CODE END TIM1_MspInit 1 */
@@ -848,6 +751,9 @@ void HAL_TIM_IC_MspDeInit(TIM_HandleTypeDef* htim_ic)
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_8);
 
+    /* TIM1 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(TIM1_UP_TIM10_IRQn);
+    HAL_NVIC_DisableIRQ(TIM1_CC_IRQn);
   /* USER CODE BEGIN TIM1_MspDeInit 1 */
 
   /* USER CODE END TIM1_MspDeInit 1 */

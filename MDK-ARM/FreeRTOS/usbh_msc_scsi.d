@@ -79,6 +79,7 @@ freertos\usbh_msc_scsi.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/tim
 freertos\usbh_msc_scsi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\usbh_msc_scsi.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\usbh_msc_scsi.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
+freertos\usbh_msc_scsi.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\usbh_msc_scsi.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\usbh_msc_scsi.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\usbh_msc_scsi.o: ../Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_def.h

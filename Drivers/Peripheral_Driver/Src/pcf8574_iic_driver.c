@@ -30,10 +30,10 @@ uint8_t PCF8574_Init(void)
     
 	//检查PCF8574是否在位
     SOFT_IIC_Start();    	 	   
-	SOFT_IIC_Send_Byte(PCF8574_ADDR);            //写地址			   
-	temp = SOFT_IIC_Wait_Ack();		            //等待应答,通过判断是否有ACK应答,来判断PCF8574的状态
-    SOFT_IIC_Stop();					            //产生一个停止条件
-    PCF8574_WriteOneByte(0XFF);	            //默认情况下所有IO输出高电平
+	SOFT_IIC_Send_Byte(PCF8574_ADDR);        //写地址			   
+	temp = SOFT_IIC_Wait_Ack();		        //等待应答,通过判断是否有ACK应答,来判断PCF8574的状态
+    SOFT_IIC_Stop();					    //产生一个停止条件
+    PCF8574_WriteOneByte(0xFF);	            //默认情况下所有IO输出高电平
 	return temp;
 }
 

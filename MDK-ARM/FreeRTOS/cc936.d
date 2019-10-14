@@ -57,9 +57,6 @@ freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\cc936.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 freertos\cc936.o: ../Inc/FreeRTOSConfig.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -78,6 +75,7 @@ freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\cc936.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
+freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\cc936.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\cc936.o: ../Inc/bsp_driver_sd.h
 freertos\cc936.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

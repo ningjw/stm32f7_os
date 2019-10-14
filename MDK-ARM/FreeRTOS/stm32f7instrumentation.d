@@ -53,9 +53,6 @@ freertos\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx
 freertos\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\stm32f7instrumentation.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
 freertos\stm32f7instrumentation.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/HAL.hpp
 freertos\stm32f7instrumentation.o: ../middlewares/st/touchgfx/touchgfx/framework/include/touchgfx/hal/Types.hpp
 freertos\stm32f7instrumentation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
@@ -94,4 +91,5 @@ freertos\stm32f7instrumentation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\stm32f7instrumentation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\stm32f7instrumentation.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\stm32f7instrumentation.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
+freertos\stm32f7instrumentation.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\stm32f7instrumentation.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h

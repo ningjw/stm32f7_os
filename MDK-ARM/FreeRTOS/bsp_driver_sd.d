@@ -54,6 +54,3 @@ freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\bsp_driver_sd.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h

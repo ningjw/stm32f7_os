@@ -57,9 +57,6 @@ freertos\pppol2tp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 freertos\pppol2tp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\pppol2tp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\pppol2tp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\pppol2tp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\pppol2tp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\pppol2tp.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
 freertos\pppol2tp.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 freertos\pppol2tp.o: ../Inc/FreeRTOSConfig.h
 freertos\pppol2tp.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -78,6 +75,7 @@ freertos\pppol2tp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\pppol2tp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\pppol2tp.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\pppol2tp.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
+freertos\pppol2tp.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\pppol2tp.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\pppol2tp.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h
 freertos\pppol2tp.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h

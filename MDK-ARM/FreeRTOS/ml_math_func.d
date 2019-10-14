@@ -1,0 +1,11 @@
+freertos\ml_math_func.o: ..\DMP\mllite\ml_math_func.c
+freertos\ml_math_func.o: ..\DMP\driver\include\mlmath.h
+freertos\ml_math_func.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\ml_math_func.o: ..\DMP\mllite\ml_math_func.h
+freertos\ml_math_func.o: ..\DMP\driver\include\mltypes.h
+freertos\ml_math_func.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\ml_math_func.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\ml_math_func.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\ml_math_func.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\ml_math_func.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\ml_math_func.o: ..\DMP\driver\include\mlinclude.h

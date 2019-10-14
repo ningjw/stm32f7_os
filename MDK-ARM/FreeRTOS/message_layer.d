@@ -1,0 +1,11 @@
+freertos\message_layer.o: ..\DMP\mllite\message_layer.c
+freertos\message_layer.o: ..\DMP\mllite\message_layer.h
+freertos\message_layer.o: ..\DMP\driver\include\mltypes.h
+freertos\message_layer.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\message_layer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\message_layer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\message_layer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\message_layer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\message_layer.o: ..\DMP\driver\include\log.h
+freertos\message_layer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\message_layer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

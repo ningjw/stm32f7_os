@@ -1,0 +1,16 @@
+freertos\mpl.o: ..\DMP\mllite\mpl.c
+freertos\mpl.o: ..\DMP\mllite\storage_manager.h
+freertos\mpl.o: ..\DMP\driver\include\mltypes.h
+freertos\mpl.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\mpl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\mpl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\mpl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\mpl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\mpl.o: ..\DMP\driver\include\log.h
+freertos\mpl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\mpl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\mpl.o: ..\DMP\mllite\mpl.h
+freertos\mpl.o: ..\DMP\mllite\start_manager.h
+freertos\mpl.o: ..\DMP\mllite\data_builder.h
+freertos\mpl.o: ..\DMP\mllite\results_holder.h
+freertos\mpl.o: ..\DMP\driver\include\mlinclude.h

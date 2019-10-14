@@ -1,0 +1,17 @@
+freertos\results_holder.o: ..\DMP\mllite\results_holder.c
+freertos\results_holder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\results_holder.o: ..\DMP\mllite\results_holder.h
+freertos\results_holder.o: ..\DMP\driver\include\mltypes.h
+freertos\results_holder.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\results_holder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\results_holder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\results_holder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\results_holder.o: ..\DMP\mllite\ml_math_func.h
+freertos\results_holder.o: ..\DMP\driver\include\mlmath.h
+freertos\results_holder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\results_holder.o: ..\DMP\mllite\start_manager.h
+freertos\results_holder.o: ..\DMP\mllite\data_builder.h
+freertos\results_holder.o: ..\DMP\mllite\message_layer.h
+freertos\results_holder.o: ..\DMP\driver\include\log.h
+freertos\results_holder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\results_holder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

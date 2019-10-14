@@ -22,9 +22,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "fatfs.h"
-//#include "libjpeg.h"
 #include "lwip.h"
-#include "usb_host.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -54,10 +52,6 @@ CRC_HandleTypeDef hcrc;
 
 DAC_HandleTypeDef hdac;
 
-JPEG_HandleTypeDef hjpeg;
-DMA_HandleTypeDef hdma_jpeg_in;
-DMA_HandleTypeDef hdma_jpeg_out;
-
 QSPI_HandleTypeDef hqspi;
 
 RNG_HandleTypeDef hrng;
@@ -72,9 +66,9 @@ DMA_HandleTypeDef hdma_sdmmc1_tx;
 
 SPDIFRX_HandleTypeDef hspdif;
 
+TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
-TIM_HandleTypeDef htim7;
 
 UART_HandleTypeDef huart1;
 
@@ -100,14 +94,13 @@ static void MX_SDMMC1_SD_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_RTC_Init(void);
 static void MX_TIM3_Init(void);
-static void MX_TIM7_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_DAC_Init(void);
-static void MX_JPEG_Init(void);
 static void MX_RNG_Init(void);
 static void MX_SAI1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_SPDIFRX_Init(void);
+static void MX_TIM1_Init(void);
 void StartDefaultTask(void const * argument);
 void StartTouchTask(void const * argument);
 void StartUpdateFontTask(void const * argument);
@@ -120,7 +113,7 @@ void StartUpdateFontTask(void const * argument);
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-uint8_t ret;
+
 /**
   * @brief  The application entry point.
   * @retval int
@@ -165,16 +158,16 @@ int main(void)
   MX_QUADSPI_Init();
   MX_RTC_Init();
   MX_TIM3_Init();
-  MX_TIM7_Init();
   MX_ADC1_Init();
   MX_DAC_Init();
-//  MX_JPEG_Init();
   MX_RNG_Init();
   MX_SAI1_Init();
   MX_TIM2_Init();
   MX_SPDIFRX_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  ret = PCF8574_Init();
+  PCF8574_Init();
+  AP3216C_Init();
   PCF8574_WriteBit(BEEP_IO,1);	//控制蜂鸣器
   W25QXX_Init();//SPI Flash初始化
   /* USER CODE END 2 */
@@ -445,32 +438,6 @@ static void MX_DAC_Init(void)
 }
 
 /**
-  * @brief JPEG Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_JPEG_Init(void)
-{
-
-  /* USER CODE BEGIN JPEG_Init 0 */
-
-  /* USER CODE END JPEG_Init 0 */
-
-  /* USER CODE BEGIN JPEG_Init 1 */
-
-  /* USER CODE END JPEG_Init 1 */
-  hjpeg.Instance = JPEG;
-  if (HAL_JPEG_Init(&hjpeg) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN JPEG_Init 2 */
-
-  /* USER CODE END JPEG_Init 2 */
-
-}
-
-/**
   * @brief QUADSPI Initialization Function
   * @param None
   * @retval None
@@ -708,6 +675,57 @@ static void MX_SPDIFRX_Init(void)
 }
 
 /**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_IC_InitTypeDef sConfigIC = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 215;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 10000;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_IC_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
+  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
+  sConfigIC.ICFilter = 3;
+  if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+    HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1);   //开始捕获TIM1的通道1
+    __HAL_TIM_ENABLE_IT(&htim1,TIM_IT_UPDATE);   //使能更新中断
+  /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
   * @brief TIM2 Initialization Function
   * @param None
   * @retval None
@@ -811,44 +829,6 @@ static void MX_TIM3_Init(void)
 }
 
 /**
-  * @brief TIM7 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM7_Init(void)
-{
-
-  /* USER CODE BEGIN TIM7_Init 0 */
-
-  /* USER CODE END TIM7_Init 0 */
-
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-  /* USER CODE BEGIN TIM7_Init 1 */
-
-  /* USER CODE END TIM7_Init 1 */
-  htim7.Instance = TIM7;
-  htim7.Init.Prescaler = 0;
-  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 0;
-  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM7_Init 2 */
-
-  /* USER CODE END TIM7_Init 2 */
-
-}
-
-/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -914,15 +894,9 @@ static void MX_DMA_Init(void)
   }
 
   /* DMA interrupt init */
-  /* DMA2_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
   /* DMA2_Stream3_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
-  /* DMA2_Stream4_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream4_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream4_IRQn);
   /* DMA2_Stream6_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream6_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream6_IRQn);
@@ -1013,12 +987,6 @@ void StartDefaultTask(void const * argument)
   /* init code for FATFS */
   MX_FATFS_Init();
 
-  /* init code for LIBJPEG */
-//  MX_LIBJPEG_Init();
-
-  /* init code for USB_HOST */
-  MX_USB_HOST_Init();
-
   /* init code for LWIP */
   MX_LWIP_Init();
 
@@ -1066,14 +1034,16 @@ void StartTouchTask(void const * argument)
 void StartUpdateFontTask(void const * argument)
 {
   /* USER CODE BEGIN StartUpdateFontTask */
+    uint16_t ir,als,ps;
   /* Infinite loop */
   for(;;)
   {
     if(PCF8574_INT == 0)				//PCF8574的中断低电平有效
     {
-        PCF8574_ReadBit(EX_IO);	//读取EXIO状态,同时清除PCF8574的中断输出(INT恢复高电平)
+        PCF8574_ReadBit(EX_IO);
     }
-    osDelay(1);
+    AP3216C_ReadData(&ir,&ps,&als); //读取数据
+    osDelay(10);
   }
   /* USER CODE END StartUpdateFontTask */
 }

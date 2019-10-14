@@ -54,8 +54,5 @@ freertos\pcf8574_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal
 freertos\pcf8574_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\pcf8574_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\pcf8574_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\pcf8574_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\pcf8574_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\pcf8574_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
 freertos\pcf8574_iic_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\pcf8574_iic_driver.o: ..\Drivers\Peripheral_Driver\Inc\soft_iic_driver.h

@@ -1,0 +1,11 @@
+freertos\start_manager.o: ..\DMP\mllite\start_manager.c
+freertos\start_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\start_manager.o: ..\DMP\driver\include\log.h
+freertos\start_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\start_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\start_manager.o: ..\DMP\mllite\start_manager.h
+freertos\start_manager.o: ..\DMP\driver\include\mltypes.h
+freertos\start_manager.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\start_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\start_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\start_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h

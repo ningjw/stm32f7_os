@@ -1,0 +1,14 @@
+freertos\storage_manager.o: ..\DMP\mllite\storage_manager.c
+freertos\storage_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\storage_manager.o: ..\DMP\mllite\storage_manager.h
+freertos\storage_manager.o: ..\DMP\driver\include\mltypes.h
+freertos\storage_manager.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\storage_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\storage_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\storage_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\storage_manager.o: ..\DMP\driver\include\log.h
+freertos\storage_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\storage_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\storage_manager.o: ..\DMP\mllite\ml_math_func.h
+freertos\storage_manager.o: ..\DMP\driver\include\mlmath.h
+freertos\storage_manager.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

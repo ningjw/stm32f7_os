@@ -53,9 +53,6 @@ freertos\gt9147_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_
 freertos\gt9147_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\gt9147_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\gt9147_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\gt9147_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\gt9147_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\gt9147_iic_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
 freertos\gt9147_iic_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\gt9147_iic_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\gt9147_iic_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

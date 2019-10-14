@@ -187,9 +187,6 @@ freertos\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal
 freertos\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\boardconfiguration.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
 freertos\boardconfiguration.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 freertos\boardconfiguration.o: ../Inc/FreeRTOSConfig.h
 freertos\boardconfiguration.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -207,6 +204,7 @@ freertos\boardconfiguration.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\boardconfiguration.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
+freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\boardconfiguration.o: ../Src/STM32F7Instrumentation.hpp
 freertos\boardconfiguration.o: ../Src/HW_Init.hpp

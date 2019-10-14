@@ -1,0 +1,14 @@
+freertos\empl_outputs.o: ..\DMP\eMPL-hal\eMPL_outputs.c
+freertos\empl_outputs.o: ..\DMP\eMPL-hal\eMPL_outputs.h
+freertos\empl_outputs.o: ..\DMP\driver\include\mltypes.h
+freertos\empl_outputs.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\empl_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\empl_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\empl_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\empl_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\empl_outputs.o: ..\DMP\mllite\ml_math_func.h
+freertos\empl_outputs.o: ..\DMP\driver\include\mlmath.h
+freertos\empl_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\empl_outputs.o: ..\DMP\mllite\start_manager.h
+freertos\empl_outputs.o: ..\DMP\mllite\data_builder.h
+freertos\empl_outputs.o: ..\DMP\mllite\results_holder.h

@@ -45,6 +45,8 @@ void SOFT_IIC_Start(void)
     SOFT_IIC_SDA(1);
     SOFT_IIC_Delay();
     SOFT_IIC_SDA(0);
+    SOFT_IIC_Delay();
+    SOFT_IIC_SCL(0);//钳住I2C总线，准备发送或接收数据 
 }
 
 
@@ -54,9 +56,10 @@ void SOFT_IIC_Start(void)
 void SOFT_IIC_Stop(void)
 {
     SOFT_IIC_SDA_OUT();//sda线输出
-    SOFT_IIC_SCL(1);
+    SOFT_IIC_SCL(0);
+    SOFT_IIC_SDA(0);
     SOFT_IIC_Delay();
-    SOFT_IIC_SDA(0);//STOP:when CLK is high DATA change form low to high
+    SOFT_IIC_SCL(1);//STOP:when CLK is high DATA change form low to high
     SOFT_IIC_Delay();
     SOFT_IIC_SDA(1);
 }
@@ -69,9 +72,11 @@ void SOFT_IIC_Stop(void)
 uint8_t SOFT_IIC_Wait_Ack(void)
 {
     uint8_t ucErrTime = 0;
-    SOFT_IIC_SDA(1);
-    SOFT_IIC_SCL(1);
     SOFT_IIC_SDA_IN();      //SDA设置为输入
+    SOFT_IIC_SDA(1);
+    SOFT_IIC_Delay();
+    SOFT_IIC_SCL(1);
+    SOFT_IIC_Delay();
     while(SOFT_IIC_READ_SDA)
     {
         ucErrTime++;
@@ -79,7 +84,6 @@ uint8_t SOFT_IIC_Wait_Ack(void)
             SOFT_IIC_Stop();
             return 1;
         }
-        SOFT_IIC_Delay();
     }
     SOFT_IIC_SCL(0);
     return 0;
@@ -123,11 +127,11 @@ void SOFT_IIC_Send_Byte(uint8_t txd)
     uint8_t t;
     SOFT_IIC_SDA_OUT();
     SOFT_IIC_SCL(0);//拉低时钟开始数据传输
-    SOFT_IIC_Delay();
     for(t = 0; t < 8; t++)
     {
         SOFT_IIC_SDA((txd & 0x80) >> 7); //先发送高字节
         txd <<= 1;
+        SOFT_IIC_Delay();
         SOFT_IIC_SCL(1);
         SOFT_IIC_Delay();
         SOFT_IIC_SCL(0);
@@ -159,3 +163,4 @@ uint8_t SOFT_IIC_Read_Byte(unsigned char ack)
         SOFT_IIC_Ack(); //发送ACK
     return receive;
 }
+

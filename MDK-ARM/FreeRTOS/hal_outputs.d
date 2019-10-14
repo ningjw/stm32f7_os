@@ -1,0 +1,17 @@
+freertos\hal_outputs.o: ..\DMP\mllite\hal_outputs.c
+freertos\hal_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\hal_outputs.o: ..\DMP\mllite\hal_outputs.h
+freertos\hal_outputs.o: ..\DMP\driver\include\mltypes.h
+freertos\hal_outputs.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\hal_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\hal_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\hal_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\hal_outputs.o: ..\DMP\driver\include\log.h
+freertos\hal_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\hal_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+freertos\hal_outputs.o: ..\DMP\mllite\ml_math_func.h
+freertos\hal_outputs.o: ..\DMP\driver\include\mlmath.h
+freertos\hal_outputs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\hal_outputs.o: ..\DMP\mllite\start_manager.h
+freertos\hal_outputs.o: ..\DMP\mllite\data_builder.h
+freertos\hal_outputs.o: ..\DMP\mllite\results_holder.h

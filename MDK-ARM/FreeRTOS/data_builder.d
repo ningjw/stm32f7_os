@@ -1,0 +1,17 @@
+freertos\data_builder.o: ..\DMP\mllite\data_builder.c
+freertos\data_builder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\data_builder.o: ..\DMP\mllite\ml_math_func.h
+freertos\data_builder.o: ..\DMP\driver\include\mltypes.h
+freertos\data_builder.o: ..\DMP\driver\include\stdint_invensense.h
+freertos\data_builder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos\data_builder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+freertos\data_builder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+freertos\data_builder.o: ..\DMP\mllite\data_builder.h
+freertos\data_builder.o: ..\DMP\driver\include\mlmath.h
+freertos\data_builder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+freertos\data_builder.o: ..\DMP\mllite\storage_manager.h
+freertos\data_builder.o: ..\DMP\mllite\message_layer.h
+freertos\data_builder.o: ..\DMP\mllite\results_holder.h
+freertos\data_builder.o: ..\DMP\driver\include\log.h
+freertos\data_builder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos\data_builder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

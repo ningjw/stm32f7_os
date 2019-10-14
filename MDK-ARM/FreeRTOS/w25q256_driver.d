@@ -54,9 +54,6 @@ freertos\w25q256_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim
 freertos\w25q256_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\w25q256_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\w25q256_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-freertos\w25q256_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_hcd.h
-freertos\w25q256_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h
-freertos\w25q256_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
 freertos\w25q256_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 freertos\w25q256_driver.o: ../Inc/FreeRTOSConfig.h
 freertos\w25q256_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -75,4 +72,6 @@ freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
+freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
+freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h

@@ -79,6 +79,7 @@ freertos\jdata_conf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\jdata_conf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 freertos\jdata_conf.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\jdata_conf.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
+freertos\jdata_conf.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\jdata_conf.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\jdata_conf.o: ../Inc/bsp_driver_sd.h
 freertos\jdata_conf.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
