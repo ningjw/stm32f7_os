@@ -75,3 +75,5 @@ freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
+freertos\ltdc_driver.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
+freertos\ltdc_driver.o: ..\DMP\driver\eMPL\inv_mpu.h

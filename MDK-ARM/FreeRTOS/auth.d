@@ -77,6 +77,8 @@ freertos\auth.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\auth.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\auth.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\auth.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
+freertos\auth.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
+freertos\auth.o: ..\DMP\driver\eMPL\inv_mpu.h
 freertos\auth.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h
 freertos\auth.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h
 freertos\auth.o: ../Middlewares/Third_Party/LwIP/system/arch/cc.h

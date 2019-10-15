@@ -156,6 +156,7 @@ uint8_t SOFT_IIC_Read_Byte(unsigned char ack)
         SOFT_IIC_SCL(1);
         receive <<= 1;
         if(SOFT_IIC_READ_SDA)receive++;
+        SOFT_IIC_Delay();
     }
     if (!ack)
         SOFT_IIC_NAck();//·¢ËÍnACK

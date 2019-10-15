@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx,USE_HAL_DRIVER,STM32F767xx,RTE_CMSIS_RTOS,MPL_LOG_NDEBUG=1,EMPL,MPU9250,EMPL_TARGET_STM32F4</Define>
               <Undefine></Undefine>
-              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;..\Drivers\Peripheral_Driver\Inc;../Inc;..\Middlewares\ST\STemWin\inc;../Middlewares/Third_Party/FatFs/src;..\STemWin\Inc;../Drivers/CMSIS/Include;../Src;../TouchGFX/generated/fonts/include;../TouchGFX/generated/texts/include;../TouchGFX/generated/images/include;../TouchGFX/generated/gui_generated/include;../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../Middlewares/ST/TouchGFX/touchgfx/framework/include;..\Middlewares\Third_Party\yaffs2;..\Middlewares\Third_Party\yaffs2\direct;../Middlewares/Third_Party/LwIP/src/include;../Middlewares/Third_Party/LwIP/system;../Middlewares/Third_Party/LwIP/src/include/netif/ppp;../Middlewares/Third_Party/LwIP/src/include/lwip;../Middlewares/Third_Party/LwIP/src/include/lwip/apps;../Middlewares/Third_Party/LwIP/src/include/lwip/priv;../Middlewares/Third_Party/LwIP/src/include/lwip/prot;../Middlewares/Third_Party/LwIP/src/include/netif;../Middlewares/Third_Party/LwIP/src/include/posix;../Middlewares/Third_Party/LwIP/src/include/posix/sys;../Middlewares/Third_Party/LwIP/system/arch;..\DMP\driver\eMPL;..\DMP\driver\include;..\DMP\driver\stm32L;..\DMP\eMPL-hal;..\DMP\mllite;..\DMP\mpl</IncludePath>
+              <IncludePath>../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;..\Drivers\Peripheral_Driver\Inc;../Inc;..\Middlewares\ST\STemWin\inc;../Middlewares/Third_Party/FatFs/src;..\STemWin\Inc;../Drivers/CMSIS/Include;../Src;../TouchGFX/generated/fonts/include;../TouchGFX/generated/texts/include;../TouchGFX/generated/images/include;../TouchGFX/generated/gui_generated/include;../TouchGFX/gui/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;../middlewares/st/touchgfx/touchgfx/framework/include;..\Middlewares\Third_Party\yaffs2;..\Middlewares\Third_Party\yaffs2\direct;../Middlewares/Third_Party/LwIP/src/include;../Middlewares/Third_Party/LwIP/system;../Middlewares/Third_Party/LwIP/src/include/netif/ppp;../Middlewares/Third_Party/LwIP/src/include/lwip;../Middlewares/Third_Party/LwIP/src/include/lwip/apps;../Middlewares/Third_Party/LwIP/src/include/lwip/priv;../Middlewares/Third_Party/LwIP/src/include/lwip/prot;../Middlewares/Third_Party/LwIP/src/include/netif;../Middlewares/Third_Party/LwIP/src/include/posix;../Middlewares/Third_Party/LwIP/src/include/posix/sys;../Middlewares/Third_Party/LwIP/system/arch;..\DMP\driver\eMPL;..\DMP\driver\include;..\DMP\driver\stm32L;..\DMP\eMPL-hal;..\DMP\mllite;..\DMP\mpl</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -538,6 +538,11 @@
               <FilePath>..\Drivers\Peripheral_Driver\Src\ir_remote_driver.c</FilePath>
             </File>
             <File>
+              <FileName>mpu9250_iic_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Peripheral_Driver\Src\mpu9250_iic_driver.c</FilePath>
+            </File>
+            <File>
               <FileName>ltdc_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Peripheral_Driver\Src\ltdc_driver.c</FilePath>
@@ -719,11 +724,6 @@
               <FileName>nand_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Peripheral_Driver\Src\nand_driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>mpu9250_iic_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\Peripheral_Driver\Src\mpu9250_iic_driver.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1185,11 +1185,6 @@
               <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
               <FilePath>../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
-            </File>
-            <File>
-              <FileName>touchgfx_core.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
             </File>
             <File>
               <FileName>OSWrappers.cpp</FileName>

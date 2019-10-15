@@ -3394,7 +3394,7 @@ uint8_t mpu_dmp_init(void)
     unsigned short compass_fsr;
     
 	SOFT_IIC_Init(); 		        //初始化IIC总线
-	if(mpu_init(&int_param)==0)	//初始化MPU9250
+	if(mpu_init(&int_param) ==0 )	//初始化MPU9250
 	{
         res=inv_init_mpl();     //初始化MPL
         if(res)return 1;
@@ -3430,19 +3430,19 @@ uint8_t mpu_dmp_init(void)
             inv_orientation_matrix_to_scalar(comp_orientation),(long)compass_fsr<<15);
             
             
-		res=dmp_load_motion_driver_firmware();		             //加载dmp固件
+		res = dmp_load_motion_driver_firmware();		             //加载dmp固件
 		if(res)return 6; 
-		res=dmp_set_orientation(inv_orientation_matrix_to_scalar(gyro_orientation));//设置陀螺仪方向
+		res = dmp_set_orientation(inv_orientation_matrix_to_scalar(gyro_orientation));//设置陀螺仪方向
 		if(res)return 7; 
-		res=dmp_enable_feature(DMP_FEATURE_6X_LP_QUAT|DMP_FEATURE_TAP|	            //设置dmp功能
+		res = dmp_enable_feature(DMP_FEATURE_6X_LP_QUAT|DMP_FEATURE_TAP|	            //设置dmp功能
 		    DMP_FEATURE_ANDROID_ORIENT|DMP_FEATURE_SEND_RAW_ACCEL|DMP_FEATURE_SEND_CAL_GYRO|
 		    DMP_FEATURE_GYRO_CAL);
 		if(res)return 8; 
-		res=dmp_set_fifo_rate(DEFAULT_MPU_HZ);	//设置DMP输出速率(最大不超过200Hz)
+		res = dmp_set_fifo_rate(DEFAULT_MPU_HZ);	//设置DMP输出速率(最大不超过200Hz)
 		if(res)return 9;   
-		res=run_self_test();		//自检
+		res = run_self_test();		//自检
 		if(res)return 10;    
-		res=mpu_set_dmp_state(1);	//使能DMP
+		res = mpu_set_dmp_state(1);	//使能DMP
 		if(res)return 11;     
 	}
 	return 0;

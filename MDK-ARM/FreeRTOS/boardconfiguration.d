@@ -206,5 +206,7 @@ freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_drive
 freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
+freertos\boardconfiguration.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
+freertos\boardconfiguration.o: ..\DMP\driver\eMPL\inv_mpu.h
 freertos\boardconfiguration.o: ../Src/STM32F7Instrumentation.hpp
 freertos\boardconfiguration.o: ../Src/HW_Init.hpp

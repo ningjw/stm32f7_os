@@ -74,6 +74,8 @@ freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
+freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
+freertos\main.o: ..\DMP\driver\eMPL\inv_mpu.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\main.o: ../Inc/fatfs.h
 freertos\main.o: ../Middlewares/Third_Party/FatFs/src/ff.h

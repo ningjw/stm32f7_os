@@ -168,6 +168,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   PCF8574_Init();
   AP3216C_Init();
+  MPU9250_Init();             	//初始化MPU9250
+  mpu_dmp_init();
   PCF8574_WriteBit(BEEP_IO,1);	//控制蜂鸣器
   W25QXX_Init();//SPI Flash初始化
   /* USER CODE END 2 */
@@ -1035,16 +1037,27 @@ void StartUpdateFontTask(void const * argument)
 {
   /* USER CODE BEGIN StartUpdateFontTask */
     uint16_t ir,als,ps;
-  /* Infinite loop */
-  for(;;)
-  {
-    if(PCF8574_INT == 0)				//PCF8574的中断低电平有效
+    float pitch,roll,yaw; 	        //欧拉角
+    short aacx,aacy,aacz;	        //加速度传感器原始数据
+    short gyrox,gyroy,gyroz;        //陀螺仪原始数据 
+    short temp = temp;		                //温度 
+    /* Infinite loop */
+    for(;;)
     {
-        PCF8574_ReadBit(EX_IO);
+        if( PCF8574_INT == 0 )				//PCF8574的中断低电平有效
+        {
+            PCF8574_ReadBit(EX_IO);
+        }
+        AP3216C_ReadData(&ir, &ps, &als); //读取数据
+
+        if( mpu_mpl_get_data(&pitch, &roll, &yaw) == 0 )
+        {
+            temp = MPU_Get_Temperature();	//得到温度值
+            MPU_Get_Accelerometer(&aacx, &aacy, &aacz);	//得到加速度传感器数据
+            MPU_Get_Gyroscope(&gyrox ,&gyroy, &gyroz);	//得到陀螺仪数据
+        }
+        osDelay(10);
     }
-    AP3216C_ReadData(&ir,&ps,&als); //读取数据
-    osDelay(10);
-  }
   /* USER CODE END StartUpdateFontTask */
 }
 

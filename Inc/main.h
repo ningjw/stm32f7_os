@@ -47,8 +47,8 @@ extern "C" {
 #include "pcf8574_iic_driver.h"
 #include "ap3216_iic_driver.h"
 #include "w25q256_driver.h"
-
-
+#include "mpu9250_iic_driver.h"
+#include "inv_mpu.h"
 
 /* USER CODE END Includes */
 
