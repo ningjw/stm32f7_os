@@ -71,9 +71,13 @@ freertos\hw_init.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\hw_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\hw_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\hw_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\hw_init.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\hw_init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\hw_init.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\hw_init.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\hw_init.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\hw_init.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\hw_init.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\hw_init.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\hw_init.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
+freertos\hw_init.o: ..\Drivers\Peripheral_Driver\Inc\utility.h

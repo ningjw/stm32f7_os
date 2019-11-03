@@ -70,10 +70,13 @@ freertos\w25q256_driver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/ti
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\w25q256_driver.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\w25q256_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\w25q256_driver.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
 freertos\w25q256_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h

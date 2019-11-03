@@ -70,12 +70,16 @@ freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\main.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\main.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
+freertos\main.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\main.o: ../Inc/fatfs.h
 freertos\main.o: ../Middlewares/Third_Party/FatFs/src/ff.h

@@ -73,12 +73,16 @@ freertos\chap-md5.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\chap-md5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\chap-md5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\chap-md5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\chap-md5.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\chap-md5.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\chap-md5.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\chap-md5.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\chap-md5.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\chap-md5.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\chap-md5.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\chap-md5.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\chap-md5.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
+freertos\chap-md5.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\chap-md5.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h
 freertos\chap-md5.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h
 freertos\chap-md5.o: ../Middlewares/Third_Party/LwIP/system/arch/cc.h

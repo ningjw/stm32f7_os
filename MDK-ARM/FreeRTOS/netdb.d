@@ -73,12 +73,16 @@ freertos\netdb.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\netdb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\netdb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\netdb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\netdb.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\netdb.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\netdb.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\netdb.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\netdb.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\netdb.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\netdb.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\netdb.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\netdb.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
+freertos\netdb.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\netdb.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h
 freertos\netdb.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h
 freertos\netdb.o: ../Middlewares/Third_Party/LwIP/system/arch/cc.h

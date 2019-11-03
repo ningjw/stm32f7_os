@@ -28,10 +28,10 @@
 /*  Keil.ARM Compiler::Compiler:I/O:STDOUT:Breakpoint:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_BKPT     /* Compiler I/O: STDOUT Breakpoint */
-/*  Keil.MDK-Plus::File System:CORE:LFN Debug:6.12.0 */
+/*  Keil.MDK-Plus::File System:CORE:LFN:6.12.0 */
 #define RTE_FileSystem_Core             /* File System Core */
           #define RTE_FileSystem_LFN              /* File System with Long Filename support */
-          #define RTE_FileSystem_Debug            /* File System Debug Version */
+          #define RTE_FileSystem_Release          /* File System Release Version */
 /*  Keil.MDK-Plus::File System:Drive:NAND:6.12.0 */
 #define RTE_FileSystem_Drive_NAND_0     /* File System NAND Flash Drive 0 */
 

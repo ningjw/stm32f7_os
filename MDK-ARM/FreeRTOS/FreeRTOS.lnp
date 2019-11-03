@@ -86,6 +86,7 @@
 "freertos\heap_4.o"
 "freertos\port.o"
 "../middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib"
+"../Middlewares/ST/TouchGFX/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib"
 "freertos\oswrappers.o"
 "freertos\containerdialog.o"
 "freertos\containerkeyboard.o"
@@ -231,9 +232,8 @@
 "freertos\nand_membus.o"
 "freertos\eventrecorder.o"
 "freertos\retarget_io.o"
-"C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Lib\ARM\FS_Dbg_LFN_CM3_L.lib"
+"C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Lib\ARM\FS_LFN_CM3_L.lib"
 "freertos\fs_config.o"
-"freertos\fs_debug.o"
 --strict --scatter ".\FLASH.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

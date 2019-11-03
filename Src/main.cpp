@@ -172,6 +172,7 @@ int main(void)
   mpu_dmp_init();
   PCF8574_WriteBit(BEEP_IO,1);	//控制蜂鸣器
   W25QXX_Init();//SPI Flash初始化
+    
   /* USER CODE END 2 */
 
 /* Initialise the graphical hardware */
@@ -183,6 +184,10 @@ int main(void)
   
 
   /* USER CODE BEGIN RTOS_MUTEX */
+
+  NAND_Reset();
+  delay_ms(100);
+  NAND_ReadID();	        //读取ID
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
@@ -996,6 +1001,7 @@ void StartDefaultTask(void const * argument)
   GRAPHICS_MainTask();
 
   /* USER CODE BEGIN 5 */
+
   /* Infinite loop */
   for(;;)
   {
@@ -1103,7 +1109,7 @@ void MPU_Config(void)
   */
   MPU_InitStruct.Enable = MPU_REGION_ENABLE;
   MPU_InitStruct.Number = MPU_REGION_NUMBER2;
-  MPU_InitStruct.BaseAddress = 0x0;
+  MPU_InitStruct.BaseAddress = 0x80000000;
   MPU_InitStruct.Size = MPU_REGION_SIZE_256MB;
   MPU_InitStruct.SubRegionDisable = 0x0;
   MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;

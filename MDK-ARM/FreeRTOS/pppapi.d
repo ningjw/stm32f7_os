@@ -73,12 +73,16 @@ freertos\pppapi.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\pppapi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\pppapi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\pppapi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\pppapi.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\pppapi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\pppapi.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\pppapi.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\pppapi.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\pppapi.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\pppapi.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\pppapi.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\pppapi.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
+freertos\pppapi.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\pppapi.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h
 freertos\pppapi.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h
 freertos\pppapi.o: ../Middlewares/Third_Party/LwIP/system/arch/cc.h

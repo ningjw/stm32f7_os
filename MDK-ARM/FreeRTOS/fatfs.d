@@ -74,12 +74,16 @@ freertos\fatfs.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\fatfs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\fatfs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\fatfs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\fatfs.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\fatfs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\fatfs.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\fatfs.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\fatfs.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\fatfs.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\fatfs.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\fatfs.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\fatfs.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
+freertos\fatfs.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\fatfs.o: ../Inc/bsp_driver_sd.h
 freertos\fatfs.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 freertos\fatfs.o: ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h

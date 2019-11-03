@@ -73,12 +73,16 @@ freertos\pppcrypt.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 freertos\pppcrypt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 freertos\pppcrypt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos\pppcrypt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+freertos\pppcrypt.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\pppcrypt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 freertos\pppcrypt.o: ..\Drivers\Peripheral_Driver\Inc\gt9147_iic_driver.h
 freertos\pppcrypt.o: ..\Drivers\Peripheral_Driver\Inc\pcf8574_iic_driver.h
 freertos\pppcrypt.o: ..\Drivers\Peripheral_Driver\Inc\ap3216_iic_driver.h
 freertos\pppcrypt.o: ..\Drivers\Peripheral_Driver\Inc\w25q256_driver.h
 freertos\pppcrypt.o: ..\Drivers\Peripheral_Driver\Inc\mpu9250_iic_driver.h
 freertos\pppcrypt.o: ..\DMP\driver\eMPL\inv_mpu.h
+freertos\pppcrypt.o: ..\Drivers\Peripheral_Driver\Inc\nand_driver.h
+freertos\pppcrypt.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
 freertos\pppcrypt.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h
 freertos\pppcrypt.o: ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h
 freertos\pppcrypt.o: ../Middlewares/Third_Party/LwIP/system/arch/cc.h
