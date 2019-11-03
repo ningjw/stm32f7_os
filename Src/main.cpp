@@ -184,10 +184,7 @@ int main(void)
   
 
   /* USER CODE BEGIN RTOS_MUTEX */
-
-  NAND_Reset();
-  delay_ms(100);
-  NAND_ReadID();	        //∂¡»°ID
+    NAND_Init();
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 

@@ -49,8 +49,8 @@
 //   </e>
 #define NAND_DEV0               1
 #define NAND_DEV0_ADDR_BASE     0x80000000
-#define NAND_DEV0_ADDR_ALE      0x80010000
-#define NAND_DEV0_ADDR_CLE      0x80020000
+#define NAND_DEV0_ADDR_ALE      0x80020000
+#define NAND_DEV0_ADDR_CLE      0x80010000
 #define NAND_DEV0_DATA_WIDTH    8
 #define NAND_DEV0_RB_PIN        1
 #define NAND_DEV0_RB_PIN_IRQ    1

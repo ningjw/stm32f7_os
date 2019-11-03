@@ -141,7 +141,7 @@
 //   <o>Filename Cache Size <0-1000000>
 //   <i>Define number of cached file or directory names.
 //   <i>48 bytes of RAM is required for each cached name.
-#define NAND0_NAME_CACHE_SIZE   0
+#define NAND0_NAME_CACHE_SIZE   50
 
 //   <q>Use FAT Journal
 //   <i>Protect File Allocation Table and Directory Entries for

@@ -53,3 +53,7 @@ freertos\nand_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 freertos\nand_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 freertos\nand_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 freertos\nand_driver.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+freertos\nand_driver.o: ..\Drivers\Peripheral_Driver\Inc\utility.h
+freertos\nand_driver.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.9.0\FileSystem\Include\rl_fs.h
+freertos\nand_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+freertos\nand_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
